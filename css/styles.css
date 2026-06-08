@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
 
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Titillium Web',Verdana,Arial,sans-serif;font-size:13px;color:#333;background:#fff}
+body{font-family:'Titillium Web',Verdana,Arial,sans-serif;font-size:13px;color:#333;background:#111 url('../images/bg-asphalt.png') center center / cover fixed}
 a{color:#333;text-decoration:none}
 img{max-width:100%;height:auto}
 
@@ -53,7 +53,7 @@ img{max-width:100%;height:auto}
 }
 
 /* ===== PAGE LAYOUT ===== */
-.page-wrap{max-width:1200px;margin:0 auto;padding:10px}
+.page-wrap{max-width:1200px;margin:0 auto;padding:10px;background:#fff}
 .row-2col{display:flex;gap:0;margin-bottom:15px}
 .col-14{flex:0 0 58.33%;max-width:58.33%;padding-right:15px}
 .col-10{flex:0 0 41.67%;max-width:41.67%}
@@ -156,7 +156,7 @@ img{max-width:100%;height:auto}
 .page-title-bar h1{font-size:22px;font-weight:700;color:#333;letter-spacing:.3px}
 
 /* ===== FAQ ===== */
-.faq-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px}
+.faq-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px;background:#fff}
 .faq-item{border-bottom:1px solid #e5e5e5}
 .faq-q{display:flex;justify-content:space-between;align-items:center;padding:13px 2px;cursor:pointer;font-size:13px;font-weight:600;color:#333;transition:color .2s;user-select:none;gap:10px}
 .faq-q:hover,.faq-q.open{color:#cc0000}
@@ -172,7 +172,7 @@ img{max-width:100%;height:auto}
 .faq-a.open{animation:fadeSlide .2s ease}
 
 /* ===== NOTICIAS ===== */
-.news-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px}
+.news-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px;background:#fff}
 .news-month-title{font-size:12px;font-weight:700;color:#fff;background:#333;padding:6px 12px;text-transform:uppercase;letter-spacing:1px;margin:10px 0 10px;display:block}
 .news-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-bottom:5px}
 @media(max-width:600px){.news-grid{grid-template-columns:1fr}}
@@ -188,7 +188,7 @@ img{max-width:100%;height:auto}
 .news-card .n-excerpt a{color:#cc0000;font-weight:600}
 
 /* ===== VEHICULOS ===== */
-.veh-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px}
+.veh-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px;background:#fff}
 .veh-search{display:flex;gap:8px;margin-bottom:20px;padding:14px;background:#f5f5f5;border:1px solid #ddd}
 .veh-search input{flex:1;padding:8px 14px;border:1px solid #ccc;font-size:13px;font-family:inherit;outline:none}
 .veh-search input:focus{border-color:#cc0000}
@@ -211,7 +211,7 @@ img{max-width:100%;height:auto}
 .brand-item:hover{background:#cc0000;color:#fff;border-color:#cc0000}
 
 /* ===== CONTACTO ===== */
-.contact-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px}
+.contact-wrap{max-width:1200px;margin:0 auto;padding:10px 10px 20px;background:#fff}
 .contact-grid{display:grid;grid-template-columns:3fr 2fr;gap:30px}
 @media(max-width:767px){.contact-grid{grid-template-columns:1fr}}
 .contact-form-section h2,.contact-info-section h2{font-size:15px;font-weight:700;color:#333;margin-bottom:14px;padding-bottom:8px;border-bottom:2px solid #cc0000}
