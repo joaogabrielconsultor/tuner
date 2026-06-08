@@ -1,0 +1,37 @@
+/* Asphalt background over the original white body */
+body {
+  background: #111 url('../images/bg-asphalt.png') no-repeat center top fixed;
+  background-size: cover;
+}
+
+/* Hero slider */
+.hero-slider {
+  position: relative;
+  overflow: hidden;
+  height: 334px;
+}
+.hero-slider .slides-track {
+  display: flex;
+  height: 334px;
+  transition: transform .6s cubic-bezier(.445,.05,.55,.95);
+}
+.hero-slider .slide { min-width: 100%; height: 334px; }
+
+/* News slider inside box-border */
+.news-slider {
+  position: relative;
+  overflow: hidden;
+}
+.news-slider .slides-track {
+  display: flex;
+  transition: transform .6s cubic-bezier(.445,.05,.55,.95);
+}
+.news-slider .slide { min-width: 100%; }
+
+/* Nav toggle for mobile */
+.nav-toggle { display: none; }
+@media only screen and (max-width: 767px) {
+  .nav-toggle { display: block; }
+  nav.primary { display: none; }
+  nav.primary.open { display: block; }
+}

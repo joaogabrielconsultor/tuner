@@ -1,6 +1,6 @@
-// Mobile nav toggle
+// Mobile nav toggle — supports both old (.nav-menu) and new Foundation (.primary) nav
 const navToggle = document.querySelector('.nav-toggle');
-const navMenu = document.querySelector('.nav-menu');
+const navMenu = document.querySelector('nav.primary') || document.querySelector('.nav-menu');
 if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
 }
