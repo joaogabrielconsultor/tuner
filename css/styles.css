@@ -7,6 +7,15 @@ a:hover{color:#40a8e4}
 img{max-width:100%;height:auto;border:0}
 address{font-style:normal}
 
+/* ===== CONTAINER CENTRAL (senta por cima do asfalto) ===== */
+#container{
+  max-width:920px;
+  margin:0 auto;
+  background:#111;
+  box-shadow:0 0 30px rgba(0,0,0,.95);
+  position:relative;
+}
+
 /* ===== TOP HEADER BAR ===== */
 .top-bar{background:#2a2a2a;display:none}
 @media(min-width:768px){.top-bar{display:block}}
