@@ -207,7 +207,7 @@ img{max-width:100%;height:auto}
 .brand-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
 @media(max-width:900px){.brand-grid{grid-template-columns:repeat(4,1fr)}}
 @media(max-width:480px){.brand-grid{grid-template-columns:repeat(3,1fr)}}
-.brand-item{border:1px solid #ddd;padding:12px 8px;text-align:center;cursor:pointer;font-size:11px;font-weight:700;color:#444;transition:all .15s;background:#fff;text-transform:uppercase;letter-spacing:.5px}
+.brand-item{display:block;border:1px solid #ddd;padding:12px 8px;text-align:center;cursor:pointer;font-size:11px;font-weight:700;color:#444;transition:all .15s;background:#fff;text-transform:uppercase;letter-spacing:.5px;text-decoration:none}
 .brand-item:hover{background:#cc0000;color:#fff;border-color:#cc0000}
 
 /* ===== CONTACTO ===== */
