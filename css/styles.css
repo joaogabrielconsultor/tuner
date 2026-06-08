@@ -112,6 +112,12 @@ img{max-width:100%;height:auto}
 .intro-inner ul li::before{content:'✓';color:#cc0000;position:absolute;left:0;font-weight:700;font-size:11px;line-height:1.6}
 
 /* ===== YOUTUBE SECTION ===== */
+.yt-slider{overflow:hidden;border:1px solid #ddd;position:relative}
+.yt-slider .slides-track{display:flex;transition:transform .5s ease}
+.yt-slider .slide{min-width:100%;flex-shrink:0}
+.yt-slider .slider-dots{text-align:center;padding:4px 0;background:#f8f8f8;border-top:1px solid #eee}
+.yt-slider .slider-dots button{width:8px;height:8px;border-radius:50%;border:none;background:#ccc;margin:0 3px;cursor:pointer;padding:0}
+.yt-slider .slider-dots button.active{background:#cc0000}
 .yt-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;background:#eee}
 .yt-item a{display:block;overflow:hidden}
 .yt-item img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;transition:opacity .2s}

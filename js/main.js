@@ -37,6 +37,7 @@ function initSlider(containerSel) {
 
 initSlider('.hero-slider');
 initSlider('.news-slider');
+initSlider('.yt-slider');
 
 // FAQ accordion
 document.querySelectorAll('.faq-q').forEach(btn => {
