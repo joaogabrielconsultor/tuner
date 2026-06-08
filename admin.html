@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — BR-Performance Barcelona</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#ccc;min-height:100vh}
+
+    /* ===== LOGIN ===== */
+    #login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh;background:#0f0f0f}
+    .login-box{background:#1a1a1a;border:1px solid #2a2a2a;border-top:3px solid #cc0000;padding:40px;width:360px;text-align:center}
+    .login-box .logo{font-size:1.4rem;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:1px}
+    .login-box .logo span{color:#cc0000}
+    .login-box .sub{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:30px}
+    .login-box label{display:block;font-size:11px;color:#666;text-align:left;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px}
+    .login-box input{width:100%;padding:11px 14px;background:#111;border:1px solid #333;color:#fff;font-size:14px;outline:none;margin-bottom:16px;transition:border-color .2s}
+    .login-box input:focus{border-color:#cc0000}
+    .login-box button{width:100%;padding:11px;background:#cc0000;color:#fff;border:none;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer;transition:background .2s}
+    .login-box button:hover{background:#aa0000}
+    .login-error{color:#ff6666;font-size:12px;margin-top:10px;display:none}
+
+    /* ===== ADMIN PANEL ===== */
+    #admin-panel{display:none}
+    .admin-header{background:#1a1a1a;border-bottom:2px solid #cc0000;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:56px;position:sticky;top:0;z-index:100}
+    .admin-header .brand{font-size:1rem;font-weight:700;color:#fff;letter-spacing:1px}
+    .admin-header .brand span{color:#cc0000}
+    .admin-header .header-actions{display:flex;gap:10px;align-items:center}
+    .btn-save{background:#cc0000;color:#fff;border:none;padding:7px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;border-radius:3px;transition:background .2s}
+    .btn-save:hover{background:#aa0000}
+    .btn-export{background:#333;color:#ccc;border:1px solid #444;padding:7px 18px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;border-radius:3px;transition:all .2s}
+    .btn-export:hover{background:#444;color:#fff}
+    .btn-logout{background:transparent;color:#666;border:none;padding:7px 12px;font-size:12px;cursor:pointer;transition:color .2s}
+    .btn-logout:hover{color:#ccc}
+    .save-notice{color:#44cc44;font-size:12px;display:none;font-weight:600}
+
+    /* ===== TABS ===== */
+    .admin-tabs{background:#151515;border-bottom:1px solid #222;padding:0 24px;display:flex;gap:0}
+    .tab-btn{padding:14px 20px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:#666;border:none;background:none;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s}
+    .tab-btn:hover{color:#aaa}
+    .tab-btn.active{color:#cc0000;border-bottom-color:#cc0000}
+
+    /* ===== CONTENT ===== */
+    .admin-content{max-width:900px;margin:0 auto;padding:30px 24px}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+    .section-title{font-size:13px;font-weight:700;color:#888;text-transform:uppercase;letter-spacing:1px;margin-bottom:16px;padding-bottom:8px;border-bottom:1px solid #222}
+    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px}
+    @media(max-width:600px){.form-grid{grid-template-columns:1fr}}
+    .form-grid.full{grid-template-columns:1fr}
+    .fg{display:flex;flex-direction:column;gap:5px}
+    .fg label{font-size:11px;color:#666;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+    .fg input,.fg textarea,.fg select{padding:9px 12px;background:#111;border:1px solid #2a2a2a;color:#ddd;font-size:13px;font-family:inherit;outline:none;transition:border-color .2s;border-radius:2px}
+    .fg input:focus,.fg textarea:focus{border-color:#cc0000;background:#151515}
+    .fg textarea{height:80px;resize:vertical}
+    .fg .hint{font-size:11px;color:#444;margin-top:2px}
+    .card{background:#1a1a1a;border:1px solid #222;padding:20px;margin-bottom:20px}
+    .card-title{font-size:13px;font-weight:700;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:8px}
+    .card-title .dot{width:8px;height:8px;border-radius:50%;background:#cc0000;display:inline-block}
+
+    /* ===== PASSWORD CHANGE ===== */
+    .senha-info{background:#1a1a1a;border:1px solid #333;border-left:3px solid #cc0000;padding:14px 16px;font-size:12px;color:#888;margin-bottom:20px;line-height:1.6}
+    .senha-info strong{color:#ccc}
+
+    /* ===== EXPORT MODAL ===== */
+    #export-modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:center;justify-content:center}
+    #export-modal.open{display:flex}
+    .export-box{background:#1a1a1a;border:1px solid #333;border-top:3px solid #cc0000;padding:24px;width:600px;max-width:95vw;max-height:80vh;display:flex;flex-direction:column;gap:14px}
+    .export-box h3{font-size:14px;font-weight:700;color:#fff}
+    .export-box p{font-size:12px;color:#888;line-height:1.5}
+    .export-box textarea{flex:1;min-height:260px;background:#0a0a0a;border:1px solid #333;color:#88cc88;font-family:'Courier New',monospace;font-size:11px;padding:12px;resize:none;outline:none}
+    .export-box .export-actions{display:flex;gap:10px}
+    .btn-copy{background:#333;color:#fff;border:none;padding:8px 18px;font-size:12px;cursor:pointer;border-radius:3px}
+    .btn-copy:hover{background:#444}
+    .btn-download{background:#cc0000;color:#fff;border:none;padding:8px 18px;font-size:12px;font-weight:700;cursor:pointer;border-radius:3px}
+    .btn-download:hover{background:#aa0000}
+    .btn-close-modal{background:transparent;color:#666;border:1px solid #333;padding:8px 18px;font-size:12px;cursor:pointer;border-radius:3px;margin-left:auto}
+    .btn-close-modal:hover{color:#aaa;border-color:#555}
+
+    /* ===== PREVIEW LINK ===== */
+    .preview-bar{background:#111;border:1px solid #222;padding:10px 16px;display:flex;align-items:center;gap:12px;margin-bottom:20px;border-radius:2px}
+    .preview-bar span{font-size:12px;color:#555}
+    .preview-bar a{color:#cc0000;font-size:12px;text-decoration:none}
+    .preview-bar a:hover{color:#ff4444}
+  </style>
+</head>
+<body>
+
+<!-- ===== LOGIN ===== -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="logo">BR-<span>PERFORMANCE</span></div>
+    <div class="sub">Painel Administrativo</div>
+    <label>Senha de acesso</label>
+    <input type="password" id="pwd-input" placeholder="••••••••" onkeydown="if(event.key==='Enter')doLogin()">
+    <button onclick="doLogin()">Entrar</button>
+    <div class="login-error" id="login-error">Senha incorreta. Tente novamente.</div>
+  </div>
+</div>
+
+<!-- ===== ADMIN PANEL ===== -->
+<div id="admin-panel">
+  <div class="admin-header">
+    <div class="brand">BR-<span>PERFORMANCE</span> <span style="color:#444;font-weight:400;font-size:.8rem">/ Admin</span></div>
+    <div class="header-actions">
+      <span class="save-notice" id="save-notice">✓ Guardado!</span>
+      <button class="btn-export" onclick="openExport()">Exportar config.js</button>
+      <button class="btn-save" onclick="saveConfig()">Guardar alterações</button>
+      <button class="btn-logout" onclick="doLogout()">Sair</button>
+    </div>
+  </div>
+
+  <div class="admin-tabs">
+    <button class="tab-btn active" onclick="showTab('empresa')">Empresa</button>
+    <button class="tab-btn" onclick="showTab('redes')">Redes Sociais</button>
+    <button class="tab-btn" onclick="showTab('links')">Links</button>
+    <button class="tab-btn" onclick="showTab('senha')">Senha</button>
+  </div>
+
+  <div class="admin-content">
+
+    <div class="preview-bar">
+      <span>Ver site:</span>
+      <a href="index.html" target="_blank">index.html (Home)</a>
+      <a href="faq.html" target="_blank">FAQ</a>
+      <a href="noticias.html" target="_blank">Noticias</a>
+      <a href="contacto.html" target="_blank">Contacto</a>
+      <a href="vehiculos.html" target="_blank">Vehículos</a>
+    </div>
+
+    <!-- TAB: EMPRESA -->
+    <div class="tab-panel active" id="tab-empresa">
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>Informação da empresa</div>
+        <div class="form-grid">
+          <div class="fg">
+            <label>Nome da empresa</label>
+            <input type="text" id="cfg-nome" placeholder="BR-Performance Barcelona">
+          </div>
+          <div class="fg">
+            <label>Slogan</label>
+            <input type="text" id="cfg-slogan" placeholder="Professional Chiptuning">
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="fg">
+            <label>Telefone (exibição)</label>
+            <input type="text" id="cfg-telefone" placeholder="+34 680 911 007">
+          </div>
+          <div class="fg">
+            <label>Telefone (link tel:)</label>
+            <input type="text" id="cfg-telefone-link" placeholder="tel:34680911007">
+            <span class="hint">Formato: tel:34680911007 (sem + ou espaços)</span>
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="fg">
+            <label>Email</label>
+            <input type="email" id="cfg-email" placeholder="barcelona@br-performance.com">
+          </div>
+          <div class="fg">
+            <label>Horário</label>
+            <input type="text" id="cfg-horario" placeholder="Lun–Vie: 9:00–18:00 | Sáb: Cita previa">
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="fg">
+            <label>Morada — Linha 1</label>
+            <input type="text" id="cfg-morada1" placeholder="Calle del cobalto 165">
+          </div>
+          <div class="fg">
+            <label>Morada — Linha 2</label>
+            <input type="text" id="cfg-morada2" placeholder="08907 Hospitalet del Llobregat, Barcelona">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: REDES SOCIAIS -->
+    <div class="tab-panel" id="tab-redes">
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>URLs das Redes Sociais</div>
+        <div class="form-grid full">
+          <div class="fg">
+            <label>Facebook — URL completa</label>
+            <input type="url" id="cfg-facebook" placeholder="https://www.facebook.com/BRPerformanceBarcelona">
+          </div>
+          <div class="fg">
+            <label>YouTube — URL completa</label>
+            <input type="url" id="cfg-youtube" placeholder="http://www.youtube.com/user/BRPerformances">
+          </div>
+          <div class="fg">
+            <label>Instagram — URL completa</label>
+            <input type="url" id="cfg-instagram" placeholder="https://www.instagram.com/brperformance_bcn">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: LINKS -->
+    <div class="tab-panel" id="tab-links">
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>Links legais e externos</div>
+        <div class="form-grid full">
+          <div class="fg">
+            <label>Condições de venda — URL</label>
+            <input type="url" id="cfg-condicoes" placeholder="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">
+          </div>
+          <div class="fg">
+            <label>Política de privacidade — URL</label>
+            <input type="url" id="cfg-privacidade" placeholder="https://www.br-performance.com/brp-barcelona/privacy-policy">
+          </div>
+          <div class="fg">
+            <label>Seleção de idioma — URL</label>
+            <input type="url" id="cfg-langselect" placeholder="https://www.br-performance.eu/langselect/">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB: SENHA -->
+    <div class="tab-panel" id="tab-senha">
+      <div class="senha-info">
+        <strong>Como funciona a proteção?</strong><br>
+        A senha é guardada localmente neste browser. Para alterar, introduza a senha atual e depois a nova senha duas vezes.
+      </div>
+      <div class="card">
+        <div class="card-title"><span class="dot"></span>Alterar senha de acesso</div>
+        <div class="form-grid">
+          <div class="fg">
+            <label>Senha atual</label>
+            <input type="password" id="pwd-atual" placeholder="••••••••">
+          </div>
+        </div>
+        <div class="form-grid">
+          <div class="fg">
+            <label>Nova senha</label>
+            <input type="password" id="pwd-nova" placeholder="••••••••">
+          </div>
+          <div class="fg">
+            <label>Confirmar nova senha</label>
+            <input type="password" id="pwd-confirma" placeholder="••••••••">
+          </div>
+        </div>
+        <button class="btn-save" onclick="changePwd()" style="margin-top:4px">Alterar senha</button>
+        <div id="pwd-msg" style="font-size:12px;margin-top:10px;display:none"></div>
+      </div>
+    </div>
+
+  </div><!-- /admin-content -->
+</div><!-- /admin-panel -->
+
+<!-- ===== EXPORT MODAL ===== -->
+<div id="export-modal">
+  <div class="export-box">
+    <h3>Exportar config.js</h3>
+    <p>Copie o código abaixo e substitua o ficheiro <strong>js/config.js</strong> no repositório GitHub. O Render irá publicar automaticamente.</p>
+    <textarea id="export-code" readonly></textarea>
+    <div class="export-actions">
+      <button class="btn-copy" onclick="copyExport()">Copiar código</button>
+      <button class="btn-download" onclick="downloadExport()">Descarregar config.js</button>
+      <button class="btn-close-modal" onclick="closeExport()">Fechar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ===== SENHA =====
+const DEFAULT_PWD = 'brpadmin';
+function getPwd() { return localStorage.getItem('brp_admin_pwd') || DEFAULT_PWD; }
+
+function doLogin() {
+  const input = document.getElementById('pwd-input').value;
+  if (input === getPwd()) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('admin-panel').style.display = 'block';
+    loadFields();
+  } else {
+    const err = document.getElementById('login-error');
+    err.style.display = 'block';
+    setTimeout(() => err.style.display = 'none', 3000);
+  }
+}
+
+function doLogout() {
+  document.getElementById('admin-panel').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'flex';
+  document.getElementById('pwd-input').value = '';
+}
+
+function changePwd() {
+  const atual = document.getElementById('pwd-atual').value;
+  const nova = document.getElementById('pwd-nova').value;
+  const confirma = document.getElementById('pwd-confirma').value;
+  const msg = document.getElementById('pwd-msg');
+  msg.style.display = 'block';
+  if (atual !== getPwd()) { msg.style.color = '#ff6666'; msg.textContent = '✗ Senha atual incorreta.'; return; }
+  if (nova.length < 6) { msg.style.color = '#ff6666'; msg.textContent = '✗ A nova senha deve ter pelo menos 6 caracteres.'; return; }
+  if (nova !== confirma) { msg.style.color = '#ff6666'; msg.textContent = '✗ As senhas não coincidem.'; return; }
+  localStorage.setItem('brp_admin_pwd', nova);
+  msg.style.color = '#44cc44';
+  msg.textContent = '✓ Senha alterada com sucesso!';
+  document.getElementById('pwd-atual').value = '';
+  document.getElementById('pwd-nova').value = '';
+  document.getElementById('pwd-confirma').value = '';
+}
+
+// ===== TABS =====
+function showTab(name) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.currentTarget.classList.add('active');
+}
+
+// ===== CONFIG =====
+function getConfig() {
+  try {
+    const saved = localStorage.getItem('brp_config');
+    if (saved) return JSON.parse(saved);
+  } catch(e) {}
+  return {};
+}
+
+function loadFields() {
+  const cfg = getConfig();
+  const empresa = cfg.empresa || {};
+  const redes = cfg.redes || {};
+  const links = cfg.links || {};
+
+  const set = (id, val) => { const el = document.getElementById(id); if (el && val) el.value = val; };
+
+  set('cfg-nome', empresa.nome || 'BR-Performance Barcelona');
+  set('cfg-slogan', empresa.slogan || 'Professional Chiptuning');
+  set('cfg-telefone', empresa.telefone || '+34 680 911 007');
+  set('cfg-telefone-link', empresa.telefone_link || 'tel:34680911007');
+  set('cfg-email', empresa.email || 'barcelona@br-performance.com');
+  set('cfg-horario', empresa.horario || 'Lunes–Viernes: 9:00–18:00 | Sábado: Con cita previa');
+  set('cfg-morada1', empresa.morada_linha1 || 'Calle del cobalto 165');
+  set('cfg-morada2', empresa.morada_linha2 || '08907 Hospitalet del Llobregat, Barcelona');
+
+  set('cfg-facebook', redes.facebook || 'https://www.facebook.com/BRPerformanceBarcelona');
+  set('cfg-youtube', redes.youtube || 'http://www.youtube.com/user/BRPerformances');
+  set('cfg-instagram', redes.instagram || 'https://www.instagram.com/brperformance_bcn');
+
+  set('cfg-condicoes', links.condicoes_venda || 'https://www.br-performance.com/brp-barcelona/condiciones-de-venta/');
+  set('cfg-privacidade', links.politica_privacidade || 'https://www.br-performance.com/brp-barcelona/privacy-policy');
+  set('cfg-langselect', links.langselect || 'https://www.br-performance.eu/langselect/');
+}
+
+function readFields() {
+  const g = id => document.getElementById(id).value.trim();
+  return {
+    empresa: {
+      nome: g('cfg-nome'),
+      slogan: g('cfg-slogan'),
+      telefone: g('cfg-telefone'),
+      telefone_link: g('cfg-telefone-link'),
+      email: g('cfg-email'),
+      horario: g('cfg-horario'),
+      morada_linha1: g('cfg-morada1'),
+      morada_linha2: g('cfg-morada2')
+    },
+    redes: {
+      facebook: g('cfg-facebook'),
+      youtube: g('cfg-youtube'),
+      instagram: g('cfg-instagram')
+    },
+    links: {
+      condicoes_venda: g('cfg-condicoes'),
+      politica_privacidade: g('cfg-privacidade'),
+      langselect: g('cfg-langselect')
+    }
+  };
+}
+
+function saveConfig() {
+  const cfg = readFields();
+  localStorage.setItem('brp_config', JSON.stringify(cfg));
+  const notice = document.getElementById('save-notice');
+  notice.style.display = 'inline';
+  setTimeout(() => notice.style.display = 'none', 2500);
+}
+
+// ===== EXPORT =====
+function buildConfigJS() {
+  const cfg = readFields();
+  return `// BR-Performance Barcelona — Configuração do site
+// Gerado pelo painel admin em ${new Date().toLocaleString('pt-PT')}
+
+const BRP_CONFIG = {
+  empresa: {
+    nome: '${esc(cfg.empresa.nome)}',
+    slogan: '${esc(cfg.empresa.slogan)}',
+    morada_linha1: '${esc(cfg.empresa.morada_linha1)}',
+    morada_linha2: '${esc(cfg.empresa.morada_linha2)}',
+    telefone: '${esc(cfg.empresa.telefone)}',
+    telefone_link: '${esc(cfg.empresa.telefone_link)}',
+    email: '${esc(cfg.empresa.email)}',
+    horario: '${esc(cfg.empresa.horario)}'
+  },
+  redes: {
+    facebook: '${esc(cfg.redes.facebook)}',
+    youtube: '${esc(cfg.redes.youtube)}',
+    instagram: '${esc(cfg.redes.instagram)}'
+  },
+  links: {
+    condicoes_venda: '${esc(cfg.links.condicoes_venda)}',
+    politica_privacidade: '${esc(cfg.links.politica_privacidade)}',
+    langselect: '${esc(cfg.links.langselect)}'
+  }
+};
+
+(function () {
+  try {
+    const saved = localStorage.getItem('brp_config');
+    if (saved) {
+      const parsed = JSON.parse(saved);
+      Object.keys(parsed).forEach(section => {
+        if (BRP_CONFIG[section]) Object.assign(BRP_CONFIG[section], parsed[section]);
+      });
+    }
+  } catch (e) {}
+  document.addEventListener('DOMContentLoaded', function () { applyConfig(BRP_CONFIG); });
+})();
+
+function applyConfig(cfg) {
+  document.querySelectorAll('[data-cfg="telefone"]').forEach(el => el.textContent = cfg.empresa.telefone);
+  document.querySelectorAll('[data-cfg="telefone-href"]').forEach(el => el.href = cfg.empresa.telefone_link);
+  document.querySelectorAll('[data-cfg="email"]').forEach(el => el.href = 'mailto:' + cfg.empresa.email);
+  document.querySelectorAll('[data-cfg="email-text"]').forEach(el => el.textContent = cfg.empresa.email);
+  document.querySelectorAll('[data-cfg="morada1"]').forEach(el => el.textContent = cfg.empresa.morada_linha1);
+  document.querySelectorAll('[data-cfg="morada2"]').forEach(el => el.textContent = cfg.empresa.morada_linha2);
+  document.querySelectorAll('[data-cfg="facebook"]').forEach(el => el.href = cfg.redes.facebook);
+  document.querySelectorAll('[data-cfg="youtube"]').forEach(el => el.href = cfg.redes.youtube);
+  document.querySelectorAll('[data-cfg="instagram"]').forEach(el => el.href = cfg.redes.instagram);
+  document.querySelectorAll('[data-cfg="slogan"]').forEach(el => el.textContent = cfg.empresa.slogan);
+}`;
+}
+
+function esc(s) { return (s||'').replace(/'/g, "\\'"); }
+
+function openExport() {
+  document.getElementById('export-code').value = buildConfigJS();
+  document.getElementById('export-modal').classList.add('open');
+}
+
+function closeExport() {
+  document.getElementById('export-modal').classList.remove('open');
+}
+
+function copyExport() {
+  const ta = document.getElementById('export-code');
+  ta.select();
+  document.execCommand('copy');
+  const btn = event.currentTarget;
+  btn.textContent = '✓ Copiado!';
+  setTimeout(() => btn.textContent = 'Copiar código', 2000);
+}
+
+function downloadExport() {
+  const code = buildConfigJS();
+  const blob = new Blob([code], { type: 'text/javascript' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'config.js';
+  a.click();
+}
+
+// Enter no login
+document.getElementById('pwd-input').addEventListener('keydown', e => {
+  if (e.key === 'Enter') doLogin();
+});
+</script>
+</body>
+</html>
