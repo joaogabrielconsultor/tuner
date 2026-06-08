@@ -17,7 +17,7 @@ address{font-style:normal}
 }
 
 /* ===== TOP HEADER BAR ===== */
-.top-bar{background:#2a2a2a;display:none}
+.top-bar{background:transparent;display:none}
 @media(min-width:768px){.top-bar{display:block}}
 .top-bar .inner{max-width:920px;margin:0 auto;padding:6px 12px;display:flex;justify-content:flex-end;align-items:center;gap:15px}
 .top-bar .social-links{list-style:none;display:flex;gap:8px;align-items:center}
