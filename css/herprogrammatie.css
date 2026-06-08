@@ -1,0 +1,475 @@
+@charset "utf-8";
+/* CSS Document */
+
+.vehicle-types {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex !important;
+    justify-content: center;
+}
+
+.vehicle-types li {
+    flex-grow: 1;
+    max-width: 294px;
+}
+
+.vehicle-types .type {
+    color: white;
+    font-size: 16px;
+    display: inline-block;
+    height: 54px;
+    vertical-align: middle;
+    line-height: 50px;
+    opacity: 0.5;
+    transition: opacity 0.2s ease;
+}
+
+    .vehicle-types .type.active, .vehicle-types .type:hover {
+        opacity: 1;
+    }
+
+.vehicle-types .icon {
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.brand-disclaimer {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
+#brands a.merk {
+	float: left;
+	display: table;
+}
+
+    #brands a.merk span {
+        display: table-cell;
+        width: 122px;
+        height: 100px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+        #brands a.merk span img {
+            max-width: 80px;
+            max-height: 50px;
+            width: auto;
+            height: auto;
+        }
+
+.kiosk {
+    width: 100%;
+    height: 332px;
+    position: relative;
+}
+
+    .kiosk picture {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 332px;
+        background-size: cover;
+        background-position: center center;
+        z-index: 1;
+    }
+
+    .kiosk .selectionname {
+        position: absolute;
+        bottom: 32px;
+        right: 20px;
+        font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+        line-height: 18px;
+        font-size: 18px;
+        margin: 0;
+        font-weight: normal;
+        color: white;
+        z-index: 2;
+    }
+
+section.sub .columns {
+    padding-left: 0;
+}
+
+    section.sub .columns {
+        text-align: center;
+        font-size: 18px;
+    }
+
+        section.sub .columns .back {
+            float: left;
+            line-height: auto !important;
+            height: auto !important;
+            display: inline !important;
+        }
+
+            section.sub .columns .back .button-full-rounded, .previous {
+                padding-left: 22px;
+                background-image: url(../images/arrow_button_back.gif); /* fallback */
+                background-image: url(../images/arrow_button_back.gif), -moz-linear-gradient(top,  #2c507a 0%, #395f89 50%, #2c507a 50%, #305681 100%); /* FF3.6+ */
+                background-image: url(../images/arrow_button_back.gif), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c507a), color-stop(50%,#395f89), color-stop(50%,#2c507a), color-stop(100%,#305681)); /* Chrome,Safari4+ */
+                background-image: url(../images/arrow_button_back.gif), -webkit-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* Chrome10+,Safari5.1+ */
+                background-image: url(../images/arrow_button_back.gif), -o-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* Opera 11.10+ */
+                background-image: url(../images/arrow_button_back.gif), -ms-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* IE10+ */
+                background-image: url(../images/arrow_button_back.gif), linear-gradient(to bottom,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* W3C */
+                background-repeat: no-repeat;
+                background-position: left center;
+            }
+
+        section.sub .columns .title {
+            margin-left: -147px;
+        }
+
+        section.sub .columns .noback {
+            margin-left: 0 !important;
+        }
+
+.list article header.small {
+    padding-top: 13px;
+    padding-bottom: 13px;
+}
+
+.list article header.small .logo {
+    margin-top: -1px;
+}
+
+.list article header {
+    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0px !important;
+}
+
+.list article header:first-of-type {
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+
+.list article header h2 {
+    display: inline;
+}
+
+.list article header .logo {
+    float: right;
+    margin-top: -13px;
+    max-width: 80px;
+    max-height: 50px;
+    width: auto;
+    height: auto;
+}
+
+.list article ul.content {
+    margin: 0;
+    padding: 12px;
+}
+
+    .list article ul.content li {
+        padding: 3px 18px;
+        margin-bottom: 0;
+        border-bottom: 1px dotted #343434;
+    }
+
+    .list article ul.content li.new a {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .list article ul.content li.development a {
+        color: #666;
+    }
+
+    .list article ul.content li:last-child {
+        border-bottom: 0;
+    }
+
+        .list article ul.content li a {
+            color: #ccc;
+        }
+
+        .list article ul.content li a:hover {
+            color: #56b2e7;
+        }
+
+        .list article ul.content li .specs {
+            float: right;
+            font-style: italic;
+        }
+
+        .list article ul.content li .specs span.spec:before {
+            content: ' - ';
+        }
+
+        .list article ul.content li .specs span.spec:first-child:before {
+            content: none;
+        }
+
+        .list article ul.content li label {
+            position: absolute;
+            display: inline-block;
+            cursor: default;
+            font-weight: normal;
+            font-style: italic;
+            white-space: nowrap;
+            font-size: 11px;
+        }
+
+        .list article ul.content li label.new {
+            padding-left: 11px;
+            color: #9ec7fe;
+            text-shadow: 1px 1px 0px #1a355f;
+            border: none;
+            background: transparent
+                        url(../images/label_arrow_new.png)
+                        no-repeat
+                        left center;
+        }
+
+        .list article ul.content.nl li label.new {
+            right: 10px;
+        }
+        .list article ul.content.fr li label.new {
+            right: -2px;
+        }
+        .list article ul.content.en li label.new {
+            right: 22px;
+        }
+        .list article ul.content.de li label.new {
+            right: 18px;
+        }
+
+            .list article ul.content li label.new span.label {
+                display: inline-block;
+                line-height: 19px;
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+                padding-right: 5px;
+                background: transparent
+                            url(../images/label_bg_new.png)
+                            repeat-x
+                            left center;
+            }
+
+        .list article ul.content li label.development {
+            padding-left: 11px;
+            color: #999;
+            text-shadow: 1px 1px 0px #1a355f;
+            border: none;
+            background: transparent
+                        url(../images/label_arrow_development.png)
+                        no-repeat
+                        left center;
+        }
+
+        .list article ul.content.nl li label.development {
+            right: -31px;
+        }
+        .list article ul.content.fr li label.development {
+            right: -48px;
+        }
+        .list article ul.content.en li label.development {
+            right: -31px;
+        }
+        .list article ul.content.de li label.development {
+            right: -31px;
+        }
+
+            .list article ul.content li label.development span.label {
+                display: inline-block;
+                line-height: 19px;
+                border-top-right-radius: 3px;
+                border-bottom-right-radius: 3px;
+                padding-right: 5px;
+                background: transparent
+                            url(../images/label_bg_development.png)
+                            repeat-x
+                            left center;
+            }
+
+ul.articles li.non-active article {
+    border: 3px solid black;
+}
+
+    ul.articles li.non-active article header h2 {
+        color: #999;
+    }
+
+        ul.articles li.non-active article ul.content li a {
+            color: #999;
+        }
+
+        ul.articles li.non-active article ul.content li a:hover {
+            color: #ccc;
+        }
+
+div.no-overflow {
+    overflow: visible;
+}
+
+.stages li:nth-child(1) header h2 {
+    padding-left: 20px;
+    background: transparent
+                url(../images/bg_stage1_sel.png)
+                no-repeat
+                left center;
+}
+
+.stages li:nth-child(2) header h2 {
+    padding-left: 24px;
+    background: transparent
+                url(../images/bg_stage2_sel.png)
+                no-repeat
+                left center;
+}
+
+.stages li:nth-child(3) header h2 {
+    padding-left: 24px;
+    background: transparent
+                url(../images/bg_stage3_sel.png)
+                no-repeat
+                left center;
+}
+
+.stages li:nth-child(4) header h2 {
+    padding-left: 24px;
+    color: transparent;
+    background: transparent
+                url(../images/bg_brpeco_sel.png)
+                no-repeat
+                left center;
+}
+
+.modelyear .icon {
+    height: 10px !important;
+    width: auto;
+    margin: 0 5px;
+}
+
+.named.modelyear {
+    padding-left: 10px;
+}
+
+.named.engine {
+    padding-left: 10px;
+    position: relative;
+    top: -0.3em;
+    font-size: 80%;
+}
+
+
+/* Medium devices */
+@media all and (min-width: 767px) and (max-width: 1200px) {
+
+    .kiosk .center img {
+        position: static;
+        top: auto;
+        left: auto;
+        margin-left: auto !important;
+        margin-top: auto !important;
+    }
+
+    #brands a.merk {
+        position: relative;
+        float: left;
+        display: block;
+        width: 101px;
+        height: 100px;
+    }
+
+}
+
+/* Small devices */
+@media all and (max-width: 767px) {
+
+    .kiosk .center img {
+        position: static;
+        top: auto;
+        left: auto;
+        margin-left: auto !important;
+        margin-top: auto !important;
+    }
+
+    .vehicle-types .type img {
+        margin-right: 0;
+    }
+
+    .vehicle-types .type .label {
+        display: none;
+    }
+
+    #brands a.merk {
+        position: relative;
+        float: left;
+        display: block;
+        width: 33.333%;
+        height: 100px;
+        line-height: 100px;
+        text-align: center;
+    }
+
+        #brands a.merk img {
+            position: static;
+            top: 0;
+            left: 0;
+            margin-left: 0 !important;
+            margin-top: 0 !important;
+            vertical-align: middle;
+        }
+
+        section.sub {
+            height: auto;
+            background-position: center top;
+            padding-left: 0;
+        }
+
+        section.sub .columns {
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+        }
+
+        section.sub .columns .back {
+            float: none;
+            line-height: auto !important;
+            height: auto !important;
+            display: inline !important;
+        }
+
+        section.sub .columns .title {
+            display: block;
+            margin-left: 0;
+        }
+
+        .list article ul.content li {
+            position: relative;
+        }
+
+            .list article ul.content li a.specs {
+                float: right;
+                font-weight: normal;
+                color: #ccc;
+            }
+
+            .list article ul.content li a.tooltip, .list article ul.content li span.tooltip {
+                margin-left: 0;
+                padding: 0;
+            }
+
+            .list article ul.content li.development a.specs {
+                color: #666;
+            }
+
+            .list article ul.content li label.new, .list article ul.content li label.development {
+                position: static;
+                right: 0px !important;
+                top: 0px;
+                padding-left: 0;
+            }
+
+                .list article ul.content li label.new span.label, .list article ul.content li label.development span.label {
+                    border-bottom-left-radius: 3px;
+                    border-top-left-radius: 3px;
+                    padding-left: 5px;
+                }
+
+}
+
