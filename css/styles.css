@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
 
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Titillium Web',Verdana,Arial,sans-serif;font-size:13px;color:#333;background:#111 url('../images/bg-asphalt.png') repeat}
+body{font-family:'Titillium Web',Verdana,Arial,sans-serif;font-size:13px;color:#333;background:#111}
+body::before{content:'';position:fixed;inset:0;background:url('../images/bg-asphalt.png') repeat;z-index:-2;pointer-events:none}
+body::after{content:'';position:fixed;inset:0;background:linear-gradient(to bottom,transparent 0%,transparent 30%,rgba(17,17,17,.7) 60%,rgba(17,17,17,1) 90%);z-index:-1;pointer-events:none}
 a{color:#333;text-decoration:none}
 img{max-width:100%;height:auto}
 
@@ -20,8 +22,8 @@ img{max-width:100%;height:auto}
 /* ===== NAVIGATION ===== */
 .main-nav{background:#1a1a1a;position:relative;z-index:200}
 .main-nav .inner{max-width:1200px;margin:0 auto;padding:0 10px;display:flex;align-items:stretch;position:relative}
-.nav-logo{display:flex;align-items:center;padding:8px 20px 8px 0;flex-shrink:0}
-.nav-logo img{height:56px;width:auto;display:block}
+.nav-logo{display:flex;align-items:center;padding:4px 16px 4px 0;flex-shrink:0;background:#fff;margin-right:12px}
+.nav-logo img{height:60px;width:auto;display:block}
 .nav-logo .logo-text{color:#fff;font-size:1.5rem;font-weight:700;letter-spacing:1px;line-height:1;display:flex;flex-direction:column}
 .nav-logo .logo-text .brand{font-size:1.4rem}
 .nav-logo .logo-text span.red{color:#cc0000}
