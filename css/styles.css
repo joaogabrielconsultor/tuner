@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;400;600;700&display=swap');
 
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Titillium Web',Arial,Helvetica,sans-serif;font-size:14px;color:#ccc;background:#111 url('../images/bg-asphalt.png') repeat;-webkit-font-smoothing:antialiased}
+body{font-family:'Titillium Web',Arial,Helvetica,sans-serif;font-size:14px;color:#ccc;background:#111 url('../images/bg-asphalt.png') no-repeat center top fixed;background-size:cover;-webkit-font-smoothing:antialiased}
 a{color:#56b2e7;text-decoration:none}
 a:hover{color:#40a8e4}
 img{max-width:100%;height:auto;border:0}
