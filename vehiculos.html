@@ -3,203 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Busca tu Reprogramación — BR-Performance Barcelona</title>
-  <meta name="description" content="Busca la reprogramación de centralita para tu vehículo. Coches, motos, quads, motos de agua y lanchas.">
+  <title>Busca tu reprogramación - BR-Performance Barcelona</title>
+  <meta name="description" content="Busca la reprogramación de centralita para tu vehículo. Coches, motos, quads, embarcaciones. BR-Performance Barcelona.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="header-top">
-    <a href="index.html" class="logo">
-      BR<span>-</span>PERFORMANCE
-      <span class="logo-badge">Barcelona · Professional Chiptuning</span>
-    </a>
-    <div class="header-actions">
-      <div class="header-social">
-        <a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener">FB</a>
-        <a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener">YT</a>
-        <a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener">IG</a>
-      </div>
-      <button class="mobile-toggle" aria-label="Menú">☰</button>
-    </div>
-  </div>
-  <nav class="primary">
-    <ul class="nav-inner">
-      <li><a href="index.html">Home</a></li>
-      <li class="has-dropdown active">
-        <a href="vehiculos.html">Busca tu reprogramación ▾</a>
-        <ul class="dropdown">
-          <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-          <li><a href="vehiculos.html">Bikes - Quad</a></li>
-          <li><a href="vehiculos.html">Moto de Agua</a></li>
-          <li><a href="vehiculos.html">Lancha motora</a></li>
-        </ul>
-      </li>
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contacto.html">Solicita presupuesto</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="inner">
+    <ul class="social-links">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a1a1a"/></svg></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#1a1a1a"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/></svg></a></li>
     </ul>
-  </nav>
+    <form class="search-form" action="https://www.br-performance.com/brp-barcelona/buscar/" method="get">
+      <input type="text" name="q" placeholder="Buscar por marca o modelo ..." autocomplete="off">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
 </header>
 
-<div class="page-hero">
-  <div class="container page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Home</a> / Busca tu reprogramación</div>
-    <h1 class="page-title">Busca tu <em>Reprogramación</em></h1>
+<!-- NAVIGATION -->
+<nav class="main-nav">
+  <div class="inner">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-text">
+          <span class="brand">BR-<span class="red">PERFORMANCE</span></span>
+          <span class="sub">Barcelona · Professional Chiptuning</span>
+        </span>
+      </a>
+    </div>
+    <button class="nav-toggle" aria-label="Menú">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li class="active"><a href="vehiculos.html">Busca tu reprogramación</a><ul class="subnav"><li><a href="vehiculos.html">Vehículo / Coche</a></li><li><a href="vehiculos.html">Bikes - Quad</a></li><li><a href="vehiculos.html">Moto de Agua</a></li><li><a href="vehiculos.html">Lancha motora</a></li><li><a href="vehiculos.html">Desarrollo</a></li></ul></li>
+      <li><a href="noticias.html">Noticias</a><ul class="subnav"><li><a href="noticias.html">Noticias</a></li><li><a href="noticias.html">Promociones</a></li></ul></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contacto.html">Solicita presupuesto</a></li>
+      <li><a href="contacto.html">Contacto</a><ul class="subnav align-right"><li><a href="contacto.html">Contacto</a></li><li><a href="contacto.html">Banco de Rodillos</a></li><li><a href="contacto.html">Empresa</a></li><li><a href="contacto.html">Nuestro equipo</a></li><li><a href="contacto.html">Objetivos</a></li><li><a href="contacto.html">Colaboradores</a></li></ul></li>
+    </ul>
+    <div class="nav-right"><div class="lang-select"><a href="#"><span class="flag-icon">🇪🇸</span> España / Español</a></div></div>
   </div>
+</nav>
+
+<!-- PAGE TITLE -->
+<div class="page-title-bar">
+  <div class="inner"><h1>Vehículo / Coche</h1></div>
 </div>
 
-<section>
-  <div class="container">
+<!-- VEHICLES CONTENT -->
+<div class="veh-wrap">
 
-    <!-- CATEGORY TABS -->
-    <div class="category-tabs">
-      <button class="tab-btn active" data-cat="coches">🚗 Vehículo / Coche</button>
-      <button class="tab-btn" data-cat="motos">🏍️ Bikes - Quad</button>
-      <button class="tab-btn" data-cat="agua">🚤 Moto de Agua</button>
-      <button class="tab-btn" data-cat="lancha">⛵ Lancha motora</button>
-      <button class="tab-btn" data-cat="desarrollo">🔧 Desarrollo</button>
+  <!-- Search bar -->
+  <div class="veh-search">
+    <input type="text" id="brand-search" placeholder="Buscar marca o modelo...">
+    <button type="button">Buscar</button>
+  </div>
+
+  <!-- Intro -->
+  <p class="veh-intro">
+    BR-Performance ofrece chiptuning profesional para una amplia gama de vehículos. Selecciona tu tipo de vehículo o busca directamente por marca para ver los resultados disponibles para tu motor.
+  </p>
+
+  <!-- Vehicle types -->
+  <div class="veh-types-grid">
+    <div class="veh-type-card">
+      <div class="type-img-wrap"><img src="https://www.br-performance.com/db/pictures/large/24535-Porsche_ferrari_pista_dyno.jpg" alt="Vehículo / Coche"></div>
+      <div class="type-name">Vehículo / Coche</div>
     </div>
-
-    <!-- SEARCH -->
-    <div class="search-bar">
-      <input type="text" id="vehicle-search" placeholder="Buscar por marca o modelo...">
-      <button type="button">Buscar</button>
+    <div class="veh-type-card">
+      <div class="type-img-wrap"><img src="https://www.br-performance.com/db/pictures/large/31275-Moto_banner_7.jpg" alt="Bikes - Quad"></div>
+      <div class="type-name">Bikes - Quad</div>
     </div>
-
-    <!-- BRANDS GRID -->
-    <div class="section-label" style="margin-bottom:24px;">Selecciona tu marca</div>
-    <div class="brands-alpha">
-      <div class="brand-item"><div class="brand-item-icon">A</div><div class="brand-item-name">Alfa Romeo</div></div>
-      <div class="brand-item"><div class="brand-item-icon">A</div><div class="brand-item-name">Aston Martin</div></div>
-      <div class="brand-item"><div class="brand-item-icon">A</div><div class="brand-item-name">Audi</div></div>
-      <div class="brand-item"><div class="brand-item-icon">B</div><div class="brand-item-name">BMW</div></div>
-      <div class="brand-item"><div class="brand-item-icon">B</div><div class="brand-item-name">Bentley</div></div>
-      <div class="brand-item"><div class="brand-item-icon">C</div><div class="brand-item-name">Chevrolet</div></div>
-      <div class="brand-item"><div class="brand-item-icon">C</div><div class="brand-item-name">Citroën</div></div>
-      <div class="brand-item"><div class="brand-item-icon">C</div><div class="brand-item-name">Cupra</div></div>
-      <div class="brand-item"><div class="brand-item-icon">D</div><div class="brand-item-name">Dodge</div></div>
-      <div class="brand-item"><div class="brand-item-icon">F</div><div class="brand-item-name">Ferrari</div></div>
-      <div class="brand-item"><div class="brand-item-icon">F</div><div class="brand-item-name">Fiat</div></div>
-      <div class="brand-item"><div class="brand-item-icon">F</div><div class="brand-item-name">Ford</div></div>
-      <div class="brand-item"><div class="brand-item-icon">H</div><div class="brand-item-name">Honda</div></div>
-      <div class="brand-item"><div class="brand-item-icon">H</div><div class="brand-item-name">Hyundai</div></div>
-      <div class="brand-item"><div class="brand-item-icon">J</div><div class="brand-item-name">Jaguar</div></div>
-      <div class="brand-item"><div class="brand-item-icon">J</div><div class="brand-item-name">Jeep</div></div>
-      <div class="brand-item"><div class="brand-item-icon">K</div><div class="brand-item-name">Kia</div></div>
-      <div class="brand-item"><div class="brand-item-icon">L</div><div class="brand-item-name">Lamborghini</div></div>
-      <div class="brand-item"><div class="brand-item-icon">L</div><div class="brand-item-name">Land Rover</div></div>
-      <div class="brand-item"><div class="brand-item-icon">L</div><div class="brand-item-name">Lexus</div></div>
-      <div class="brand-item"><div class="brand-item-icon">M</div><div class="brand-item-name">Maserati</div></div>
-      <div class="brand-item"><div class="brand-item-icon">M</div><div class="brand-item-name">McLaren</div></div>
-      <div class="brand-item"><div class="brand-item-icon">M</div><div class="brand-item-name">Mercedes-Benz</div></div>
-      <div class="brand-item"><div class="brand-item-icon">M</div><div class="brand-item-name">Mini</div></div>
-      <div class="brand-item"><div class="brand-item-icon">M</div><div class="brand-item-name">Mitsubishi</div></div>
-      <div class="brand-item"><div class="brand-item-icon">N</div><div class="brand-item-name">Nissan</div></div>
-      <div class="brand-item"><div class="brand-item-icon">O</div><div class="brand-item-name">Opel</div></div>
-      <div class="brand-item"><div class="brand-item-icon">P</div><div class="brand-item-name">Peugeot</div></div>
-      <div class="brand-item"><div class="brand-item-icon">P</div><div class="brand-item-name">Porsche</div></div>
-      <div class="brand-item"><div class="brand-item-icon">R</div><div class="brand-item-name">Renault</div></div>
-      <div class="brand-item"><div class="brand-item-icon">R</div><div class="brand-item-name">Rolls-Royce</div></div>
-      <div class="brand-item"><div class="brand-item-icon">S</div><div class="brand-item-name">SEAT</div></div>
-      <div class="brand-item"><div class="brand-item-icon">S</div><div class="brand-item-name">Skoda</div></div>
-      <div class="brand-item"><div class="brand-item-icon">S</div><div class="brand-item-name">Subaru</div></div>
-      <div class="brand-item"><div class="brand-item-icon">T</div><div class="brand-item-name">Toyota</div></div>
-      <div class="brand-item"><div class="brand-item-icon">V</div><div class="brand-item-name">Volkswagen</div></div>
-      <div class="brand-item"><div class="brand-item-icon">V</div><div class="brand-item-name">Volvo</div></div>
+    <div class="veh-type-card">
+      <div class="type-img-wrap" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+      <div class="type-name">Moto de Agua</div>
     </div>
-
-    <div class="divider"></div>
-
-    <!-- INFO BLOCK -->
-    <div style="display:grid; grid-template-columns: repeat(3,1fr); gap:2px;">
-      <div class="service-card">
-        <span class="service-icon">🔍</span>
-        <h3>Selecciona tu marca</h3>
-        <p>Elige tu marca del listado y selecciona tu modelo específico para ver los datos de potencia disponibles.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">📊</span>
-        <h3>Resultados en banco</h3>
-        <p>Todos los datos de potencia y par se obtienen en banco de rodillos con cada vehículo calibrado individualmente.</p>
-      </div>
-      <div class="service-card">
-        <span class="service-icon">📞</span>
-        <h3>¿No encuentras tu vehículo?</h3>
-        <p>Contacta con nosotros directamente. Desarrollamos software para cualquier vehículo bajo petición.</p>
-      </div>
+    <div class="veh-type-card">
+      <div class="type-img-wrap" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1"><path d="M22 17H2a3 3 0 0 0 3-3V9a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v5a3 3 0 0 0 3 3z"/><polyline points="6 17 6 21"/><polyline points="18 17 18 21"/></svg></div>
+      <div class="type-name">Lancha motora</div>
     </div>
-
-    <div style="text-align:center; margin-top:50px;">
-      <a href="contacto.html" class="btn btn-primary">Consultar por mi vehículo →</a>
+    <div class="veh-type-card">
+      <div class="type-img-wrap" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
+      <div class="type-name">Desarrollo</div>
     </div>
   </div>
-</section>
 
-<!-- BRANDS -->
-<div class="brands-section">
-  <div class="container">
-    <p class="brands-title">Marcas colaboradoras</p>
-    <div class="brands-grid">
-      <span class="brand-badge">Milltek</span><span class="brand-badge">Forge</span>
-      <span class="brand-badge">Sachs Performance</span><span class="brand-badge">Mountune</span>
-      <span class="brand-badge">KW Suspensions</span><span class="brand-badge">BMC Air Filters</span>
-      <span class="brand-badge">Carbonio</span><span class="brand-badge">Akrapovic</span>
-      <span class="brand-badge">Ragazzon</span><span class="brand-badge">Ferodo Racing</span>
-      <span class="brand-badge">Cargraphic</span><span class="brand-badge">Supersprint</span>
-      <span class="brand-badge">Remus</span><span class="brand-badge">Armytrix</span>
-      <span class="brand-badge">HRE</span><span class="brand-badge">IPE Exhaust</span>
-    </div>
+  <!-- Brands grid -->
+  <div class="brand-title">Selecciona tu marca</div>
+  <div class="brand-grid">
+    <div class="brand-item">Alfa Romeo</div>
+    <div class="brand-item">Aston Martin</div>
+    <div class="brand-item">Audi</div>
+    <div class="brand-item">Bentley</div>
+    <div class="brand-item">BMW</div>
+    <div class="brand-item">Bugatti</div>
+    <div class="brand-item">Chevrolet</div>
+    <div class="brand-item">Citroën</div>
+    <div class="brand-item">Cupra</div>
+    <div class="brand-item">Dacia</div>
+    <div class="brand-item">DS</div>
+    <div class="brand-item">Ferrari</div>
+    <div class="brand-item">Fiat</div>
+    <div class="brand-item">Ford</div>
+    <div class="brand-item">Honda</div>
+    <div class="brand-item">Hyundai</div>
+    <div class="brand-item">Jaguar</div>
+    <div class="brand-item">Jeep</div>
+    <div class="brand-item">Kia</div>
+    <div class="brand-item">Lamborghini</div>
+    <div class="brand-item">Land Rover</div>
+    <div class="brand-item">Maserati</div>
+    <div class="brand-item">McLaren</div>
+    <div class="brand-item">Mercedes</div>
+    <div class="brand-item">Mini</div>
+    <div class="brand-item">Mitsubishi</div>
+    <div class="brand-item">Nissan</div>
+    <div class="brand-item">Opel</div>
+    <div class="brand-item">Peugeot</div>
+    <div class="brand-item">Porsche</div>
+    <div class="brand-item">Renault</div>
+    <div class="brand-item">SEAT</div>
+    <div class="brand-item">Skoda</div>
+    <div class="brand-item">Subaru</div>
+    <div class="brand-item">Toyota</div>
+    <div class="brand-item">Volkswagen</div>
+    <div class="brand-item">Volvo</div>
   </div>
-</div>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">BR<span>-</span>PERFORMANCE</div>
-        <p class="footer-desc">Chiptuning y reprogramación profesional de centralitas en Barcelona.</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/BRPerformanceBarcelona" class="social-btn" target="_blank" rel="noopener">f</a>
-          <a href="http://www.youtube.com/user/BRPerformances" class="social-btn" target="_blank" rel="noopener">▶</a>
-          <a href="https://www.instagram.com/brperformance_bcn" class="social-btn" target="_blank" rel="noopener">◉</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-          <li><a href="vehiculos.html">Bikes - Quad</a></li>
-          <li><a href="vehiculos.html">Moto de Agua</a></li>
-          <li><a href="vehiculos.html">Lancha motora</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Info</h4>
-        <ul>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <div class="footer-addr">
-          Calle del cobalto 165<br>
-          08907 Hospitalet del Llobregat<br>
-          Barcelona<br><br>
-          Tel: +34 680 911 007
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© BR-Performance 2026 — Todos los derechos reservados</span>
-      <span class="tuv">TÜV Rheinland Certified</span>
-    </div>
-  </div>
-</footer>
+</div><!-- /veh-wrap -->
+
+<!-- BRANDS BAR -->
+<footer class="brands-bar"><div class="inner"><ul class="brands-list"><li><span>Milltek</span></li><li><span>Forge</span></li><li><span>Sachs</span></li><li><span>Mountune</span></li><li><span>KW</span></li><li><span>BMC</span></li><li><span>Carbonio</span></li><li><span>Akrapovic</span></li><li><span>Ragazzon</span></li><li><span>Ferodo</span></li><li><span>Red Bull</span></li><li><span>Cargraphic</span></li><li><span>Supersprint</span></li><li><span>Pipercross</span></li><li><span>RSR Spa</span></li><li><span>Remus</span></li><li><span>Armytrix</span></li><li><span>HRE</span></li><li><span>IPE Exhaust</span></li><li><span>Thor</span></li><li><span>RSR Nurburg</span></li></ul></div></footer>
+
+<!-- MOBILE SEARCH -->
+<div class="search-mobile-bar"><form action="https://www.br-performance.com/brp-barcelona/buscar/" method="get"><input type="text" name="q" placeholder="Buscar por marca o modelo ..."><button type="submit">Buscar</button></form></div>
+
+<!-- ADDRESS FOOTER -->
+<footer class="address-footer"><div class="inner"><ul class="addr-list"><li><address><strong style="color:#888;font-size:13px;">TÜV</strong></address><address><span style="color:#555;font-size:9px;letter-spacing:1px;text-transform:uppercase;">Rheinland</span></address></li><li><address>BR-Performance <span class="dark">© ® 2026</span></address><address>Professional chiptuning</address></li><li><address>Calle del cobalto 165</address><address>08907 Hospitalet del Llobregat, Barcelona</address></li><li><address><a href="mailto:barcelona@br-performance.com">E-mail</a></address><address>Tel: <a href="tel:34680911007">+34 680 911 007</a></address></li><li><address><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></address><address><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></address></li></ul><div class="footer-right"><ul class="foot-social"><li><a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li><li><a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#111"/></svg></a></li><li><a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:#111"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></a></li></ul></div></div></footer>
 
 <script src="js/main.js"></script>
 </body>

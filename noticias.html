@@ -3,262 +3,95 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Noticias — BR-Performance Barcelona</title>
-  <meta name="description" content="Últimas noticias sobre chiptuning y reprogramación de centralitas de BR-Performance Barcelona.">
+  <title>Noticias - BR-Performance Barcelona - Reprogramación de centralitas</title>
+  <meta name="description" content="Últimas noticias y novedades de BR-Performance Barcelona. Reprogramaciones disponibles.">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<header class="site-header">
-  <div class="header-top">
-    <a href="index.html" class="logo">
-      BR<span>-</span>PERFORMANCE
-      <span class="logo-badge">Barcelona · Professional Chiptuning</span>
-    </a>
-    <div class="header-actions">
-      <div class="header-social">
-        <a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener">FB</a>
-        <a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener">YT</a>
-        <a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener">IG</a>
-      </div>
-      <button class="mobile-toggle" aria-label="Menú">☰</button>
-    </div>
-  </div>
-  <nav class="primary">
-    <ul class="nav-inner">
-      <li><a href="index.html">Home</a></li>
-      <li class="has-dropdown">
-        <a href="vehiculos.html">Busca tu reprogramación ▾</a>
-        <ul class="dropdown">
-          <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-          <li><a href="vehiculos.html">Bikes - Quad</a></li>
-          <li><a href="vehiculos.html">Moto de Agua</a></li>
-          <li><a href="vehiculos.html">Lancha motora</a></li>
-        </ul>
-      </li>
-      <li class="active"><a href="noticias.html">Noticias</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contacto.html">Solicita presupuesto</a></li>
-      <li><a href="contacto.html">Contacto</a></li>
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="inner">
+    <ul class="social-links">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a1a1a"/></svg></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#1a1a1a"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/></svg></a></li>
     </ul>
-  </nav>
+    <form class="search-form" action="https://www.br-performance.com/brp-barcelona/buscar/" method="get">
+      <input type="text" name="q" placeholder="Buscar por marca o modelo ..." autocomplete="off">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
 </header>
 
-<div class="page-hero">
-  <div class="container page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Home</a> / Noticias</div>
-    <h1 class="page-title">Últimas <em>Noticias</em></h1>
+<!-- NAVIGATION -->
+<nav class="main-nav">
+  <div class="inner">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-text">
+          <span class="brand">BR-<span class="red">PERFORMANCE</span></span>
+          <span class="sub">Barcelona · Professional Chiptuning</span>
+        </span>
+      </a>
+    </div>
+    <button class="nav-toggle" aria-label="Menú">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="vehiculos.html">Busca tu reprogramación</a><ul class="subnav"><li><a href="vehiculos.html">Vehículo / Coche</a></li><li><a href="vehiculos.html">Bikes - Quad</a></li><li><a href="vehiculos.html">Moto de Agua</a></li><li><a href="vehiculos.html">Lancha motora</a></li><li><a href="vehiculos.html">Desarrollo</a></li></ul></li>
+      <li class="active"><a href="noticias.html">Noticias</a><ul class="subnav"><li><a href="noticias.html">Noticias</a></li><li><a href="noticias.html">Promociones</a></li></ul></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contacto.html">Solicita presupuesto</a></li>
+      <li><a href="contacto.html">Contacto</a><ul class="subnav align-right"><li><a href="contacto.html">Contacto</a></li><li><a href="contacto.html">Banco de Rodillos</a></li><li><a href="contacto.html">Empresa</a></li><li><a href="contacto.html">Nuestro equipo</a></li><li><a href="contacto.html">Objetivos</a></li><li><a href="contacto.html">Colaboradores</a></li></ul></li>
+    </ul>
+    <div class="nav-right"><div class="lang-select"><a href="#"><span class="flag-icon">🇪🇸</span> España / Español</a></div></div>
   </div>
+</nav>
+
+<!-- PAGE TITLE -->
+<div class="page-title-bar">
+  <div class="inner"><h1>Noticias</h1></div>
 </div>
 
-<section>
-  <div class="container">
+<!-- NEWS CONTENT -->
+<div class="news-wrap">
 
-    <!-- FEATURED -->
-    <div style="background: var(--surface); display:grid; grid-template-columns: 1fr 1fr; margin-bottom:50px; overflow:hidden;" class="fade-up">
-      <div style="background: linear-gradient(135deg, #1a0000 0%, #0a0505 100%); min-height:340px; display:flex; align-items:center; justify-content:center; font-size:5rem; position:relative;">
-        🏎️
-        <span style="position:absolute; top:20px; left:20px; background:var(--red); color:var(--white); font-family:var(--font-mono); font-size:0.6rem; letter-spacing:0.15em; padding:4px 10px; text-transform:uppercase;">Destacado</span>
-      </div>
-      <div style="padding:50px;">
-        <div class="news-date">Junio 2026</div>
-        <h2 style="font-family:var(--font-head); font-size:1.8rem; font-weight:700; text-transform:uppercase; color:var(--white); margin-bottom:16px; line-height:1.2;">
-          Porsche 718 Cayman GTS Stage 1 — De 394 a 462 CV
-        </h2>
-        <p style="color:var(--text-dim); line-height:1.7; margin-bottom:24px;">
-          Resultados excepcionales en banco de potencia para el Porsche 718 Cayman GTS.
-          Con nuestro Stage 1, el motor boxéster de 2.5T turbocargado gana 68 CV y 85 Nm de par extra,
-          manteniendo toda la fiabilidad y garantía de fábrica intactas.
-        </p>
-        <a href="contacto.html" class="btn btn-primary">Solicitar para mi vehículo →</a>
-      </div>
-    </div>
-
-    <!-- GRID -->
-    <div class="news-grid">
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">🏍️</div>
-          <span class="news-cat">Motos</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Mayo 2026</div>
-          <h3>BMW M 1000 RR — Stage 1 Race</h3>
-          <p>Preparación completa para la supersport de BMW. La M 1000 RR pasa por banco con resultados que la acercan a la configuración de homologación Superbike.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">⚡</div>
-          <span class="news-cat">E85 · Flex85</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Abril 2026</div>
-          <h3>BRP Flex85 ahora compatible con Mercedes-AMG M139</h3>
-          <p>Después de meses de desarrollo, ya disponemos de la preparación Flex85 para la familia M139 que equipa los AMG A45S, CLA45S y GLA45S.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">🚤</div>
-          <span class="news-cat">Náutica</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Marzo 2026</div>
-          <h3>Sea-Doo RXT-X 325 — Más empuje en el agua</h3>
-          <p>Chiptuning para la moto de agua más potente de la gama BRP/Sea-Doo. Mejora notable en respuesta y velocidad punta sobre el agua.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">🔴</div>
-          <span class="news-cat">Ferrari</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Febrero 2026</div>
-          <h3>Ferrari 488 GTB — Stage 1 Software</h3>
-          <p>Una joya italiana pasa por nuestro banco. La 488 GTB obtiene una curva de potencia más lineal y una respuesta del acelerador notablemente mejorada.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">🏁</div>
-          <span class="news-cat">McLaren</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Enero 2026</div>
-          <h3>McLaren 720S — Optimización completa</h3>
-          <p>El M840T de biturbo de 4.0L de McLaren responde excepcionalmente bien a nuestra reprogramación Stage 1. Resultados publicados en nuestro canal de YouTube.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">🛠️</div>
-          <span class="news-cat">Promoción</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Diciembre 2025</div>
-          <h3>Promoción de fin de año — 10% de descuento</h3>
-          <p>Durante el mes de diciembre ofrecimos un 10% de descuento en todas las reprogramaciones Stage 1. ¡Mantente atento a nuestras próximas promociones!</p>
-          <a href="contacto.html" class="news-link">Más info →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">🚗</div>
-          <span class="news-cat">Audi</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Noviembre 2025</div>
-          <h3>Audi RS3 8Y — Stage 1 y Stage 2</h3>
-          <p>El EA888 Gen4 de la nueva RS3 acepta perfectamente nuestros programas Stage 1 y Stage 2. Espectacular tanto en potencia como en par a bajas revoluciones.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">⛽</div>
-          <span class="news-cat">Diesel</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Octubre 2025</div>
-          <h3>BMW 540d xDrive — Diesel también tiene potencial</h3>
-          <p>El B57 de BMW es uno de los motores diesel más impresionantes del mercado. Con Stage 1, gana 60 CV y 120 Nm de par adicionales.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-
-      <article class="news-card fade-up">
-        <div class="news-img">
-          <div class="news-img-inner">🏆</div>
-          <span class="news-cat">Porsche</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Septiembre 2025</div>
-          <h3>Porsche 918 Spyder en banco</h3>
-          <p>Un privilegio tener la 918 Spyder en nuestra instalación. Calibración completa de los sistemas híbrido y combustión para maximizar la sinergia entre ambos.</p>
-          <a href="contacto.html" class="news-link">Ver más →</a>
-        </div>
-      </article>
-    </div>
-
+  <span class="news-month-title">Mayo 2026</span>
+  <div class="news-grid">
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32233-SP_-_website.jpg" alt="Reprograma tu Audi RS3 o tu Cupra Formentor!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2269-reprograma-tu-audi-rs3-o-tu-cupra-formentor/">Reprograma tu Audi RS3 o tu Cupra Formentor!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles! Nos complace... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2269-reprograma-tu-audi-rs3-o-tu-cupra-formentor/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32225-SP_-_website_thumbnail.jpg" alt="¡Reprograma tu moto!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2261-reprograma-tu-moto/">¡Reprograma tu moto!</a></div><div class="n-excerpt">¡Es hora de disfrutar de tus dos ruedas! El buen tiempo... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2261-reprograma-tu-moto/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32211-SP_-_website.jpg" alt="¡Reprograma tu motor 2.2 BlueHDI!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2249-reprograma-tu-motor-2-2-bluehdi/">¡Reprograma tu motor 2.2 BlueHDI!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 2.2 BlueHDI! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2249-reprograma-tu-motor-2-2-bluehdi/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32205-SP_-_website.jpg" alt="¡Reprograma tu motor 2.0 TSI!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2245-reprograma-tu-motor-2-0-tsi/">¡Reprograma tu motor 2.0 TSI!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 2.0 TSI! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2245-reprograma-tu-motor-2-0-tsi/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32187-SP_-_website.jpg" alt="¡Reprograma tu motor 1.5 TSI!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2235-reprograma-tu-motor-1-5-tsi/">¡Reprograma tu motor 1.5 TSI!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 1.5 TSI! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2235-reprograma-tu-motor-1-5-tsi/">Leer más</a></div></div></figure></div></div>
   </div>
-</section>
 
-<!-- BRANDS -->
-<div class="brands-section">
-  <div class="container">
-    <p class="brands-title">Marcas colaboradoras</p>
-    <div class="brands-grid">
-      <span class="brand-badge">Milltek</span><span class="brand-badge">Forge</span>
-      <span class="brand-badge">Sachs Performance</span><span class="brand-badge">Mountune</span>
-      <span class="brand-badge">KW Suspensions</span><span class="brand-badge">BMC Air Filters</span>
-      <span class="brand-badge">Carbonio</span><span class="brand-badge">Akrapovic</span>
-      <span class="brand-badge">Ragazzon</span><span class="brand-badge">Ferodo Racing</span>
-      <span class="brand-badge">Cargraphic</span><span class="brand-badge">Supersprint</span>
-      <span class="brand-badge">Remus</span><span class="brand-badge">Armytrix</span>
-      <span class="brand-badge">HRE</span><span class="brand-badge">IPE Exhaust</span>
-    </div>
+  <span class="news-month-title">Abril 2026</span>
+  <div class="news-grid">
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32113-SP_-_website.jpg" alt="¡Nuevas reprogramaciones disponibles!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2177-nuevas-reprogramaciones-disponibles/">¡Nuevas reprogramaciones disponibles!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 1.5 DC... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2177-nuevas-reprogramaciones-disponibles/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32125-SP_-_website.jpg" alt="¡Nuevas reprogramaciones disponibles!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2185-nuevas-reprogramaciones-disponibles/">¡Nuevas reprogramaciones disponibles!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 1.5 Bl... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2185-nuevas-reprogramaciones-disponibles/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32105-SP_-_website.jpg" alt="¡Reprograma tu Fiat Ducato!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2169-reprograma-tu-fiat-ducato/">¡Reprograma tu Fiat Ducato!</a></div><div class="n-excerpt">¡Nueva reprogramación disponible para Fiat Ducato! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2169-reprograma-tu-fiat-ducato/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32097-SP_-_website.jpg" alt="¡Reprograma tu Jaguar/Land Rover!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2161-reprograma-tu-jaguar-land-rover/">¡Reprograma tu Jaguar/Land Rover!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para Jaguar y Land Rover! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2161-reprograma-tu-jaguar-land-rover/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32075-SP_-_website.jpg" alt="¡Reprograma tu Peugeot, Citroën o DS!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2149-reprograma-tu-peugeot-citroen-o-ds/">¡Reprograma tu Peugeot, Citroën o DS!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para Peugeot, Citroën y DS! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2149-reprograma-tu-peugeot-citroen-o-ds/">Leer más</a></div></div></figure></div></div>
   </div>
-</div>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">BR<span>-</span>PERFORMANCE</div>
-        <p class="footer-desc">Chiptuning y reprogramación profesional de centralitas en Barcelona.</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/BRPerformanceBarcelona" class="social-btn" target="_blank" rel="noopener">f</a>
-          <a href="http://www.youtube.com/user/BRPerformances" class="social-btn" target="_blank" rel="noopener">▶</a>
-          <a href="https://www.instagram.com/brperformance_bcn" class="social-btn" target="_blank" rel="noopener">◉</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-          <li><a href="vehiculos.html">Bikes - Quad</a></li>
-          <li><a href="vehiculos.html">Moto de Agua</a></li>
-          <li><a href="vehiculos.html">Lancha motora</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Info</h4>
-        <ul>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <div class="footer-addr">
-          Calle del cobalto 165<br>
-          08907 Hospitalet del Llobregat<br>
-          Barcelona<br><br>
-          Tel: +34 680 911 007
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© BR-Performance 2026 — Todos los derechos reservados</span>
-      <span class="tuv">TÜV Rheinland Certified</span>
-    </div>
+  <span class="news-month-title">Marzo 2026</span>
+  <div class="news-grid">
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32025-SP_-_website.jpg" alt="¡Reprograma tu caja de cambios DQ38x (VAG)!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2117-reprograma-tu-caja-de-cambios-dq38x-vag/">¡Reprograma tu caja de cambios DQ38x (VAG)!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones de cajas de cambios disponibles! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2117-reprograma-tu-caja-de-cambios-dq38x-vag/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32033-SP_-_website.jpg" alt="¡Reprograma tu caja de cambios ALx52 (VAG)!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2125-reprograma-tu-caja-de-cambios-alx52-vag/">¡Reprograma tu caja de cambios ALx52 (VAG)!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones de cajas de cambios disponibles! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2125-reprograma-tu-caja-de-cambios-alx52-vag/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32015-SP_-_website.jpg" alt="¡Reprograma tu Panamera!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2107-reprograma-tu-panamera/">¡Reprograma tu Panamera!</a></div><div class="n-excerpt">¡Reprogramación disponible para Panamera! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2107-reprograma-tu-panamera/">Leer más</a></div></div></figure></div></div>
+    <div class="news-card"><div class="box-border"><figure><img src="https://www.br-performance.com/db/pictures/large/32007-SP_-_website.jpg" alt="¡Reprograma tu Porsche!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2099-reprograma-tu-porsche/">¡Reprograma tu Porsche!</a></div><div class="n-excerpt">¡Nueva reprogramación disponible para Porsche! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2099-reprograma-tu-porsche/">Leer más</a></div></div></figure></div></div>
   </div>
-</footer>
+
+</div><!-- /news-wrap -->
+
+<!-- BRANDS BAR -->
+<footer class="brands-bar"><div class="inner"><ul class="brands-list"><li><span>Milltek</span></li><li><span>Forge</span></li><li><span>Sachs</span></li><li><span>Mountune</span></li><li><span>KW</span></li><li><span>BMC</span></li><li><span>Carbonio</span></li><li><span>Akrapovic</span></li><li><span>Ragazzon</span></li><li><span>Ferodo</span></li><li><span>Red Bull</span></li><li><span>Cargraphic</span></li><li><span>Supersprint</span></li><li><span>Pipercross</span></li><li><span>RSR Spa</span></li><li><span>Remus</span></li><li><span>Armytrix</span></li><li><span>HRE</span></li><li><span>IPE Exhaust</span></li><li><span>Thor</span></li><li><span>RSR Nurburg</span></li></ul></div></footer>
+
+<!-- MOBILE SEARCH -->
+<div class="search-mobile-bar"><form action="https://www.br-performance.com/brp-barcelona/buscar/" method="get"><input type="text" name="q" placeholder="Buscar por marca o modelo ..."><button type="submit">Buscar</button></form></div>
+
+<!-- ADDRESS FOOTER -->
+<footer class="address-footer"><div class="inner"><ul class="addr-list"><li><address><strong style="color:#888;font-size:13px;">TÜV</strong></address><address><span style="color:#555;font-size:9px;letter-spacing:1px;text-transform:uppercase;">Rheinland</span></address></li><li><address>BR-Performance <span class="dark">© ® 2026</span></address><address>Professional chiptuning</address></li><li><address>Calle del cobalto 165</address><address>08907 Hospitalet del Llobregat, Barcelona</address></li><li><address><a href="mailto:barcelona@br-performance.com">E-mail</a></address><address>Tel: <a href="tel:34680911007">+34 680 911 007</a></address></li><li><address><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></address><address><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></address></li></ul><div class="footer-right"><ul class="foot-social"><li><a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li><li><a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#111"/></svg></a></li><li><a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:#111"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></a></li></ul></div></div></footer>
 
 <script src="js/main.js"></script>
 </body>

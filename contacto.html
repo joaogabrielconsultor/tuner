@@ -3,325 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contacto — BR-Performance Barcelona</title>
-  <meta name="description" content="Solicita un presupuesto para la reprogramación de tu vehículo. Contacta con BR-Performance Barcelona.">
+  <title>Contacto - BR-Performance Barcelona - Reprogramación de centralitas</title>
+  <meta name="description" content="Contacta con BR-Performance Barcelona. Solicita presupuesto para chiptuning y reprogramación de centralitas. Tel: +34 680 911 007">
   <link rel="stylesheet" href="css/styles.css">
-  <style>
-    .form-success {
-      display: none;
-      background: rgba(0,102,0,0.15);
-      border: 1px solid #006600;
-      color: #00cc00;
-      padding: 16px 24px;
-      font-family: var(--font-mono);
-      font-size: 0.85rem;
-      letter-spacing: 0.1em;
-      margin-bottom: 20px;
-    }
-  </style>
 </head>
 <body>
 
-<header class="site-header">
-  <div class="header-top">
-    <a href="index.html" class="logo">
-      BR<span>-</span>PERFORMANCE
-      <span class="logo-badge">Barcelona · Professional Chiptuning</span>
-    </a>
-    <div class="header-actions">
-      <div class="header-social">
-        <a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener">FB</a>
-        <a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener">YT</a>
-        <a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener">IG</a>
-      </div>
-      <button class="mobile-toggle" aria-label="Menú">☰</button>
-    </div>
-  </div>
-  <nav class="primary">
-    <ul class="nav-inner">
-      <li><a href="index.html">Home</a></li>
-      <li class="has-dropdown">
-        <a href="vehiculos.html">Busca tu reprogramación ▾</a>
-        <ul class="dropdown">
-          <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-          <li><a href="vehiculos.html">Bikes - Quad</a></li>
-          <li><a href="vehiculos.html">Moto de Agua</a></li>
-          <li><a href="vehiculos.html">Lancha motora</a></li>
-        </ul>
-      </li>
-      <li><a href="noticias.html">Noticias</a></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li class="active"><a href="contacto.html">Solicita presupuesto</a></li>
-      <li class="active"><a href="contacto.html">Contacto</a></li>
+<!-- TOP BAR -->
+<header class="top-bar">
+  <div class="inner">
+    <ul class="social-links">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a1a1a"/></svg></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="#1a1a1a"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#1a1a1a" stroke-width="2" stroke-linecap="round"/></svg></a></li>
     </ul>
-  </nav>
+    <form class="search-form" action="https://www.br-performance.com/brp-barcelona/buscar/" method="get">
+      <input type="text" name="q" placeholder="Buscar por marca o modelo ..." autocomplete="off">
+      <button type="submit">Buscar</button>
+    </form>
+  </div>
 </header>
 
-<div class="page-hero">
-  <div class="container page-hero-content">
-    <div class="breadcrumb"><a href="index.html">Home</a> / Contacto</div>
-    <h1 class="page-title">Solicita tu <em>Presupuesto</em></h1>
+<!-- NAVIGATION -->
+<nav class="main-nav">
+  <div class="inner">
+    <div class="nav-logo">
+      <a href="index.html">
+        <span class="logo-text">
+          <span class="brand">BR-<span class="red">PERFORMANCE</span></span>
+          <span class="sub">Barcelona · Professional Chiptuning</span>
+        </span>
+      </a>
+    </div>
+    <button class="nav-toggle" aria-label="Menú">&#9776;</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="vehiculos.html">Busca tu reprogramación</a><ul class="subnav"><li><a href="vehiculos.html">Vehículo / Coche</a></li><li><a href="vehiculos.html">Bikes - Quad</a></li><li><a href="vehiculos.html">Moto de Agua</a></li><li><a href="vehiculos.html">Lancha motora</a></li><li><a href="vehiculos.html">Desarrollo</a></li></ul></li>
+      <li><a href="noticias.html">Noticias</a><ul class="subnav"><li><a href="noticias.html">Noticias</a></li><li><a href="noticias.html">Promociones</a></li></ul></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contacto.html">Solicita presupuesto</a></li>
+      <li class="active"><a href="contacto.html">Contacto</a><ul class="subnav align-right"><li><a href="contacto.html">Contacto</a></li><li><a href="contacto.html">Banco de Rodillos</a></li><li><a href="contacto.html">Empresa</a></li><li><a href="contacto.html">Nuestro equipo</a></li><li><a href="contacto.html">Objetivos</a></li><li><a href="contacto.html">Colaboradores</a></li></ul></li>
+    </ul>
+    <div class="nav-right"><div class="lang-select"><a href="#"><span class="flag-icon">🇪🇸</span> España / Español</a></div></div>
   </div>
+</nav>
+
+<!-- PAGE TITLE -->
+<div class="page-title-bar">
+  <div class="inner"><h1>Solicita presupuesto / Contacto</h1></div>
 </div>
 
-<section>
-  <div class="container">
-    <div class="contact-grid">
+<!-- CONTACT CONTENT -->
+<div class="contact-wrap">
+  <div class="contact-grid">
 
-      <!-- FORM -->
-      <div>
-        <div class="section-label" style="margin-bottom:16px;">Formulario de contacto</div>
-        <p style="color:var(--text-dim); margin-bottom:32px; line-height:1.7;">
-          Rellena el formulario con los datos de tu vehículo y nos pondremos en contacto contigo a la mayor brevedad posible para ofrecerte un presupuesto personalizado.
-        </p>
-
-        <div class="form-success" id="form-success">
-          ✓ Mensaje enviado correctamente. Te contactaremos pronto.
+    <!-- FORM -->
+    <div class="contact-form-section">
+      <h2>Solicita presupuesto</h2>
+      <form id="contact-form" action="#" method="post">
+        <div class="form-row">
+          <div class="fg"><label>Nombre *</label><input type="text" name="first_name" placeholder="Nombre" required></div>
+          <div class="fg"><label>Apellido *</label><input type="text" name="last_name" placeholder="Apellido" required></div>
         </div>
-
-        <form id="contact-form" novalidate>
-          <div class="form-row">
-            <div class="form-group">
-              <label for="nombre">Nombre *</label>
-              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
-            </div>
-            <div class="form-group">
-              <label for="apellido">Apellido *</label>
-              <input type="text" id="apellido" name="apellido" placeholder="Tu apellido" required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
-            </div>
-            <div class="form-group">
-              <label for="telefono">Teléfono</label>
-              <input type="tel" id="telefono" name="telefono" placeholder="+34 000 000 000">
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="marca">Marca del vehículo *</label>
-              <select id="marca" name="marca" required>
-                <option value="">— Selecciona una marca —</option>
-                <option>Alfa Romeo</option><option>Aston Martin</option><option>Audi</option>
-                <option>BMW</option><option>Bentley</option><option>Chevrolet</option>
-                <option>Citroën</option><option>Cupra</option><option>Dodge</option>
-                <option>Ferrari</option><option>Fiat</option><option>Ford</option>
-                <option>Honda</option><option>Hyundai</option><option>Jaguar</option>
-                <option>Jeep</option><option>Kia</option><option>Lamborghini</option>
-                <option>Land Rover</option><option>Lexus</option><option>Maserati</option>
-                <option>McLaren</option><option>Mercedes-Benz</option><option>Mini</option>
-                <option>Mitsubishi</option><option>Nissan</option><option>Opel</option>
-                <option>Peugeot</option><option>Porsche</option><option>Renault</option>
-                <option>SEAT</option><option>Skoda</option><option>Subaru</option>
-                <option>Toyota</option><option>Volkswagen</option><option>Volvo</option>
-                <option>Otra marca</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="modelo">Modelo *</label>
-              <input type="text" id="modelo" name="modelo" placeholder="Ej: Golf GTI, 320d, A3..." required>
-            </div>
-          </div>
-
-          <div class="form-row">
-            <div class="form-group">
-              <label for="anyo">Año</label>
-              <input type="number" id="anyo" name="anyo" placeholder="Ej: 2022" min="1990" max="2026">
-            </div>
-            <div class="form-group">
-              <label for="potencia">Potencia actual (CV)</label>
-              <input type="number" id="potencia" name="potencia" placeholder="Ej: 190">
-            </div>
-          </div>
-
-          <div class="form-group" style="margin-top:4px;">
-            <label for="combustible">Tipo de combustible</label>
-            <select id="combustible" name="combustible">
-              <option value="">— Selecciona —</option>
-              <option>Gasolina</option>
-              <option>Diésel</option>
-              <option>Híbrido gasolina</option>
-              <option>Híbrido diésel</option>
-              <option>GLP / Gas</option>
+        <div class="form-row">
+          <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="correo@ejemplo.com" required></div>
+          <div class="fg"><label>Teléfono</label><input type="tel" name="phone" placeholder="+34 600 000 000"></div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><label>Marca del vehículo *</label>
+            <select name="brand" required>
+              <option value="">Selecciona marca...</option>
+              <option>Alfa Romeo</option><option>Audi</option><option>BMW</option><option>Citroën</option>
+              <option>Cupra</option><option>Ferrari</option><option>Fiat</option><option>Ford</option>
+              <option>Honda</option><option>Hyundai</option><option>Jaguar</option><option>Kia</option>
+              <option>Land Rover</option><option>Lamborghini</option><option>Maserati</option>
+              <option>McLaren</option><option>Mercedes-Benz</option><option>Mini</option>
+              <option>Mitsubishi</option><option>Nissan</option><option>Opel</option>
+              <option>Peugeot</option><option>Porsche</option><option>Renault</option>
+              <option>SEAT</option><option>Skoda</option><option>Subaru</option>
+              <option>Toyota</option><option>Volkswagen</option><option>Volvo</option>
+              <option>Otra marca</option>
             </select>
           </div>
-
-          <div class="form-group">
-            <label for="mensaje">Mensaje / consulta adicional</label>
-            <textarea id="mensaje" name="mensaje" placeholder="Cuéntanos más sobre tu vehículo o lo que necesitas..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center; font-size:0.9rem; padding:16px;">
-            Solicitar Presupuesto →
-          </button>
-        </form>
-      </div>
-
-      <!-- INFO -->
-      <div>
-        <div class="section-label" style="margin-bottom:24px;">Cómo encontrarnos</div>
-
-        <div class="info-blocks">
-          <div class="info-block">
-            <div class="info-icon">📍</div>
-            <div>
-              <div class="info-label">Dirección</div>
-              <div class="info-val">
-                Calle del cobalto 165<br>
-                08907 Hospitalet del Llobregat<br>
-                Barcelona, España
-              </div>
-            </div>
-          </div>
-          <div class="info-block">
-            <div class="info-icon">📞</div>
-            <div>
-              <div class="info-label">Teléfono</div>
-              <div class="info-val">
-                <a href="tel:34680911007" style="color:var(--white); transition:color 0.2s;" onmouseover="this.style.color='#cc0000'" onmouseout="this.style.color='#e8e8e8'">
-                  +34 680 911 007
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="info-block">
-            <div class="info-icon">✉️</div>
-            <div>
-              <div class="info-label">Email</div>
-              <div class="info-val">
-                <a href="mailto:barcelona@br-performance.com" style="color:var(--white); transition:color 0.2s;" onmouseover="this.style.color='#cc0000'" onmouseout="this.style.color='#e8e8e8'">
-                  barcelona@br-performance.com
-                </a>
-              </div>
-            </div>
-          </div>
-          <div class="info-block">
-            <div class="info-icon">🕐</div>
-            <div>
-              <div class="info-label">Horario</div>
-              <div class="info-val">
-                Lun–Vie: 9:00 – 18:00<br>
-                Sábado: con cita previa<br>
-                Domingo: cerrado
-              </div>
-            </div>
-          </div>
+          <div class="fg"><label>Modelo</label><input type="text" name="model" placeholder="Ej: Golf GTI, Serie 3..."></div>
         </div>
-
-        <!-- MAP -->
-        <div class="map-placeholder">
-          📍
-          <span>Calle del cobalto 165, Hospitalet del Llobregat</span>
-          <a href="https://maps.google.com/?q=Calle+del+cobalto+165+Hospitalet+del+Llobregat+Barcelona" target="_blank" rel="noopener" style="color:var(--red); font-size:0.75rem; font-family:var(--font-mono); letter-spacing:0.1em; z-index:1; position:relative;">
-            Ver en Google Maps →
-          </a>
+        <div class="form-row">
+          <div class="fg"><label>Año</label><input type="number" name="year" placeholder="Ej: 2020" min="1990" max="2026"></div>
+          <div class="fg"><label>Motor / Potencia actual</label><input type="text" name="engine" placeholder="Ej: 2.0 TDI 150cv"></div>
         </div>
-
-        <!-- CERT -->
-        <div class="cert-badge" style="margin-top:24px; width:100%;">
-          <div class="cert-badge-icon">✓</div>
-          <div class="cert-badge-text">
-            <strong>TÜV Rheinland Certified</strong>
-            Professional Chiptuning · 5 años de garantía
-          </div>
-        </div>
-
-        <!-- SOCIAL -->
-        <div style="margin-top:28px;">
-          <div class="info-label" style="margin-bottom:14px;">Síguenos</div>
-          <div style="display:flex; gap:10px;">
-            <a href="https://www.facebook.com/BRPerformanceBarcelona" class="social-btn" target="_blank" rel="noopener" title="Facebook">f</a>
-            <a href="http://www.youtube.com/user/BRPerformances" class="social-btn" target="_blank" rel="noopener" title="YouTube">▶</a>
-            <a href="https://www.instagram.com/brperformance_bcn" class="social-btn" target="_blank" rel="noopener" title="Instagram">◉</a>
-          </div>
-        </div>
-      </div>
-
+        <div class="fg"><label>Mensaje</label><textarea name="message" placeholder="Describe lo que buscas, preguntas, etc."></textarea></div>
+        <button type="submit" class="btn-send">Enviar consulta</button>
+      </form>
     </div>
+
+    <!-- INFO -->
+    <div class="contact-info-section">
+      <h2>Información de contacto</h2>
+
+      <div class="contact-info-block">
+        <p><strong>BR-Performance Barcelona</strong></p>
+        <p>Calle del cobalto 165<br>08907 Hospitalet del Llobregat<br>Barcelona, España</p>
+      </div>
+
+      <div class="contact-info-block">
+        <p><strong>Teléfono:</strong> <a href="tel:34680911007">+34 680 911 007</a></p>
+        <p><strong>Email:</strong> <a href="mailto:barcelona@br-performance.com">barcelona@br-performance.com</a></p>
+      </div>
+
+      <div class="contact-info-block">
+        <p><strong>Horario:</strong></p>
+        <p>Lunes – Viernes: 9:00 – 18:00<br>Sábado: Con cita previa<br>Domingo: Cerrado</p>
+      </div>
+
+      <div class="contact-info-block">
+        <p><strong>Certificación:</strong> TÜV Rheinland</p>
+        <p>Chiptuning profesional con 5 años de garantía de software.</p>
+      </div>
+
+      <!-- Google Maps embed -->
+      <iframe
+        class="contact-map-embed"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.!2d2.1012771!3d41.3550745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4986a09d4eb91%3A0x0!2sCalle+del+cobalto+165%2C+08907+l%27Hospitalet+de+Llobregat!5e0!3m2!1ses!2ses!4v1"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="BR-Performance Barcelona - Mapa">
+      </iframe>
+    </div>
+
   </div>
-</section>
+</div><!-- /contact-wrap -->
 
-<!-- BRANDS -->
-<div class="brands-section">
-  <div class="container">
-    <p class="brands-title">Marcas colaboradoras</p>
-    <div class="brands-grid">
-      <span class="brand-badge">Milltek</span><span class="brand-badge">Forge</span>
-      <span class="brand-badge">Sachs Performance</span><span class="brand-badge">Mountune</span>
-      <span class="brand-badge">KW Suspensions</span><span class="brand-badge">BMC Air Filters</span>
-      <span class="brand-badge">Carbonio</span><span class="brand-badge">Akrapovic</span>
-      <span class="brand-badge">Ragazzon</span><span class="brand-badge">Ferodo Racing</span>
-      <span class="brand-badge">Cargraphic</span><span class="brand-badge">Supersprint</span>
-      <span class="brand-badge">Remus</span><span class="brand-badge">Armytrix</span>
-      <span class="brand-badge">HRE</span><span class="brand-badge">IPE Exhaust</span>
-    </div>
-  </div>
-</div>
+<!-- BRANDS BAR -->
+<footer class="brands-bar"><div class="inner"><ul class="brands-list"><li><span>Milltek</span></li><li><span>Forge</span></li><li><span>Sachs</span></li><li><span>Mountune</span></li><li><span>KW</span></li><li><span>BMC</span></li><li><span>Carbonio</span></li><li><span>Akrapovic</span></li><li><span>Ragazzon</span></li><li><span>Ferodo</span></li><li><span>Red Bull</span></li><li><span>Cargraphic</span></li><li><span>Supersprint</span></li><li><span>Pipercross</span></li><li><span>RSR Spa</span></li><li><span>Remus</span></li><li><span>Armytrix</span></li><li><span>HRE</span></li><li><span>IPE Exhaust</span></li><li><span>Thor</span></li><li><span>RSR Nurburg</span></li></ul></div></footer>
 
-<footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">BR<span>-</span>PERFORMANCE</div>
-        <p class="footer-desc">Chiptuning y reprogramación profesional de centralitas en Barcelona. Software desarrollado individualmente en banco de potencia.</p>
-        <div class="footer-social">
-          <a href="https://www.facebook.com/BRPerformanceBarcelona" class="social-btn" target="_blank" rel="noopener">f</a>
-          <a href="http://www.youtube.com/user/BRPerformances" class="social-btn" target="_blank" rel="noopener">▶</a>
-          <a href="https://www.instagram.com/brperformance_bcn" class="social-btn" target="_blank" rel="noopener">◉</a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-          <li><a href="vehiculos.html">Bikes - Quad</a></li>
-          <li><a href="vehiculos.html">Moto de Agua</a></li>
-          <li><a href="vehiculos.html">Lancha motora</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Info</h4>
-        <ul>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <div class="footer-addr">
-          Calle del cobalto 165<br>
-          08907 Hospitalet del Llobregat<br>
-          Barcelona<br><br>
-          Tel: +34 680 911 007
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© BR-Performance 2026 — Todos los derechos reservados</span>
-      <span class="tuv">TÜV Rheinland Certified</span>
-    </div>
-  </div>
-</footer>
+<!-- MOBILE SEARCH -->
+<div class="search-mobile-bar"><form action="https://www.br-performance.com/brp-barcelona/buscar/" method="get"><input type="text" name="q" placeholder="Buscar por marca o modelo ..."><button type="submit">Buscar</button></form></div>
+
+<!-- ADDRESS FOOTER -->
+<footer class="address-footer"><div class="inner"><ul class="addr-list"><li><address><strong style="color:#888;font-size:13px;">TÜV</strong></address><address><span style="color:#555;font-size:9px;letter-spacing:1px;text-transform:uppercase;">Rheinland</span></address></li><li><address>BR-Performance <span class="dark">© ® 2026</span></address><address>Professional chiptuning</address></li><li><address>Calle del cobalto 165</address><address>08907 Hospitalet del Llobregat, Barcelona</address></li><li><address><a href="mailto:barcelona@br-performance.com">E-mail</a></address><address>Tel: <a href="tel:34680911007">+34 680 911 007</a></address></li><li><address><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></address><address><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></address></li></ul><div class="footer-right"><ul class="foot-social"><li><a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li><li><a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#111"/></svg></a></li><li><a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:#111"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></a></li></ul></div></div></footer>
 
 <script src="js/main.js"></script>
-<script>
-  const form = document.getElementById('contact-form');
-  const success = document.getElementById('form-success');
-  if (form) {
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      success.style.display = 'block';
-      form.reset();
-      success.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      setTimeout(() => { success.style.display = 'none'; }, 5000);
-    });
-  }
-</script>
 </body>
 </html>
