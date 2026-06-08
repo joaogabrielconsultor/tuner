@@ -4,223 +4,253 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>FAQ - BR-Performance Barcelona - Reprogramación de centralitas</title>
-  <meta name="description" content="Preguntas frecuentes sobre chiptuning y reprogramación de centralitas en Barcelona. BR-Performance.">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Preguntas frecuentes sobre chiptuning y reprogramación de centralitas en BR-Performance Barcelona.">
+  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/home.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
 </head>
 <body>
-<div id="container">
 
 <!-- TOP BAR -->
-<header class="top-bar">
-  <div class="inner">
-    <ul class="social-links">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#3b5998"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" title="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="#ff0000" d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="#c13584"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#fff" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a></li>
+<header class="row hide-for-small">
+  <div class="twelve columns offset-by-twelve search-extended">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
     </ul>
-    <form class="search-form" action="https://www.br-performance.com/brp-barcelona/buscar/" method="get">
-      <input type="text" name="q" placeholder="Buscar por marca o modelo ..." autocomplete="off">
-      <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
+      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
+      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
     </form>
   </div>
 </header>
 
 <!-- NAVIGATION -->
-<nav class="main-nav">
-  <div class="inner">
-    <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="BR-Performance Barcelona" style="height:56px;width:auto;display:block;"></a></div>
-    <button class="nav-toggle" aria-label="Menú">&#9776;</button>
-    <div class="langselect">
-      <a href="#" class="flag">
-        <svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg>
-        España / Español
-      </a>
-    </div>
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li>
-        <a href="vehiculos.html">Busca tu reprogramación</a>
-        <ul class="subnav">
-          <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-          <li><a href="vehiculos.html">Bikes - Quad</a></li>
-          <li><a href="vehiculos.html">Moto de Agua</a></li>
-          <li><a href="vehiculos.html">Lancha motora</a></li>
-          <li><a href="vehiculos.html">Desarrollo</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="noticias.html">Noticias</a>
-        <ul class="subnav">
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="noticias.html">Promociones</a></li>
-        </ul>
-      </li>
-      <li class="sel"><a href="faq.html">FAQ</a></li>
-      <li><a href="contacto.html">Solicita presupuesto</a></li>
-      <li>
-        <a href="contacto.html">Contacto</a>
-        <ul class="subnav align-right">
-          <li><a href="contacto.html">Contacto</a></li>
-          <li><a href="contacto.html">Banco de Rodillos</a></li>
-          <li><a href="contacto.html">Empresa</a></li>
-          <li><a href="contacto.html">Nuestro equipo</a></li>
-          <li><a href="contacto.html">Objetivos</a></li>
-          <li><a href="contacto.html">Colaboradores</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
-
-<!-- PAGE TITLE -->
-<div class="page-title-bar">
-  <div class="inner"><h1>FAQ</h1></div>
-</div>
-
-<!-- FAQ CONTENT -->
-<div class="faq-wrap">
-
-  <div class="faq-item">
-    <div class="faq-q">¿Qué es la reprogramación y cómo funciona? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>Cada motor de inyección está equipado con una ECU (Unidad de control electrónico) que controla el encendido, inyección y la relación aire-combustible. Esta ECU contiene todos los ajustes operativos necesarios para el motor. Reescribimos los datos en este chip para que el motor se beneficie de un programa operativo optimizado individualmente.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Qué tipo de garantía se proporciona? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a open">
-      <p>5 años de garantía en el funcionamiento apropiado de nuestro software. Aumento de potencia garantizado si el motor está en buenas condiciones.</p>
-      <p>5 años del software reprogramado gratuito si recibe una actualización del distribuidor.</p>
-      <p>5 años de garantía de que volvemos a poner el coche de serie si lo desea (por ejemplo, vendiendo el automóvil).</p>
-      <p>Garantizamos un ajuste individual y un diagnóstico completo de cada automóvil.</p>
-      <p>Garantizamos que nuestro software está completamente desarrollado por uno de nuestros ingenieros calificados.</p>
-      <p>Puede leer todas las garantías en nuestros términos y condiciones.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Qué consecuencias hay sobre la garantía de fábrica? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>La garantía de fábrica de un vehículo nuevo es legalmente obligatoria para los estados miembros de la Unión Europea, por lo que un fabricante no puede declinar la garantía cuando descubren que un vehículo está modificado. Para rechazar esta garantía, el fabricante debe encontrar un vínculo directo entre la modificación y el daño. Como nuestra modificación Stage 1 se mantiene entre las tolerancias de fábrica y es completamente segura, no existe ninguna razón para que el fabricante decline la garantía. Si el fabricante está decidido a rechazar la garantía cuando el automóvil está modificado, no sería legal y pueden ser juzgados.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Existen consecuencias con el seguro? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>La mayoría de las compañías de seguros calculan sus tarifas sobre el precio del vehículo, la edad del conductor, índice de robo/siniestralidad, pero no sobre la potencia del vehículo.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Existen consecuencias sobre el impuesto de circulación? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>No. El impuesto de circulación se calcula sobre los caballos fiscales.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Cuánto tiempo lleva el proceso de reprogramación? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>Después de concretar una cita, trabajamos en el coche durante aproximadamente 2-3 horas (tenga en cuenta que algunos autos tardan más). Ajustamos individualmente cada automóvil y, a menudo, se necesitan varios ajustes antes de que el resultado sea perfecto. Devolvemos el automóvil cuando estamos satisfechos con el resultado, debe ser perfecto. Nuestros clientes siempre son bienvenidos a quedarse y ver qué pasa con el automóvil.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Por qué cada coche necesita un software personalizado y debe probarse en un banco de potencia fiable? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>Cada motor es diferente, cada inyector es diferente, cada turbo es diferente... Producción en masa = tolerancias de fabricación bastante grandes. Si los analizamos individualmente, podemos ofrecer una gran seguridad, mucha potencia y aumento de par. Los reprogramadores que usan una reprogramación estándar no obtienen su potencia adicional por el ajuste fino, sino simplemente por una presión de turbo muy elevada, ¡lo que no es bueno para la vida útil del motor! ¡Lo barato sale caro!</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Cuáles son los beneficios de la reprogramación? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <ul>
-        <li>Más diversión</li>
-        <li>Adelantamientos más seguros</li>
-        <li>Más par (caravana, barco, jetski, carga pesada)</li>
-        <li>Menor consumo de combustible</li>
+<section class="row nav">
+  <div class="twentyfour navContainer">
+    <a href="#" class="nav-toggle button-full-rounded"></a>
+    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="BR-Performance Barcelona"></a></div>
+    <nav class="primary">
+      <div class="langselect">
+        <a href="#" class="flag" title="España / Español">
+          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
+        </a>
+      </div>
+      <ul class="brp-barcelona">
+        <li class="first"><a href="index.html">Home</a></li>
+        <li class="sub"><a href="vehiculos.html">Busca tu reprogramación</a>
+          <ul class="subnav left">
+            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="vehiculos.html">Bikes - Quad</a></li>
+            <li><a href="vehiculos.html">Moto de Agua</a></li>
+            <li><a href="vehiculos.html">Lancha motora</a></li>
+            <li class="last"><a href="vehiculos.html">Desarrollo</a></li>
+          </ul>
+        </li>
+        <li class="sub"><a href="noticias.html">Noticias</a>
+          <ul class="subnav left">
+            <li class="first"><a href="noticias.html">Noticias</a></li>
+            <li class="last"><a href="noticias.html">Promociones</a></li>
+          </ul>
+        </li>
+        <li class="sel"><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Solicita presupuesto</a></li>
+        <li class="last sub"><a href="contacto.html">Contacto</a>
+          <ul class="subnav right">
+            <li class="first"><a href="contacto.html">Contacto</a></li>
+            <li><a href="contacto.html">Banco de Rodillos</a></li>
+            <li><a href="contacto.html">Empresa</a></li>
+            <li><a href="contacto.html">Nuestro equipo</a></li>
+            <li><a href="contacto.html">Objetivos</a></li>
+            <li class="last"><a href="contacto.html">Colaboradores</a></li>
+          </ul>
+        </li>
       </ul>
-    </div>
+    </nav>
   </div>
+</section>
 
-  <div class="faq-item">
-    <div class="faq-q">¿Cuáles son las desventajas de la reprogramación? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>Esto puede sonar extraño, pero si lo haces bien, ¡no hay ninguno!</p>
-    </div>
+<div class="row" id="container">
+  <div class="twentyfour columns">
+
+    <!-- PAGE TITLE -->
+    <section class="row inner-page-title">
+      <div class="twentyfour columns"><h1>FAQ - Preguntas frecuentes</h1></div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="row main smalltoppadding">
+      <div class="twentyfour columns">
+        <div class="inner-content">
+
+          <div class="faq-item">
+            <div class="faq-q">¿Qué es el chiptuning o reprogramación de centralita? <span>+</span></div>
+            <div class="faq-a">
+              <p>El chiptuning, también llamado reprogramación de centralita o ECU tuning, consiste en modificar el software original del fabricante que controla el motor de tu vehículo. Mediante la lectura y escritura de la ECU (unidad de control electrónica), optimizamos parámetros como la inyección de combustible, la presión del turbo, la curva de encendido y la limitación de potencia de fábrica.</p>
+              <p>El resultado es un aumento significativo de la potencia, el par motor y, en muchos casos, una mejora en el consumo de combustible.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Es seguro para mi motor? <span>+</span></div>
+            <div class="faq-a">
+              <p>Sí. En BR-Performance trabajamos exclusivamente dentro de los márgenes de seguridad que permite el motor. No forzamos el hardware más allá de sus límites estructurales. Nuestras modificaciones de software están validadas con más de 15 años de experiencia y miles de vehículos reprogramados.</p>
+              <p>Además, ofrecemos <strong>5 años de garantía de software</strong> y contamos con la certificación TÜV Rheinland, que avala la calidad y seguridad de nuestros procesos.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Cuánto tiempo tarda la reprogramación? <span>+</span></div>
+            <div class="faq-a">
+              <p>El tiempo varía según el vehículo y el método de acceso a la ECU, pero generalmente el proceso completo oscila entre <strong>2 y 4 horas</strong>, incluyendo la lectura inicial, la programación personalizada y las pruebas en banco de potencia.</p>
+              <p>Para modelos con ECU de acceso más complejo o que requieren desmontaje, puede extenderse a una jornada completa. Te informamos del tiempo exacto al solicitar presupuesto.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Cuánta potencia puedo ganar? <span>+</span></div>
+            <div class="faq-a">
+              <p>Depende del motor y del estado actual del vehículo. Como referencia:</p>
+              <ul>
+                <li>Motores turbodiésel: entre un 25% y un 35% de aumento de potencia y par.</li>
+                <li>Motores turbogasolina: entre un 15% y un 25%.</li>
+                <li>Motores atmosféricos: entre un 5% y un 10%.</li>
+              </ul>
+              <p>Consulta nuestra sección <a href="vehiculos.html">Busca tu reprogramación</a> para ver los valores específicos de tu vehículo.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿La reprogramación afecta a la garantía del fabricante? <span>+</span></div>
+            <div class="faq-a">
+              <p>En teoría, cualquier modificación del software original puede afectar la garantía del fabricante. No obstante, en la práctica, el concesionario tendría que demostrar que el fallo está directamente relacionado con la reprogramación, lo cual es difícil de probar.</p>
+              <p>Ofrecemos también la opción de <strong>restaurar el software original</strong> en cualquier momento antes de llevar el vehículo al taller oficial, sin coste adicional durante el primer año.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Puedo devolver el vehículo a su estado original? <span>+</span></div>
+            <div class="faq-a">
+              <p>Sí, siempre guardamos una copia del software original de tu vehículo. Si en algún momento deseas revertir la reprogramación, podemos restaurar el software de fábrica sin problema.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Qué tipos de vehículos reprogramáis? <span>+</span></div>
+            <div class="faq-a">
+              <p>Reprogramamos prácticamente cualquier tipo de vehículo con ECU electrónica:</p>
+              <ul>
+                <li>Coches de turismo (diésel, gasolina, híbridos)</li>
+                <li>Furgonetas y vehículos industriales</li>
+                <li>Motos y quads</li>
+                <li>Motos de agua</li>
+                <li>Lanchas motoras</li>
+              </ul>
+              <p>Consulta la lista completa de marcas y modelos en <a href="vehiculos.html">Busca tu reprogramación</a>.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Necesito cita previa? <span>+</span></div>
+            <div class="faq-a">
+              <p>Sí, trabajamos siempre con cita previa para poder dedicarle el tiempo necesario a tu vehículo. Puedes solicitar cita a través del formulario en <a href="contacto.html">Contacto</a>, por teléfono (+34 680 911 007) o por email (barcelona@br-performance.com).</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Realizáis pruebas en banco de potencia? <span>+</span></div>
+            <div class="faq-a">
+              <p>Sí. Disponemos de un banco de potencia propio donde realizamos pruebas antes y después de la reprogramación. Esto nos permite verificar los resultados reales y garantizar que la optimización se ha realizado correctamente y de forma segura.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-q">¿Cuál es el precio de una reprogramación? <span>+</span></div>
+            <div class="faq-a">
+              <p>El precio varía según el modelo y tipo de vehículo, el método de acceso a la ECU y las optimizaciones requeridas. Solicita un presupuesto personalizado sin compromiso a través de nuestro formulario de <a href="contacto.html">Contacto</a> o llámanos directamente.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <footer class="row brands hide-for-small">
+      <div class="twentyfour columns">
+        <ul class="list">
+          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
+          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
+          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs"></a></li>
+          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune"></a></li>
+          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW"></a></li>
+          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC"></a></li>
+          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
+          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
+          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
+          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
+          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
+          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
+          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
+          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
+          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
+          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
+          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
+          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
+          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
+          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
+          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- MOBILE SEARCH -->
+    <footer class="row search-mobile show-for-small">
+      <div class="twentyfour columns">
+        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
+          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
+          <input type="submit" name="search" value="" class="button-full-rounded">
+        </form>
+      </div>
+    </footer>
+
   </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿La reprogramación puede dañar mi motor? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>Nuestra Stage 1 se desarrolla de una manera que siempre permanecemos dentro de los límites de seguridad del automóvil. La Stage 1 es 100% fiable y le garantizamos la misma vida útil para este motor.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Qué pasa si me hacen una actualización del software del coche? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>Con automóviles nuevos es posible que reciban una actualización. Si esto sucede, puede volver a reprogramar el coche con su software, por supuesto... Gratis.</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Cuál es la diferencia entre la reprogramación y centralita externa? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>Una "centralita externa" o "centralita adicional" es un pequeño módulo conectado al sistema de cableado del motor. Al reprogramar el automóvil, optimizamos el software en el eeprom (chip o memoria interna de la centralita original). Una "centralita externa" solo altera el valor enviado en la ECU del motor — de hecho, estaría engañando a la centralita original del automóvil. Esa no es la manera correcta de ajustar un automóvil y puede tener varios peligros... por eso no lo vendemos :)</p>
-    </div>
-  </div>
-
-  <div class="faq-item">
-    <div class="faq-q">¿Ofrecemos la posibilidad de utilizar Etanol (E85)? <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></div>
-    <div class="faq-a">
-      <p>El Etanol (E85) ofrece la ventaja de tener un precio reducido en comparación al combustible tradicional, sin embargo el uso de este tipo de combustible puede conllevar riesgos para el motor si no se equipa con un sensor de Etanol. Este sensor nos permite medir en tiempo real el nivel de Etanol presente en el tanque y por lo tanto permite a la ECU regular el funcionamiento del motor.</p>
-      <p>Tras varios años de investigación y desarrollo, BR-Performance ha desarrollado una adaptación de Etanol para ciertos motores que incluye la instalación de dicho sensor. No dudes en comprobar en nuestra web si tu vehículo es apto para nuestra preparación BRP Flex85*</p>
-      <p>(*No todos los vehículos son aptos para este tipo de preparación. Estamos trabajando para desarrollar este tipo de preparaciones en más motores en un futuro)</p>
-    </div>
-  </div>
-
-</div><!-- /faq-wrap -->
-
-<!-- BRANDS BAR -->
-<footer class="brands-bar">
-  <div class="inner">
-    <ul class="brands-list"><li><img src="images/milltek.png" alt="Milltek"></li><li><img src="images/forge.png" alt="Forge"></li><li><img src="images/sachs.png" alt="Sachs"></li><li><img src="images/mountune.png" alt="Mountune"></li><li><img src="images/kw.png" alt="KW"></li><li><img src="images/bmc.png" alt="BMC"></li><li><img src="images/carbonio.png" alt="Carbonio"></li><li><img src="images/akrapovic.png" alt="Akrapovic"></li><li><img src="images/ragazzon.png" alt="Ragazzon"></li><li><img src="images/ferodo-racing.png" alt="Ferodo Racing"></li><li><img src="images/redbull.png" alt="Red Bull"></li><li><img src="images/cargraphic.png" alt="Cargraphic"></li><li><img src="images/supersprint.png" alt="Supersprint"></li><li><img src="images/pipercross.png" alt="Pipercross"></li><li><img src="images/rsrspa.png" alt="RSR Spa"></li><li><img src="images/remus.png" alt="Remus"></li><li><img src="images/armytrix.png" alt="Armytrix"></li><li><img src="images/hre.png" alt="HRE"></li><li><img src="images/ipe-exhaust.png" alt="IPE Exhaust"></li><li><img src="images/thor.png" alt="Thor"></li><li><img src="images/rsrnurburg.png" alt="RSR Nurburg"></li></ul>
-  </div>
-</footer>
-
-<!-- MOBILE SEARCH -->
-<div class="search-mobile-bar">
-  <form action="https://www.br-performance.com/brp-barcelona/buscar/" method="get">
-    <input type="text" name="q" placeholder="Buscar por marca o modelo ...">
-    <button type="submit">Buscar</button>
-  </form>
 </div>
 
 <!-- ADDRESS FOOTER -->
-<footer class="address-footer">
-  <div class="inner">
-    <ul class="addr-list">
-      <li><address><strong style="color:#888;font-size:13px;">TÜV</strong></address><address><span style="color:#555;font-size:9px;letter-spacing:1px;text-transform:uppercase;">Rheinland</span></address></li>
-      <li><address>BR-Performance <span class="dark">© ® 2026</span></address><address>Professional chiptuning</address></li>
-      <li><address>Calle del cobalto 165</address><address>08907 Hospitalet del Llobregat, Barcelona</address></li>
-      <li><address><a href="mailto:barcelona@br-performance.com">E-mail</a></address><address>Tel: <a href="tel:34680911007">+34 680 911 007</a></address></li>
-      <li><address><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></address><address><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></address></li>
+<footer class="row address brp-barcelona">
+  <div class="seventeen columns address">
+    <ul>
+      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
+      <li>
+        <address>BR-Performance <span class="dark">© ® 2026</span></address>
+        <address>Professional chiptuning</address>
+      </li>
+      <li>
+        <address>Calle del cobalto 165</address>
+        <address>08907 Hospitalet del Llobregat, Barcelona</address>
+      </li>
+      <li>
+        <address><a href="mailto:barcelona@br-performance.com" class="email">E-mail</a></address>
+        <address>Tel: +34 680 911 007</address>
+      </li>
+      <li>
+        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
+        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
+      </li>
     </ul>
-    <div class="footer-right">
-      <ul class="foot-social">
-        <li><a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
-        <li><a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#111"/></svg></a></li>
-        <li><a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:#111"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></a></li>
-      </ul>
-    </div>
+  </div>
+  <div class="seven columns links">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
+    </ul>
   </div>
 </footer>
-
-</div><!-- /#container -->
 
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>

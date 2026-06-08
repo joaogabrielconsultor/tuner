@@ -3,195 +3,254 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Busca tu reprogramación - BR-Performance Barcelona</title>
-  <meta name="description" content="Busca la reprogramación de centralita para tu vehículo. Coches, motos, quads, embarcaciones. BR-Performance Barcelona.">
-  <link rel="stylesheet" href="css/styles.css">
+  <title>Busca tu reprogramación - BR-Performance Barcelona - Reprogramación de centralitas</title>
+  <meta name="description" content="Busca la reprogramación de centralita para tu vehículo en BR-Performance Barcelona. Todas las marcas y modelos.">
+  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/home.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
 </head>
 <body>
-<div id="container">
 
 <!-- TOP BAR -->
-<header class="top-bar">
-  <div class="inner">
-    <ul class="social-links">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#3b5998"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" title="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="#ff0000" d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="#c13584"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#fff" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a></li>
+<header class="row hide-for-small">
+  <div class="twelve columns offset-by-twelve search-extended">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
     </ul>
-    <form class="search-form" action="https://www.br-performance.com/brp-barcelona/buscar/" method="get">
-      <input type="text" name="q" placeholder="Buscar por marca o modelo ..." autocomplete="off">
-      <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
+      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
+      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
     </form>
   </div>
 </header>
 
 <!-- NAVIGATION -->
-<nav class="main-nav">
-  <div class="inner">
-    <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="BR-Performance Barcelona" style="height:56px;width:auto;display:block;"></a></div>
-    <button class="nav-toggle" aria-label="Menú">&#9776;</button>
-    <div class="langselect">
-      <a href="#" class="flag">
-        <svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg>
-        España / Español
-      </a>
-    </div>
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li class="sel"><a href="vehiculos.html">Busca tu reprogramación</a><ul class="subnav"><li><a href="vehiculos.html">Vehículo / Coche</a></li><li><a href="vehiculos.html">Bikes - Quad</a></li><li><a href="vehiculos.html">Moto de Agua</a></li><li><a href="vehiculos.html">Lancha motora</a></li><li><a href="vehiculos.html">Desarrollo</a></li></ul></li>
-      <li><a href="noticias.html">Noticias</a><ul class="subnav"><li><a href="noticias.html">Noticias</a></li><li><a href="noticias.html">Promociones</a></li></ul></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contacto.html">Solicita presupuesto</a></li>
-      <li><a href="contacto.html">Contacto</a><ul class="subnav align-right"><li><a href="contacto.html">Contacto</a></li><li><a href="contacto.html">Banco de Rodillos</a></li><li><a href="contacto.html">Empresa</a></li><li><a href="contacto.html">Nuestro equipo</a></li><li><a href="contacto.html">Objetivos</a></li><li><a href="contacto.html">Colaboradores</a></li></ul></li>
-    </ul>
+<section class="row nav">
+  <div class="twentyfour navContainer">
+    <a href="#" class="nav-toggle button-full-rounded"></a>
+    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="BR-Performance Barcelona"></a></div>
+    <nav class="primary">
+      <div class="langselect">
+        <a href="#" class="flag" title="España / Español">
+          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
+        </a>
+      </div>
+      <ul class="brp-barcelona">
+        <li class="first"><a href="index.html">Home</a></li>
+        <li class="sub sel"><a href="vehiculos.html">Busca tu reprogramación</a>
+          <ul class="subnav left">
+            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="vehiculos.html">Bikes - Quad</a></li>
+            <li><a href="vehiculos.html">Moto de Agua</a></li>
+            <li><a href="vehiculos.html">Lancha motora</a></li>
+            <li class="last"><a href="vehiculos.html">Desarrollo</a></li>
+          </ul>
+        </li>
+        <li class="sub"><a href="noticias.html">Noticias</a>
+          <ul class="subnav left">
+            <li class="first"><a href="noticias.html">Noticias</a></li>
+            <li class="last"><a href="noticias.html">Promociones</a></li>
+          </ul>
+        </li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Solicita presupuesto</a></li>
+        <li class="last sub"><a href="contacto.html">Contacto</a>
+          <ul class="subnav right">
+            <li class="first"><a href="contacto.html">Contacto</a></li>
+            <li><a href="contacto.html">Banco de Rodillos</a></li>
+            <li><a href="contacto.html">Empresa</a></li>
+            <li><a href="contacto.html">Nuestro equipo</a></li>
+            <li><a href="contacto.html">Objetivos</a></li>
+            <li class="last"><a href="contacto.html">Colaboradores</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</section>
 
-<!-- PAGE TITLE -->
-<div class="page-title-bar">
-  <div class="inner"><h1>Vehículo / Coche</h1></div>
+<div class="row" id="container">
+  <div class="twentyfour columns">
+
+    <!-- PAGE TITLE -->
+    <section class="row inner-page-title">
+      <div class="twentyfour columns"><h1>Busca tu reprogramación</h1></div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="row main smalltoppadding">
+      <div class="twentyfour columns">
+        <div class="inner-content">
+
+          <!-- Search bar -->
+          <div class="brand-search-bar">
+            <input type="text" id="brand-search" placeholder="Escribe el nombre de tu marca...">
+            <button type="button">Buscar</button>
+          </div>
+
+          <!-- Cars -->
+          <div class="brand-section-title">Vehículo / Coche</div>
+          <div class="brand-grid">
+            <a href="contacto.html" class="brand-item">Alfa Romeo</a>
+            <a href="contacto.html" class="brand-item">Aston Martin</a>
+            <a href="contacto.html" class="brand-item">Audi</a>
+            <a href="contacto.html" class="brand-item">Bentley</a>
+            <a href="contacto.html" class="brand-item">BMW</a>
+            <a href="contacto.html" class="brand-item">Chevrolet</a>
+            <a href="contacto.html" class="brand-item">Chrysler</a>
+            <a href="contacto.html" class="brand-item">Citroën</a>
+            <a href="contacto.html" class="brand-item">Cupra</a>
+            <a href="contacto.html" class="brand-item">Dacia</a>
+            <a href="contacto.html" class="brand-item">Dodge</a>
+            <a href="contacto.html" class="brand-item">Ferrari</a>
+            <a href="contacto.html" class="brand-item">Fiat</a>
+            <a href="contacto.html" class="brand-item">Ford</a>
+            <a href="contacto.html" class="brand-item">Honda</a>
+            <a href="contacto.html" class="brand-item">Hyundai</a>
+            <a href="contacto.html" class="brand-item">Jaguar</a>
+            <a href="contacto.html" class="brand-item">Jeep</a>
+            <a href="contacto.html" class="brand-item">Kia</a>
+            <a href="contacto.html" class="brand-item">Lamborghini</a>
+            <a href="contacto.html" class="brand-item">Land Rover</a>
+            <a href="contacto.html" class="brand-item">Lexus</a>
+            <a href="contacto.html" class="brand-item">Maserati</a>
+            <a href="contacto.html" class="brand-item">Mazda</a>
+            <a href="contacto.html" class="brand-item">McLaren</a>
+            <a href="contacto.html" class="brand-item">Mercedes-Benz</a>
+            <a href="contacto.html" class="brand-item">Mini</a>
+            <a href="contacto.html" class="brand-item">Mitsubishi</a>
+            <a href="contacto.html" class="brand-item">Nissan</a>
+            <a href="contacto.html" class="brand-item">Opel</a>
+            <a href="contacto.html" class="brand-item">Peugeot</a>
+            <a href="contacto.html" class="brand-item">Porsche</a>
+            <a href="contacto.html" class="brand-item">Renault</a>
+            <a href="contacto.html" class="brand-item">Rolls-Royce</a>
+            <a href="contacto.html" class="brand-item">SEAT</a>
+            <a href="contacto.html" class="brand-item">Skoda</a>
+            <a href="contacto.html" class="brand-item">Smart</a>
+            <a href="contacto.html" class="brand-item">Subaru</a>
+            <a href="contacto.html" class="brand-item">Suzuki</a>
+            <a href="contacto.html" class="brand-item">Toyota</a>
+            <a href="contacto.html" class="brand-item">Volkswagen</a>
+            <a href="contacto.html" class="brand-item">Volvo</a>
+            <a href="contacto.html" class="brand-item">Wiesmann</a>
+          </div>
+
+          <!-- Bikes -->
+          <div class="brand-section-title">Bikes - Quad</div>
+          <div class="brand-grid">
+            <a href="contacto.html" class="brand-item">Aprilia</a>
+            <a href="contacto.html" class="brand-item">BMW Motorrad</a>
+            <a href="contacto.html" class="brand-item">Ducati</a>
+            <a href="contacto.html" class="brand-item">Honda Moto</a>
+            <a href="contacto.html" class="brand-item">Husqvarna</a>
+            <a href="contacto.html" class="brand-item">KTM</a>
+            <a href="contacto.html" class="brand-item">Kawasaki</a>
+            <a href="contacto.html" class="brand-item">MV Agusta</a>
+            <a href="contacto.html" class="brand-item">Suzuki Moto</a>
+            <a href="contacto.html" class="brand-item">Triumph</a>
+            <a href="contacto.html" class="brand-item">Yamaha</a>
+          </div>
+
+          <!-- Motos de Agua -->
+          <div class="brand-section-title">Moto de Agua</div>
+          <div class="brand-grid">
+            <a href="contacto.html" class="brand-item">BRP Sea-Doo</a>
+            <a href="contacto.html" class="brand-item">Kawasaki Jet Ski</a>
+            <a href="contacto.html" class="brand-item">Yamaha WaveRunner</a>
+          </div>
+
+          <!-- Lanchas -->
+          <div class="brand-section-title">Lancha motora</div>
+          <div class="brand-grid">
+            <a href="contacto.html" class="brand-item">BRP Evinrude</a>
+            <a href="contacto.html" class="brand-item">Honda Marine</a>
+            <a href="contacto.html" class="brand-item">Mercury Marine</a>
+            <a href="contacto.html" class="brand-item">Suzuki Marine</a>
+            <a href="contacto.html" class="brand-item">Yamaha Marine</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <footer class="row brands hide-for-small">
+      <div class="twentyfour columns">
+        <ul class="list">
+          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
+          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
+          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs"></a></li>
+          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune"></a></li>
+          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW"></a></li>
+          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC"></a></li>
+          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
+          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
+          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
+          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
+          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
+          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
+          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
+          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
+          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
+          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
+          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
+          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
+          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
+          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
+          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- MOBILE SEARCH -->
+    <footer class="row search-mobile show-for-small">
+      <div class="twentyfour columns">
+        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
+          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
+          <input type="submit" name="search" value="" class="button-full-rounded">
+        </form>
+      </div>
+    </footer>
+
+  </div>
 </div>
 
-<!-- VEHICLES CONTENT -->
-<div class="veh-wrap">
-
-  <!-- Search bar -->
-  <div class="veh-search">
-    <input type="text" id="brand-search" placeholder="Buscar marca o modelo...">
-    <button type="button">Buscar</button>
-  </div>
-
-  <!-- Intro -->
-  <p class="veh-intro">
-    BR-Performance ofrece chiptuning profesional para una amplia gama de vehículos. Selecciona tu tipo de vehículo o busca directamente por marca para ver los resultados disponibles para tu motor.
-  </p>
-
-  <!-- Vehicle types -->
-  <div class="veh-types-grid">
-    <div class="veh-type-card">
-      <div class="type-img-wrap"><img src="images/24535-Porsche_ferrari_pista_dyno.jpg" alt="Vehículo / Coche"></div>
-      <div class="type-name">Vehículo / Coche</div>
-    </div>
-    <div class="veh-type-card">
-      <div class="type-img-wrap"><img src="images/31275-Moto_banner_7.jpg" alt="Bikes - Quad"></div>
-      <div class="type-name">Bikes - Quad</div>
-    </div>
-    <div class="veh-type-card">
-      <div class="type-img-wrap" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-      <div class="type-name">Moto de Agua</div>
-    </div>
-    <div class="veh-type-card">
-      <div class="type-img-wrap" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1"><path d="M22 17H2a3 3 0 0 0 3-3V9a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v5a3 3 0 0 0 3 3z"/><polyline points="6 17 6 21"/><polyline points="18 17 18 21"/></svg></div>
-      <div class="type-name">Lancha motora</div>
-    </div>
-    <div class="veh-type-card">
-      <div class="type-img-wrap" style="background:#1a1a1a;display:flex;align-items:center;justify-content:center;"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#555" stroke-width="1"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14M4.93 4.93a10 10 0 0 0 0 14.14"/></svg></div>
-      <div class="type-name">Desarrollo</div>
-    </div>
-  </div>
-
-  <!-- Brands grid -->
-  <div class="brand-title">Selecciona tu marca</div>
-  <div class="brand-grid">
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/9-alfa-romeo/" class="brand-item" target="_blank">Alfa Romeo</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10-alpina/" class="brand-item" target="_blank">Alpina</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/8302-alpine/" class="brand-item" target="_blank">Alpine</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10227-ariel-motors/" class="brand-item" target="_blank">Ariel Motors</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10691-artega/" class="brand-item" target="_blank">Artega</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/5790-aston-martin/" class="brand-item" target="_blank">Aston Martin</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/11-audi/" class="brand-item" target="_blank">Audi</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/12-bentley/" class="brand-item" target="_blank">Bentley</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/5-bmw/" class="brand-item" target="_blank">BMW</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10492-borgward/" class="brand-item" target="_blank">Borgward</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/13-bugatti/" class="brand-item" target="_blank">Bugatti</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/8124-buick/" class="brand-item" target="_blank">Buick</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10703-byd/" class="brand-item" target="_blank">BYD</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/14-cadillac/" class="brand-item" target="_blank">Cadillac</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10681-caterham/" class="brand-item" target="_blank">Caterham</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/15-chevrolet/" class="brand-item" target="_blank">Chevrolet</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/16-chrysler/" class="brand-item" target="_blank">Chrysler</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/17-citroen/" class="brand-item" target="_blank">Citroën</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/9916-cupra/" class="brand-item" target="_blank">Cupra</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/18-dacia/" class="brand-item" target="_blank">Dacia</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/19-daewoo/" class="brand-item" target="_blank">Daewoo</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/20-dodge/" class="brand-item" target="_blank">Dodge</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/7098-ds/" class="brand-item" target="_blank">DS</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/21-ferrari/" class="brand-item" target="_blank">Ferrari</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/22-fiat/" class="brand-item" target="_blank">Fiat</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/23-ford/" class="brand-item" target="_blank">Ford</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10621-geely/" class="brand-item" target="_blank">Geely</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10821-genesis/" class="brand-item" target="_blank">Genesis</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/6359-gwm/" class="brand-item" target="_blank">GWM</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/9103-holden/" class="brand-item" target="_blank">Holden</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/24-honda/" class="brand-item" target="_blank">Honda</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/25-hyundai/" class="brand-item" target="_blank">Hyundai</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10707-ineos/" class="brand-item" target="_blank">Ineos</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/26-infiniti/" class="brand-item" target="_blank">Infiniti</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/3750-isuzu/" class="brand-item" target="_blank">Isuzu</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/3938-iveco/" class="brand-item" target="_blank">Iveco</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10675-jac/" class="brand-item" target="_blank">JAC</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/27-jaguar/" class="brand-item" target="_blank">Jaguar</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/28-jeep/" class="brand-item" target="_blank">Jeep</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/29-kia/" class="brand-item" target="_blank">Kia</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/30-ktm/" class="brand-item" target="_blank">KTM</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/31-lamborghini/" class="brand-item" target="_blank">Lamborghini</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/32-lancia/" class="brand-item" target="_blank">Lancia</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/33-landrover/" class="brand-item" target="_blank">Land Rover</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/6806-lexus/" class="brand-item" target="_blank">Lexus</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10597-lincoln/" class="brand-item" target="_blank">Lincoln</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/34-lotus/" class="brand-item" target="_blank">Lotus</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/7374-mahindra/" class="brand-item" target="_blank">Mahindra</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/9690-man/" class="brand-item" target="_blank">MAN</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/35-maserati/" class="brand-item" target="_blank">Maserati</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/36-mazda/" class="brand-item" target="_blank">Mazda</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/3913-mclaren/" class="brand-item" target="_blank">McLaren</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/37-mercedes/" class="brand-item" target="_blank">Mercedes</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/38-mg/" class="brand-item" target="_blank">MG</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/39-mini/" class="brand-item" target="_blank">Mini</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/40-mitsubishi/" class="brand-item" target="_blank">Mitsubishi</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10697-morgan/" class="brand-item" target="_blank">Morgan</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10701-mpm/" class="brand-item" target="_blank">MPM</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/41-nissan/" class="brand-item" target="_blank">Nissan</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/42-opel/" class="brand-item" target="_blank">Opel</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/4118-pagani/" class="brand-item" target="_blank">Pagani</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/43-peugeot/" class="brand-item" target="_blank">Peugeot</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/5763-pgo/" class="brand-item" target="_blank">PGO</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/6682-piaggio/" class="brand-item" target="_blank">Piaggio</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10827-polestar/" class="brand-item" target="_blank">Polestar</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/44-porsche/" class="brand-item" target="_blank">Porsche</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/45-renault/" class="brand-item" target="_blank">Renault</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/46-rolls-royce/" class="brand-item" target="_blank">Rolls Royce</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/47-saab/" class="brand-item" target="_blank">Saab</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/9504-samsung/" class="brand-item" target="_blank">Samsung</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/5951-scion/" class="brand-item" target="_blank">Scion</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/48-seat/" class="brand-item" target="_blank">SEAT</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10679-secma/" class="brand-item" target="_blank">Secma</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/49-skoda/" class="brand-item" target="_blank">Skoda</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/50-smart/" class="brand-item" target="_blank">Smart</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/3722-ssangyong/" class="brand-item" target="_blank">SsangYong</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/51-subaru/" class="brand-item" target="_blank">Subaru</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/52-suzuki/" class="brand-item" target="_blank">Suzuki</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/3723-tata/" class="brand-item" target="_blank">Tata</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/10711-tesla/" class="brand-item" target="_blank">Tesla</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/53-toyota/" class="brand-item" target="_blank">Toyota</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/54-volkswagen/" class="brand-item" target="_blank">Volkswagen</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/55-volvo/" class="brand-item" target="_blank">Volvo</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/5319-westfield/" class="brand-item" target="_blank">Westfield</a>
-    <a href="https://www.br-performance.com/brp-barcelona/chiptuning/1-vehiculos/56-wiesmann/" class="brand-item" target="_blank">Wiesmann</a>
-  </div>
-
-</div><!-- /veh-wrap -->
-
-<!-- BRANDS BAR -->
-<footer class="brands-bar"><div class="inner"><ul class="brands-list"><li><img src="images/milltek.png" alt="Milltek"></li><li><img src="images/forge.png" alt="Forge"></li><li><img src="images/sachs.png" alt="Sachs"></li><li><img src="images/mountune.png" alt="Mountune"></li><li><img src="images/kw.png" alt="KW"></li><li><img src="images/bmc.png" alt="BMC"></li><li><img src="images/carbonio.png" alt="Carbonio"></li><li><img src="images/akrapovic.png" alt="Akrapovic"></li><li><img src="images/ragazzon.png" alt="Ragazzon"></li><li><img src="images/ferodo-racing.png" alt="Ferodo Racing"></li><li><img src="images/redbull.png" alt="Red Bull"></li><li><img src="images/cargraphic.png" alt="Cargraphic"></li><li><img src="images/supersprint.png" alt="Supersprint"></li><li><img src="images/pipercross.png" alt="Pipercross"></li><li><img src="images/rsrspa.png" alt="RSR Spa"></li><li><img src="images/remus.png" alt="Remus"></li><li><img src="images/armytrix.png" alt="Armytrix"></li><li><img src="images/hre.png" alt="HRE"></li><li><img src="images/ipe-exhaust.png" alt="IPE Exhaust"></li><li><img src="images/thor.png" alt="Thor"></li><li><img src="images/rsrnurburg.png" alt="RSR Nurburg"></li></ul></div></footer>
-
-<!-- MOBILE SEARCH -->
-<div class="search-mobile-bar"><form action="https://www.br-performance.com/brp-barcelona/buscar/" method="get"><input type="text" name="q" placeholder="Buscar por marca o modelo ..."><button type="submit">Buscar</button></form></div>
-
 <!-- ADDRESS FOOTER -->
-<footer class="address-footer"><div class="inner"><ul class="addr-list"><li><address><strong style="color:#888;font-size:13px;">TÜV</strong></address><address><span style="color:#555;font-size:9px;letter-spacing:1px;text-transform:uppercase;">Rheinland</span></address></li><li><address>BR-Performance <span class="dark">© ® 2026</span></address><address>Professional chiptuning</address></li><li><address>Calle del cobalto 165</address><address>08907 Hospitalet del Llobregat, Barcelona</address></li><li><address><a href="mailto:barcelona@br-performance.com">E-mail</a></address><address>Tel: <a href="tel:34680911007">+34 680 911 007</a></address></li><li><address><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></address><address><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></address></li></ul><div class="footer-right"><ul class="foot-social"><li><a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li><li><a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#111"/></svg></a></li><li><a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:#111"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></a></li></ul></div></div></footer>
-
-</div><!-- /#container -->
+<footer class="row address brp-barcelona">
+  <div class="seventeen columns address">
+    <ul>
+      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
+      <li>
+        <address>BR-Performance <span class="dark">© ® 2026</span></address>
+        <address>Professional chiptuning</address>
+      </li>
+      <li>
+        <address>Calle del cobalto 165</address>
+        <address>08907 Hospitalet del Llobregat, Barcelona</address>
+      </li>
+      <li>
+        <address><a href="mailto:barcelona@br-performance.com" class="email">E-mail</a></address>
+        <address>Tel: +34 680 911 007</address>
+      </li>
+      <li>
+        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
+        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
+      </li>
+    </ul>
+  </div>
+  <div class="seven columns links">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
+    </ul>
+  </div>
+</footer>
 
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>

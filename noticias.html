@@ -4,114 +4,230 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Noticias - BR-Performance Barcelona - Reprogramación de centralitas</title>
-  <meta name="description" content="Últimas noticias y novedades de BR-Performance Barcelona. Reprogramaciones disponibles.">
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="description" content="Últimas noticias sobre chiptuning y reprogramación de centralitas en Barcelona. Novedades BR-Performance.">
+  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/home.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
 </head>
 <body>
-<div id="container">
 
 <!-- TOP BAR -->
-<header class="top-bar">
-  <div class="inner">
-    <ul class="social-links">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" title="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="#3b5998"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" title="YouTube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path fill="#ff0000" d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon fill="#fff" points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" title="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="#c13584"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" stroke="#fff" stroke-width="1.5"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg></a></li>
+<header class="row hide-for-small">
+  <div class="twelve columns offset-by-twelve search-extended">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
     </ul>
-    <form class="search-form" action="https://www.br-performance.com/brp-barcelona/buscar/" method="get">
-      <input type="text" name="q" placeholder="Buscar por marca o modelo ..." autocomplete="off">
-      <button type="submit" aria-label="Buscar"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></button>
+    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
+      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
+      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
     </form>
   </div>
 </header>
 
 <!-- NAVIGATION -->
-<nav class="main-nav">
-  <div class="inner">
-    <div class="nav-logo"><a href="index.html"><img src="images/logo.png" alt="BR-Performance Barcelona" style="height:56px;width:auto;display:block;"></a></div>
-    <button class="nav-toggle" aria-label="Menú">&#9776;</button>
-    <div class="langselect">
-      <a href="#" class="flag">
-        <svg viewBox="0 0 20 14" width="20" height="14"><rect width="20" height="14" fill="#c60b1e"/><rect y="3.5" width="20" height="7" fill="#ffc400"/></svg>
-        España / Español
-      </a>
-    </div>
-    <ul class="nav-menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="vehiculos.html">Busca tu reprogramación</a><ul class="subnav"><li><a href="vehiculos.html">Vehículo / Coche</a></li><li><a href="vehiculos.html">Bikes - Quad</a></li><li><a href="vehiculos.html">Moto de Agua</a></li><li><a href="vehiculos.html">Lancha motora</a></li><li><a href="vehiculos.html">Desarrollo</a></li></ul></li>
-      <li class="sel"><a href="noticias.html">Noticias</a><ul class="subnav"><li><a href="noticias.html">Noticias</a></li><li><a href="noticias.html">Promociones</a></li></ul></li>
-      <li><a href="faq.html">FAQ</a></li>
-      <li><a href="contacto.html">Solicita presupuesto</a></li>
-      <li><a href="contacto.html">Contacto</a><ul class="subnav align-right"><li><a href="contacto.html">Contacto</a></li><li><a href="contacto.html">Banco de Rodillos</a></li><li><a href="contacto.html">Empresa</a></li><li><a href="contacto.html">Nuestro equipo</a></li><li><a href="contacto.html">Objetivos</a></li><li><a href="contacto.html">Colaboradores</a></li></ul></li>
-    </ul>
+<section class="row nav">
+  <div class="twentyfour navContainer">
+    <a href="#" class="nav-toggle button-full-rounded"></a>
+    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="BR-Performance Barcelona"></a></div>
+    <nav class="primary">
+      <div class="langselect">
+        <a href="#" class="flag" title="España / Español">
+          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
+        </a>
+      </div>
+      <ul class="brp-barcelona">
+        <li class="first"><a href="index.html">Home</a></li>
+        <li class="sub"><a href="vehiculos.html">Busca tu reprogramación</a>
+          <ul class="subnav left">
+            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="vehiculos.html">Bikes - Quad</a></li>
+            <li><a href="vehiculos.html">Moto de Agua</a></li>
+            <li><a href="vehiculos.html">Lancha motora</a></li>
+            <li class="last"><a href="vehiculos.html">Desarrollo</a></li>
+          </ul>
+        </li>
+        <li class="sub sel"><a href="noticias.html">Noticias</a>
+          <ul class="subnav left">
+            <li class="first"><a href="noticias.html">Noticias</a></li>
+            <li class="last"><a href="noticias.html">Promociones</a></li>
+          </ul>
+        </li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Solicita presupuesto</a></li>
+        <li class="last sub"><a href="contacto.html">Contacto</a>
+          <ul class="subnav right">
+            <li class="first"><a href="contacto.html">Contacto</a></li>
+            <li><a href="contacto.html">Banco de Rodillos</a></li>
+            <li><a href="contacto.html">Empresa</a></li>
+            <li><a href="contacto.html">Nuestro equipo</a></li>
+            <li><a href="contacto.html">Objetivos</a></li>
+            <li class="last"><a href="contacto.html">Colaboradores</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
   </div>
-</nav>
+</section>
 
-<!-- PAGE TITLE -->
-<div class="page-title-bar">
-  <div class="inner"><h1>Noticias</h1></div>
+<div class="row" id="container">
+  <div class="twentyfour columns">
+
+    <!-- PAGE TITLE -->
+    <section class="row inner-page-title">
+      <div class="twentyfour columns"><h1>Noticias</h1></div>
+    </section>
+
+    <!-- MAIN CONTENT -->
+    <section class="row main smalltoppadding">
+      <div class="twentyfour columns">
+        <div class="inner-content">
+
+          <span class="news-month">Junio 2026</span>
+          <div class="news-2col">
+            <div class="news-card-wrap">
+              <figure>
+                <a href="noticias.html"><img src="images/32233-SP_-_website.jpg" alt="Reprograma tu Audi RS3 o tu Cupra Formentor!"></a>
+                <div class="n-label">
+                  <div class="n-title"><a href="noticias.html">Reprograma tu Audi RS3 o tu Cupra Formentor!</a></div>
+                  <div class="n-excerpt">¡Nuevas reprogramaciones disponibles! Nos complace anunciar... <a href="noticias.html">leer más</a></div>
+                </div>
+              </figure>
+            </div>
+            <div class="news-card-wrap">
+              <figure>
+                <a href="noticias.html"><img src="images/32225-SP_-_website_thumbnail.jpg" alt="¡Reprograma tu moto!"></a>
+                <div class="n-label">
+                  <div class="n-title"><a href="noticias.html">¡Reprograma tu moto!</a></div>
+                  <div class="n-excerpt">¡Es hora de disfrutar de tus dos ruedas! El buen tiempo invita a... <a href="noticias.html">leer más</a></div>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <div class="news-2col">
+            <div class="news-card-wrap">
+              <figure>
+                <a href="noticias.html"><img src="images/32211-SP_-_website.jpg" alt="¡Reprograma tu motor 2.2 BlueHDI!"></a>
+                <div class="n-label">
+                  <div class="n-title"><a href="noticias.html">¡Reprograma tu motor 2.2 BlueHDI!</a></div>
+                  <div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 2.2 BlueHDI! <a href="noticias.html">leer más</a></div>
+                </div>
+              </figure>
+            </div>
+            <div class="news-card-wrap">
+              <figure>
+                <a href="noticias.html"><img src="images/32205-SP_-_website.jpg" alt="¡Reprograma tu motor 2.0 TSI!"></a>
+                <div class="n-label">
+                  <div class="n-title"><a href="noticias.html">¡Reprograma tu motor 2.0 TSI!</a></div>
+                  <div class="n-excerpt">¡Nuevas reprogramaciones para motores 2.0 TSI! Optimiza tu vehículo... <a href="noticias.html">leer más</a></div>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+          <span class="news-month">Mayo 2026</span>
+          <div class="news-2col">
+            <div class="news-card-wrap">
+              <figure>
+                <a href="noticias.html"><img src="images/32187-SP_-_website.jpg" alt="¡Reprograma tu motor 1.5 TSI!"></a>
+                <div class="n-label">
+                  <div class="n-title"><a href="noticias.html">¡Reprograma tu motor 1.5 TSI!</a></div>
+                  <div class="n-excerpt">¡Nuevas reprogramaciones para motores 1.5 TSI! Gana potencia y eficiencia... <a href="noticias.html">leer más</a></div>
+                </div>
+              </figure>
+            </div>
+            <div class="news-card-wrap">
+              <figure>
+                <a href="noticias.html"><img src="images/promo_video_2021.jpg" alt="Promoción chiptuning primavera 2026"></a>
+                <div class="n-label">
+                  <div class="n-title"><a href="noticias.html">Promoción chiptuning primavera 2026</a></div>
+                  <div class="n-excerpt">Aprovecha nuestra promoción de primavera y mejora el rendimiento de tu vehículo... <a href="noticias.html">leer más</a></div>
+                </div>
+              </figure>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- BRANDS -->
+    <footer class="row brands hide-for-small">
+      <div class="twentyfour columns">
+        <ul class="list">
+          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
+          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
+          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs"></a></li>
+          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune"></a></li>
+          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW"></a></li>
+          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC"></a></li>
+          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
+          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
+          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
+          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
+          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
+          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
+          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
+          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
+          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
+          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
+          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
+          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
+          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
+          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
+          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- MOBILE SEARCH -->
+    <footer class="row search-mobile show-for-small">
+      <div class="twentyfour columns">
+        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
+          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
+          <input type="submit" name="search" value="" class="button-full-rounded">
+        </form>
+      </div>
+    </footer>
+
+  </div>
 </div>
 
-<!-- NEWS CONTENT -->
-<div class="news-wrap">
-
-  <span class="news-month-title">Mayo 2026</span>
-  <div class="news-grid">
-    <div class="news-card"><div class="box-border"><figure><img src="images/32233-SP_-_website.jpg" alt="Reprograma tu Audi RS3 o tu Cupra Formentor!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2269-reprograma-tu-audi-rs3-o-tu-cupra-formentor/">Reprograma tu Audi RS3 o tu Cupra Formentor!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles! Nos complace... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2269-reprograma-tu-audi-rs3-o-tu-cupra-formentor/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32225-SP_-_website_thumbnail.jpg" alt="¡Reprograma tu moto!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2261-reprograma-tu-moto/">¡Reprograma tu moto!</a></div><div class="n-excerpt">¡Es hora de disfrutar de tus dos ruedas! El buen tiempo... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2261-reprograma-tu-moto/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32211-SP_-_website.jpg" alt="¡Reprograma tu motor 2.2 BlueHDI!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2249-reprograma-tu-motor-2-2-bluehdi/">¡Reprograma tu motor 2.2 BlueHDI!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 2.2 BlueHDI! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2249-reprograma-tu-motor-2-2-bluehdi/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32205-SP_-_website.jpg" alt="¡Reprograma tu motor 2.0 TSI!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2245-reprograma-tu-motor-2-0-tsi/">¡Reprograma tu motor 2.0 TSI!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 2.0 TSI! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2245-reprograma-tu-motor-2-0-tsi/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32187-SP_-_website.jpg" alt="¡Reprograma tu motor 1.5 TSI!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2235-reprograma-tu-motor-1-5-tsi/">¡Reprograma tu motor 1.5 TSI!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 1.5 TSI! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2235-reprograma-tu-motor-1-5-tsi/">Leer más</a></div></div></figure></div></div>
-  </div>
-
-  <span class="news-month-title">Abril 2026</span>
-  <div class="news-grid">
-    <div class="news-card"><div class="box-border"><figure><img src="images/32113-SP_-_website.jpg" alt="¡Nuevas reprogramaciones disponibles!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2177-nuevas-reprogramaciones-disponibles/">¡Nuevas reprogramaciones disponibles!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 1.5 DC... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2177-nuevas-reprogramaciones-disponibles/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32125-SP_-_website.jpg" alt="¡Nuevas reprogramaciones disponibles!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2185-nuevas-reprogramaciones-disponibles/">¡Nuevas reprogramaciones disponibles!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para motores 1.5 Bl... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2185-nuevas-reprogramaciones-disponibles/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32105-SP_-_website.jpg" alt="¡Reprograma tu Fiat Ducato!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2169-reprograma-tu-fiat-ducato/">¡Reprograma tu Fiat Ducato!</a></div><div class="n-excerpt">¡Nueva reprogramación disponible para Fiat Ducato! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2169-reprograma-tu-fiat-ducato/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32097-SP_-_website.jpg" alt="¡Reprograma tu Jaguar/Land Rover!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2161-reprograma-tu-jaguar-land-rover/">¡Reprograma tu Jaguar/Land Rover!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para Jaguar y Land Rover! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2161-reprograma-tu-jaguar-land-rover/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32075-SP_-_website.jpg" alt="¡Reprograma tu Peugeot, Citroën o DS!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2149-reprograma-tu-peugeot-citroen-o-ds/">¡Reprograma tu Peugeot, Citroën o DS!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles para Peugeot, Citroën y DS! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2149-reprograma-tu-peugeot-citroen-o-ds/">Leer más</a></div></div></figure></div></div>
-  </div>
-
-  <span class="news-month-title">Marzo 2026</span>
-  <div class="news-grid">
-    <div class="news-card"><div class="box-border"><figure><img src="images/32025-SP_-_website.jpg" alt="¡Reprograma tu caja de cambios DQ38x (VAG)!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2117-reprograma-tu-caja-de-cambios-dq38x-vag/">¡Reprograma tu caja de cambios DQ38x (VAG)!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones de cajas de cambios disponibles! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2117-reprograma-tu-caja-de-cambios-dq38x-vag/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32033-SP_-_website.jpg" alt="¡Reprograma tu caja de cambios ALx52 (VAG)!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2125-reprograma-tu-caja-de-cambios-alx52-vag/">¡Reprograma tu caja de cambios ALx52 (VAG)!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones de cajas de cambios disponibles! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2125-reprograma-tu-caja-de-cambios-alx52-vag/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32015-SP_-_website.jpg" alt="¡Reprograma tu Panamera!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2107-reprograma-tu-panamera/">¡Reprograma tu Panamera!</a></div><div class="n-excerpt">¡Reprogramación disponible para Panamera! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2107-reprograma-tu-panamera/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/32007-SP_-_website.jpg" alt="¡Reprograma tu Porsche!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2099-reprograma-tu-porsche/">¡Reprograma tu Porsche!</a></div><div class="n-excerpt">¡Nueva reprogramación disponible para Porsche! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2099-reprograma-tu-porsche/">Leer más</a></div></div></figure></div></div>
-  </div>
-
-
-  <span class="news-month-title">Enero 2026</span>
-  <div class="news-grid">
-    <div class="news-card"><div class="box-border"><figure><img src="images/31987-SP_-_website_thumbnail.jpg" alt="¡Reprograma tu Iveco!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2087-reprograma-tu-iveco/">¡Reprograma tu Iveco!</a></div><div class="n-excerpt">¡Reprogramación disponible para Iveco! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2087-reprograma-tu-iveco/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/31949-SP_-_website_thumbnail.jpg" alt="¡Nuevas reprogramaciones disponibles: Audi!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2065-nuevas-reprogramaciones-disponibles-audi/">¡Nuevas reprogramaciones disponibles: Audi!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones Audi disponibles! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2065-nuevas-reprogramaciones-disponibles-audi/">Leer más</a></div></div></figure></div></div>
-  </div>
-
-  <span class="news-month-title">Diciembre 2025</span>
-  <div class="news-grid">
-    <div class="news-card"><div class="box-border"><figure><img src="images/31869-SP_-_website_thumbnail.jpg" alt="¡Nuevas reprogramaciones disponibles: Ford!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2015-nuevas-reprogramaciones-disponibles-ford/">¡Nuevas reprogramaciones disponibles: Ford!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles: Ford! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2015-nuevas-reprogramaciones-disponibles-ford/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/31859-SP_-_website_thumbnail.jpg" alt="¡Nuevas reprogramaciones disponibles: Ford y VW!"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2007-nuevas-reprogramaciones-disponibles-ford-y-vw/">¡Nuevas reprogramaciones disponibles: Ford y VW!</a></div><div class="n-excerpt">¡Nuevas reprogramaciones disponibles: Ford y Volkswagen! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/2007-nuevas-reprogramaciones-disponibles-ford-y-vw/">Leer más</a></div></div></figure></div></div>
-    <div class="news-card"><div class="box-border"><figure><img src="images/31853-SP_-_website_thumbnail.jpg" alt="Reprog' VW ID3/4/5, Skoda Enyaq &amp; Audi Q4 e-tron"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/1999-reprog-vw-id3-4-5-skoda-enyaq-audi-q4-e-tron/">Reprog' VW ID3/4/5, Skoda Enyaq &amp; Audi Q4 e-tron</a></div><div class="n-excerpt">¡La reprogramación de los Volkswagen ID3, ID4, ID5... <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/1999-reprog-vw-id3-4-5-skoda-enyaq-audi-q4-e-tron/">Leer más</a></div></div></figure></div></div>
-  </div>
-
-  <span class="news-month-title">Noviembre 2025</span>
-  <div class="news-grid">
-    <div class="news-card"><div class="box-border"><figure><img src="images/31799-SP_-_website_thumbnail_-_1.0_TGDI.jpg.jpg" alt="Reprogramación Porsche, Audi y Lambo (2023+)"><div class="n-label"><div class="n-title"><a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/1967-reprogramacion-porsche-audi-y-lambo-2023/">Reprogramación Porsche, Audi y Lambo (2023+)</a></div><div class="n-excerpt">¡La reprogramación de nuevos modelos Porsche, Audi y Lamborghini! <a href="https://www.br-performance.com/brp-barcelona/noticias/noticias/1967-reprogramacion-porsche-audi-y-lambo-2023/">Leer más</a></div></div></figure></div></div>
-  </div>
-
-</div><!-- /news-wrap -->
-
-<!-- BRANDS BAR -->
-<footer class="brands-bar"><div class="inner"><ul class="brands-list"><li><img src="images/milltek.png" alt="Milltek"></li><li><img src="images/forge.png" alt="Forge"></li><li><img src="images/sachs.png" alt="Sachs"></li><li><img src="images/mountune.png" alt="Mountune"></li><li><img src="images/kw.png" alt="KW"></li><li><img src="images/bmc.png" alt="BMC"></li><li><img src="images/carbonio.png" alt="Carbonio"></li><li><img src="images/akrapovic.png" alt="Akrapovic"></li><li><img src="images/ragazzon.png" alt="Ragazzon"></li><li><img src="images/ferodo-racing.png" alt="Ferodo Racing"></li><li><img src="images/redbull.png" alt="Red Bull"></li><li><img src="images/cargraphic.png" alt="Cargraphic"></li><li><img src="images/supersprint.png" alt="Supersprint"></li><li><img src="images/pipercross.png" alt="Pipercross"></li><li><img src="images/rsrspa.png" alt="RSR Spa"></li><li><img src="images/remus.png" alt="Remus"></li><li><img src="images/armytrix.png" alt="Armytrix"></li><li><img src="images/hre.png" alt="HRE"></li><li><img src="images/ipe-exhaust.png" alt="IPE Exhaust"></li><li><img src="images/thor.png" alt="Thor"></li><li><img src="images/rsrnurburg.png" alt="RSR Nurburg"></li></ul></div></footer>
-
-<!-- MOBILE SEARCH -->
-<div class="search-mobile-bar"><form action="https://www.br-performance.com/brp-barcelona/buscar/" method="get"><input type="text" name="q" placeholder="Buscar por marca o modelo ..."><button type="submit">Buscar</button></form></div>
-
 <!-- ADDRESS FOOTER -->
-<footer class="address-footer"><div class="inner"><ul class="addr-list"><li><address><strong style="color:#888;font-size:13px;">TÜV</strong></address><address><span style="color:#555;font-size:9px;letter-spacing:1px;text-transform:uppercase;">Rheinland</span></address></li><li><address>BR-Performance <span class="dark">© ® 2026</span></address><address>Professional chiptuning</address></li><li><address>Calle del cobalto 165</address><address>08907 Hospitalet del Llobregat, Barcelona</address></li><li><address><a href="mailto:barcelona@br-performance.com">E-mail</a></address><address>Tel: <a href="tel:34680911007">+34 680 911 007</a></address></li><li><address><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></address><address><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></address></li></ul><div class="footer-right"><ul class="foot-social"><li><a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a></li><li><a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" style="fill:#111"/></svg></a></li><li><a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" style="fill:#111"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke="#111" stroke-width="2" stroke-linecap="round"/></svg></a></li></ul></div></div></footer>
-
-</div><!-- /#container -->
+<footer class="row address brp-barcelona">
+  <div class="seventeen columns address">
+    <ul>
+      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
+      <li>
+        <address>BR-Performance <span class="dark">© ® 2026</span></address>
+        <address>Professional chiptuning</address>
+      </li>
+      <li>
+        <address>Calle del cobalto 165</address>
+        <address>08907 Hospitalet del Llobregat, Barcelona</address>
+      </li>
+      <li>
+        <address><a href="mailto:barcelona@br-performance.com" class="email">E-mail</a></address>
+        <address>Tel: +34 680 911 007</address>
+      </li>
+      <li>
+        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
+        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
+      </li>
+    </ul>
+  </div>
+  <div class="seven columns links">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
+    </ul>
+  </div>
+</footer>
 
 <script src="js/config.js"></script>
 <script src="js/main.js"></script>
