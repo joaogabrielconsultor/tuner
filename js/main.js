@@ -5,24 +5,6 @@ if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => navMenu.classList.toggle('open'));
 }
 
-// Align subnav content below the hovered nav item (replicates general.js padding logic)
-document.querySelectorAll('nav.primary ul li.sub').forEach(li => {
-  li.addEventListener('mouseenter', () => {
-    const ul = li.querySelector('ul.subnav');
-    if (!ul) return;
-    const navUl = li.closest('nav.primary ul');
-    if (!navUl) return;
-    const navRect = navUl.getBoundingClientRect();
-    const liRect = li.getBoundingClientRect();
-    if (ul.classList.contains('left')) {
-      ul.style.paddingLeft = Math.max(0, liRect.left - navRect.left) + 'px';
-      ul.style.paddingRight = '';
-    } else if (ul.classList.contains('right')) {
-      ul.style.paddingRight = Math.max(0, navRect.right - liRect.right) + 'px';
-      ul.style.paddingLeft = '';
-    }
-  });
-});
 
 // Generic auto-slider
 function initSlider(containerSel) {

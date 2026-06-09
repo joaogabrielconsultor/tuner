@@ -24,6 +24,21 @@ body {
 
 /* Submenu dropdown on hover */
 @media only screen and (min-width:768px) {
+  nav.primary ul li.sub {
+    position: relative;
+  }
+  nav.primary ul li.sub > ul {
+    top: 100%;
+    left: 0;
+    width: auto;
+    white-space: nowrap;
+    height: auto;
+    line-height: 51px;
+  }
+  nav.primary ul li.sub > ul.right {
+    left: auto;
+    right: 0;
+  }
   nav.primary ul li.sub:hover > ul {
     display: block;
   }
