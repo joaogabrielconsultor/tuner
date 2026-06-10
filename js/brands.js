@@ -293,6 +293,39 @@ const BRANDS = {
 
 function getBrand(slug) { return BRANDS[slug] || null; }
 
+const VEHICLE_TYPES = {
+  'coche': [
+    'alfa-romeo','alpina','alpine','ariel-motors','artega','aston-martin','audi','bentley','bmw',
+    'borgward','bugatti','buick','byd','cadillac','caterham','chevrolet','chrysler','citroen',
+    'cupra','dacia','daewoo','dodge','ds','ferrari','fiat','ford','geely','genesis','gwm',
+    'holden','honda','hyundai','ineos','infiniti','isuzu','iveco','jac','jaguar','jeep','kia',
+    'ktm','lamborghini','lancia','landrover','lexus','lincoln','lotus','mahindra','man',
+    'maserati','mazda','mclaren','mercedes','mg','mini','mitsubishi','morgan','mpm','nissan',
+    'opel','pagani','peugeot','pgo','piaggio','polestar','porsche','renault','rolls-royce',
+    'saab','samsung','scion','seat','secma','skoda','smart','ssangyong','subaru','suzuki',
+    'tata','tesla','toyota','volkswagen','volvo','westfield','wiesmann'
+  ],
+  'moto': [
+    'ajp','aprilia','argo','benelli','bimota','bmw-motorrad','brixton','buell',
+    'campagna-motors','can-am','ccm','cfmoto','ducati','easy-trike','energica','fantic',
+    'gasgas','gilera','goes','harley-davidson','honda-motorcycles','husqvarna','hyosung',
+    'hytrack','indian','kawasaki','ktm','kymco','linhai','loncin','macbor','magpower',
+    'masai','mash','moto-guzzi','moto-morini','motron','mv-agusta','norton','odes','orcal',
+    'piaggio','polaris','qj-motors','quadro','rewaco','royal-enfield','segway','sherco',
+    'stels','suzuki-moto','swm','sym','tgb','triumph','vespa','voge','yamaha-moto',
+    'zero-motorcycle','zontes'
+  ],
+  'moto-agua': [
+    'kawasaki-moto-agua','sea-doo','taiga','yamaha-moto-agua'
+  ],
+  'lancha': [
+    'caterpillar-marine','cummins-marine','daedong-marine','deutz-marine','fpt-marine',
+    'honda-marine','hyundai-seasall','johnson-marine','lombardini-marine','man-marine',
+    'mercury-marine','scania-marine','selva-marine','suzuki-marine','volvo-penta',
+    'vw-marine','yamaha-marine','yanmar'
+  ]
+};
+
 (function () {
   try {
     var custom = localStorage.getItem('brp_brands_custom');

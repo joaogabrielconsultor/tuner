@@ -40,7 +40,7 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#ccc;min-h
 /* PANELS */
 .panels{display:flex;flex:1;overflow:hidden}
 .panel{display:flex;flex-direction:column;border-right:1px solid #1e1e1e;overflow:hidden}
-.panel-brand{width:220px;flex-shrink:0}
+.panel-brand{width:200px;flex-shrink:0}
 .panel-model{width:200px;flex-shrink:0}
 .panel-period{width:200px;flex-shrink:0}
 .panel-engine{flex:1}
@@ -59,6 +59,14 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#ccc;min-h
 .item:hover .item-actions{display:flex}
 .item.sel .item-actions{display:flex}
 .item-badge{font-size:10px;color:#555;margin-left:6px}
+
+/* TYPE TABS */
+.type-tabs{display:flex;flex-direction:column;border-bottom:1px solid #1e1e1e;flex-shrink:0;background:#131313}
+.type-tab{padding:8px 14px;font-size:11px;cursor:pointer;color:#555;border-left:2px solid transparent;display:flex;align-items:center;gap:7px;transition:all .15s;font-weight:600;text-transform:uppercase;letter-spacing:.5px}
+.type-tab:hover{color:#ccc;background:#1a1a1a}
+.type-tab.sel{color:#fff;border-left-color:#cc0000;background:#1a1a1a}
+.type-tab .tab-icon{font-size:15px;line-height:1}
+.type-tab .tab-count{margin-left:auto;font-size:10px;color:#444;font-weight:400;text-transform:none;letter-spacing:0}
 
 /* BRAND SEARCH */
 .brand-search{padding:8px;border-bottom:1px solid #1e1e1e;flex-shrink:0}
@@ -157,7 +165,21 @@ body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#ccc;min-h
   <div class="panels">
     <!-- BRAND PANEL -->
     <div class="panel panel-brand">
-      <div class="panel-head">Marcas <span id="brand-count"></span></div>
+      <div class="panel-head">Tipo de Vehículo</div>
+      <div class="type-tabs">
+        <div class="type-tab sel" data-type="coche" onclick="selectType('coche')">
+          <span class="tab-icon">🚗</span> Coches <span class="tab-count" id="count-coche"></span>
+        </div>
+        <div class="type-tab" data-type="moto" onclick="selectType('moto')">
+          <span class="tab-icon">🏍</span> Motos / Quad <span class="tab-count" id="count-moto"></span>
+        </div>
+        <div class="type-tab" data-type="moto-agua" onclick="selectType('moto-agua')">
+          <span class="tab-icon">🌊</span> Moto de Agua <span class="tab-count" id="count-moto-agua"></span>
+        </div>
+        <div class="type-tab" data-type="lancha" onclick="selectType('lancha')">
+          <span class="tab-icon">⛵</span> Lancha <span class="tab-count" id="count-lancha"></span>
+        </div>
+      </div>
       <div class="brand-search"><input type="text" placeholder="Buscar marca..." id="brand-search" oninput="renderBrands()"></div>
       <div class="panel-body" id="brand-list"></div>
     </div>
@@ -239,6 +261,7 @@ document.getElementById('pwd').addEventListener('keydown', function(e){ if(e.key
 
 // ─── Data ────────────────────────────────────────────
 var D = {}; // working copy
+var currentType = 'coche';
 
 function init() {
   D = JSON.parse(JSON.stringify(BRANDS)); // deep copy from brands.js
@@ -249,8 +272,29 @@ function init() {
       Object.keys(c).forEach(function(k){ D[k] = c[k]; });
     } catch(e){}
   }
+  updateTypeCounts();
   renderBrands();
-  document.getElementById('brand-count').textContent = '(' + Object.keys(D).length + ')';
+}
+
+function updateTypeCounts() {
+  ['coche','moto','moto-agua','lancha'].forEach(function(type) {
+    var slugs = VEHICLE_TYPES[type] || [];
+    document.getElementById('count-' + type).textContent = slugs.length;
+  });
+}
+
+function selectType(type) {
+  currentType = type;
+  sel.brand = null; sel.model = null; sel.period = null;
+  document.querySelectorAll('.type-tab').forEach(function(t){
+    t.classList.toggle('sel', t.dataset.type === type);
+  });
+  document.getElementById('brand-search').value = '';
+  document.getElementById('panel-model').style.display = 'none';
+  document.getElementById('panel-period').style.display = 'none';
+  document.getElementById('panel-engine').style.display = 'none';
+  document.getElementById('panel-welcome').style.display = 'flex';
+  renderBrands();
 }
 
 function save() {
@@ -267,11 +311,15 @@ var sel = { brand: null, model: null, period: null };
 // ─── Brands ──────────────────────────────────────────
 function renderBrands() {
   var q = document.getElementById('brand-search').value.toLowerCase();
+  var typeSlugs = VEHICLE_TYPES[currentType] || [];
   var html = '';
-  Object.keys(D).sort(function(a,b){
-    return D[a].name.localeCompare(D[b].name);
+  typeSlugs.slice().sort(function(a,b){
+    var na = D[a] ? D[a].name : a;
+    var nb = D[b] ? D[b].name : b;
+    return na.localeCompare(nb);
   }).forEach(function(slug) {
     var b = D[slug];
+    if (!b) return;
     if (q && b.name.toLowerCase().indexOf(q) < 0) return;
     var active = sel.brand === slug ? ' sel' : '';
     var count = (b.models && b.models.length) ? '<span class="item-badge">' + b.models.length + '</span>' : '';
@@ -279,6 +327,7 @@ function renderBrands() {
               '<span class="item-name">' + esc(b.name) + count + '</span>' +
             '</div>';
   });
+  if (!html) html = '<div class="empty-state" style="padding:20px;font-size:11px;color:#444">Sin marcas en esta categoría.</div>';
   document.getElementById('brand-list').innerHTML = html;
 }
 
