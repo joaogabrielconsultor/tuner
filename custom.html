@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Editor de Catálogo — BR-Performance</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#ccc;min-height:100vh;font-size:13px}
+
+/* LOGIN */
+#login-screen{display:flex;align-items:center;justify-content:center;min-height:100vh}
+.login-box{background:#1a1a1a;border:1px solid #2a2a2a;border-top:3px solid #cc0000;padding:40px;width:340px;text-align:center}
+.login-box .logo{font-size:1.3rem;font-weight:700;color:#fff;margin-bottom:4px;letter-spacing:1px}
+.login-box .logo span{color:#cc0000}
+.login-box .sub{font-size:11px;color:#555;text-transform:uppercase;letter-spacing:2px;margin-bottom:28px}
+.login-box label{display:block;font-size:11px;color:#666;text-align:left;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px}
+.login-box input{width:100%;padding:10px 12px;background:#111;border:1px solid #333;color:#fff;font-size:13px;outline:none;margin-bottom:14px}
+.login-box input:focus{border-color:#cc0000}
+.login-box button{width:100%;padding:10px;background:#cc0000;color:#fff;border:none;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;cursor:pointer}
+.login-box button:hover{background:#aa0000}
+.login-error{color:#ff6666;font-size:11px;margin-top:8px;display:none}
+
+/* LAYOUT */
+#app{display:none;height:100vh;flex-direction:column}
+.topbar{background:#1a1a1a;border-bottom:2px solid #cc0000;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:52px;position:sticky;top:0;z-index:100;flex-shrink:0}
+.topbar .logo{font-size:.95rem;font-weight:700;color:#fff;letter-spacing:1px}
+.topbar .logo span{color:#cc0000}
+.topbar .logo small{color:#444;font-weight:400;font-size:.75rem;margin-left:6px}
+.topbar-actions{display:flex;gap:8px;align-items:center}
+.btn{padding:6px 14px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;cursor:pointer;border-radius:2px;border:none;transition:all .2s}
+.btn-red{background:#cc0000;color:#fff}.btn-red:hover{background:#aa0000}
+.btn-dark{background:#2a2a2a;color:#aaa;border:1px solid #3a3a3a}.btn-dark:hover{background:#333;color:#fff}
+.btn-green{background:#1a5c1a;color:#88dd88;border:1px solid #2a7a2a}.btn-green:hover{background:#1e6e1e;color:#aaffaa}
+.btn-outline{background:transparent;color:#666;border:1px solid #333}.btn-outline:hover{color:#ccc;border-color:#555}
+.btn-sm{padding:4px 10px;font-size:10px}
+.btn-icon{width:26px;height:26px;padding:0;display:inline-flex;align-items:center;justify-content:center;font-size:14px;line-height:1}
+.saved-msg{color:#44cc44;font-size:11px;font-weight:600;display:none}
+
+/* PANELS */
+.panels{display:flex;flex:1;overflow:hidden}
+.panel{display:flex;flex-direction:column;border-right:1px solid #1e1e1e;overflow:hidden}
+.panel-brand{width:220px;flex-shrink:0}
+.panel-model{width:200px;flex-shrink:0}
+.panel-period{width:200px;flex-shrink:0}
+.panel-engine{flex:1}
+.panel-head{padding:10px 14px;background:#151515;border-bottom:1px solid #1e1e1e;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#555;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.panel-body{flex:1;overflow-y:auto;padding:8px 0}
+.panel-body::-webkit-scrollbar{width:4px}
+.panel-body::-webkit-scrollbar-track{background:#111}
+.panel-body::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+
+/* ITEMS */
+.item{padding:8px 14px;cursor:pointer;display:flex;align-items:center;justify-content:space-between;border-left:2px solid transparent;transition:all .15s}
+.item:hover{background:#1a1a1a;color:#fff}
+.item.sel{background:#1e1e1e;border-left-color:#cc0000;color:#fff}
+.item .item-name{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item .item-actions{display:none;gap:4px;flex-shrink:0}
+.item:hover .item-actions{display:flex}
+.item.sel .item-actions{display:flex}
+.item-badge{font-size:10px;color:#555;margin-left:6px}
+
+/* BRAND SEARCH */
+.brand-search{padding:8px;border-bottom:1px solid #1e1e1e;flex-shrink:0}
+.brand-search input{width:100%;padding:6px 10px;background:#111;border:1px solid #222;color:#ccc;font-size:12px;outline:none}
+.brand-search input:focus{border-color:#cc0000}
+
+/* EDITOR PANEL */
+.editor-panel{flex:1;overflow:hidden;display:flex;flex-direction:column}
+.editor-head{padding:12px 20px;background:#151515;border-bottom:1px solid #1e1e1e;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#555;flex-shrink:0}
+.editor-body{flex:1;overflow-y:auto;padding:20px}
+.editor-body::-webkit-scrollbar{width:4px}
+.editor-body::-webkit-scrollbar-track{background:#111}
+.editor-body::-webkit-scrollbar-thumb{background:#333;border-radius:2px}
+
+.section-title{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#555;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #1e1e1e;display:flex;align-items:center;justify-content:space-between}
+.form-row{display:flex;gap:12px;margin-bottom:12px;align-items:flex-end}
+.form-row.cols-3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.form-row.cols-4{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:10px}
+.fg{display:flex;flex-direction:column;gap:4px;flex:1}
+.fg label{font-size:10px;color:#555;text-transform:uppercase;letter-spacing:.5px;font-weight:700}
+.fg input,.fg select{padding:7px 10px;background:#111;border:1px solid #222;color:#ddd;font-size:12px;font-family:inherit;outline:none;width:100%}
+.fg input:focus,.fg select:focus{border-color:#cc0000;background:#151515}
+.fg .hint{font-size:10px;color:#444}
+.card{background:#161616;border:1px solid #1e1e1e;margin-bottom:12px;overflow:hidden}
+.card-head{padding:9px 14px;background:#1a1a1a;border-bottom:1px solid #1e1e1e;display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.card-head .name{color:#ddd;font-weight:600}
+.card-head .type-badge{font-size:10px;color:#888;background:#222;padding:2px 8px;border-radius:10px;margin-left:8px}
+.card-body{padding:10px 14px}
+.engine-row{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid #1a1a1a}
+.engine-row:last-child{border-bottom:0}
+.engine-row .ename{color:#ccc;flex:1}
+.engine-row .ecv{color:#888;font-size:11px;width:60px;text-align:right}
+
+/* STAGE EDITOR */
+.stage-grid{display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:10px}
+.stage-card{background:#1a1a1a;border:1px solid #222;padding:10px 12px}
+.stage-card .sh{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
+.stage-card .sh .sname{font-size:11px;font-weight:700;color:#fff}
+.sep{height:1px;background:#1e1e1e;margin:14px 0}
+
+/* ADD FORM */
+.add-form{background:#161616;border:1px dashed #2a2a2a;padding:14px;margin-top:8px}
+.add-form-title{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:#555;margin-bottom:10px;font-weight:700}
+
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:40px 20px;color:#444;font-size:12px}
+.empty-state .big{font-size:28px;margin-bottom:8px}
+
+/* FUEL SECTION */
+.fuel-section{margin-bottom:16px}
+.fuel-head{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:#888;padding:4px 0 8px;border-bottom:1px solid #1e1e1e;margin-bottom:6px;display:flex;align-items:center;justify-content:space-between}
+
+/* MODAL */
+#modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;align-items:center;justify-content:center}
+#modal-overlay.open{display:flex}
+.modal-box{background:#1a1a1a;border:1px solid #333;border-top:3px solid #cc0000;padding:24px;width:680px;max-width:95vw;max-height:90vh;display:flex;flex-direction:column;gap:14px;overflow-y:auto}
+.modal-box h3{font-size:13px;font-weight:700;color:#fff}
+.modal-box .modal-actions{display:flex;gap:8px;margin-top:4px}
+
+/* EXPORT MODAL */
+#export-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:300;align-items:center;justify-content:center}
+#export-overlay.open{display:flex}
+.export-box{background:#1a1a1a;border:1px solid #333;border-top:3px solid #cc0000;padding:24px;width:640px;max-width:95vw;max-height:85vh;display:flex;flex-direction:column;gap:12px}
+.export-box h3{font-size:13px;font-weight:700;color:#fff}
+.export-box p{font-size:11px;color:#777;line-height:1.5}
+.export-box textarea{flex:1;min-height:300px;background:#0a0a0a;border:1px solid #2a2a2a;color:#88cc88;font-family:'Courier New',monospace;font-size:11px;padding:12px;resize:none;outline:none}
+.export-actions{display:flex;gap:8px}
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="logo">BR-<span>PERFORMANCE</span></div>
+    <div class="sub">Editor de Catálogo</div>
+    <label>Contraseña</label>
+    <input type="password" id="pwd" placeholder="••••••••" onkeydown="if(event.key==='Enter')login()">
+    <button onclick="login()">Entrar</button>
+    <div class="login-error" id="login-err">Contraseña incorrecta.</div>
+  </div>
+</div>
+
+<!-- APP -->
+<div id="app">
+  <div class="topbar">
+    <div class="logo">BR-<span>PERFORMANCE</span><small>/ Catálogo</small></div>
+    <div class="topbar-actions">
+      <span class="saved-msg" id="saved-msg">✓ Guardado</span>
+      <a href="admin.html" class="btn btn-outline">← Admin</a>
+      <button class="btn btn-dark" onclick="openExport()">Exportar brands.js</button>
+      <button class="btn btn-outline" onclick="logout()">Sair</button>
+    </div>
+  </div>
+
+  <div class="panels">
+    <!-- BRAND PANEL -->
+    <div class="panel panel-brand">
+      <div class="panel-head">Marcas <span id="brand-count"></span></div>
+      <div class="brand-search"><input type="text" placeholder="Buscar marca..." id="brand-search" oninput="renderBrands()"></div>
+      <div class="panel-body" id="brand-list"></div>
+    </div>
+
+    <!-- MODEL PANEL -->
+    <div class="panel panel-model" id="panel-model" style="display:none">
+      <div class="panel-head">Modelos <button class="btn btn-red btn-sm btn-icon" title="Añadir modelo" onclick="openAddModel()">+</button></div>
+      <div class="panel-body" id="model-list"></div>
+    </div>
+
+    <!-- PERIOD PANEL -->
+    <div class="panel panel-period" id="panel-period" style="display:none">
+      <div class="panel-head">Años <button class="btn btn-red btn-sm btn-icon" title="Añadir período" onclick="openAddPeriod()">+</button></div>
+      <div class="panel-body" id="period-list"></div>
+    </div>
+
+    <!-- ENGINE EDITOR -->
+    <div class="editor-panel" id="panel-engine" style="display:none">
+      <div class="editor-head" id="engine-head">Motores</div>
+      <div class="editor-body" id="engine-body"></div>
+    </div>
+
+    <!-- WELCOME -->
+    <div class="editor-panel" id="panel-welcome">
+      <div class="empty-state" style="margin-top:60px">
+        <div class="big">⚙️</div>
+        <div style="color:#555;margin-bottom:6px">Selecciona una marca para empezar</div>
+        <div style="color:#333;font-size:11px">Los cambios se guardan automáticamente en el navegador.<br>Usa "Exportar brands.js" para actualizar el archivo del sitio.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- STAGE MODAL -->
+<div id="modal-overlay">
+  <div class="modal-box">
+    <h3 id="modal-title">Editar Stages</h3>
+    <div id="modal-body"></div>
+    <div class="modal-actions">
+      <button class="btn btn-red" onclick="addStage()">+ Añadir Stage</button>
+      <button class="btn btn-dark" onclick="saveStages()">Guardar stages</button>
+      <button class="btn btn-outline" onclick="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- EXPORT MODAL -->
+<div id="export-overlay">
+  <div class="export-box">
+    <h3>Exportar brands.js</h3>
+    <p>Copia el contenido abajo o descarga el archivo. Reemplaza el archivo <code>js/brands.js</code> en el proyecto para aplicar los cambios en todos los dispositivos.</p>
+    <textarea id="export-content" readonly></textarea>
+    <div class="export-actions">
+      <button class="btn btn-dark" onclick="copyExport()">Copiar</button>
+      <button class="btn btn-red" onclick="downloadExport()">Descargar brands.js</button>
+      <button class="btn btn-outline" style="margin-left:auto" onclick="closeExport()">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/config.js"></script>
+<script src="js/brands.js"></script>
+<script>
+// ─── Auth ───────────────────────────────────────────
+var PASSWORD = 'brp2026';
+function login() {
+  var val = document.getElementById('pwd').value;
+  try { var cfg = JSON.parse(localStorage.getItem('brp_config') || '{}'); if (cfg.senha) PASSWORD = cfg.senha; } catch(e){}
+  if (val === PASSWORD) {
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('app').style.display = 'flex';
+    init();
+  } else {
+    document.getElementById('login-err').style.display = 'block';
+  }
+}
+function logout() { location.reload(); }
+document.getElementById('pwd').addEventListener('keydown', function(e){ if(e.key==='Enter') login(); });
+
+// ─── Data ────────────────────────────────────────────
+var D = {}; // working copy
+
+function init() {
+  D = JSON.parse(JSON.stringify(BRANDS)); // deep copy from brands.js
+  var custom = localStorage.getItem('brp_brands_custom');
+  if (custom) {
+    try {
+      var c = JSON.parse(custom);
+      Object.keys(c).forEach(function(k){ D[k] = c[k]; });
+    } catch(e){}
+  }
+  renderBrands();
+  document.getElementById('brand-count').textContent = '(' + Object.keys(D).length + ')';
+}
+
+function save() {
+  localStorage.setItem('brp_brands_custom', JSON.stringify(D));
+  var msg = document.getElementById('saved-msg');
+  msg.style.display = 'inline';
+  clearTimeout(save._t);
+  save._t = setTimeout(function(){ msg.style.display = 'none'; }, 2000);
+}
+
+// ─── State ───────────────────────────────────────────
+var sel = { brand: null, model: null, period: null };
+
+// ─── Brands ──────────────────────────────────────────
+function renderBrands() {
+  var q = document.getElementById('brand-search').value.toLowerCase();
+  var html = '';
+  Object.keys(D).sort(function(a,b){
+    return D[a].name.localeCompare(D[b].name);
+  }).forEach(function(slug) {
+    var b = D[slug];
+    if (q && b.name.toLowerCase().indexOf(q) < 0) return;
+    var active = sel.brand === slug ? ' sel' : '';
+    var count = (b.models && b.models.length) ? '<span class="item-badge">' + b.models.length + '</span>' : '';
+    html += '<div class="item' + active + '" onclick="selectBrand(\'' + slug + '\')">' +
+              '<span class="item-name">' + esc(b.name) + count + '</span>' +
+            '</div>';
+  });
+  document.getElementById('brand-list').innerHTML = html;
+}
+
+function selectBrand(slug) {
+  sel.brand = slug;
+  sel.model = null;
+  sel.period = null;
+  renderBrands();
+  renderModels();
+  document.getElementById('panel-model').style.display = 'flex';
+  document.getElementById('panel-period').style.display = 'none';
+  document.getElementById('panel-engine').style.display = 'none';
+  document.getElementById('panel-welcome').style.display = 'none';
+}
+
+// ─── Models ──────────────────────────────────────────
+function renderModels() {
+  if (!sel.brand) return;
+  var models = D[sel.brand].models || [];
+  var html = '';
+  models.forEach(function(m, i) {
+    var name = typeof m === 'string' ? m : m.name;
+    var pCount = (m.periods && m.periods.length) ? m.periods.length : 0;
+    var active = sel.model === i ? ' sel' : '';
+    html += '<div class="item' + active + '" onclick="selectModel(' + i + ')">' +
+              '<span class="item-name">' + esc(name) + (pCount ? '<span class="item-badge">' + pCount + '</span>' : '') + '</span>' +
+              '<span class="item-actions">' +
+                '<button class="btn btn-dark btn-sm btn-icon" title="Renombrar" onclick="event.stopPropagation();renameModel(' + i + ')">✏</button>' +
+                '<button class="btn btn-outline btn-sm btn-icon" title="Eliminar" onclick="event.stopPropagation();deleteModel(' + i + ')" style="color:#cc6666">✕</button>' +
+              '</span>' +
+            '</div>';
+  });
+  if (!models.length) html = '<div class="empty-state" style="padding:20px;font-size:11px">Sin modelos. Añade uno con +</div>';
+  document.getElementById('model-list').innerHTML = html;
+}
+
+function selectModel(i) {
+  sel.model = i;
+  sel.period = null;
+  renderModels();
+  renderPeriods();
+  document.getElementById('panel-period').style.display = 'flex';
+  document.getElementById('panel-engine').style.display = 'none';
+  document.getElementById('panel-welcome').style.display = 'none';
+}
+
+function openAddModel() {
+  if (!sel.brand) return;
+  var name = prompt('Nombre del modelo:', '');
+  if (!name || !name.trim()) return;
+  if (!D[sel.brand].models) D[sel.brand].models = [];
+  D[sel.brand].models.push({ name: name.trim(), periods: [] });
+  save(); renderModels();
+}
+
+function renameModel(i) {
+  var m = D[sel.brand].models[i];
+  var cur = typeof m === 'string' ? m : m.name;
+  var name = prompt('Nuevo nombre:', cur);
+  if (!name || !name.trim()) return;
+  if (typeof m === 'string') D[sel.brand].models[i] = { name: name.trim(), periods: [] };
+  else D[sel.brand].models[i].name = name.trim();
+  save(); renderModels();
+}
+
+function deleteModel(i) {
+  var m = D[sel.brand].models[i];
+  var name = typeof m === 'string' ? m : m.name;
+  if (!confirm('¿Eliminar modelo "' + name + '"?')) return;
+  D[sel.brand].models.splice(i, 1);
+  if (sel.model === i) { sel.model = null; sel.period = null; document.getElementById('panel-period').style.display='none'; document.getElementById('panel-engine').style.display='none'; }
+  save(); renderModels();
+}
+
+// ─── Periods ─────────────────────────────────────────
+function renderPeriods() {
+  if (sel.model === null) return;
+  var m = D[sel.brand].models[sel.model];
+  if (typeof m === 'string') m = { name: m, periods: [] };
+  var periods = m.periods || [];
+  var html = '';
+  periods.forEach(function(p, i) {
+    var active = sel.period === i ? ' sel' : '';
+    var eCount = 0;
+    (p.fuels || []).forEach(function(f){ eCount += (f.engines || []).length; });
+    html += '<div class="item' + active + '" onclick="selectPeriod(' + i + ')">' +
+              '<span class="item-name">' + esc(p.label) + (eCount ? '<span class="item-badge">' + eCount + '</span>' : '') + '</span>' +
+              '<span class="item-actions">' +
+                '<button class="btn btn-dark btn-sm btn-icon" title="Editar" onclick="event.stopPropagation();editPeriod(' + i + ')">✏</button>' +
+                '<button class="btn btn-outline btn-sm btn-icon" title="Eliminar" onclick="event.stopPropagation();deletePeriod(' + i + ')" style="color:#cc6666">✕</button>' +
+              '</span>' +
+            '</div>';
+  });
+  if (!periods.length) html = '<div class="empty-state" style="padding:20px;font-size:11px">Sin períodos. Añade uno con +</div>';
+  document.getElementById('period-list').innerHTML = html;
+}
+
+function selectPeriod(i) {
+  sel.period = i;
+  renderPeriods();
+  renderEngines();
+  document.getElementById('panel-engine').style.display = 'flex';
+  document.getElementById('panel-welcome').style.display = 'none';
+}
+
+function openAddPeriod() {
+  if (sel.model === null) return;
+  var id = prompt('ID del período (ej: 2001-2005):', '');
+  if (!id || !id.trim()) return;
+  var label = prompt('Etiqueta (ej: 2001 > 2005):', id.trim().replace('-', ' > '));
+  if (!label) return;
+  var m = D[sel.brand].models[sel.model];
+  if (!m.periods) m.periods = [];
+  m.periods.push({ id: id.trim(), label: label.trim(), fuels: [] });
+  save(); renderPeriods();
+}
+
+function editPeriod(i) {
+  var p = D[sel.brand].models[sel.model].periods[i];
+  var label = prompt('Etiqueta:', p.label);
+  if (label && label.trim()) { p.label = label.trim(); save(); renderPeriods(); if (sel.period === i) renderEngines(); }
+}
+
+function deletePeriod(i) {
+  if (!confirm('¿Eliminar período "' + D[sel.brand].models[sel.model].periods[i].label + '"?')) return;
+  D[sel.brand].models[sel.model].periods.splice(i, 1);
+  if (sel.period === i) { sel.period = null; document.getElementById('panel-engine').style.display='none'; }
+  save(); renderPeriods();
+}
+
+// ─── Engines ─────────────────────────────────────────
+function renderEngines() {
+  if (sel.period === null) return;
+  var p = D[sel.brand].models[sel.model].periods[sel.period];
+  var modelName = D[sel.brand].models[sel.model].name || D[sel.brand].models[sel.model];
+  document.getElementById('engine-head').textContent = 'Motores — ' + modelName + ' / ' + p.label;
+
+  var fuels = p.fuels || [];
+  var html = '';
+
+  fuels.forEach(function(fuel, fi) {
+    html += '<div class="fuel-section">' +
+              '<div class="fuel-head">' +
+                '<span>' + esc(fuel.type) + ' <span style="color:#555;font-weight:400">(' + (fuel.engines||[]).length + ')</span></span>' +
+                '<span style="display:flex;gap:6px">' +
+                  '<button class="btn btn-red btn-sm" onclick="addEngine(' + fi + ')">+ Motor</button>' +
+                  '<button class="btn btn-outline btn-sm" onclick="deleteFuel(' + fi + ')" style="color:#cc6666">✕ Tipo</button>' +
+                '</span>' +
+              '</div>';
+
+    (fuel.engines || []).forEach(function(eng, ei) {
+      var stCount = (eng.stages || []).length;
+      html += '<div class="engine-row">' +
+                '<span class="ename">' + esc(eng.name) + '</span>' +
+                '<span class="ecv">' + eng.cv + ' cv</span>' +
+                '<span style="display:flex;gap:4px;margin-left:8px">' +
+                  '<button class="btn btn-dark btn-sm" onclick="openStages(' + fi + ',' + ei + ')" title="Editar stages">' +
+                    (stCount ? '⚡ ' + stCount + ' stage' + (stCount>1?'s':'') : '+ Stages') +
+                  '</button>' +
+                  '<button class="btn btn-dark btn-sm btn-icon" onclick="editEngine(' + fi + ',' + ei + ')" title="Editar motor">✏</button>' +
+                  '<button class="btn btn-outline btn-sm btn-icon" onclick="deleteEngine(' + fi + ',' + ei + ')" style="color:#cc6666" title="Eliminar">✕</button>' +
+                '</span>' +
+              '</div>';
+    });
+
+    html += '</div>';
+  });
+
+  html += '<div class="sep"></div>' +
+          '<div style="display:flex;gap:8px;flex-wrap:wrap">' +
+            '<button class="btn btn-dark btn-sm" onclick="addFuel(\'Gasoline\')">+ Gasolina</button>' +
+            '<button class="btn btn-dark btn-sm" onclick="addFuel(\'Diesel\')">+ Diésel</button>' +
+            '<button class="btn btn-dark btn-sm" onclick="addFuelCustom()">+ Otro tipo</button>' +
+          '</div>';
+
+  document.getElementById('engine-body').innerHTML = html;
+  document.getElementById('panel-engine').style.display = 'flex';
+}
+
+function addFuel(type) {
+  var p = D[sel.brand].models[sel.model].periods[sel.period];
+  if (!p.fuels) p.fuels = [];
+  var exists = p.fuels.find(function(f){ return f.type === type; });
+  if (exists) { alert('El tipo "' + type + '" ya existe.'); return; }
+  p.fuels.push({ type: type, engines: [] });
+  save(); renderEngines();
+}
+
+function addFuelCustom() {
+  var type = prompt('Tipo de combustible:', '');
+  if (!type || !type.trim()) return;
+  addFuel(type.trim());
+}
+
+function deleteFuel(fi) {
+  var p = D[sel.brand].models[sel.model].periods[sel.period];
+  if (!confirm('¿Eliminar tipo "' + p.fuels[fi].type + '" y todos sus motores?')) return;
+  p.fuels.splice(fi, 1);
+  save(); renderEngines();
+}
+
+function addEngine(fi) {
+  var name = prompt('Nombre del motor (ej: 2.0 TDI):', '');
+  if (!name || !name.trim()) return;
+  var cv = parseInt(prompt('Potencia (cv):', ''), 10);
+  if (!cv) return;
+  var p = D[sel.brand].models[sel.model].periods[sel.period];
+  p.fuels[fi].engines.push({ name: name.trim(), cv: cv, stages: [] });
+  save(); renderEngines();
+}
+
+function editEngine(fi, ei) {
+  var eng = D[sel.brand].models[sel.model].periods[sel.period].fuels[fi].engines[ei];
+  var name = prompt('Nombre:', eng.name);
+  if (name && name.trim()) eng.name = name.trim();
+  var cv = parseInt(prompt('Potencia (cv):', eng.cv), 10);
+  if (cv) eng.cv = cv;
+  save(); renderEngines();
+}
+
+function deleteEngine(fi, ei) {
+  var eng = D[sel.brand].models[sel.model].periods[sel.period].fuels[fi].engines[ei];
+  if (!confirm('¿Eliminar motor "' + eng.name + ' ' + eng.cv + 'cv"?')) return;
+  D[sel.brand].models[sel.model].periods[sel.period].fuels[fi].engines.splice(ei, 1);
+  save(); renderEngines();
+}
+
+// ─── Stages Modal ────────────────────────────────────
+var modalCtx = { fi: 0, ei: 0, stages: [] };
+
+function openStages(fi, ei) {
+  var eng = D[sel.brand].models[sel.model].periods[sel.period].fuels[fi].engines[ei];
+  modalCtx = { fi: fi, ei: ei, stages: JSON.parse(JSON.stringify(eng.stages || [])) };
+  document.getElementById('modal-title').textContent = 'Stages — ' + eng.name + ' ' + eng.cv + 'cv';
+  renderStageModal();
+  document.getElementById('modal-overlay').classList.add('open');
+}
+
+function renderStageModal() {
+  var stages = modalCtx.stages;
+  var stageIds = [
+    { id: 'eco', label: 'BRP ECO', cssClass: 'brp-eco' },
+    { id: 'stage1', label: 'Stage 1', cssClass: 'stage1' },
+    { id: 'stage2', label: 'Stage 2', cssClass: 'stage2' },
+    { id: 'stage3', label: 'Stage 3', cssClass: 'stage3' }
+  ];
+
+  var html = '';
+  stages.forEach(function(s, i) {
+    html += '<div class="stage-card" id="stage-card-' + i + '" style="margin-bottom:10px">' +
+              '<div class="sh">' +
+                '<span class="sname">' + esc(s.label || s.id) + '</span>' +
+                '<button class="btn btn-outline btn-sm" onclick="removeStage(' + i + ')" style="color:#cc6666">✕ Eliminar</button>' +
+              '</div>' +
+              '<div class="form-row cols-4">' +
+                '<div class="fg"><label>ID</label><select onchange="updateStageField(' + i + ',\'id\',this.value);updateStageField(' + i + ',\'cssClass\',this.value)">' +
+                  stageIds.map(function(x){ return '<option value="' + x.id + '"' + (s.id===x.id?' selected':'') + ' data-label="' + x.label + '">' + x.label + '</option>'; }).join('') +
+                '</select></div>' +
+                '<div class="fg"><label>Precio (€)</label><input type="number" value="' + (s.price||'') + '" onchange="updateStageField(' + i + ',\'price\',+this.value)"></div>' +
+              '</div>' +
+              '<div style="font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px">Potencia</div>' +
+              '<div class="form-row cols-4">' +
+                mkStageInput(i,'power_orig','Original (hp)',s.power_orig) +
+                mkStageInput(i,'power_mod','Modificado (cv)',s.power_mod) +
+                mkStageInput(i,'power_diff','Diferencia',s.power_diff,'text') +
+                '<div class="fg"><label>Unidad</label><input type="text" value="' + (s.power_unit||'hp') + '" onchange="updateStageField(' + i + ',\'power_unit\',this.value)"></div>' +
+              '</div>' +
+              '<div style="font-size:10px;color:#555;text-transform:uppercase;letter-spacing:1px;margin:8px 0 4px">Par motor</div>' +
+              '<div class="form-row cols-4">' +
+                mkStageInput(i,'torque_orig','Original (Nm)',s.torque_orig) +
+                mkStageInput(i,'torque_mod','Modificado (Nm)',s.torque_mod) +
+                mkStageInput(i,'torque_diff','Diferencia',s.torque_diff,'text') +
+                '<div class="fg"><label>Unidad</label><input type="text" value="' + (s.torque_unit||'Nm') + '" onchange="updateStageField(' + i + ',\'torque_unit\',this.value)"></div>' +
+              '</div>' +
+            '</div>';
+  });
+
+  if (!stages.length) html = '<div class="empty-state" style="padding:16px">Sin stages. Añade uno abajo.</div>';
+  document.getElementById('modal-body').innerHTML = html;
+}
+
+function mkStageInput(i, field, lbl, val, type) {
+  type = type || 'number';
+  return '<div class="fg"><label>' + lbl + '</label><input type="' + type + '" value="' + (val||'') + '" onchange="updateStageField(' + i + ',\'' + field + '\',this.value)"></div>';
+}
+
+function updateStageField(i, field, val) {
+  modalCtx.stages[i][field] = (field === 'price' || field === 'power_orig' || field === 'power_mod' || field === 'torque_orig' || field === 'torque_mod') ? +val : val;
+  if (field === 'id') {
+    var labels = {eco:'BRP ECO', stage1:'Stage 1', stage2:'Stage 2', stage3:'Stage 3'};
+    modalCtx.stages[i].label = labels[val] || val;
+    modalCtx.stages[i].cssClass = val;
+    renderStageModal();
+  }
+}
+
+function addStage() {
+  var existingIds = modalCtx.stages.map(function(s){ return s.id; });
+  var defaultId = ['stage1','stage2','stage3','eco'].find(function(id){ return existingIds.indexOf(id) < 0; }) || 'stage1';
+  var labels = {eco:'BRP ECO', stage1:'Stage 1', stage2:'Stage 2', stage3:'Stage 3'};
+  modalCtx.stages.push({ id: defaultId, label: labels[defaultId]||defaultId, cssClass: defaultId, power_orig:0, power_mod:0, power_diff:'+0', power_unit:'hp', torque_orig:0, torque_mod:0, torque_diff:'+0', torque_unit:'Nm', price:0 });
+  renderStageModal();
+}
+
+function removeStage(i) {
+  if (!confirm('¿Eliminar este stage?')) return;
+  modalCtx.stages.splice(i, 1);
+  renderStageModal();
+}
+
+function saveStages() {
+  var eng = D[sel.brand].models[sel.model].periods[sel.period].fuels[modalCtx.fi].engines[modalCtx.ei];
+  eng.stages = JSON.parse(JSON.stringify(modalCtx.stages));
+  save(); renderEngines(); closeModal();
+}
+
+function closeModal() {
+  document.getElementById('modal-overlay').classList.remove('open');
+}
+
+// ─── Export ──────────────────────────────────────────
+function openExport() {
+  var content = generateBrandsJs();
+  document.getElementById('export-content').value = content;
+  document.getElementById('export-overlay').classList.add('open');
+}
+
+function closeExport() {
+  document.getElementById('export-overlay').classList.remove('open');
+}
+
+function copyExport() {
+  var ta = document.getElementById('export-content');
+  ta.select();
+  document.execCommand('copy');
+  alert('¡Copiado al portapapeles!');
+}
+
+function downloadExport() {
+  var content = document.getElementById('export-content').value;
+  var blob = new Blob([content], { type: 'text/javascript' });
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'brands.js';
+  a.click();
+}
+
+function generateBrandsJs() {
+  var lines = ['const BRANDS = {'];
+  var keys = Object.keys(D);
+  keys.forEach(function(slug, ki) {
+    var b = D[slug];
+    lines.push('  \'' + slug + '\': {');
+    lines.push('    name: ' + JSON.stringify(b.name) + ',');
+    lines.push('    logo: ' + JSON.stringify(b.logo || '') + ',');
+    if (!b.models || b.models.length === 0) {
+      lines.push('    models: []');
+    } else {
+      lines.push('    models: [');
+      b.models.forEach(function(m, mi) {
+        var mname = typeof m === 'string' ? m : m.name;
+        var periods = (typeof m === 'string' || !m.periods) ? [] : m.periods;
+        if (!periods.length) {
+          lines.push('      { name: ' + JSON.stringify(mname) + ', periods: [] }' + (mi<b.models.length-1?',':''));
+        } else {
+          lines.push('      { name: ' + JSON.stringify(mname) + ', periods: [');
+          periods.forEach(function(p, pi) {
+            var fuels = p.fuels || [];
+            if (!fuels.length) {
+              lines.push('        { id: ' + JSON.stringify(p.id) + ', label: ' + JSON.stringify(p.label) + ', fuels: [] }' + (pi<periods.length-1?',':''));
+            } else {
+              lines.push('        { id: ' + JSON.stringify(p.id) + ', label: ' + JSON.stringify(p.label) + ', fuels: [');
+              fuels.forEach(function(fuel, fui) {
+                var engs = fuel.engines || [];
+                if (!engs.length) {
+                  lines.push('          { type: ' + JSON.stringify(fuel.type) + ', engines: [] }' + (fui<fuels.length-1?',':''));
+                } else {
+                  lines.push('          { type: ' + JSON.stringify(fuel.type) + ', engines: [');
+                  engs.forEach(function(eng, eni) {
+                    var stages = eng.stages || [];
+                    if (!stages.length) {
+                      lines.push('            { name: ' + JSON.stringify(eng.name) + ', cv: ' + eng.cv + ', stages: [] }' + (eni<engs.length-1?',':''));
+                    } else {
+                      lines.push('            { name: ' + JSON.stringify(eng.name) + ', cv: ' + eng.cv + ', stages: [');
+                      stages.forEach(function(s, si) {
+                        var sc = JSON.stringify(s);
+                        lines.push('              ' + sc + (si<stages.length-1?',':''));
+                      });
+                      lines.push('            ]}' + (eni<engs.length-1?',':''));
+                    }
+                  });
+                  lines.push('          ]}' + (fui<fuels.length-1?',':''));
+                }
+              });
+              lines.push('        ]}' + (pi<periods.length-1?',':''));
+            }
+          });
+          lines.push('      ]}' + (mi<b.models.length-1?',':''));
+        }
+      });
+      lines.push('    ]');
+    }
+    lines.push('  }' + (ki<keys.length-1?',':''));
+  });
+  lines.push('};');
+  lines.push('');
+  lines.push('function getBrand(slug) { return BRANDS[slug] || null; }');
+  lines.push('');
+  lines.push('// Merge com localStorage (custom data do editor)');
+  lines.push('(function() {');
+  lines.push('  try {');
+  lines.push('    var custom = localStorage.getItem(\'brp_brands_custom\');');
+  lines.push('    if (custom) {');
+  lines.push('      var c = JSON.parse(custom);');
+  lines.push('      Object.keys(c).forEach(function(k){ BRANDS[k] = c[k]; });');
+  lines.push('    }');
+  lines.push('  } catch(e){}');
+  lines.push('})();');
+  return lines.join('\n');
+}
+
+// ─── Utils ───────────────────────────────────────────
+function esc(str) {
+  return String(str||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+</script>
+</body>
+</html>

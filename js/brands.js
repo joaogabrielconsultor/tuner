@@ -292,3 +292,13 @@ const BRANDS = {
 };
 
 function getBrand(slug) { return BRANDS[slug] || null; }
+
+(function () {
+  try {
+    var custom = localStorage.getItem('brp_brands_custom');
+    if (custom) {
+      var c = JSON.parse(custom);
+      Object.keys(c).forEach(function (k) { BRANDS[k] = c[k]; });
+    }
+  } catch (e) {}
+})();
