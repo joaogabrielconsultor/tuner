@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Motor - BR-Performance Barcelona - Reprogramación de centralitas</title>
+  <meta name="description" content="Potenciación de motores y reprogramación profesional">
+  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/fiche.css" media="screen">
+  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+  <style>
+    .kiosk-bg { background-color: #0d1117; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<header class="row hide-for-small">
+  <div class="twelve columns offset-by-twelve search-extended">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener" data-cfg="facebook"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener" data-cfg="youtube"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener" data-cfg="instagram"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
+    </ul>
+    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
+      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
+      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
+    </form>
+  </div>
+</header>
+
+<!-- NAVIGATION -->
+<section class="row nav">
+  <div class="twentyfour navContainer">
+    <a href="#" class="nav-toggle button-full-rounded"></a>
+    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="BR-Performance Barcelona"></a></div>
+    <nav class="primary">
+      <div class="langselect">
+        <a href="#" class="flag" title="España / Español">
+          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
+        </a>
+      </div>
+      <ul class="brp-barcelona">
+        <li class="first"><a href="index.html">Home</a></li>
+        <li class="sub sel"><a href="vehiculos.html">Busca tu reprogramación</a>
+          <ul class="subnav left">
+            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="motos.html">Bikes - Quad</a></li>
+            <li><a href="moto-agua.html">Moto de Agua</a></li>
+            <li><a href="lancha.html">Lancha motora</a></li>
+            <li class="last"><a href="vehiculos.html">Desarrollo</a></li>
+          </ul>
+        </li>
+        <li class="sub"><a href="noticias.html">Noticias</a>
+          <ul class="subnav left">
+            <li class="first"><a href="noticias.html">Noticias</a></li>
+            <li class="last"><a href="noticias.html">Promociones</a></li>
+          </ul>
+        </li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="contacto.html">Solicita presupuesto</a></li>
+        <li class="last sub"><a href="contacto.html">Contacto</a>
+          <ul class="subnav right">
+            <li class="first"><a href="contacto.html">Contacto</a></li>
+            <li><a href="contacto.html">Banco de Rodillos</a></li>
+            <li><a href="contacto.html">Empresa</a></li>
+            <li><a href="contacto.html">Nuestro equipo</a></li>
+            <li><a href="contacto.html">Objetivos</a></li>
+            <li class="last"><a href="contacto.html">Colaboradores</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</section>
+
+<div class="row" id="container">
+  <div class="twentyfour columns">
+
+    <!-- KIOSK BANNER -->
+    <section class="row kiosk">
+      <picture>
+        <picture class="kiosk-bg"></picture>
+      </picture>
+      <h1 class="selectionname"></h1>
+    </section>
+
+    <!-- BREADCRUMB + BACK BUTTON -->
+    <section class="row title">
+      <div class="twentyfour columns nopadding group">
+        <h1>Reprogramación</h1>
+        <h2><a href="vehiculos.html">Vehículos</a></h2>
+        <h3><a id="bc-brand" href="#"></a></h3>
+        <h4><a id="bc-modelo" href="#"></a></h4>
+        <h5 id="bc-periodo"></h5>
+        <h6 id="bc-motor"></h6>
+        <div class="back">
+          <a href="#" class="button-full-rounded back-to-selection"><span>editar selección</span></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MOBILE BACK BUTTON -->
+    <section class="row sub show-for-small">
+      <div class="twentyfour columns">
+        <div class="back">
+          <a href="#" class="button-full-rounded back-to-selection">editar selección</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- STAGE TABLE + GRAPH -->
+    <section class="row main first">
+      <div class="sixteen columns smalltoppadding">
+        <section class="box stage">
+          <header class="stages">
+            <div>
+              <!-- Rendered by motor.js -->
+            </div>
+          </header>
+          <div class="content nopadding">
+            <table width="100%" border="0" cellspacing="5" cellpadding="0" class="stage-data">
+              <tbody id="stage-table-wrap">
+                <!-- Rendered by motor.js -->
+              </tbody>
+            </table>
+            <div class="more-info es" id="more-info-wrap">
+              <span class="label">¿Tiene alguna duda sobre esta stage?</span>
+              <span class="button-full-rounded mail"><a href="contacto.html">Contáctenos para más información.</a></span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="eight columns smalltoppadding noleftpadding">
+        <section class="box graph">
+          <header class="title">Información importante</header>
+          <div class="content nopadding">
+            <div class="no-data">Gráfico no disponible</div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS + QUALITY -->
+    <section class="row main second">
+      <div class="twentyfour columns smalltoppadding">
+        <ul class="block-grid three-up mobile-one-up">
+          <li>
+            <section class="box testimonials">
+              <header class="title">
+                <span class="label">Testimonios</span>
+              </header>
+              <div class="content nopadding">
+                <div class="no-data">
+                  <a href="contacto.html" id="btn-testimonio" class="button-full-rounded">Escribir testimonio</a>
+                </div>
+              </div>
+            </section>
+          </li>
+          <li>
+            <section class="box services">
+              <header class="title">
+                <span class="label">Nuestra calidad</span>
+              </header>
+              <div class="content nopadding">
+                <div class="inner-big">
+                  <ul>
+                    <li>Cada coche es <strong>ajustado y probado individualmente en tiempo real</strong>.</li>
+                    <li>Equipo de <strong>ingenieros automovilísticos cualificados</strong>.</li>
+                    <li>Apto para la inspección técnica del vehículo (ITV).</li>
+                    <li>Ofrecemos una <strong>garantía de 5 años</strong>.</li>
+                    <li><u>Dentro de los límites de tolerancia mecánica</u>.</li>
+                    <li>Mayor experiencia en el mercado, con más de 20.000 coches reprogramados anualmente.</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </li>
+        </ul>
+        <div class="disclaimer">Nuestras <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">condiciones generales de venta</a> se aplican a todas nuestras entregas y servicios.</div>
+      </div>
+    </section>
+
+    <!-- BRANDS BAR -->
+    <footer class="row brands hide-for-small">
+      <div class="twentyfour columns">
+        <ul class="list">
+          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
+          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
+          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs"></a></li>
+          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune"></a></li>
+          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW"></a></li>
+          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC"></a></li>
+          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
+          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
+          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
+          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
+          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
+          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
+          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
+          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
+          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
+          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
+          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
+          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
+          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
+          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
+          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+        </ul>
+      </div>
+    </footer>
+
+    <!-- MOBILE SEARCH -->
+    <footer class="row search-mobile show-for-small">
+      <div class="twentyfour columns">
+        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
+          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
+          <input type="submit" name="search" value="" class="button-full-rounded">
+        </form>
+      </div>
+    </footer>
+
+  </div>
+</div>
+
+<!-- ADDRESS FOOTER -->
+<footer class="row address brp-barcelona">
+  <div class="seventeen columns address">
+    <ul>
+      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
+      <li>
+        <address>BR-Performance <span class="dark">© ® 2026</span></address>
+        <address>Professional chiptuning</address>
+      </li>
+      <li>
+        <address data-cfg="morada1">Calle del cobalto 165</address>
+        <address data-cfg="morada2">08907 Hospitalet del Llobregat, Barcelona</address>
+      </li>
+      <li>
+        <address><a href="mailto:barcelona@br-performance.com" class="email" data-cfg="email">E-mail</a></address>
+        <address><span class="hide-for-small" data-cfg="telefone">Tel: +34 680 911 007</span></address>
+      </li>
+      <li>
+        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
+        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
+      </li>
+    </ul>
+  </div>
+  <div class="seven columns links">
+    <ul class="links right">
+      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener" data-cfg="facebook"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
+      <li><a href="http://www.youtube.com/user/BRPerformances" target="_blank" rel="noopener" data-cfg="youtube"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
+      <li><a href="https://www.instagram.com/brperformance_bcn" target="_blank" rel="noopener" data-cfg="instagram"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
+    </ul>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/brands.js"></script>
+<script src="js/motor.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

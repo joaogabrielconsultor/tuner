@@ -180,9 +180,14 @@ document.addEventListener('DOMContentLoaded', function () {
           '</header>' +
           '<ul class="content">';
         fuel.engines.forEach(function (eng) {
+          var engUrl = 'motor.html?marca=' + encodeURIComponent(marcaSlug) +
+                       '&modelo=' + encodeURIComponent(modelName) +
+                       '&periodo=' + encodeURIComponent(period.id) +
+                       '&motor=' + encodeURIComponent(eng.name) +
+                       '&cv=' + eng.cv;
           inner +=
             '<li>' +
-              '<a href="contacto.html" title="' + escHtml(brand.name + ' ' + modelName + ' ' + eng.name + ' ' + eng.cv + 'cv') + '">' + escHtml(eng.name) + '</a>' +
+              '<a href="' + engUrl + '" title="' + escHtml(brand.name + ' ' + modelName + ' ' + eng.name + ' ' + eng.cv + 'cv') + '">' + escHtml(eng.name) + '</a>' +
               '<span class="specs"><span class="spec">' + eng.cv + 'cv</span></span>' +
             '</li>';
         });

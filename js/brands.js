@@ -6,14 +6,44 @@ const BRANDS = {
       { name: '147', periods: [
         { id: '2001-2005', label: '2001 > 2005', fuels: [
           { type: 'Gasoline', engines: [
-            { name: '2.0 TS', cv: 150 },
-            { name: '3.2 V6 GTA', cv: 250 }
+            { name: '2.0 TS', cv: 150, stages: [
+              { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
+                power_orig: 150, power_mod: 165, power_diff: '+15', power_unit: 'hp',
+                torque_orig: 172, torque_mod: 192, torque_diff: '+20', torque_unit: 'Nm',
+                price: 460 }
+            ]},
+            { name: '3.2 V6 GTA', cv: 250, stages: [
+              { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
+                power_orig: 250, power_mod: 280, power_diff: '+30', power_unit: 'hp',
+                torque_orig: 300, torque_mod: 335, torque_diff: '+35', torque_unit: 'Nm',
+                price: 560 }
+            ]}
           ]},
           { type: 'Diesel', engines: [
-            { name: '1.9 Jtd', cv: 100 },
-            { name: '1.9 Jtd', cv: 115 },
-            { name: '1.9 Jtd', cv: 136 },
-            { name: '1.9 Jtd', cv: 140 }
+            { name: '1.9 Jtd', cv: 100, stages: [
+              { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
+                power_orig: 100, power_mod: 120, power_diff: '+20', power_unit: 'hp',
+                torque_orig: 200, torque_mod: 240, torque_diff: '+40', torque_unit: 'Nm',
+                price: 360 }
+            ]},
+            { name: '1.9 Jtd', cv: 115, stages: [
+              { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
+                power_orig: 115, power_mod: 140, power_diff: '+25', power_unit: 'hp',
+                torque_orig: 255, torque_mod: 300, torque_diff: '+45', torque_unit: 'Nm',
+                price: 360 }
+            ]},
+            { name: '1.9 Jtd', cv: 136, stages: [
+              { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
+                power_orig: 136, power_mod: 165, power_diff: '+29', power_unit: 'hp',
+                torque_orig: 305, torque_mod: 360, torque_diff: '+55', torque_unit: 'Nm',
+                price: 420 }
+            ]},
+            { name: '1.9 Jtd', cv: 140, stages: [
+              { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
+                power_orig: 140, power_mod: 170, power_diff: '+30', power_unit: 'hp',
+                torque_orig: 320, torque_mod: 380, torque_diff: '+60', torque_unit: 'Nm',
+                price: 420 }
+            ]}
           ]}
         ]},
         { id: '2005-', label: '2005 > ...', fuels: [] }

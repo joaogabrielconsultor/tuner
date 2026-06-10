@@ -1,0 +1,298 @@
+/* -----------------------------------------------
+   Fiche / Motor stage page styles
+----------------------------------------------- */
+
+section.box {
+  border: 1px solid #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #161616;
+  margin-bottom: 14px;
+}
+
+section.box header.title {
+  padding: 11px 18px;
+  background: linear-gradient(to bottom, #2c507a 0%, #395f89 50%, #2c507a 50%, #305681 100%);
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Titillium Web', Arial, sans-serif;
+}
+
+section.box header.title .label {
+  font-size: 13px;
+  color: #fff;
+}
+
+section.box header.stages {
+  padding: 8px 12px;
+  background: linear-gradient(to bottom, #2c507a 0%, #395f89 50%, #2c507a 50%, #305681 100%);
+}
+
+/* Stage tabs */
+.stages > div {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.stage {
+  display: inline-block;
+}
+
+.stage a {
+  display: inline-block;
+  padding: 4px 16px;
+  color: #aaa;
+  font-size: 12px;
+  border-radius: 3px;
+  text-decoration: none;
+  background: rgba(0, 0, 0, 0.35);
+  transition: background 0.2s, color 0.2s;
+  font-family: 'Titillium Web', Arial, sans-serif;
+  line-height: 22px;
+}
+
+.stage.sel a,
+.stage a:hover {
+  color: #fff;
+  background: linear-gradient(to bottom, #395f89 0%, #2c507a 100%);
+}
+
+.stage a.brp-eco {
+  padding-left: 28px;
+  background-image: url(../images/bg_brpeco_sel.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+.stage.sel a.brp-eco,
+.stage a.brp-eco:hover {
+  background-color: transparent;
+  background-image: url(../images/bg_brpeco_sel.png);
+  background-repeat: no-repeat;
+  background-position: left center;
+  background: url(../images/bg_brpeco_sel.png) no-repeat left center,
+              linear-gradient(to bottom, #395f89 0%, #2c507a 100%);
+}
+
+/* Stage data table */
+.stage-data {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  color: #ccc;
+  font-family: 'Titillium Web', Arial, sans-serif;
+}
+
+.stage-data td,
+.stage-data th {
+  padding: 9px 14px;
+  border-bottom: 1px dotted #2a2a2a;
+}
+
+.stage-data tr:last-child td,
+.stage-data tr:last-child th {
+  border-bottom: 0;
+}
+
+.stage-data th.empty {
+  width: 30%;
+}
+
+.stage-data th.empty a {
+  color: #777;
+  font-size: 11px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.stage-data th[scope="row"] {
+  text-align: left;
+  color: #aaa;
+  font-weight: normal;
+  width: 30%;
+}
+
+.stage-data th[scope="col"] {
+  text-align: center;
+  color: #777;
+  font-weight: normal;
+  font-size: 12px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.stage-data td {
+  text-align: center;
+  color: #bbb;
+}
+
+.stage-data td.highlight {
+  background: rgba(56, 114, 174, 0.18);
+  color: #7db8e8;
+}
+
+.stage-data td.noborder {
+  border-bottom: 0 !important;
+  text-align: left;
+  vertical-align: middle;
+  padding: 14px;
+}
+
+.stage-data td.price {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-align: right;
+  vertical-align: middle;
+  white-space: nowrap;
+  padding-right: 18px;
+}
+
+.stage-data .big {
+  font-size: 16px;
+  color: #ccc;
+  margin-bottom: 3px;
+}
+
+.stage-data .big + div a {
+  color: #7db8e8;
+  font-size: 11px;
+}
+
+/* More info / contact area */
+.more-info {
+  padding: 10px 14px;
+  border-top: 1px solid #222;
+  background: rgba(0, 0, 0, 0.25);
+  font-size: 12px;
+  color: #888;
+  font-family: 'Titillium Web', Arial, sans-serif;
+}
+
+.more-info .label {
+  display: inline;
+  margin-right: 6px;
+  color: #999;
+}
+
+.more-info .button-full-rounded.mail {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.more-info .button-full-rounded.mail a {
+  color: #9ec7fe;
+  font-size: 12px;
+}
+
+/* Box content */
+section.box .content {
+  padding: 12px;
+  color: #ccc;
+}
+
+section.box .content.nopadding {
+  padding: 0;
+}
+
+/* Graph */
+section.box.graph {
+  height: 100%;
+  min-height: 200px;
+}
+
+section.box.graph .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 160px;
+}
+
+/* Services / quality box */
+section.box.services .inner-big {
+  padding: 10px 16px 14px;
+}
+
+section.box.services .inner-big ul {
+  padding: 0 0 0 16px;
+  margin: 0;
+  color: #ccc;
+  font-size: 13px;
+}
+
+section.box.services .inner-big ul li {
+  padding: 5px 0;
+  border-bottom: 1px dotted #2a2a2a;
+  line-height: 1.4;
+}
+
+section.box.services .inner-big ul li:last-child {
+  border-bottom: 0;
+}
+
+/* Testimonials */
+section.box.testimonials .content {
+  min-height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* No data placeholder */
+.no-data {
+  color: #555;
+  font-style: italic;
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 13px;
+}
+
+/* Disclaimer */
+.disclaimer {
+  color: #555;
+  font-size: 11px;
+  text-align: center;
+  padding: 10px 0 6px;
+}
+
+.disclaimer a {
+  color: #666;
+  text-decoration: underline;
+}
+
+/* Spacing helpers */
+.smalltoppadding {
+  padding-top: 10px !important;
+}
+
+.noleftpadding {
+  padding-left: 0 !important;
+}
+
+/* Breadcrumb h6 */
+section.row.title .twentyfour h6 {
+  display: inline;
+  font-size: inherit;
+  font-weight: normal;
+}
+
+/* Mobile sub back button */
+section.row.sub.show-for-small {
+  display: none;
+}
+
+@media all and (max-width: 767px) {
+  section.row.sub.show-for-small {
+    display: block;
+  }
+
+  .stage-data td.price {
+    font-size: 18px;
+  }
+
+  section.box.graph {
+    min-height: 100px;
+  }
+}
