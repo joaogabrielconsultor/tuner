@@ -1,5 +1,180 @@
 const BRANDS = {
-  'alfa-romeo': { name: 'Alfa Romeo', logo: 'images/alfa-romeo_3.png', models: ['147', '156', '159', '166', '4C', 'Brennero', 'Brera', 'CrossWagon', 'Giulia', 'Giulietta', 'GT', 'Junior', 'Milano', 'MiTo', 'Spider', 'Stelvio', 'Tonale'] },
+  'alfa-romeo': {
+    name: 'Alfa Romeo',
+    logo: 'images/alfa-romeo_3.png',
+    models: [
+      { name: '147', periods: [
+        { id: '2001-2005', label: '2001 > 2005', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '2.0 TS', cv: 150 },
+            { name: '3.2 V6 GTA', cv: 250 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '1.9 Jtd', cv: 100 },
+            { name: '1.9 Jtd', cv: 115 },
+            { name: '1.9 Jtd', cv: 136 },
+            { name: '1.9 Jtd', cv: 140 }
+          ]}
+        ]},
+        { id: '2005-', label: '2005 > ...', fuels: [] }
+      ]},
+      { name: '156', periods: [
+        { id: '1997-2003', label: '1997 > 2003', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '1.6 TS', cv: 120 },
+            { name: '1.8 TS', cv: 144 },
+            { name: '2.0 TS', cv: 155 },
+            { name: '2.5 V6', cv: 192 },
+            { name: '3.2 V6 GTA', cv: 250 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '1.9 Jtd', cv: 105 },
+            { name: '1.9 Jtd', cv: 115 },
+            { name: '2.4 Jtd', cv: 136 },
+            { name: '2.4 Jtd', cv: 150 }
+          ]}
+        ]},
+        { id: '2003-2006', label: '2003 > 2006', fuels: [] }
+      ]},
+      { name: '159', periods: [
+        { id: '2005-2012', label: '2005 > 2012', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '1.8 MPI', cv: 140 },
+            { name: '2.2 JTS', cv: 185 },
+            { name: '3.2 V6 JTS', cv: 260 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '1.9 JTDm', cv: 120 },
+            { name: '1.9 JTDm', cv: 150 },
+            { name: '2.4 JTDm', cv: 200 }
+          ]}
+        ]}
+      ]},
+      { name: '166', periods: [
+        { id: '1998-2007', label: '1998 > 2007', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '2.0 TS', cv: 155 },
+            { name: '2.5 V6', cv: 192 },
+            { name: '3.0 V6', cv: 220 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '2.4 Jtd', cv: 136 },
+            { name: '2.4 Jtd', cv: 150 },
+            { name: '2.4 Jtd', cv: 185 }
+          ]}
+        ]}
+      ]},
+      { name: '4C', periods: [
+        { id: '2013-2020', label: '2013 > 2020', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '1.75 TBi', cv: 240 }
+          ]}
+        ]}
+      ]},
+      { name: 'Brennero', periods: [] },
+      { name: 'Brera', periods: [
+        { id: '2005-2010', label: '2005 > 2010', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '2.2 JTS', cv: 185 },
+            { name: '3.2 V6 JTS', cv: 260 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '2.4 JTDm', cv: 200 }
+          ]}
+        ]}
+      ]},
+      { name: 'CrossWagon', periods: [] },
+      { name: 'Giulia', periods: [
+        { id: '2016-', label: '2016 > ...', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '2.0 GME', cv: 200 },
+            { name: '2.9 V6 Bi-Turbo Quadrifoglio', cv: 510 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '2.2 JTD', cv: 150 },
+            { name: '2.2 JTD', cv: 180 },
+            { name: '2.2 JTD', cv: 210 }
+          ]}
+        ]}
+      ]},
+      { name: 'Giulietta', periods: [
+        { id: '2010-', label: '2010 > ...', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '1.4 TB MultiAir', cv: 120 },
+            { name: '1.4 TB MultiAir', cv: 170 },
+            { name: '1.75 TB MultiAir QV', cv: 235 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '2.0 JTDm', cv: 140 },
+            { name: '2.0 JTDm', cv: 150 },
+            { name: '2.0 JTDm', cv: 175 }
+          ]}
+        ]}
+      ]},
+      { name: 'GT', periods: [
+        { id: '2003-2010', label: '2003 > 2010', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '2.0 JTS', cv: 165 },
+            { name: '3.2 V6 GTA', cv: 240 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '1.9 JTD', cv: 150 },
+            { name: '2.4 JTD', cv: 200 }
+          ]}
+        ]}
+      ]},
+      { name: 'Junior', periods: [] },
+      { name: 'Milano', periods: [] },
+      { name: 'MiTo', periods: [
+        { id: '2008-2018', label: '2008 > 2018', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '1.4 TB', cv: 120 },
+            { name: '1.4 TB MultiAir', cv: 135 },
+            { name: '1.4 TB QV', cv: 170 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '1.3 JTDm', cv: 85 },
+            { name: '1.6 JTDm', cv: 120 }
+          ]}
+        ]}
+      ]},
+      { name: 'Spider', periods: [
+        { id: '2006-2011', label: '2006 > 2011', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '2.2 JTS', cv: 185 },
+            { name: '3.2 V6 JTS', cv: 260 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '2.4 JTDm', cv: 200 }
+          ]}
+        ]}
+      ]},
+      { name: 'Stelvio', periods: [
+        { id: '2017-', label: '2017 > ...', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '2.0 GME', cv: 200 },
+            { name: '2.9 V6 Bi-Turbo Quadrifoglio', cv: 510 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '2.2 JTD', cv: 160 },
+            { name: '2.2 JTD', cv: 180 },
+            { name: '2.2 JTD', cv: 210 }
+          ]}
+        ]}
+      ]},
+      { name: 'Tonale', periods: [
+        { id: '2022-', label: '2022 > ...', fuels: [
+          { type: 'Gasoline', engines: [
+            { name: '1.5 MHEV', cv: 130 },
+            { name: '1.5 MHEV', cv: 160 }
+          ]},
+          { type: 'Diesel', engines: [
+            { name: '1.6 Multijet', cv: 130 }
+          ]}
+        ]}
+      ]}
+    ]
+  },
   'alpina': { name: 'Alpina', logo: 'images/alpina-2.png', models: [] },
   'alpine': { name: 'Alpine', logo: 'images/alpine_3.png', models: [] },
   'ariel-motors': { name: 'Ariel Motors', logo: 'images/ariel-2.png', models: [] },
@@ -83,6 +258,7 @@ const BRANDS = {
   'volkswagen': { name: 'Volkswagen', logo: 'images/vw-white.png', models: [] },
   'volvo': { name: 'Volvo', logo: 'images/volvo_2.png', models: [] },
   'westfield': { name: 'Westfield', logo: 'images/westfield_3.png', models: [] },
-  'wiesmann': { name: 'Wiesmann', logo: 'images/wiesmann_2.png', models: [] }};
+  'wiesmann': { name: 'Wiesmann', logo: 'images/wiesmann_2.png', models: [] }
+};
 
 function getBrand(slug) { return BRANDS[slug] || null; }
