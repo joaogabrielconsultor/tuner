@@ -3,13 +3,18 @@ body {
   background: #111 url('../images/textile_texture_bg.gif') repeat center top;
 }
 
-/* ECO stage tab — always green (bg_brpeco.png pending download) */
+/* Stage tab icons — use _sel images for both normal and hover states */
 section.box header.stages a.brp-eco {
-  color: #33cc00 !important;
+  background-image: url('../images/bg_brpeco_sel.png') !important;
 }
-section.box header.stages a.brp-eco:hover,
-section.box header.stages .sel a.brp-eco {
-  color: #55ee22 !important;
+section.box header.stages a.stage1 {
+  background-image: url('../images/bg_stage1_sel.png') !important;
+}
+section.box header.stages a.stage2 {
+  background-image: url('../images/bg_stage2_sel.png') !important;
+}
+section.box header.stages a.stage3 {
+  background-image: url('../images/bg_stage3_sel.png') !important;
 }
 
 /* Hero slider */
