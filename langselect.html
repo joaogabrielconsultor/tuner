@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BR-Performance - Engine optimisation</title>
+  <meta name="description" content="Professionele herprogrammatie">
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" type="text/css" href="css/langselect.css" media="screen">
+</head>
+<body>
+
+<div class="container">
+
+  <img src="images/logo/brp-barcelona/logo.png" width="504" height="71" alt="BR-Performance - Engine optimisation" class="logo">
+
+  <div class="map">
+    <div id="Stage" class="map-animation" style="position:relative;height:268px;width:498px;overflow:hidden;">
+      <div id="Stage_map_europe3" style="position:absolute;inset:0;width:498px;height:268px;background-image:url('images/langselect/intro/images/map_europe2.png');background-size:100% 100%;background-repeat:no-repeat;"></div>
+      <div id="Stage_map_bullet6"  title="Paris, France"               style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(163px,68px);"></div>
+      <div id="Stage_map_bullet7"  title="Lyon, France"                style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(176px,114px);"></div>
+      <div id="Stage_map_bullet8"  title="Marseille, France"           style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(176px,151px);"></div>
+      <div id="Stage_map_bullet8Copy5" title="Montpellier, France"     style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(156px,143px);"></div>
+      <div id="Stage_map_bullet8Copy4" title="Saint Laurent Du Var"    style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(197px,144px);"></div>
+      <div id="Stage_map_bullet8Copy3" title="Toulouse, France"        style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(137px,125px);"></div>
+      <div id="Stage_map_bullet8Copy2" title="Bénesse-Maremne"         style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;top:123px;left:105px;"></div>
+      <div id="Stage_map_bullet9"  title="Willebroek, Belgium"         style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(182px,46px);"></div>
+      <div id="Stage_map_bullet10" title="Sandweiler, Luxembourg"      style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(197px,58px);"></div>
+      <div id="Stage_map_bullet10Copy3" title="Mulhouse, France"       style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(210px,88px);"></div>
+      <div id="Stage_map_bullet10Copy" title="Raamsdonksveer, NL"      style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(197px,34px);"></div>
+      <div id="Stage_map_bullet10Copy2" title="Barcelona, Spain"       style="position:absolute;width:19px;height:19px;background-image:url('images/langselect/intro/images/map_bullet.png');background-size:100%;cursor:pointer;transform:translate(130px,167px);"></div>
+    </div>
+    <div class="overlay" style="display:none;">
+      <img src="" width="498" height="268" alt="BR-Performance" id="overlay-img">
+    </div>
+  </div>
+
+  <div class="other">
+    <div class="primary">
+      <h2>Europe</h2>
+
+      <div class="col dark divider">
+        <ul>
+          <li><a href="https://www.br-performance.fr/brp-paris/" rel="map_fr" class="show-map">France <img src="images/fr_FR.png" width="16" height="16" alt="France" class="flag"></a>
+            <ul>
+              <li><a href="https://www.br-performance.fr/brp-lyon/" rel="map_fr-lyon" class="show-map">Lyon/<small style="font-size:70%;">Chambery/Grenoble</small></a></li>
+              <li><a href="https://www.br-performance.fr/brp-paris/" rel="map_fr-paris" class="show-map">Paris</a></li>
+              <li><a href="https://www.br-performance.fr/brp-marseille/" rel="map_fr-sud" class="show-map">Marseille</a></li>
+              <li><a href="https://www.br-performance.fr/brp-bayonne/" rel="map_fr-bayonne" class="show-map">Bayonne</a></li>
+              <li><a href="https://www.br-performance.fr/brp-nice/" rel="map_fr-nice" class="show-map">Nice</a></li>
+              <li><a href="https://www.br-performance.fr/brp-toulouse/" rel="map_fr-toulouse" class="show-map">Toulouse</a></li>
+              <li><a href="https://www.br-performance.fr/brp-mulhouse/" rel="map_fr-mulhouse" class="show-map">Mulhouse</a></li>
+              <li><a href="https://www.br-performance.fr/brp-montpellier/" rel="map_fr-montpellier" class="show-map">Montpellier</a></li>
+              <li><a href="https://www.br-performance.fr/brp-niort/" rel="map_fr-niort" class="show-map">Niort</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col dark">
+        <ul>
+          <li><a href="https://www.br-performance.com/brp-barcelona/" rel="map_es-barcelona" class="show-map">Spain <img src="images/es.png" width="16" height="16" alt="Spain" class="flag"></a>
+            <ul>
+              <li><a href="index.html" rel="map_es-barcelona" class="show-map">Barcelona</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.br-performance.fr/brp-bayonne/" rel="map_fr-bayonne" class="show-map">Bayonne <img src="images/fr_FR.png" width="16" height="16" alt="Bayonne" class="flag"></a>
+            <ul>
+              <li><a href="https://www.br-performance.fr/brp-bayonne-en/" rel="map_fr-bayonne" class="show-map">English</a></li>
+              <li><a href="https://www.br-performance.fr/brp-bayonne-es/" rel="map_fr-bayonne" class="show-map">Spanish</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col light">
+        <h3>Main office</h3>
+        <ul>
+          <li><a href="https://www.br-performance.be/nl-be/" rel="map_be" class="show-map">Belgium <img src="images/be.png" width="16" height="16" alt="Belgium" class="flag"></a>
+            <ul>
+              <li><a href="https://www.br-performance.be/nl-be/" rel="map_be" class="show-map">Dutch</a></li>
+              <li><a href="https://www.br-performance.be/fr-be/" rel="map_be" class="show-map">French</a></li>
+              <li><a href="https://www.br-performance.be/en-be/" rel="map_be" class="show-map">English</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col dark divider">
+        <ul>
+          <li><a href="https://www.br-performance.nl/nl-nl/" rel="map_nl" class="show-map">The Netherlands <img src="images/nl_NL.png" width="16" height="16" alt="Netherlands" class="flag"></a>
+            <ul>
+              <li><a href="https://www.br-performance.nl/nl-nl/" rel="map_nl" class="show-map">Dutch</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col dark">
+        <ul>
+          <li><a href="https://www.br-performance.lu/fr-lu/" rel="map_lu" class="show-map">Luxembourg <img src="images/lu.png" width="16" height="16" alt="Luxembourg" class="flag"></a>
+            <ul>
+              <li><a href="https://www.br-performance.lu/fr-lu/" rel="map_lu" class="show-map">French</a></li>
+              <li><a href="https://www.br-performance.lu/en-lu/" rel="map_lu" class="show-map">English</a></li>
+              <li><a href="https://www.br-performance.lu/de-lu/" rel="map_lu" class="show-map">German</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="doClear"></div>
+    </div>
+
+    <div class="secondary">
+      <div class="col">
+        <h2>Antilles</h2>
+        <ul>
+          <li><a href="http://www.br-performance.mq/fr-mq/" rel="map_mq" class="show-map">Martinique</a></li>
+          <li><a href="http://www.br-performance.gp/fr-gp/" rel="map_gp" class="show-map">Guadeloupe</a></li>
+        </ul>
+      </div>
+      <div class="col">
+        <h2>South America</h2>
+        <ul>
+          <li><a href="http://www.br-performance.gy/fr-gy/" rel="map_gy" class="show-map">Guyane</a></li>
+        </ul>
+      </div>
+      <div class="col notes">
+        <h2>China*</h2>
+        <h2>Russia*</h2>
+        <h2>Israel*</h2>
+        <h2>Tunisia*</h2>
+        <h2>Algeria*</h2>
+      </div>
+    </div>
+  </div>
+
+  <select class="mobile-nav">
+    <option value="">Select a center / language</option>
+    <optgroup label="Belgium">
+      <option value="https://www.br-performance.be/nl-be/">Dutch</option>
+      <option value="https://www.br-performance.be/fr-be/">French</option>
+      <option value="https://www.br-performance.be/en-be/">English</option>
+    </optgroup>
+    <optgroup label="France">
+      <option value="https://www.br-performance.fr/brp-lyon/">Lyon / Chambery / Grenoble</option>
+      <option value="https://www.br-performance.fr/brp-paris/">Paris</option>
+      <option value="https://www.br-performance.fr/brp-marseille/">Marseille</option>
+      <option value="https://www.br-performance.fr/brp-bayonne/">Bayonne</option>
+      <option value="https://www.br-performance.fr/brp-bayonne-en/">Bayonne (english)</option>
+      <option value="https://www.br-performance.fr/brp-bayonne-es/">Bayonne (español)</option>
+      <option value="https://www.br-performance.fr/brp-nice/">Nice</option>
+      <option value="https://www.br-performance.fr/brp-toulouse/">Toulouse</option>
+      <option value="https://www.br-performance.fr/brp-mulhouse/">Mulhouse</option>
+      <option value="https://www.br-performance.fr/brp-montpellier/">Montpellier</option>
+      <option value="https://www.br-performance.fr/brp-niort/">Niort</option>
+    </optgroup>
+    <optgroup label="Spain">
+      <option value="index.html">Barcelona</option>
+    </optgroup>
+    <optgroup label="The Netherlands">
+      <option value="https://www.br-performance.nl/nl-nl/">Dutch</option>
+    </optgroup>
+    <optgroup label="Luxembourg">
+      <option value="https://www.br-performance.lu/fr-lu/">French</option>
+      <option value="https://www.br-performance.lu/en-lu/">English</option>
+      <option value="https://www.br-performance.lu/de-lu/">German</option>
+    </optgroup>
+    <optgroup label="Antilles">
+      <option value="http://www.br-performance.mq/fr-mq/">Martinique</option>
+      <option value="http://www.br-performance.gp/fr-gp/">Guadeloupe</option>
+    </optgroup>
+    <optgroup label="South America">
+      <option value="http://www.br-performance.gy/fr-gy/">Guyane</option>
+    </optgroup>
+  </select>
+
+  <div class="doClear"></div>
+</div>
+
+<div class="remark">
+  *BR-Performance does not have any official dealers in China, Russia, Israel, Tunisia or Algeria.<br>
+  All centres in these countries under the name BR-Performance are counterfeit.<br>
+  The use of counterfeit software might damage your engine.
+</div>
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/modernizr.foundation.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('li a.show-map').hover(function() {
+      var rel = $(this).attr('rel');
+      $('.map-animation').hide();
+      $('#overlay-img').attr('src', 'images/langselect/' + rel + '.png');
+      $('.overlay').show();
+    }, function() {
+      $('.overlay').hide();
+      $('.map-animation').show();
+    });
+
+    $('select.mobile-nav').change(function() {
+      var url = $(this).find('option:selected').val();
+      if (url && url !== '') window.location.href = url;
+    });
+  });
+</script>
+</body>
+</html>
