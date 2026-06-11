@@ -24,6 +24,11 @@ section.box header.stages a.stage3 {
 /* RoyalSlider height override for hero */
 .kiosk .rsMinW { height: 334px; }
 
+/* Team intro box height — matches news slider so intro.png fills completely */
+.team .rsMinW { height: 334px; }
+.team .rsMinW .rsContent,
+.team .intro { height: 334px; }
+
 /* Nav toggle */
 .nav-toggle { display:none; }
 @media only screen and (max-width:767px) {
