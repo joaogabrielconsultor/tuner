@@ -8,6 +8,8 @@ section.box header.stages a.brp-eco {
   background-image: url('../images/bg_brpeco_sel.png') !important;
   font-size: 0 !important;
   color: transparent !important;
+  text-indent: -9999px !important;
+  overflow: hidden !important;
 }
 section.box header.stages a.stage1 {
   background-image: url('../images/bg_stage1_sel.png') !important;
