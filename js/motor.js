@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<th scope="col">Diferencia</th>' +
       '</tr>' +
       '<tr>' +
-        '<th scope="row">Poder</th>' +
+        '<th scope="row">Potencia</th>' +
         '<td>' + s.power_orig + ' ' + (s.power_unit || 'hp') + '</td>' +
         '<td class="highlight info">' + s.power_mod + ' cv</td>' +
         '<td class="highlight info">' + s.power_diff + ' ' + (s.power_unit || 'hp') + '</td>' +
