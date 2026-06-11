@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* CSS Document */
+
+.faq h4  {
+    font-size: 16px;
+    font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin-top: 0;
+	padding-left: 20px;
+	cursor: pointer;
+	line-height: 2em;
+	color: #56b2e7;
+	background:
+		transparent
+		url(../../../../../images/list_bullet.png)
+		no-repeat
+		left 10px;	
+}
+.faq h4:hover {
+	color:#66ccff;
+}
+.faq h4.active { 
+	color:#66ccff;
+}
+.faq div   { position:relative; display: none; padding-left: 20px; }
+.faq div p { padding:0; margin-bottom:15px; }
