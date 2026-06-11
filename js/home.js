@@ -47,4 +47,44 @@ jQuery(document).ready(function($) {
         } }
     });
 
+    // Hero slider
+    $('.kiosk .rsMinW').royalSlider({
+        controlNavigation: 'bullets',
+        autoScaleSlider: true,
+        autoScaleSliderWidth: 960,
+        autoScaleSliderHeight: 334,
+        loop: true,
+        imageScaleMode: 'fill',
+        autoPlay: { enabled: true, delay: 4500, stopAtAction: false, pauseOnHover: true },
+        sliderDrag: false
+    });
+
+    // News slider
+    $('.news .rsMinW').royalSlider({
+        controlNavigation: 'bullets',
+        loop: true,
+        autoPlay: { enabled: true, delay: 4500, stopAtAction: true, pauseOnHover: true }
+    });
+
+    // YouTube slider
+    $('.youtube .rsMinW').royalSlider({
+        controlNavigation: 'bullets',
+        loop: true,
+        sliderDrag: false
+    });
+
+    // Fancybox for video links
+    $('a.vimeo').fancybox({
+        type: 'iframe',
+        maxWidth: 800,
+        maxHeight: 600,
+        fitToView: false,
+        width: '70%',
+        height: '70%',
+        autoSize: false,
+        closeClick: false,
+        openEffect: 'none',
+        closeEffect: 'none'
+    });
+
 });
