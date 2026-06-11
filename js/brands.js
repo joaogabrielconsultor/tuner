@@ -2,6 +2,7 @@ const BRANDS = {
   'alfa-romeo': {
     name: 'Alfa Romeo',
     logo: 'images/alfa-romeo_3.png',
+    banner: 'images/alfaromeo.jpg',
     models: [
       { name: '147', periods: [
         { id: '2001-2005', label: '2001 > 2005', fuels: [

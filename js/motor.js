@@ -34,8 +34,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function initKiosk() {
     var bg = document.querySelector('.kiosk-bg');
-    if (bg && brand.logo) {
-      bg.style.backgroundImage = 'url(' + brand.logo + ')';
+    var bgImg = brand.banner || brand.logo;
+    if (bg && bgImg) {
+      bg.style.backgroundImage = 'url(' + bgImg + ')';
       bg.style.backgroundSize = 'contain';
       bg.style.backgroundRepeat = 'no-repeat';
       bg.style.backgroundPosition = 'center center';
