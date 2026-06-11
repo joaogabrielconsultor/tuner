@@ -1,26 +1,34 @@
 @charset "utf-8";
 /* CSS Document */
 
-.faq h4  {
+.faq h4 {
     font-size: 16px;
     font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
     font-weight: normal;
     margin-top: 0;
-	padding-left: 20px;
-	cursor: pointer;
-	line-height: 2em;
-	color: #56b2e7;
-	background:
-		transparent
-		url(../../../../../images/list_bullet.png)
-		no-repeat
-		left 10px;	
+    padding-left: 26px;
+    cursor: pointer;
+    line-height: 2em;
+    color: #56b2e7;
+    position: relative;
+    background: transparent url(../images/list_bullet.png) no-repeat left 10px;
+}
+.faq h4::before {
+    content: '▶';
+    font-size: 10px;
+    color: #56b2e7;
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .faq h4:hover {
-	color:#66ccff;
+    color: #66ccff;
 }
-.faq h4.active { 
-	color:#66ccff;
+.faq h4.active {
+    color: #66ccff;
 }
-.faq div   { position:relative; display: none; padding-left: 20px; }
-.faq div p { padding:0; margin-bottom:15px; }
+.faq div   { position: relative; display: none; padding-left: 26px; }
+.faq div p { padding: 0; margin-bottom: 15px; }
+.faq div ul { padding-left: 16px; margin-bottom: 15px; }
+.faq div ul li { list-style: disc; margin-bottom: 4px; }
