@@ -39,16 +39,15 @@ document.addEventListener('DOMContentLoaded', function () {
       bg.style.backgroundSize = 'contain';
       bg.style.backgroundRepeat = 'no-repeat';
       bg.style.backgroundPosition = 'center center';
-      bg.style.backgroundColor = '#0d1117';
     }
-    var sel = document.querySelector('.kiosk .selectionname');
+    var sel = document.querySelector('.selectionname');
     if (sel) {
-      var periodLabel = period ? period.label.replace(' > ', '-') : periodoParam;
+      var periodLabel = period ? period.label : periodoParam;
       var stageLabel = currentStage ? ' ' + currentStage.label : '';
       sel.innerHTML =
-        '<span class="modelyear">' + escHtml(brand.name) + '</span> ' +
+        escHtml(brand.name) + ' ' +
         escHtml(modeloParam) + ' ' +
-        '<span class="modelyear">' + escHtml(periodLabel) + '</span>' +
+        escHtml(periodLabel) +
         ' ' + escHtml(motorParam) + escHtml(stageLabel);
     }
   }
