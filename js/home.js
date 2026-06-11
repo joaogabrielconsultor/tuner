@@ -62,7 +62,11 @@ jQuery(document).ready(function($) {
     // News slider
     $('.news .rsMinW').royalSlider({
         controlNavigation: 'bullets',
+        autoScaleSlider: true,
+        autoScaleSliderWidth: 578,
+        autoScaleSliderHeight: 334,
         loop: true,
+        imageScaleMode: 'fill',
         autoPlay: { enabled: true, delay: 4500, stopAtAction: true, pauseOnHover: true }
     });
 
