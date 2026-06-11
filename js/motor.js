@@ -128,15 +128,15 @@ document.addEventListener('DOMContentLoaded', function () {
       '</tr>' +
       '<tr>' +
         '<th scope="row">Potencia</th>' +
-        '<td>' + s.power_orig + ' ' + (s.power_unit || 'hp') + '</td>' +
+        '<td>' + s.power_orig + ' cv</td>' +
         '<td class="highlight info">' + s.power_mod + ' cv</td>' +
-        '<td class="highlight info">' + s.power_diff + ' ' + (s.power_unit || 'hp') + '</td>' +
+        '<td class="highlight info">+ ' + s.power_diff + ' cv</td>' +
       '</tr>' +
       '<tr>' +
         '<th scope="row">Par</th>' +
         '<td>' + s.torque_orig + ' ' + (s.torque_unit || 'Nm') + '</td>' +
         '<td class="highlight">' + s.torque_mod + ' ' + (s.torque_unit || 'Nm') + '</td>' +
-        '<td class="highlight">' + s.torque_diff + ' ' + (s.torque_unit || 'Nm') + '</td>' +
+        '<td class="highlight">+ ' + s.torque_diff + ' ' + (s.torque_unit || 'Nm') + '</td>' +
       '</tr>' +
       '<tr>' +
         '<td colspan="3" class="noborder">' +

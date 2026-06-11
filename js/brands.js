@@ -7,9 +7,13 @@ const BRANDS = {
         { id: '2001-2005', label: '2001 > 2005', fuels: [
           { type: 'Gasoline', engines: [
             { name: '2.0 TS', cv: 150, stages: [
+              { id: 'brp-eco', label: 'ECO', cssClass: 'brp-eco',
+                power_orig: 150, power_mod: 152, power_diff: '2', power_unit: 'cv',
+                torque_orig: 172, torque_mod: 185, torque_diff: '13', torque_unit: 'Nm',
+                price: 360 },
               { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
-                power_orig: 150, power_mod: 165, power_diff: '+15', power_unit: 'hp',
-                torque_orig: 172, torque_mod: 192, torque_diff: '+20', torque_unit: 'Nm',
+                power_orig: 150, power_mod: 165, power_diff: '15', power_unit: 'cv',
+                torque_orig: 172, torque_mod: 192, torque_diff: '20', torque_unit: 'Nm',
                 price: 460 }
             ]},
             { name: '3.2 V6 GTA', cv: 250, stages: [
