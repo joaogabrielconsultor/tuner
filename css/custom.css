@@ -1,7 +1,15 @@
-/* Asphalt background over the original white body */
+/* Dark body background — bg_body.jpg pending download */
 body {
-  background: #111 url('../images/bg-asphalt.png') no-repeat center top fixed;
-  background-size: cover;
+  background: #111 url('../images/textile_texture_bg.gif') repeat center top;
+}
+
+/* ECO stage tab — always green (bg_brpeco.png pending download) */
+section.box header.stages a.brp-eco {
+  color: #33cc00 !important;
+}
+section.box header.stages a.brp-eco:hover,
+section.box header.stages .sel a.brp-eco {
+  color: #55ee22 !important;
 }
 
 /* Hero slider */
