@@ -76,90 +76,113 @@
 <div class="row" id="container">
   <div class="twentyfour columns">
 
-    <!-- PAGE TITLE -->
-    <section class="row inner-page-title">
-      <div class="twentyfour columns"><h1>Solicita presupuesto / Contacto</h1></div>
+    <!-- MAP KIOSK -->
+    <section class="row kiosk contact-kiosk">
+      <div class="twentyfour columns nopadding">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.5!2d2.1012771!3d41.3550745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4986a09d4eb91%3A0x0!2sCalle+del+cobalto+165%2C+08907+Hospitalet+de+Llobregat!5e0!3m2!1ses!2ses!4v1" width="100%" height="250" style="border:0;display:block;" allowfullscreen="" loading="lazy" title="BR-Performance Barcelona"></iframe>
+      </div>
+    </section>
+
+    <!-- PAGE TABS -->
+    <section class="row title pagetabs">
+      <div class="twentyfour columns nopadding">
+        <ul class="tabs">
+          <li class="sel"><a href="contacto.html">Contacto</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- SUB NAV -->
+    <section class="row contact-subnav">
+      <div class="twentyfour columns">
+        <ul>
+          <li class="sel"><a href="contacto.html">Contacto</a></li>
+          <li><a href="contacto.html">Banco de Rodillos</a></li>
+          <li><a href="contacto.html">Empresa</a></li>
+          <li><a href="contacto.html">Nuestro equipo</a></li>
+          <li><a href="contacto.html">Objetivos</a></li>
+          <li><a href="contacto.html">Colaboradores</a></li>
+        </ul>
+      </div>
     </section>
 
     <!-- MAIN CONTENT -->
-    <section class="row main smalltoppadding">
+    <section class="row main smalltoppadding smallbottompadding">
       <div class="twentyfour columns">
-        <div class="contact-grid">
+        <div class="contact-grid-v2">
 
-            <!-- FORM -->
-            <div class="contact-form-section">
-              <h2>Solicita presupuesto</h2>
+          <!-- LEFT: DIRECCIÓN -->
+          <section class="box box-border contact-dir">
+            <header class="title"><span class="label">Dirección</span></header>
+            <div class="content">
+              <p><strong>BR-Performance Barcelona</strong><br>
+              Calle del cobalto 165<br>
+              08907 Hospitalet del Llobregat, Barcelona</p>
+              <p><a href="tel:34680911007">Tel: +34 680 911 007</a><br>
+              Email: <a href="mailto:barcelona@br-performance.com">barcelona@br-performance.com</a></p>
+              <p>GPS coordenadas: 41.3550745,2.1012771</p>
+              <p><strong>Horario:</strong><br>
+              Lunes – Viernes: 9:00 – 18:00<br>
+              Sábado: Con cita previa<br>
+              Domingo: Cerrado</p>
+              <p><strong>Certificación:</strong> TÜV Rheinland<br>
+              Chiptuning profesional con 5 años de garantía de software.</p>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.5!2d2.1012771!3d41.3550745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4986a09d4eb91%3A0x0!2sCalle+del+cobalto+165%2C+08907+Hospitalet+de+Llobregat!5e0!3m2!1ses!2ses!4v1" width="100%" height="130" style="border:1px solid #444;display:block;margin-top:10px;" allowfullscreen="" loading="lazy" title="Mapa"></iframe>
+            </div>
+          </section>
+
+          <!-- RIGHT: FORM -->
+          <section class="box box-border contact-formbox">
+            <header class="title"><span class="label">Contacto</span></header>
+            <div class="content">
               <form id="contact-form" action="#" method="post">
-                <div class="form-row">
-                  <div class="fg"><label>Nombre *</label><input type="text" name="first_name" placeholder="Nombre" required></div>
-                  <div class="fg"><label>Apellido *</label><input type="text" name="last_name" placeholder="Apellido" required></div>
+                <div class="fg-row3">
+                  <div class="fg"><label>Nombre de pila *</label><input type="text" name="first_name" required></div>
+                  <div class="fg"><label>Nombre *</label><input type="text" name="last_name" required></div>
+                  <div class="fg"><label>Empresa</label><input type="text" name="company"></div>
                 </div>
-                <div class="form-row">
-                  <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="correo@ejemplo.com" required></div>
-                  <div class="fg"><label>Teléfono</label><input type="tel" name="phone" placeholder="+34 600 000 000"></div>
-                </div>
-                <div class="form-row">
-                  <div class="fg"><label>Marca del vehículo *</label>
-                    <select name="brand" required>
-                      <option value="">Selecciona marca...</option>
-                      <option>Alfa Romeo</option><option>Audi</option><option>BMW</option><option>Citroën</option>
-                      <option>Cupra</option><option>Ferrari</option><option>Fiat</option><option>Ford</option>
-                      <option>Honda</option><option>Hyundai</option><option>Jaguar</option><option>Kia</option>
-                      <option>Land Rover</option><option>Lamborghini</option><option>Maserati</option>
-                      <option>McLaren</option><option>Mercedes-Benz</option><option>Mini</option>
-                      <option>Mitsubishi</option><option>Nissan</option><option>Opel</option>
-                      <option>Peugeot</option><option>Porsche</option><option>Renault</option>
-                      <option>SEAT</option><option>Skoda</option><option>Subaru</option>
-                      <option>Toyota</option><option>Volkswagen</option><option>Volvo</option>
-                      <option>Otra marca</option>
+                <div class="fg-row2">
+                  <div class="fg"><label>Ubicación</label><input type="text" name="location"></div>
+                  <div class="fg"><label>País</label>
+                    <select name="country">
+                      <option value="ES" selected>España</option>
+                      <option value="FR">Francia</option>
+                      <option value="PT">Portugal</option>
+                      <option value="DE">Alemania</option>
+                      <option value="IT">Italia</option>
+                      <option value="GB">Reino Unido</option>
                     </select>
                   </div>
-                  <div class="fg"><label>Modelo</label><input type="text" name="model" placeholder="Ej: Golf GTI, Serie 3..."></div>
                 </div>
-                <div class="form-row">
-                  <div class="fg"><label>Año</label><input type="number" name="year" placeholder="Ej: 2020" min="1990" max="2026"></div>
-                  <div class="fg"><label>Motor / Potencia actual</label><input type="text" name="engine" placeholder="Ej: 2.0 TDI 150cv"></div>
+                <div class="fg-row2">
+                  <div class="fg"><label>E-mail *</label><input type="email" name="email" required></div>
+                  <div class="fg"><label>Teléfono</label><input type="tel" name="phone"></div>
                 </div>
-                <div class="fg"><label>Mensaje</label><textarea name="message" placeholder="Describe lo que buscas, preguntas, etc."></textarea></div>
-                <button type="submit" class="btn-send">Enviar consulta</button>
+                <div class="fg">
+                  <label class="fg-check"><input type="checkbox" name="newsletter"> Suscribirme a nuestro boletín de noticias</label>
+                </div>
+                <div class="fg-row3">
+                  <div class="fg"><label>Tipo de vehículo</label>
+                    <select name="vehicle_type">
+                      <option value="">Selecciona</option>
+                      <option>Coche</option><option>Moto</option><option>Camión</option>
+                    </select>
+                  </div>
+                  <div class="fg"><label>Kilómetros</label><input type="text" name="km"></div>
+                  <div class="fg"><label>Tipo de chip a cambiar *</label><input type="text" name="chip_type"></div>
+                </div>
+                <div class="fg"><label>Coche</label><input type="text" name="car"></div>
+                <div class="fg"><label>Preguntas</label><textarea name="message" rows="4"></textarea></div>
+                <div class="fg-submit">
+                  <button type="submit" class="btn-send">Enviar</button>
+                  <span class="fg-required">* campos necesarios</span>
+                </div>
               </form>
             </div>
+          </section>
 
-            <!-- INFO -->
-            <div class="contact-info-section">
-              <h2>Información de contacto</h2>
-
-              <div class="contact-info-block">
-                <p><strong>BR-Performance Barcelona</strong></p>
-                <p>Calle del cobalto 165<br>08907 Hospitalet del Llobregat<br>Barcelona, España</p>
-              </div>
-
-              <div class="contact-info-block">
-                <p><strong>Teléfono:</strong> <a href="tel:34680911007">+34 680 911 007</a></p>
-                <p><strong>Email:</strong> <a href="mailto:barcelona@br-performance.com">barcelona@br-performance.com</a></p>
-              </div>
-
-              <div class="contact-info-block">
-                <p><strong>Horario:</strong></p>
-                <p>Lunes – Viernes: 9:00 – 18:00<br>Sábado: Con cita previa<br>Domingo: Cerrado</p>
-              </div>
-
-              <div class="contact-info-block">
-                <p><strong>Certificación:</strong> TÜV Rheinland</p>
-                <p>Chiptuning profesional con 5 años de garantía de software.</p>
-              </div>
-
-              <iframe
-                class="contact-map-embed"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2992.!2d2.1012771!3d41.3550745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4986a09d4eb91%3A0x0!2sCalle+del+cobalto+165%2C+08907+l%27Hospitalet+de+Llobregat!5e0!3m2!1ses!2ses!4v1"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                title="BR-Performance Barcelona - Mapa">
-              </iframe>
-            </div>
-
-          </div>
+        </div>
       </div>
     </section>
 
