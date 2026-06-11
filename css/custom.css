@@ -1,8 +1,3 @@
-body {
-  background: #111 url('../images/bg_body.jpg') no-repeat center top;
-  background-size: cover;
-}
-
 /* Stage tab icons — use _sel images for both normal and hover states */
 section.box header.stages a.brp-eco {
   background-image: url('../images/bg_brpeco_sel.png') !important;
