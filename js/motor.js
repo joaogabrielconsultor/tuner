@@ -119,25 +119,43 @@ document.addEventListener('DOMContentLoaded', function () {
                    '&motor=' + encodeURIComponent(motorParam) +
                    '&stage=' + encodeURIComponent(s.id);
 
-    tableWrap.innerHTML =
+    var isEco = s.cssClass === 'brp-eco';
+    var tu = s.torque_unit || 'Nm';
+    var rows =
       '<tr>' +
         '<th scope="col" class="empty"><a href="vehiculos.html">Más información</a></th>' +
         '<th scope="col">Original</th>' +
         '<th scope="col">Modificado</th>' +
         '<th scope="col">Diferencia</th>' +
-      '</tr>' +
-      '<tr>' +
-        '<th scope="row">Potencia</th>' +
-        '<td>' + s.power_orig + ' cv</td>' +
-        '<td class="highlight info">' + s.power_mod + ' cv</td>' +
-        '<td class="highlight info">+ ' + s.power_diff + ' cv</td>' +
-      '</tr>' +
+      '</tr>';
+
+    if (!isEco) {
+      rows +=
+        '<tr>' +
+          '<th scope="row">Potencia</th>' +
+          '<td>' + s.power_orig + ' cv</td>' +
+          '<td class="highlight info">' + s.power_mod + ' cv</td>' +
+          '<td class="highlight info">+ ' + s.power_diff + ' cv</td>' +
+        '</tr>';
+    }
+
+    rows +=
       '<tr>' +
         '<th scope="row">Par</th>' +
-        '<td>' + s.torque_orig + ' ' + (s.torque_unit || 'Nm') + '</td>' +
-        '<td class="highlight">' + s.torque_mod + ' ' + (s.torque_unit || 'Nm') + '</td>' +
-        '<td class="highlight">+ ' + s.torque_diff + ' ' + (s.torque_unit || 'Nm') + '</td>' +
-      '</tr>' +
+        '<td>' + s.torque_orig + ' ' + tu + '</td>' +
+        '<td class="highlight">' + s.torque_mod + ' ' + tu + '</td>' +
+        '<td class="highlight">+ ' + s.torque_diff + ' ' + tu + '</td>' +
+      '</tr>';
+
+    if (isEco && s.fuel_saving) {
+      rows +=
+        '<tr>' +
+          '<td colspan="3" class="noborder ecolabel" style="text-align:right;color:#33cc00;">Ahorro de combustible estimado</td>' +
+          '<td class="ecolabel" style="color:#33cc00;">' + s.fuel_saving + '</td>' +
+        '</tr>';
+    }
+
+    rows +=
       '<tr>' +
         '<td colspan="3" class="noborder">' +
           '<div class="big">Precio</div>' +
@@ -145,6 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
         '</td>' +
         '<td class="price">&euro;' + s.price + '</td>' +
       '</tr>';
+
+    tableWrap.innerHTML = rows;
 
     if (moreInfo) {
       moreInfo.querySelector('a').href = motorUrl;

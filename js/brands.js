@@ -8,8 +8,8 @@ const BRANDS = {
           { type: 'Gasoline', engines: [
             { name: '2.0 TS', cv: 150, stages: [
               { id: 'brp-eco', label: 'ECO', cssClass: 'brp-eco',
-                power_orig: 150, power_mod: 152, power_diff: '2', power_unit: 'cv',
-                torque_orig: 172, torque_mod: 185, torque_diff: '13', torque_unit: 'Nm',
+                torque_orig: 172, torque_mod: 192, torque_diff: '20', torque_unit: 'Nm',
+                fuel_saving: '+/- 6 %',
                 price: 360 },
               { id: 'stage1', label: 'Stage 1', cssClass: 'stage1',
                 power_orig: 150, power_mod: 165, power_diff: '15', power_unit: 'cv',
