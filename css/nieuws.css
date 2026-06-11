@@ -1,0 +1,53 @@
+@charset "utf-8";
+/* CSS Document */
+
+figure.label {
+    height: 276px;
+    overflow: hidden;
+}
+
+.block-grid {
+    padding: 12px;
+    padding-left: 12px !important;
+    padding-bottom: 0;
+}
+
+    .block-grid li {
+        padding-left: 0;
+        margin-bottom: 0 !important;
+        background-image: none !important;
+    }
+
+    .block-grid li:nth-child(odd) {
+        padding-right: 6px;
+    }
+
+    .block-grid li:nth-child(even) {
+        padding-left: 6px;
+    }
+
+.load {
+    text-align: center !important;
+    margin-bottom: 1px;
+    padding-left: 0 !important;
+}
+
+.empty {
+    border: 1px dotted #333;
+    margin: 12px;
+    padding: 2em 1em;
+    text-align: center;
+}
+
+/* Small devices */
+@media all and (max-width: 767px) {
+
+    .block-grid li:nth-child(odd) {
+        padding-right: 15px;
+    }
+
+    .block-grid li:nth-child(even) {
+        padding-left: 15px;
+    }
+
+}
