@@ -9,7 +9,7 @@
 	padding-left: 26px;
 	cursor: pointer;
 	line-height: 2em;
-	color: #56b2e7;
+	color: #e75656;
 	position: relative;
 	background:
 		transparent
@@ -26,10 +26,10 @@
 	transform: translateY(-50%);
 }
 .faq h4:hover {
-	color:#66ccff;
+	color:#ff6666;
 }
 .faq h4.active {
-	color:#66ccff;
+	color:#ff6666;
 }
 .faq div   { position:relative; display: none; padding-left: 20px; }
 .faq div p { padding:0; margin-bottom:15px; }

@@ -105,7 +105,7 @@ section.title .group h5 {
 }
 
     .team .intro h1 strong {
-        color: #56b2e7;
+        color: #e75656;
         text-transform: uppercase;
     }
 
@@ -191,7 +191,7 @@ figure.news {
                             color: white;
                             font-weight: normal;
                             font-size: 12px;
-                            background-color: rgba(0,0,0,0.8);
+                            background-color: rgba(0, 0, 0,0.8);
                             padding: 2px 3px;
                             font-weight: bold;
                             line-height: 12px;
@@ -380,7 +380,7 @@ img.fnone{float:none !important}
 
 /*************** default theme **********************/
 .dd{}
-.dd .divider{border-left:1px solid #223f64; border-right:1px solid #244674;; right:32px;}
+.dd .divider{border-left:1px solid #642222; border-right:1px solid #742424;; right:32px;}
 .dd .ddArrow{width:26px;height:25px; margin-top:-12px; background:url(../images/arrow_select.png) no-repeat center center;}
 .dd .ddArrow:hover{}
 .dd .ddTitle{
@@ -395,13 +395,13 @@ img.fnone{float:none !important}
     border: none;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-    background: #2c507a; /* Old browsers */
-    background: -moz-linear-gradient(top,  #2c507a 0%, #395f89 50%, #2c507a 50%, #305681 100%); /* FF3.6+ */
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c507a), color-stop(50%,#395f89), color-stop(50%,#2c507a), color-stop(100%,#305681)); /* Chrome,Safari4+ */
-    background: -webkit-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* Chrome10+,Safari5.1+ */
-    background: -o-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* Opera 11.10+ */
-    background: -ms-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* IE10+ */
-    background: linear-gradient(to bottom,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* W3C */
+    background: #7a2c2c; /* Old browsers */
+    background: -moz-linear-gradient(top,  #7a2c2c 0%, #893939 50%, #7a2c2c 50%, #813030 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7a2c2c), color-stop(50%,#893939), color-stop(50%,#7a2c2c), color-stop(100%,#813030)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* W3C */
     cursor: pointer;
 }
 .dd .ddTitle .ddTitleText{padding:10px 32px 10px 10px !important;}

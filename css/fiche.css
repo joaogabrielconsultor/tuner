@@ -237,7 +237,7 @@ section.box {
         section.development .title .label {background: transparent url(../images/icon_info.png) no-repeat left center;}
 
         section.box header.title span.highlight {
-            color: #56b2e7;
+            color: #e75656;
             background-color: transparent;
         }
 
@@ -307,12 +307,12 @@ section.box {
     }
 
     .stage-data td.highlight {
-        color: #56b2e7;
+        color: #e75656;
         font-weight: bold;
     }
 
     .stage-data td.price {
-        color: #56b2e7;
+        color: #e75656;
         font-weight: bold;
         font-size: 24px;
     }
@@ -372,7 +372,7 @@ section.box {
         }
 
         .more-info .button-full-rounded a:hover {
-            color: #56b2e7;
+            color: #e75656;
         }
 
 .second .block-grid {
@@ -425,7 +425,7 @@ section.box {
     .development h3, .development h4 {
         font-size: 14px;
         font-family: 'Titillium Web', Arial, Helvetica, sans-serif;
-        color: #56b2e7;
+        color: #e75656;
     }
 
 div.disclaimer {
@@ -448,7 +448,7 @@ div.highlight {
 
 div.highlight.blue {
     background-color: #182129;
-    border: 1px solid #50b3e5;
+    border: 1px solid #e55050;
 }
 
 div.options-header {
@@ -461,7 +461,7 @@ div.options-header {
     background: #1d1d1d url(../images/icon_list.png) no-repeat 20px center;
 }
 
-span.plus-blue { color: #56b2e7; }
+span.plus-blue { color: #e75656; }
 span.plus-red  { color: #c30000; }
 
 /* Medium devices */

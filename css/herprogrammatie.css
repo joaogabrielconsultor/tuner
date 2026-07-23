@@ -109,12 +109,12 @@ section.sub .columns {
             section.sub .columns .back .button-full-rounded, .previous {
                 padding-left: 22px;
                 background-image: url(../images/arrow_button_back.gif); /* fallback */
-                background-image: url(../images/arrow_button_back.gif), -moz-linear-gradient(top,  #2c507a 0%, #395f89 50%, #2c507a 50%, #305681 100%); /* FF3.6+ */
-                background-image: url(../images/arrow_button_back.gif), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#2c507a), color-stop(50%,#395f89), color-stop(50%,#2c507a), color-stop(100%,#305681)); /* Chrome,Safari4+ */
-                background-image: url(../images/arrow_button_back.gif), -webkit-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* Chrome10+,Safari5.1+ */
-                background-image: url(../images/arrow_button_back.gif), -o-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* Opera 11.10+ */
-                background-image: url(../images/arrow_button_back.gif), -ms-linear-gradient(top,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* IE10+ */
-                background-image: url(../images/arrow_button_back.gif), linear-gradient(to bottom,  #2c507a 0%,#395f89 50%,#2c507a 50%,#305681 100%); /* W3C */
+                background-image: url(../images/arrow_button_back.gif), -moz-linear-gradient(top,  #7a2c2c 0%, #893939 50%, #7a2c2c 50%, #813030 100%); /* FF3.6+ */
+                background-image: url(../images/arrow_button_back.gif), -webkit-gradient(linear, left top, left bottom, color-stop(0%,#7a2c2c), color-stop(50%,#893939), color-stop(50%,#7a2c2c), color-stop(100%,#813030)); /* Chrome,Safari4+ */
+                background-image: url(../images/arrow_button_back.gif), -webkit-linear-gradient(top,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* Chrome10+,Safari5.1+ */
+                background-image: url(../images/arrow_button_back.gif), -o-linear-gradient(top,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* Opera 11.10+ */
+                background-image: url(../images/arrow_button_back.gif), -ms-linear-gradient(top,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* IE10+ */
+                background-image: url(../images/arrow_button_back.gif), linear-gradient(to bottom,  #7a2c2c 0%,#893939 50%,#7a2c2c 50%,#813030 100%); /* W3C */
                 background-repeat: no-repeat;
                 background-position: left center;
             }
@@ -188,7 +188,7 @@ section.sub .columns {
         }
 
         .list article ul.content li a:hover {
-            color: #56b2e7;
+            color: #e75656;
         }
 
         .list article ul.content li .specs {
@@ -216,8 +216,8 @@ section.sub .columns {
 
         .list article ul.content li label.new {
             padding-left: 11px;
-            color: #9ec7fe;
-            text-shadow: 1px 1px 0px #1a355f;
+            color: #fe9e9e;
+            text-shadow: 1px 1px 0px #5f1a1a;
             border: none;
             background: transparent
                         url(../images/label_arrow_new.png)
@@ -253,7 +253,7 @@ section.sub .columns {
         .list article ul.content li label.development {
             padding-left: 11px;
             color: #999;
-            text-shadow: 1px 1px 0px #1a355f;
+            text-shadow: 1px 1px 0px #5f1a1a;
             border: none;
             background: transparent
                         url(../images/label_arrow_development.png)
