@@ -51,10 +51,11 @@ jQuery(document).ready(function($) {
     $('.kiosk .rsMinW').royalSlider({
         controlNavigation: 'bullets',
         autoScaleSlider: true,
-        autoScaleSliderWidth: 960,
+        autoScaleSliderWidth: 1200,
         autoScaleSliderHeight: 334,
         loop: true,
-        imageScaleMode: 'fill',
+        imageScaleMode: 'fit',
+        imageAlignCenter: true,
         autoPlay: { enabled: true, delay: 4500, stopAtAction: false, pauseOnHover: true },
         sliderDrag: false
     });
