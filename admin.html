@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin — BR-Performance Barcelona</title>
+  <title>Admin — Carbon Performance</title>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Segoe UI',Arial,sans-serif;background:#0f0f0f;color:#ccc;min-height:100vh}
@@ -136,7 +136,7 @@
         <div class="form-grid">
           <div class="fg">
             <label>Nome da empresa</label>
-            <input type="text" id="cfg-nome" placeholder="BR-Performance Barcelona">
+            <input type="text" id="cfg-nome" placeholder="Carbon Performance">
           </div>
           <div class="fg">
             <label>Slogan</label>
@@ -167,11 +167,11 @@
         <div class="form-grid">
           <div class="fg">
             <label>Morada — Linha 1</label>
-            <input type="text" id="cfg-morada1" placeholder="Calle del cobalto 165">
+            <input type="text" id="cfg-morada1" placeholder="Zuberoa Etorb. 8, 10">
           </div>
           <div class="fg">
             <label>Morada — Linha 2</label>
-            <input type="text" id="cfg-morada2" placeholder="08907 Hospitalet del Llobregat, Barcelona">
+            <input type="text" id="cfg-morada2" placeholder="48012 Errekalde, Bilbao, Bizkaia">
           </div>
         </div>
       </div>
@@ -331,14 +331,14 @@ function loadFields() {
 
   const set = (id, val) => { const el = document.getElementById(id); if (el && val) el.value = val; };
 
-  set('cfg-nome', empresa.nome || 'BR-Performance Barcelona');
+  set('cfg-nome', empresa.nome || 'Carbon Performance');
   set('cfg-slogan', empresa.slogan || 'Professional Chiptuning');
   set('cfg-telefone', empresa.telefone || '+34 680 911 007');
   set('cfg-telefone-link', empresa.telefone_link || 'tel:34680911007');
   set('cfg-email', empresa.email || 'barcelona@br-performance.com');
   set('cfg-horario', empresa.horario || 'Lunes–Viernes: 9:00–18:00 | Sábado: Con cita previa');
-  set('cfg-morada1', empresa.morada_linha1 || 'Calle del cobalto 165');
-  set('cfg-morada2', empresa.morada_linha2 || '08907 Hospitalet del Llobregat, Barcelona');
+  set('cfg-morada1', empresa.morada_linha1 || 'Zuberoa Etorb. 8, 10');
+  set('cfg-morada2', empresa.morada_linha2 || '48012 Errekalde, Bilbao, Bizkaia');
 
   set('cfg-facebook', redes.facebook || 'https://www.facebook.com/BRPerformanceBarcelona');
   set('cfg-youtube', redes.youtube || 'http://www.youtube.com/user/BRPerformances');
@@ -386,7 +386,7 @@ function saveConfig() {
 // ===== EXPORT =====
 function buildConfigJS() {
   const cfg = readFields();
-  return `// BR-Performance Barcelona — Configuração do site
+  return `// Carbon Performance — Configuração do site
 // Gerado pelo painel admin em ${new Date().toLocaleString('pt-PT')}
 
 const BRP_CONFIG = {

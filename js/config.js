@@ -1,12 +1,12 @@
-// BR-Performance Barcelona — Configuração do site
+// Carbon Performance — Configuração do site
 // Edite via /admin.html ou diretamente aqui
 
 const BRP_CONFIG = {
   empresa: {
-    nome: 'BR-Performance Barcelona',
+    nome: 'Carbon Performance',
     slogan: 'Professional Chiptuning',
-    morada_linha1: 'Calle del cobalto 165',
-    morada_linha2: '08907 Hospitalet del Llobregat, Barcelona',
+    morada_linha1: 'Zuberoa Etorb. 8, 10',
+    morada_linha2: '48012 Errekalde, Bilbao, Bizkaia',
     telefone: '+34 680 911 007',
     telefone_link: 'tel:34680911007',
     email: 'barcelona@br-performance.com',
@@ -18,7 +18,7 @@ const BRP_CONFIG = {
     instagram: 'https://www.instagram.com/brperformance_bcn'
   },
   seo: {
-    titulo_home: 'Home - BR-Performance Barcelona - Reprogramación de centralitas',
+    titulo_home: 'Home - Carbon Performance - Reprogramación de centralitas',
     descricao: 'Chiptuning y reprogramación profesional de centralitas en Barcelona. TÜV Rheinland certificado.'
   },
   links: {
