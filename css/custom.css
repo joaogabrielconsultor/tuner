@@ -28,8 +28,23 @@ section.box header.stages a.stage3 {
 .nav-toggle { display:none; }
 @media only screen and (max-width:767px) {
   .nav-toggle { display:block; }
-  nav.primary { display:none; }
-  nav.primary.open { display:block; }
+  /* A barra de nav tinha overflow:hidden + altura fixa que prendia o menu.
+     Liberar para o menu poder empurrar o conteudo para baixo. */
+  section.row.nav { overflow: visible !important; height: auto !important; }
+  .navContainer { overflow: visible !important; height: auto !important; }
+  /* Menu mobile: em fluxo normal, empurra o conteudo para baixo (sem sobrepor) */
+  nav.primary {
+    display: none;
+    position: static !important;
+    float: none !important;
+    width: 100%;
+    clear: both;
+    background: #1a1a1a !important;
+    border-top: 2px solid #cc0000;
+  }
+  nav.primary.open { display: block; }
+  nav.primary ul.brp-barcelona { position: static !important; float: none !important; width: 100%; }
+  nav.primary ul.brp-barcelona > li { float: none !important; width: 100%; }
 }
 
 /* Submenu dropdown on hover */
