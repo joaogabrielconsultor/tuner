@@ -103,7 +103,10 @@ if (contactForm) {
   }
 
   // --- Newsletter popup (bottom-right, dismissible) ---
-  if (!document.querySelector('.newsletter-popup') && sessionStorage.getItem('brpNewsletterClosed') !== '1') {
+  // Só aparece depois que o cookie for resolvido, para nunca se sobrepor a ele no mobile.
+  function showNewsletter() {
+    if (document.querySelector('.newsletter-popup')) return;
+    if (sessionStorage.getItem('brpNewsletterClosed') === '1') return;
     const np = document.createElement('div');
     np.className = 'newsletter-popup';
     np.innerHTML =
@@ -129,7 +132,7 @@ if (contactForm) {
     });
   }
 
-  // --- Cookie consent (bottom-left, remembers choice) ---
+  // --- Cookie consent (bottom, remembers choice) ---
   if (!document.querySelector('.cookie-consent') && localStorage.getItem('brpCookieChoice') === null) {
     const cc = document.createElement('div');
     cc.className = 'cookie-consent';
@@ -140,10 +143,13 @@ if (contactForm) {
       '<button class="cookie-accept">Accept all</button>' +
       '<button class="cookie-reject">Reject all</button></div>';
     body.appendChild(cc);
-    const closeCookie = (choice) => { localStorage.setItem('brpCookieChoice', choice); cc.remove(); };
+    const closeCookie = (choice) => { localStorage.setItem('brpCookieChoice', choice); cc.remove(); showNewsletter(); };
     cc.querySelector('.cookie-accept').addEventListener('click', () => closeCookie('all'));
     cc.querySelector('.cookie-reject').addEventListener('click', () => closeCookie('reject'));
     cc.querySelector('.cookie-choose').addEventListener('click', (e) => { e.preventDefault(); closeCookie('essential'); });
+  } else {
+    // cookie já resolvido: pode mostrar a newsletter direto
+    showNewsletter();
   }
 })();
 

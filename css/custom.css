@@ -131,6 +131,9 @@ div.sub, section.sub { background: linear-gradient(to bottom, #3a3a3a 0%, #2a2a2
 .box.other .secondary .doClear { clear: both; }
 @media only screen and (max-width: 767px) { .box.other .secondary .col { width: 48%; margin-right: 2%; margin-bottom: 10px; } }
 
+/* Guarda contra scroll horizontal no mobile (margens negativas do grid Foundation) */
+html, body { overflow-x: hidden; max-width: 100%; }
+
 /* ===== GLOBAL WIDGETS ===== */
 
 /* Announcement bar (top marquee) */
