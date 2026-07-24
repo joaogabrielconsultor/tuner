@@ -146,3 +146,124 @@ if (contactForm) {
     cc.querySelector('.cookie-choose').addEventListener('click', (e) => { e.preventDefault(); closeCookie('essential'); });
   }
 })();
+
+
+// ===== FORMULARIO DE CONTACTO -> WHATSAPP =====
+// Ao enviar, monta a mensagem com os datos preenchidos (mais a reprogramacion
+// de interes, se o cliente veio de uma pagina de motor) e abre o WhatsApp.
+(function () {
+  var form = document.querySelector('form.content.contact');
+  if (!form) return;
+
+  var WA = '393758172444'; // +39 375 817 2444
+  var params = new URLSearchParams(window.location.search);
+  // Monta o nome do veiculo evitando repetir o modelo quando o motor ja o contem
+  // (ex.: modelo "RSQ8" + motor "RSQ8 4.0 V8 TFSI" -> "Audi RSQ8 4.0 V8 TFSI")
+  var pMarca = params.get('marca'), pModelo = params.get('modelo'), pMotor = params.get('motor');
+  var vehParts = [pMarca];
+  if (pModelo && !(pMotor && pMotor.toLowerCase().indexOf(pModelo.toLowerCase()) >= 0)) vehParts.push(pModelo);
+  if (pMotor) vehParts.push(pMotor);
+  var veh = vehParts.filter(Boolean).join(' ');
+
+  function field(n) { return form.querySelector('#' + n); }
+  function val(n) { var el = field(n); return el ? el.value.trim() : ''; }
+
+  // Pre-preenche o "Coche" com o veiculo e seleciona Espana no pais
+  if (veh) {
+    var subj = field('subject');
+    if (subj && !subj.value) subj.value = veh;
+
+    // Banner de destaque com a reprogramacion consultada
+    var stg = params.get('stage'), pr = params.get('price');
+    var banner = document.createElement('div');
+    banner.className = 'consulta-vehiculo';
+    banner.innerHTML =
+      '<span class="cv-tag">Estás consultando</span>' +
+      '<span class="cv-car">' + veh + (stg ? ' &middot; ' + stg : '') + (pr ? ' &middot; €' + pr : '') + '</span>' +
+      '<span class="cv-hint">¿No es este vehículo? Cámbialo en el campo <b>Coche</b> más abajo.</span>';
+    form.insertBefore(banner, form.firstChild);
+
+    // Realca o campo Coche editavel
+    if (subj) {
+      subj.classList.add('cv-prefill');
+      subj.addEventListener('focus', function () { this.classList.remove('cv-prefill'); }, { once: true });
+    }
+  }
+  var country = field('country');
+  if (country && !country.value) {
+    Array.prototype.some.call(country.options, function (o) {
+      if (/^(Espa..a|Spain)$/i.test(o.value) || /^(Espa..a|Spain)$/i.test(o.text)) { o.selected = true; return true; }
+      return false;
+    });
+  }
+  // Se veio de um coche, marca o tipo de vehiculo como "Coche"
+  var typeSel = field('type');
+  if (typeSel && veh) {
+    Array.prototype.some.call(typeSel.options, function (o) {
+      if (/coche/i.test(o.text)) { o.selected = true; return true; }
+      return false;
+    });
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Validacao dos obrigatorios
+    var required = ['first_name', 'last_name', 'email', 'mileage', 'gearbox', 'subject', 'question'];
+    for (var i = 0; i < required.length; i++) {
+      var el = field(required[i]);
+      if (el && !el.value.trim()) {
+        el.classList.add('field-error');
+        el.addEventListener('input', function () { this.classList.remove('field-error'); }, { once: true });
+        el.focus();
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        return;
+      }
+    }
+
+    var B = function (s) { return '*' + s + '*'; };
+    var lines = [];
+    lines.push('🔧 ' + B('Solicitud de presupuesto — Carbon Performance'));
+    lines.push('');
+    lines.push('👤 ' + B('CLIENTE'));
+    lines.push('Nombre: ' + val('first_name') + ' ' + val('last_name'));
+    if (val('company')) lines.push('Empresa: ' + val('company'));
+    var loc = [val('address'), country ? country.value : ''].filter(Boolean).join(', ');
+    if (loc) lines.push('Ubicación: ' + loc);
+    lines.push('E-mail: ' + val('email'));
+    if (val('phone')) lines.push('Teléfono: ' + val('phone'));
+    lines.push('');
+    lines.push('🚗 ' + B('VEHÍCULO'));
+    if (typeSel) {
+      var t = (typeSel.options[typeSel.selectedIndex] || {}).text || '';
+      if (t && !/seleccione/i.test(t)) lines.push('Tipo: ' + t);
+    }
+    lines.push('Coche: ' + val('subject'));
+    lines.push('Kilómetros: ' + val('mileage'));
+    lines.push('Caja de cambios: ' + val('gearbox'));
+
+    var stage = params.get('stage');
+    if (veh && stage) {
+      lines.push('');
+      lines.push('⚙️ ' + B('REPROGRAMACIÓN DE INTERÉS'));
+      lines.push(veh + ' · ' + stage);
+      var po = params.get('po');
+      if (po) lines.push('Potencia: ' + po + ' → ' + params.get('pm') + ' cv (+' + params.get('pd') + ')');
+      var to = params.get('to');
+      if (to) lines.push('Par: ' + to + ' → ' + params.get('tm') + ' Nm (+' + params.get('td') + ')');
+      var price = params.get('price');
+      if (price) lines.push('Precio orientativo: €' + price);
+    }
+
+    lines.push('');
+    lines.push('💬 ' + B('CONSULTA'));
+    lines.push(val('question'));
+    lines.push('');
+    var nl = field('newsletter');
+    lines.push('📬 Newsletter: ' + (nl && nl.checked ? 'Sí' : 'No'));
+
+    var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank');
+    if (!w) window.location.href = url;
+  });
+})();

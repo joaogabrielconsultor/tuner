@@ -105,6 +105,15 @@ div.sub, section.sub { background: linear-gradient(to bottom, #3a3a3a 0%, #2a2a2
 .content.contact select option { background: #222; color: #e5e5e5; }
 .content.contact textarea { height: 80px; resize: vertical; }
 .content.contact .warning { color: #cc0000; }
+.content.contact .field-error { border-color: #cc0000 !important; box-shadow: 0 0 0 2px #cc0000 !important; }
+
+/* Banner "estas consultando" no formulario de contacto */
+.consulta-vehiculo { background:linear-gradient(180deg,#2a1414,#1c0f0f); border:1px solid #cc0000; border-left:4px solid #cc0000; border-radius:4px; padding:12px 16px; margin:0 0 18px; }
+.consulta-vehiculo .cv-tag { display:block; font-size:10px; letter-spacing:1.5px; text-transform:uppercase; color:#e75656; font-weight:700; margin-bottom:3px; }
+.consulta-vehiculo .cv-car { display:block; font-size:15px; font-weight:700; color:#fff; }
+.consulta-vehiculo .cv-hint { display:block; font-size:11px; color:#aaa; margin-top:5px; }
+.consulta-vehiculo .cv-hint b { color:#e75656; }
+.content.contact input.cv-prefill { border-color:#cc0000; background:rgba(204,0,0,0.06); }
 
 /* Otros centros — country columns */
 .box.other .secondary { overflow: hidden; margin: 10px 0; }

@@ -173,9 +173,28 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function initSecondSection() {
-    var motorUrl = 'contacto.html?motor=' + encodeURIComponent(motorParam);
+    // Monta o link de contato carregando marca/modelo/motor/stage e os numeros,
+    // para o formulario gerar a mensagem de WhatsApp ja com a reprogramacion de interes.
+    var q = 'contacto.html?marca=' + encodeURIComponent(brand.name) +
+            '&modelo=' + encodeURIComponent(modeloParam) +
+            '&motor=' + encodeURIComponent(motorParam);
+    if (currentStage) {
+      q += '&stage=' + encodeURIComponent(currentStage.label || '');
+      if (currentStage.power_orig != null && currentStage.power_orig !== '') {
+        q += '&po=' + currentStage.power_orig +
+             '&pm=' + (currentStage.power_mod != null ? currentStage.power_mod : '') +
+             '&pd=' + (currentStage.power_diff != null ? currentStage.power_diff : '');
+      }
+      if (currentStage.torque_orig != null && currentStage.torque_orig !== '') {
+        q += '&to=' + currentStage.torque_orig +
+             '&tm=' + (currentStage.torque_mod != null ? currentStage.torque_mod : '') +
+             '&td=' + (currentStage.torque_diff != null ? currentStage.torque_diff : '');
+      }
+      if (currentStage.price) q += '&price=' + currentStage.price;
+    }
     var testBtn = document.getElementById('btn-testimonio');
-    if (testBtn) testBtn.href = motorUrl;
+    if (testBtn) testBtn.href = q;
+    document.querySelectorAll('span.mail a').forEach(function (a) { a.href = q; });
   }
 
   function findModel(b, modelName) {
