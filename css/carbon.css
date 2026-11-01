@@ -110,7 +110,8 @@ main { display: block; }
 body.nav-open .site-header { position: fixed; top: 0; }
 .header-inner { height: 100%; display: flex; align-items: center; gap: 40px; max-width: none; padding: 0 40px; }
 .brand { flex: none; }
-.brand img { width: 208px; height: auto; }
+.brand-logo { position: relative; display: block; height: 60px; aspect-ratio: 600 / 191; }
+.brand img { display: block; width: auto; height: 100%; }
 .main-nav { flex: 1; }
 .main-nav > ul { list-style: none; margin: 0; padding: 0; display: flex; gap: 24px; }
 .main-nav li { position: relative; }
@@ -142,7 +143,7 @@ body.nav-open .site-header { position: fixed; top: 0; }
 .drawer-extra { display: none; }
 @media (max-width: 1180px) {
   .header-inner { padding: 0 var(--gutter); gap: 16px; }
-  .brand img { width: 160px; }
+  .brand-logo { height: 50px; }
   .nav-burger { display: inline-grid; }
   .header-loc, .header-search { display: none; }
   .main-nav {
@@ -740,7 +741,7 @@ body.nav-open .site-header { z-index: 70; }
 /* Rodapé e contato com as medidas da referência */
 .site-footer { padding-top: 144px; }
 .footer-logo { display: inline-block; margin-bottom: 40px; }
-.footer-logo img { height: 39px; width: auto; }
+.footer-logo img { height: 64px; width: auto; }
 .footer-news-intro { margin: 0 0 24px; font-size: 18px; line-height: 1.5; color: var(--body); }
 .footer-top { padding-bottom: 96px; }
 .footer-news { gap: 24px; }
@@ -881,7 +882,7 @@ body.nav-open .site-header { z-index: 70; }
 
 /* ===== Topo fixo ao rolar ===== */
 body.header-stuck .site-header { position: fixed; left: 0; right: 0; top: 0; height: 76px; background: rgba(23,23,24,.82); -webkit-backdrop-filter: blur(14px) saturate(1.4); backdrop-filter: blur(14px) saturate(1.4); box-shadow: 0 1px 0 rgba(255,255,255,.06), 0 12px 30px rgba(0,0,0,.35); animation: header-drop .45s var(--ease-out); }
-body.header-stuck .site-header .brand img { width: 168px; }
+body.header-stuck .site-header .brand-logo { height: 48px; }
 body.header-stuck .site-header .btn { height: 48px; }
 body.header-stuck .site-header .btn .ico { width: 34px; height: 34px; }
 @keyframes header-drop { from { transform: translateY(-100%); } to { transform: none; } }
@@ -940,3 +941,64 @@ body.nav-open.header-stuck .site-header { background: var(--bg); -webkit-backdro
 .result-sticky { display: none; }
 @media (max-width: 768px) { .result-sticky { display: flex; } }
 @keyframes rs-up { from { transform: translateY(100%); } to { transform: none; } }
+
+/* ---------- Logo: entrada (uma vez por visita) ---------- */
+@media (max-width: 768px) { .brand-logo { height: 46px; } body.header-stuck .site-header .brand-logo { height: 42px; } }
+.brand-fx { position: absolute; inset: 0; display: none; pointer-events: none; }
+.brand-logo::before, .brand-logo::after { content: none; }
+.logo-intro .brand-fx { display: block; }
+.logo-intro .brand-logo { animation: logo-in .85s cubic-bezier(.16, 1, .3, 1) both; will-change: transform, opacity; }
+/* motion blur: dois "fantasmas" da logo ficando para trás */
+.logo-intro .brand-logo::before, .logo-intro .brand-logo::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background: url(../images/logo-mido.webp) center / 100% 100% no-repeat; opacity: 0;
+}
+.logo-intro .brand-logo::before { animation: logo-ghost-1 .7s ease-out both; }
+.logo-intro .brand-logo::after  { animation: logo-ghost-2 .7s ease-out both; }
+/* brilho metálico nas letras MIDO */
+.brand-shine {
+  -webkit-mask: url(../images/logo-mido-letters.png) center / 100% 100% no-repeat;
+          mask: url(../images/logo-mido-letters.png) center / 100% 100% no-repeat;
+  background: linear-gradient(105deg, transparent 0 40%, rgba(255,255,255,.35) 45%, #fff 49%, rgba(255,255,255,.35) 53%, transparent 58%) 100% 0 / 300% 100% no-repeat;
+  mix-blend-mode: screen; opacity: 0;
+}
+.logo-intro .brand-shine { animation: logo-shine .8s .5s cubic-bezier(.45, 0, .2, 1) both; }
+/* rastro de luz vermelha no contorno do carro e na linha de baixo */
+.brand-trail {
+  -webkit-mask: url(../images/logo-mido-trail.png) center / 100% 100% no-repeat;
+          mask: url(../images/logo-mido-trail.png) center / 100% 100% no-repeat;
+  background: linear-gradient(90deg, transparent 0 36%, rgba(255,30,30,.35) 46%, #ff4d4d 54%, #fff 56.5%, #fff 58%, rgba(255,80,80,.7) 59.5%, transparent 62%) 100% 0 / 300% 100% no-repeat;
+  mix-blend-mode: plus-lighter; opacity: 0;
+}
+.logo-intro .brand-trail { animation: logo-trail 1.2s .6s cubic-bezier(.45, .05, .55, .95) both; }
+@keyframes logo-in {
+  0%   { opacity: 0; transform: translateX(-280px) skewX(-16deg); filter: blur(4px); }
+  20%  { opacity: 1; }
+  62%  { transform: translateX(7px) skewX(3deg); filter: blur(0); }
+  82%  { transform: translateX(-2px) skewX(0); }
+  100% { opacity: 1; transform: none; filter: none; }
+}
+@keyframes logo-ghost-1 {
+  0%   { opacity: .5;  transform: translateX(-40px); }
+  60%  { opacity: .18; transform: translateX(-14px); }
+  100% { opacity: 0;   transform: none; }
+}
+@keyframes logo-ghost-2 {
+  0%   { opacity: .3;  transform: translateX(-90px); }
+  50%  { opacity: .1;  transform: translateX(-30px); }
+  100% { opacity: 0;   transform: none; }
+}
+@keyframes logo-shine {
+  0%   { opacity: 1; background-position: 100% 0; }
+  90%  { opacity: 1; }
+  100% { opacity: 0; background-position: 0 0; }
+}
+@keyframes logo-trail {
+  0%   { opacity: 1; background-position: 100% 0; }
+  85%  { opacity: 1; }
+  100% { opacity: 0; background-position: 0 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .logo-intro .brand-logo, .logo-intro .brand-logo::before, .logo-intro .brand-logo::after { animation: none; }
+  .logo-intro .brand-logo::before, .logo-intro .brand-logo::after, .logo-intro .brand-fx { display: none; }
+}

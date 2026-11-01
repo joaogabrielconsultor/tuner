@@ -409,3 +409,10 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
   update();
 })();
+
+/* Logo: tira a classe da animação de entrada quando ela termina (roda uma vez por visita) */
+(function () {
+  var root = document.documentElement;
+  if (!root.classList.contains('logo-intro')) return;
+  setTimeout(function () { root.classList.remove('logo-intro'); }, 2100);
+})();
