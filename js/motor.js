@@ -129,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function btn(q) {
     return '<div class="cta-box">' +
       '<a class="btn btn-wa" href="#" data-wa-direct>' + WA_ICON + '<span>Pedir cita por WhatsApp</span></a>' +
-      '<div class="cta-alt"><a class="cta-link" href="tel:+34680911007">' + PHONE_ICON + 'Llamar</a>' +
+      '<div class="cta-alt"><a class="cta-link" href="tel:+393758172444">' + PHONE_ICON + 'Llamar</a>' +
       '<a class="cta-link" href="#contacto">Prefiero el formulario</a></div>' +
       '<ul class="cta-trust"><li>Respuesta rápida</li><li>Sin compromiso</li><li>Probado en banco de potencia</li></ul>' +
       '</div>';

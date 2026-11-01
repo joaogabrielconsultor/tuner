@@ -7,9 +7,9 @@ const BRP_CONFIG = {
     slogan: 'Professional Chiptuning',
     morada_linha1: 'Zuberoa Etorb. 8, 10',
     morada_linha2: '48012 Errekalde, Bilbao, Bizkaia',
-    telefone: '+34 680 911 007',
-    telefone_link: 'tel:+34680911007',
-    email: 'barcelona@br-performance.com',
+    telefone: '+39 375 817 2444',
+    telefone_link: 'tel:+393758172444',
+    email: '', // sem e-mail por enquanto (o da BR foi retirado)
     horario: 'Lunes–Sábado: 9:00–15:00 | Domingo: Cerrado'
   },
   redes: {
