@@ -212,7 +212,8 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     '<button type="button" class="cookie-accept">Aceptar</button></div>' +
     '<hr class="cookie-sep"><a class="cookie-policy" href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>';
   body.appendChild(cc);
-  var closeCookie = function (v) { try { localStorage.setItem('brpCookieChoice', v); } catch (e) {} cc.remove(); };
+  body.classList.add('cookie-open');
+  var closeCookie = function (v) { try { localStorage.setItem('brpCookieChoice', v); } catch (e) {} cc.remove(); body.classList.remove('cookie-open'); };
   cc.querySelector('.cookie-accept').addEventListener('click', function () { closeCookie('all'); });
   cc.querySelector('.cookie-reject').addEventListener('click', function () { closeCookie('reject'); });
   cc.querySelector('.cookie-choose').addEventListener('click', function (e) { e.preventDefault(); closeCookie('essential'); });
@@ -361,4 +362,84 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     var input = finder.querySelector('.finder-search input');
     if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 450);
   });
+})();
+
+// ===== WHATSAPP FIXO =====
+// Mensagem pronta; quando a página tem um veículo escolhido (CP.waContext), ele vai junto.
+(function () {
+  var a = document.querySelector('[data-wa-float]');
+  if (!a) return;
+  window.CP = window.CP || {};
+  CP.waMessage = function (extra) {
+    var c = CP.waContext;
+    var lines = ['Hola Carbon Performance 👋'];
+    if (c && c.veh) {
+      lines.push('Me interesa la reprogramación de mi vehículo:');
+      lines.push('🚗 ' + c.veh + (c.stage ? ' · ' + c.stage : ''));
+      if (c.power) lines.push('Potencia: ' + c.power);
+      if (c.torque) lines.push('Par: ' + c.torque);
+      if (c.price) lines.push('Precio orientativo: ' + c.price);
+      lines.push('¿Cuándo podría pedir cita?');
+    } else {
+      lines.push('Me gustaría información sobre la reprogramación de mi vehículo.');
+    }
+    if (extra) lines.push(extra);
+    return 'https://wa.me/' + CP_WA + '?text=' + encodeURIComponent(lines.join('\n'));
+  };
+  a.addEventListener('click', function (e) {
+    e.preventDefault();
+    var url = CP.waMessage();
+    var w = window.open(url, '_blank');
+    if (!w) window.location.href = url;
+  });
+  // Balão "¿Te ayudamos?" aparece uma vez por visita, depois de alguns segundos
+  var seen = false;
+  try { seen = sessionStorage.getItem('cpWaBubble') === '1'; } catch (e) {}
+  if (!seen) {
+    setTimeout(function () {
+      a.classList.add('show-bubble');
+      try { sessionStorage.setItem('cpWaBubble', '1'); } catch (e) {}
+      setTimeout(function () { a.classList.remove('show-bubble'); }, 6000);
+    }, 5000);
+  }
+})();
+
+// ===== ANIMAÇÕES AO ROLAR =====
+// Marca os blocos principais e faz cada um entrar suavemente quando aparece na tela.
+// Sem JS ou com "reduzir movimento" ligado, tudo aparece normalmente.
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || !('IntersectionObserver' in window)) return;
+  var root = document.documentElement;
+  root.classList.add('anim');
+  var groups = [
+    '.hero h1, .hero .hero-lead, .hero .finder',
+    '.section-head, .parts-head, .page-head > *, .about > *, .faq-head .faq-page > *',
+    '.news-grid > .news-card, #svc-rail > .svc-card, .svc-stack > *, .svc-feature',
+    '.split > *, .result-top > *, .spec-card, .graph-card, .stage-bar',
+    '.faq-group, .contact-grid > *, .center-grid > *, .center-card, .footer-top > *',
+    '.photo-band'
+  ];
+  var els = [];
+  groups.forEach(function (sel) {
+    document.querySelectorAll(sel).forEach(function (el) {
+      if (el.hasAttribute('data-reveal') || el.closest('[data-reveal]') && !el.matches('.svc-stack > *')) return;
+      el.setAttribute('data-reveal', '');
+      els.push(el);
+    });
+  });
+  // pequenos atrasos em sequência para itens lado a lado
+  var lastParent = null, idx = 0;
+  els.forEach(function (el) {
+    if (el.parentElement === lastParent) idx++; else { idx = 0; lastParent = el.parentElement; }
+    el.style.setProperty('--d', Math.min(idx, 5) * 90 + 'ms');
+  });
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  els.forEach(function (el) { io.observe(el); });
+  // segurança: se algo não disparar, mostra depois de 2,5 s
+  setTimeout(function () { els.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-in'); }); }, 2500);
 })();

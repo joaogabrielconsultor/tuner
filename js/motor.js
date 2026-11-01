@@ -56,6 +56,15 @@ document.addEventListener('DOMContentLoaded', function () {
       if (stage.price) q += '&price=' + stage.price;
     }
 
+    var vehLabel = brand.name + ' ' + modeloParam + ' ' + motorParam + ' (' + cvParam + ' CV)';
+    window.CP = window.CP || {};
+    CP.waContext = stage ? {
+      veh: vehLabel,
+      stage: (function (t) { t = String(t || ''); return t.charAt(0).toUpperCase() + t.slice(1); })(STAGE_NAME[stage.id] || stage.label),
+      power: (stage.power_orig != null && stage.power_mod != null && stage.cssClass !== 'brp-eco') ? stage.power_orig + ' → ' + stage.power_mod + ' ' + (stage.power_unit || 'cv') : '',
+      torque: (stage.torque_orig != null && stage.torque_mod != null) ? stage.torque_orig + ' → ' + stage.torque_mod + ' ' + (stage.torque_unit || 'Nm') : '',
+      price: stage.price ? stage.price + ' €' : ''
+    } : { veh: vehLabel };
     renderSpec(stage, q);
     // Formulário Contáctanos desta página já leva o veículo e a etapa
     var vehName = brand.name + ' ' + modeloParam + ' ' + motorParam;
@@ -101,7 +110,24 @@ document.addEventListener('DOMContentLoaded', function () {
       '</div></div>' + btn(q);
     box.innerHTML = html;
   }
-  function btn(q) { return '<a class="btn" href="' + q + '">Contáctanos <span class="ico">' + ARROW + '</span></a>'; }
+  var WA_ICON = '<svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm5.8 15.6c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.4-.5-2.6-1.6-1-.9-1.6-1.9-1.8-2.2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.8 0 1.6 1.2 3.2 1.4 3.4.2.2 2.4 3.6 5.7 5 .8.4 1.4.6 1.9.7.8.3 1.6.2 2.2.1.7-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg>';
+  var PHONE_ICON = '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1A17 17 0 013 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>';
+  function btn(q) {
+    return '<div class="cta-box">' +
+      '<a class="btn btn-wa" href="#" data-wa-direct>' + WA_ICON + '<span>Pedir cita por WhatsApp</span></a>' +
+      '<div class="cta-alt"><a class="cta-link" href="tel:+34680911007">' + PHONE_ICON + 'Llamar</a>' +
+      '<a class="cta-link" href="#contacto">Prefiero el formulario</a></div>' +
+      '<ul class="cta-trust"><li>Respuesta rápida</li><li>Sin compromiso</li><li>Probado en banco de potencia</li></ul>' +
+      '</div>';
+  }
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('[data-wa-direct]');
+    if (!a) return;
+    e.preventDefault();
+    var url = window.CP && CP.waMessage ? CP.waMessage() : 'https://wa.me/393758172444';
+    var w = window.open(url, '_blank');
+    if (!w) window.location.href = url;
+  });
 
   function renderGraph(s) {
     var g = document.getElementById('graph');
