@@ -10,7 +10,7 @@ const BRP_CONFIG = {
     telefone: '+34 680 911 007',
     telefone_link: 'tel:+34680911007',
     email: 'barcelona@br-performance.com',
-    horario: 'Lunes–Viernes: 9:00–18:00 | Sábado: Con cita previa'
+    horario: 'Lunes–Sábado: 9:00–13:00 y 14:00–18:00 | Domingo: Cerrado'
   },
   redes: {
     facebook: '',
