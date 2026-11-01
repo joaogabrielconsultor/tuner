@@ -996,6 +996,12 @@ body.nav-open.header-stuck .site-header { background: var(--bg); -webkit-backdro
 .site-intro .intro-bar { animation: bar-in .4s .5s ease-out both; }
 .site-intro .intro-bar span { animation: bar-load 1.6s .55s cubic-bezier(.3, .6, .4, 1) both; }
 .site-intro .intro.is-done .intro-bar span { animation: bar-full .26s ease-out both; }
+/* aviso "toca para ouvir" (só quando o navegador bloqueou o som) */
+.intro-tap { display: flex; align-items: center; gap: 8px; margin-top: -14px; font: 600 12px/1 Manrope, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.62); opacity: 0; visibility: hidden; transition: opacity .35s, visibility .35s; }
+.intro-tap svg { width: 16px; height: 16px; color: #e10600; }
+.intro.needs-tap .intro-tap { opacity: 1; visibility: visible; animation: tap-pulse 1.2s .2s ease-in-out infinite alternate; }
+.intro.needs-tap { cursor: pointer; }
+@keyframes tap-pulse { from { opacity: .45; } to { opacity: 1; } }
 @keyframes intro-glow { 0% { opacity: 0; transform: scale(.7); } 100% { opacity: 1; transform: none; } }
 @keyframes intro-out     { to { opacity: 0; visibility: hidden; } }
 @keyframes intro-out-now { to { opacity: 0; visibility: hidden; transform: scale(1.03); } }

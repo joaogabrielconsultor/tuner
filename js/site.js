@@ -428,7 +428,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     snd = new Audio('audio/intro-motor.mp3');
     snd.volume = 0.6;
     var p = snd.play();
-    if (p && p.then) p.then(function () { sndOn = true; }, function () {});
+    if (p && p.then) p.then(function () { sndOn = true; }, function () { if (intro && !sndOn) { intro.classList.add('needs-tap'); MIN = 2600; } });
   } catch (e) { snd = null; }
   function fadeSound() {
     if (!snd || snd.paused) return;
@@ -458,7 +458,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   setTimeout(close, MAX);
   if (intro) intro.addEventListener('click', function () {
     if (snd && !sndOn && !closing) {            // 1º toque: liga o som e segura a tela até ele acabar
-      sndOn = true; snd.currentTime = 0;
+      sndOn = true; snd.currentTime = 0; intro.classList.remove('needs-tap');
       snd.play().catch(function () {});
       holdUntil = Date.now() + 2200;
       return;
