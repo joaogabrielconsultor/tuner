@@ -782,7 +782,7 @@ body.nav-open .site-header { z-index: 70; }
 @media (max-width: 768px) { .split { padding-block: 48px; } .split h1, .split h2 { font-size: 32px; margin-bottom: 20px; } .split p, .split ul li { font-size: 16px; } }
 
 /* Hero das páginas de reprogramação */
-.hero.hero-reprog h1 { max-width: 600px; }
+.hero.hero-reprog h1 { max-width: 760px; }
 
 /* Serviços empilhados */
 .svc-stack { display: grid; gap: 32px; }
@@ -1002,3 +1002,4 @@ body.nav-open .site-header { z-index: 70; }
 .page-home .hero-bg { object-position: 72% 50%; }
 @media (max-width: 768px) { .page-home .hero-bg { object-position: 78% 50%; } }
 .photo-band img { object-position: 50% 55%; }
+.hero-reprog .hero-bg { object-position: 70% 50%; }
