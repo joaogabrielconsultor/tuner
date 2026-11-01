@@ -348,3 +348,17 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     update();
   });
 })();
+
+// Botões "Prepara mi vehículo" e cartões de serviço: sobem até o configurador e põem o cursor na busca
+(function () {
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href="#buscador"]');
+    if (!a) return;
+    var finder = document.getElementById('buscador');
+    if (!finder) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    var input = finder.querySelector('.finder-search input');
+    if (input) setTimeout(function () { input.focus({ preventScroll: true }); }, 450);
+  });
+})();
