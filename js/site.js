@@ -355,7 +355,10 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   }
   var heroBits = document.querySelectorAll('.hero .hero-lead, .hero .finder-search, .hero .finder-row, .hero .finder-steps, .hero .type-pills');
   heroBits.forEach(function (el, i) { el.classList.add('hero-in'); el.style.setProperty('--d', (380 + i * 110) + 'ms'); });
-  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('hero-ready'); }); });
+  var heroGo = function () { requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('hero-ready'); }); }); };
+  // com a tela de abertura, o título da capa só anima quando ela some
+  if (root.classList.contains('site-intro')) { document.addEventListener('cp:intro-end', heroGo, { once: true }); setTimeout(heroGo, 2400); }
+  else heroGo();
 
   // 2) Blocos ao rolar
   var groups = [
@@ -410,9 +413,19 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   update();
 })();
 
-/* Logo: tira a classe da animação de entrada quando ela termina (roda uma vez por visita) */
+/* Abertura: some depois de ~2,5 s (ou num toque/tecla) e libera a página */
 (function () {
   var root = document.documentElement;
-  if (!root.classList.contains('logo-intro')) return;
-  setTimeout(function () { root.classList.remove('logo-intro'); }, 2100);
+  if (!root.classList.contains('site-intro')) return;
+  var intro = document.querySelector('.intro');
+  var done = false;
+  function end() {
+    if (done) return; done = true;
+    root.classList.remove('site-intro');
+    if (intro) intro.remove();
+    document.dispatchEvent(new Event('cp:intro-end'));
+  }
+  setTimeout(end, 2550);
+  if (intro) intro.addEventListener('click', end);
+  window.addEventListener('keydown', end, { once: true });
 })();
