@@ -25,7 +25,7 @@ Site estático (HTML, CSS e JavaScript, sem servidor), publicado no Render a par
 node tools/build-catalog.js
 ```
 
-**Mudou o cabeçalho ou o rodapé?** Edite `partials/header.html` ou `partials/footer.html` e aplique em todas as páginas:
+**Mudou o cabeçalho, o rodapé ou o bloco Contáctanos?** Edite `partials/header.html`, `partials/footer.html` ou `partials/contact.html` e aplique em todas as páginas:
 
 ```
 python3 tools/sync-layout.py

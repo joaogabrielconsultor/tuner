@@ -23,37 +23,10 @@
 
     <nav class="main-nav" id="main-nav" aria-label="Principal">
       <ul>
-        <li class="has-sub" data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html">
-          <a href="vehiculos.html">Reprogramación <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          <button class="sub-toggle" type="button" aria-label="Ver Reprogramación" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
-          <ul class="sub-menu">
-            <li><a href="vehiculos.html">Vehículo / Coche</a></li>
-            <li><a href="motos.html">Motos / Quads</a></li>
-            <li><a href="moto-agua.html">Moto de agua</a></li>
-            <li><a href="lancha.html">Lancha motora</a></li>
-            <li><a href="desarrollo.html">Desarrollo</a></li>
-          </ul>
-        </li>
-        <li class="has-sub" data-match="noticias.html promociones.html">
-          <a href="noticias.html">Promos y noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          <button class="sub-toggle" type="button" aria-label="Ver Promos y noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
-          <ul class="sub-menu">
-            <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="promociones.html">Promociones</a></li>
-          </ul>
-        </li>
-        <li><a href="faq.html" data-match="faq.html">FAQ</a></li>
-        <li class="has-sub" data-match="empresa.html banco-de-rodillos.html nuestro-equipo.html objetivos.html colaboradores.html">
-          <a href="empresa.html">Empresa <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          <button class="sub-toggle" type="button" aria-label="Ver Empresa" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
-          <ul class="sub-menu">
-            <li><a href="empresa.html">Empresa</a></li>
-            <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
-            <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
-            <li><a href="objetivos.html">Objetivos</a></li>
-            <li><a href="colaboradores.html">Colaboradores</a></li>
-          </ul>
-        </li>
+        <li data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html banco-de-rodillos.html"><a href="vehiculos.html">Reprogramación</a></li>
+        <li data-match="piezas.html colaboradores.html"><a href="piezas.html">Piezas performance</a></li>
+        <li data-match="faq.html"><a href="faq.html">FAQ</a></li>
+        <li data-match="noticias.html promociones.html"><a href="noticias.html">Promos y noticias</a></li>
       </ul>
       <div class="drawer-extra">
         <a href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a>
@@ -81,25 +54,18 @@
 <!-- /layout:header -->
 
 <main id="main">
-  <section class="page-hero">
-    
-    <div class="container">
-      <nav aria-label="Ruta"><ol class="crumbs"><li><a href="index.html">Inicio</a></li><li><a href="empresa.html">Empresa</a></li><li><span aria-current="page">Colaboradores</span></li></ol></nav>
-      <h1>Colaboradores</h1>
-      <p class="lead">Foros y comunidades con los que colaboramos.</p>
-      <nav class="subnav" aria-label="Sección"><a href="contacto.html">Contacto</a><a href="banco-de-rodillos.html">Banco de rodillos</a><a href="empresa.html">Empresa</a><a href="nuestro-equipo.html">Nuestro equipo</a><a href="objetivos.html">Objetivos</a><a href="colaboradores.html" aria-current="page">Colaboradores</a></nav>
-    </div>
+  <section class="container page-head">
+    <a class="btn btn-back" href="empresa.html">Empresa <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+    <h1>Colaboradores</h1>
+    <p>Foros y comunidades con los que colaboramos, y marcas con las que trabajamos.</p>
+    <nav class="subnav" aria-label="Empresa" style="margin-top:32px"><a href="empresa.html">Empresa</a><a href="banco-de-rodillos.html">Banco de rodillos</a><a href="nuestro-equipo.html">Nuestro equipo</a><a href="objetivos.html">Objetivos</a><a href="colaboradores.html" aria-current="page">Colaboradores</a><a href="contacto.html">Contacto</a></nav>
   </section>
-
-  <section class="section" style="padding-top:48px">
-    <div class="container">
-      <div class="partner-links"><a href="http://www.a3forum.fr/" target="_blank" rel="noopener"><img src="images/A3_banner.jpg" alt="A3 Forum" width="700" height="82" loading="lazy"></a><a href="http://www.golf5forum.fr/" target="_blank" rel="noopener"><img src="images/golf5_banner.jpg" alt="Golf 5 Forum" width="700" height="82" loading="lazy"></a><a href="http://www.leonpassion.com/" target="_blank" rel="noopener"><img src="images/leon2passion_banner.jpg" alt="Leon2Passion Forum" width="700" height="82" loading="lazy"></a></div>
-    </div>
+  <section class="container" style="padding-bottom:64px">
+    <div class="partner-links"><a href="http://www.a3forum.fr/" target="_blank" rel="noopener"><img src="images/A3_banner.jpg" alt="A3 Forum" width="700" height="82" loading="lazy"></a><a href="http://www.golf5forum.fr/" target="_blank" rel="noopener"><img src="images/golf5_banner.jpg" alt="Golf 5 Forum" width="700" height="82" loading="lazy"></a><a href="http://www.leonpassion.com/" target="_blank" rel="noopener"><img src="images/leon2passion_banner.jpg" alt="Leon2Passion Forum" width="700" height="82" loading="lazy"></a></div>
   </section>
-  <section class="section" style="padding-top:0">
-    <div class="container">
-      <div class="section-head"><h2>Marcas con las que trabajamos</h2></div>
-      <div class="logo-grid">
+  <section class="container" style="padding-bottom:96px">
+    <h2 class="h2" style="margin-bottom:32px">Marcas con las que trabajamos</h2>
+    <div class="logo-grid">
         <figure class="logo-cell"><img src="images/milltek.png" alt="Milltek" width="100" height="38" loading="lazy"></figure>
         <figure class="logo-cell"><img src="images/forge.png" alt="Forge" width="100" height="38" loading="lazy"></figure>
         <figure class="logo-cell"><img src="images/sachs.png" alt="Sachs Performance" width="100" height="38" loading="lazy"></figure>
@@ -122,8 +88,71 @@
         <figure class="logo-cell"><img src="images/thor.png" alt="Thor" width="100" height="38" loading="lazy"></figure>
         <figure class="logo-cell"><img src="images/rsrnurburg.png" alt="RSR Nurburg" width="100" height="38" loading="lazy"></figure>
       </div>
+  </section>
+
+  <!-- layout:contact -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Contáctanos</h2>
+          <p>Ponte en contacto con nosotros o simplemente rellena el formulario: te respondemos por WhatsApp.</p>
+        </div>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-side">
+          <div class="info-card">
+            <div class="info-row">
+              <div><span class="k">Teléfono</span><a class="v" id="h-tel" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></div>
+              <button class="copy-btn" type="button" data-copy="h-tel" aria-label="Copiar teléfono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+            </div>
+            <div class="info-row">
+              <div><span class="k">Correo electrónico</span><a class="v" id="h-mail" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></div>
+              <button class="copy-btn" type="button" data-copy="h-mail" aria-label="Copiar correo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+            </div>
+            <div class="info-row">
+              <div><span class="k">Dirección</span><span class="v" id="h-addr">Carbon Performance<br><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></div>
+              <button class="copy-btn" type="button" data-copy="h-addr" aria-label="Copiar dirección"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+            </div>
+            <div class="info-row">
+              <div style="width:100%"><span class="k">Horario</span>
+                <table class="hours">
+                  <tr><td>Martes - Sábado</td><td>09:00-13:00 y 14:00-18:00</td></tr>
+                  <tr class="closed"><td>Domingo y Lunes</td><td>CERRADO</td></tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <form class="form-grid" data-quick-contact novalidate>
+          <div class="field full"><label class="sr-only" for="q-centro">Centro</label><select id="q-centro" name="centro"><option value="Bilbao">Elige el centro con el que deseas contactar: Bilbao</option></select></div>
+          <div class="field half"><label class="sr-only" for="q-nombre">Nombre</label><input type="text" id="q-nombre" name="nombre" placeholder="Nombre *" autocomplete="given-name"></div>
+          <div class="field half"><label class="sr-only" for="q-apellidos">Apellidos</label><input type="text" id="q-apellidos" name="apellidos" placeholder="Apellidos *" autocomplete="family-name"></div>
+          <div class="field full"><label class="sr-only" for="q-email">Correo electrónico</label><input type="email" id="q-email" name="email" placeholder="Correo electrónico *" autocomplete="email"></div>
+          <div class="field full"><label class="sr-only" for="q-tel">Número de teléfono</label><input type="tel" id="q-tel" name="telefono" placeholder="Número de teléfono *" autocomplete="tel"></div>
+          <div class="field full"><label class="sr-only" for="q-msg">Mensaje</label><textarea id="q-msg" name="mensaje" placeholder="Escribe tu mensaje aquí *"></textarea></div>
+          <div class="field full">
+            <label class="toggle-row">Da más detalles sobre tu vehículo
+              <span class="switch"><input type="checkbox" data-toggle-extra aria-label="Da más detalles sobre tu vehículo"><span></span></span>
+            </label>
+          </div>
+          <div class="extra-fields" hidden>
+            <div class="field full"><label class="sr-only" for="q-coche">Coche</label><input type="text" id="q-coche" name="coche" placeholder="Coche (marca, modelo y motor)"></div>
+            <div class="field half"><label class="sr-only" for="q-km">Kilómetros</label><input type="text" id="q-km" name="km" placeholder="Kilómetros" inputmode="numeric"></div>
+            <div class="field half"><label class="sr-only" for="q-caja">Caja de cambios</label><input type="text" id="q-caja" name="caja" placeholder="Tipo de caja de cambios"></div>
+          </div>
+          <div class="field full">
+            <label class="check"><input type="checkbox" name="acepto"><span>He leído y acepto la <a href="https://www.br-performance.com/brp-barcelona/privacy-policy">política de privacidad</a> y las <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">condiciones de venta</a>.</span></label>
+          </div>
+          <div class="form-foot">
+            <button class="btn" type="submit">Optimiza mi vehículo <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          </div>
+        </form>
+      </div>
     </div>
   </section>
+  <!-- /layout:contact -->
 
 </main>
 
@@ -155,12 +184,11 @@
         <h4>Navegación</h4>
         <ul>
           <li><a href="vehiculos.html">Reprogramación</a></li>
+          <li><a href="piezas.html">Piezas performance</a></li>
           <li><a href="noticias.html">Promos y noticias</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="empresa.html">Empresa</a></li>
-          <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
-          <li><a href="desarrollo.html">Desarrollo</a></li>
           <li><a href="contacto.html">Contacto</a></li>
+          <li><a href="empresa.html">Empresa</a></li>
         </ul>
       </div>
       <div class="footer-center">

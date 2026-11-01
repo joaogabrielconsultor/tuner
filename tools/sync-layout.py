@@ -13,7 +13,7 @@ import pathlib
 import re
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
-PARTS = ['head', 'header', 'footer']
+PARTS = ['head', 'header', 'footer', 'contact']
 partials = {p: (ROOT / 'partials' / f'{p}.html').read_text(encoding='utf-8').rstrip('\n') for p in PARTS}
 
 changed = 0

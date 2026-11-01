@@ -350,6 +350,29 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     toggle.addEventListener('change', function () { extra.hidden = !toggle.checked; });
   }
   function val(n) { var el = form.elements[n]; return el ? String(el.value).trim() : ''; }
+
+  // Veio da página de um motor? Mostra a reprogramação consultada e preenche o veículo
+  var qp = new URLSearchParams(window.location.search);
+  var pMarca = qp.get('marca'), pModelo = qp.get('modelo'), pMotor = qp.get('motor');
+  var vparts = [pMarca];
+  if (pModelo && !(pMotor && pMotor.toLowerCase().indexOf(pModelo.toLowerCase()) >= 0)) vparts.push(pModelo);
+  if (pMotor) vparts.push(pMotor);
+  var veh = vparts.filter(Boolean).join(' ');
+  var stageQ = qp.get('stage'), priceQ = qp.get('price');
+  if (veh) {
+    var banner = document.createElement('div');
+    banner.className = 'consulta-vehiculo';
+    banner.innerHTML = '<span class="cv-tag">Estás consultando</span><span class="cv-car"></span>' +
+      '<span class="cv-hint">¿No es este vehículo? Cámbialo en el campo <b>Coche</b>.</span>';
+    banner.querySelector('.cv-car').textContent = veh + (stageQ ? ' · ' + stageQ : '') + (priceQ ? ' · €' + priceQ : '');
+    form.insertBefore(banner, form.firstChild);
+    if (form.elements.coche) form.elements.coche.value = veh;
+    if (toggle) { toggle.checked = true; if (extra) extra.hidden = false; }
+    if (form.elements.mensaje && !form.elements.mensaje.value) {
+      form.elements.mensaje.value = 'Me interesa la reprogramación ' + (stageQ || '') + ' para mi ' + veh + '.';
+    }
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var required = ['nombre', 'apellidos', 'email', 'telefono', 'mensaje'];
@@ -375,6 +398,12 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
       if (val('coche')) lines.push('Coche: ' + val('coche'));
       if (val('km')) lines.push('Kilómetros: ' + val('km'));
       if (val('caja')) lines.push('Caja de cambios: ' + val('caja'));
+    }
+    if (veh && stageQ) {
+      lines.push('', '⚙️ ' + B('REPROGRAMACIÓN DE INTERÉS'), veh + ' · ' + stageQ);
+      if (qp.get('po') && qp.get('pm')) lines.push('Potencia: ' + qp.get('po') + ' → ' + qp.get('pm') + ' cv (+' + qp.get('pd') + ')');
+      if (qp.get('to') && qp.get('tm')) lines.push('Par: ' + qp.get('to') + ' → ' + qp.get('tm') + ' Nm (+' + qp.get('td') + ')');
+      if (priceQ) lines.push('Precio orientativo: €' + priceQ);
     }
     lines.push('', '💬 ' + B('CONSULTA'), val('mensaje'));
     var url = 'https://wa.me/' + CP_WA + '?text=' + encodeURIComponent(lines.join('\n'));
@@ -416,5 +445,20 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
       try { localStorage.removeItem('brpCookieChoice'); } catch (err) {}
       location.reload();
     });
+  });
+})();
+
+
+// ===== "CARGAR MÁS" NAS NOTÍCIAS =====
+(function () {
+  document.querySelectorAll('[data-load-more]').forEach(function (btn) {
+    var grid = document.getElementById(btn.getAttribute('data-load-more'));
+    if (!grid) return;
+    function update() { if (!grid.querySelector('[hidden]')) btn.parentElement.hidden = true; }
+    btn.addEventListener('click', function () {
+      [].slice.call(grid.querySelectorAll('[hidden]'), 0, 6).forEach(function (el) { el.hidden = false; });
+      update();
+    });
+    update();
   });
 })();
