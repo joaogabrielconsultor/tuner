@@ -1054,3 +1054,5 @@ body.nav-open.header-stuck .site-header { background: var(--bg); -webkit-backdro
 .wa-float { pointer-events: none; }
 .wa-float .wa-icon { pointer-events: auto; }
 .wa-float.show-bubble .wa-bubble { pointer-events: auto; }
+/* balão do WhatsApp não aparece por cima da lista do configurador aberta */
+body:has(.finder-panel:not([hidden])) .wa-bubble { opacity: 0 !important; pointer-events: none !important; }
