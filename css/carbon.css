@@ -141,6 +141,7 @@ body.nav-open .site-header { position: fixed; top: 0; }
 .header-loc .chev { width: 10px; height: 10px; opacity: .8; }
 .nav-burger { display: none; }
 .drawer-extra { display: none; }
+@media (min-width: 1181px) { .main-nav .nav-only-drawer { display: none; } }
 @media (max-width: 1180px) {
   .header-inner { padding: 0 var(--gutter); gap: 16px; }
   .brand-logo { height: 58px; }
@@ -549,7 +550,15 @@ a.step:hover { background: var(--surface-3); }
 .cookie-sep { border: 0; border-top: 1px solid var(--surface-3); margin: 24px 0 18px; }
 .cookie-policy { font-size: 15px; color: var(--body); text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 560px) {
-.cookie-consent { left: 12px; right: 12px; bottom: 12px; width: auto; } }
+.cookie-consent { left: 12px; right: 12px; bottom: 12px; width: auto; padding: 20px; font-size: 14px; border-radius: var(--r-lg); }
+.cookie-text strong { font-size: 19px; margin-bottom: 8px; }
+.cookie-text p { font-size: 14px; line-height: 1.5; margin-bottom: 12px; }
+.cookie-choose { margin-bottom: 14px; font-size: 14px; }
+.cookie-actions { grid-template-columns: 1fr 1fr; gap: 10px; }
+.cookie-actions button { height: 50px; padding: 0 6px 0 14px; font-size: 15px; }
+.cookie-actions button::after { width: 34px; height: 34px; }
+.cookie-sep { margin: 14px 0 10px; }
+.cookie-policy { font-size: 13px; } }
 
 /* ---------- Utilidades ---------- */
 .muted { color: var(--muted); }
@@ -1039,3 +1048,5 @@ body.nav-open.header-stuck .site-header { background: var(--bg); -webkit-backdro
   0% { opacity: 0; } 8% { opacity: 1; } 18% { opacity: .1; } 30% { opacity: 1; } 100% { opacity: 0; }
 }
 @media (prefers-reduced-motion: reduce) { .site-intro .intro { display: none; } .site-intro { overflow: auto; } }
+/* celular: texto da capa legível sobre a parte clara da foto */
+@media (max-width: 768px) { .hero h1, .hero .hero-lead { text-shadow: 0 2px 14px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.6); } }
