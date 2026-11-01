@@ -1,9 +1,9 @@
-// Carbon Performance — Configuração do site
+// MIDO Performance — Configuração do site
 // Edite diretamente aqui (o painel admin.html foi removido)
 
 const BRP_CONFIG = {
   empresa: {
-    nome: 'Carbon Performance',
+    nome: 'MIDO Performance',
     slogan: 'Professional Chiptuning',
     morada_linha1: 'Zuberoa Etorb. 8, 10',
     morada_linha2: '48012 Errekalde, Bilbao, Bizkaia',
@@ -18,7 +18,7 @@ const BRP_CONFIG = {
     instagram: ''
   },
   seo: {
-    titulo_home: 'Home - Carbon Performance - Reprogramación de centralitas',
+    titulo_home: 'Home - MIDO Performance - Reprogramación de centralitas',
     descricao: 'Chiptuning y reprogramación profesional de centralitas en Bilbao. TÜV Rheinland certificado.'
   },
   links: {

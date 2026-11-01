@@ -1,4 +1,4 @@
-// Carbon Performance — comportamento comum a todas as páginas
+// MIDO Performance — comportamento comum a todas as páginas
 // (menu, header, carrosséis, vídeos, FAQ, filtro de marcas, avisos e formulário de contato)
 
 // Número de WhatsApp que recebe os pedidos (formulários do site)
@@ -206,7 +206,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     var ok = form.elements.acepto;
     if (ok && !ok.checked) { ok.focus(); ok.closest('.check').style.color = 'var(--red)'; return; }
     var B = function (s) { return '*' + s + '*'; };
-    var lines = [B('Consulta web - Carbon Performance'), '',
+    var lines = [B('Consulta web - MIDO Performance'), '',
       B('CLIENTE'),
       'Nombre: ' + val('nombre') + ' ' + val('apellidos'),
       'E-mail: ' + val('email'),
@@ -246,7 +246,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
         return;
       }
     }
-    var msg = '*Alta en el boletín - Carbon Performance*\nNombre: ' + form.elements.nombre.value.trim() + ' ' +
+    var msg = '*Alta en el boletín - MIDO Performance*\nNombre: ' + form.elements.nombre.value.trim() + ' ' +
       form.elements.apellidos.value.trim() + '\nE-mail: ' + form.elements.email.value.trim();
     var url = cpWaUrl(msg);
     var w = window.open(url, '_blank');
@@ -303,7 +303,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   window.CP = window.CP || {};
   CP.waMessage = function (extra) {
     var c = CP.waContext;
-    var lines = ['Hola Carbon Performance,'];
+    var lines = ['Hola MIDO Performance,'];
     if (c && c.veh) {
       lines.push('Me interesa la reprogramación de mi vehículo:');
       lines.push('*' + c.veh + (c.stage ? ' - ' + c.stage : '') + '*');

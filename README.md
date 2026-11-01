@@ -1,4 +1,4 @@
-# Carbon Performance — site
+# MIDO Performance — site
 
 Site estático (HTML, CSS e JavaScript, sem servidor), publicado no Render a partir da branch `main`.
 

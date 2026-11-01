@@ -1,4 +1,4 @@
-// Carbon Performance — acesso ao catálogo e buscador de veículo
+// MIDO Performance — acesso ao catálogo e buscador de veículo
 //
 // Os dados ficam em data/catalog/ (gerados a partir de js/brands.js por tools/build-catalog.js).
 // Cada página baixa só a marca de que precisa, em vez do catálogo inteiro.
