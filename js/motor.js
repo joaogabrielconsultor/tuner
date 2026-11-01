@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var esc = CP.esc;
   var ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   var STAGE_NAME = { 'gearbox': 'Caja de cambios' };
+  function cap(t) { t = String(t || ''); return t.charAt(0).toUpperCase() + t.slice(1); }
 
   if (!marcaSlug || !modeloParam || !periodoParam || !motorParam) { location.href = 'vehiculos.html'; return; }
 
@@ -60,7 +61,7 @@ document.addEventListener('DOMContentLoaded', function () {
     window.CP = window.CP || {};
     CP.waContext = stage ? {
       veh: vehLabel,
-      stage: (function (t) { t = String(t || ''); return t.charAt(0).toUpperCase() + t.slice(1); })(STAGE_NAME[stage.id] || stage.label),
+      stage: cap(STAGE_NAME[stage.id] || stage.label),
       power: (stage.power_orig != null && stage.power_mod != null && stage.cssClass !== 'brp-eco') ? stage.power_orig + ' → ' + stage.power_mod + ' ' + (stage.power_unit || 'cv') : '',
       torque: (stage.torque_orig != null && stage.torque_mod != null) ? stage.torque_orig + ' → ' + stage.torque_mod + ' ' + (stage.torque_unit || 'Nm') : '',
       price: stage.price ? stage.price + ' €' : ''
@@ -70,13 +71,26 @@ document.addEventListener('DOMContentLoaded', function () {
     var vehName = brand.name + ' ' + modeloParam + ' ' + motorParam;
     var sendCtx = function () {
       if (!window.CP || !CP.setContactVehicle || !stage) return false;
-      CP.setContactVehicle({ veh: vehName, stage: stage.label, price: stage.price,
+      CP.setContactVehicle({ veh: vehName, stage: cap(STAGE_NAME[stage.id] || stage.label), price: stage.price,
         po: stage.power_mod != null ? stage.power_orig : null, pm: stage.power_mod, pd: stage.power_diff,
         to: stage.torque_mod != null ? stage.torque_orig : null, tm: stage.torque_mod, td: stage.torque_diff });
       return true;
     };
     if (!sendCtx()) window.addEventListener('load', sendCtx);
     renderGraph(stage);
+    renderStickyBar(stage);
+  }
+
+  // Barra fixa no celular: etapa, preço e botão do WhatsApp sempre à mão
+  function renderStickyBar(s) {
+    if (!s) return;
+    var bar = document.createElement('div');
+    bar.className = 'result-sticky';
+    bar.innerHTML = '<div class="rs-info"><span class="rs-stage">' + esc(cap(STAGE_NAME[s.id] || s.label)) + '</span>' +
+      '<b class="rs-price">' + (s.price ? s.price + ' €' : 'Consultar') + '</b></div>' +
+      '<a class="btn btn-wa" href="#" data-wa-direct>' + WA_ICON + '<span>Pedir cita</span></a>';
+    document.body.appendChild(bar);
+    document.body.classList.add('has-result-sticky');
   }
 
   function row(k, v, cls) { return '<div class="spec-row ' + (cls || '') + '"><span class="k">' + k + '</span><span class="v">' + v + '</span></div>'; }
@@ -124,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var a = e.target.closest && e.target.closest('[data-wa-direct]');
     if (!a) return;
     e.preventDefault();
-    var url = window.CP && CP.waMessage ? CP.waMessage() : 'https://wa.me/393758172444';
+    var url = window.CP && CP.waMessage ? CP.waMessage() : 'https://api.whatsapp.com/send?phone=393758172444';
     var w = window.open(url, '_blank');
     if (!w) window.location.href = url;
   });

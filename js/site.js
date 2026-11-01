@@ -3,6 +3,8 @@
 
 // Número de WhatsApp que recebe os pedidos (formulários do site)
 var CP_WA = '393758172444'; // +39 375 817 2444
+// Link oficial completo: o curto (wa.me) estraga acentos/emojis em alguns aparelhos e no WhatsApp do computador
+function cpWaUrl(text) { return 'https://api.whatsapp.com/send?phone=' + CP_WA + '&text=' + encodeURIComponent(text); }
 
 var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
@@ -242,7 +244,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     banner.className = 'consulta-vehiculo';
     banner.innerHTML = '<span class="cv-tag">Estás consultando</span><span class="cv-car"></span>' +
       '<span class="cv-hint">¿No es este vehículo? Cámbialo en el campo <b>Coche</b>.</span>';
-    banner.querySelector('.cv-car').textContent = c.veh + (c.stage ? ' · ' + c.stage : '') + (c.price ? ' · €' + c.price : '');
+    banner.querySelector('.cv-car').textContent = c.veh + (c.stage ? ' · ' + c.stage : '') + (c.price ? ' · ' + c.price + ' €' : '');
     form.insertBefore(banner, form.firstChild);
     if (form.elements.coche) form.elements.coche.value = c.veh;
     if (toggle) { toggle.checked = true; if (extra) extra.hidden = false; }
@@ -275,25 +277,25 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     var ok = form.elements.acepto;
     if (ok && !ok.checked) { ok.focus(); ok.closest('.check').style.color = 'var(--red)'; return; }
     var B = function (s) { return '*' + s + '*'; };
-    var lines = ['🔧 ' + B('Consulta — Carbon Performance'), '',
-      '👤 ' + B('CLIENTE'),
+    var lines = [B('Consulta web - Carbon Performance'), '',
+      B('CLIENTE'),
       'Nombre: ' + val('nombre') + ' ' + val('apellidos'),
       'E-mail: ' + val('email'),
       'Teléfono: ' + val('telefono')];
     if (toggle && toggle.checked && (val('coche') || val('km') || val('caja'))) {
-      lines.push('', '🚗 ' + B('VEHÍCULO'));
+      lines.push('', B('VEHÍCULO'));
       if (val('coche')) lines.push('Coche: ' + val('coche'));
       if (val('km')) lines.push('Kilómetros: ' + val('km'));
       if (val('caja')) lines.push('Caja de cambios: ' + val('caja'));
     }
     if (ctx && ctx.veh && ctx.stage) {
-      lines.push('', '⚙️ ' + B('REPROGRAMACIÓN DE INTERÉS'), ctx.veh + ' · ' + ctx.stage);
+      lines.push('', B('REPROGRAMACIÓN DE INTERÉS'), ctx.veh + ' - ' + ctx.stage);
       if (ctx.po && ctx.pm) lines.push('Potencia: ' + ctx.po + ' → ' + ctx.pm + ' cv (+' + ctx.pd + ')');
       if (ctx.to && ctx.tm) lines.push('Par: ' + ctx.to + ' → ' + ctx.tm + ' Nm (+' + ctx.td + ')');
-      if (ctx.price) lines.push('Precio orientativo: €' + ctx.price);
+      if (ctx.price) lines.push('Precio orientativo: ' + ctx.price + ' €');
     }
-    lines.push('', '💬 ' + B('CONSULTA'), val('mensaje'));
-    var url = 'https://wa.me/' + CP_WA + '?text=' + encodeURIComponent(lines.join('\n'));
+    lines.push('', B('CONSULTA'), val('mensaje'));
+    var url = cpWaUrl(lines.join('\n'));
     var w = window.open(url, '_blank');
     if (!w) window.location.href = url;
   });
@@ -315,9 +317,9 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
         return;
       }
     }
-    var msg = '📬 *Alta en el boletín — Carbon Performance*\nNombre: ' + form.elements.nombre.value.trim() + ' ' +
+    var msg = '*Alta en el boletín - Carbon Performance*\nNombre: ' + form.elements.nombre.value.trim() + ' ' +
       form.elements.apellidos.value.trim() + '\nE-mail: ' + form.elements.email.value.trim();
-    var url = 'https://wa.me/' + CP_WA + '?text=' + encodeURIComponent(msg);
+    var url = cpWaUrl(msg);
     var w = window.open(url, '_blank');
     if (!w) window.location.href = url;
     form.innerHTML = '<p class="done">¡Gracias! Confirma el envío en WhatsApp para completar tu suscripción.</p>';
@@ -372,10 +374,10 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   window.CP = window.CP || {};
   CP.waMessage = function (extra) {
     var c = CP.waContext;
-    var lines = ['Hola Carbon Performance 👋'];
+    var lines = ['Hola Carbon Performance,'];
     if (c && c.veh) {
       lines.push('Me interesa la reprogramación de mi vehículo:');
-      lines.push('🚗 ' + c.veh + (c.stage ? ' · ' + c.stage : ''));
+      lines.push('*' + c.veh + (c.stage ? ' - ' + c.stage : '') + '*');
       if (c.power) lines.push('Potencia: ' + c.power);
       if (c.torque) lines.push('Par: ' + c.torque);
       if (c.price) lines.push('Precio orientativo: ' + c.price);
@@ -384,7 +386,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
       lines.push('Me gustaría información sobre la reprogramación de mi vehículo.');
     }
     if (extra) lines.push(extra);
-    return 'https://wa.me/' + CP_WA + '?text=' + encodeURIComponent(lines.join('\n'));
+    return cpWaUrl(lines.join('\n'));
   };
   a.addEventListener('click', function (e) {
     e.preventDefault();
@@ -404,42 +406,77 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   }
 })();
 
-// ===== ANIMAÇÕES AO ROLAR =====
-// Marca os blocos principais e faz cada um entrar suavemente quando aparece na tela.
-// Sem JS ou com "reduzir movimento" ligado, tudo aparece normalmente.
+// ===== ANIMAÇÕES =====
+// Título da capa entra palavra por palavra; blocos entram ao aparecer na tela; fotos fazem um zoom suave.
+// Com "reduzir movimento" ligado (ou sem suporte), tudo aparece normalmente.
 (function () {
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) return;
   var root = document.documentElement;
   root.classList.add('anim');
+
+  // 1) Capa: palavras do título sobem por trás de uma máscara, depois texto e busca
+  var h1 = document.querySelector('.hero h1');
+  if (h1 && !h1.querySelector('.w')) {
+    var words = h1.textContent.trim().split(/\s+/);
+    h1.setAttribute('aria-label', h1.textContent.trim());
+    h1.innerHTML = words.map(function (w, i) {
+      return '<span class="w" aria-hidden="true"><span style="--i:' + i + '">' + w.replace(/</g, '&lt;') + '</span></span>';
+    }).join(' ');
+  }
+  var heroBits = document.querySelectorAll('.hero .hero-lead, .hero .finder-search, .hero .finder-row, .hero .finder-steps, .hero .type-pills');
+  heroBits.forEach(function (el, i) { el.classList.add('hero-in'); el.style.setProperty('--d', (380 + i * 110) + 'ms'); });
+  requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('hero-ready'); }); });
+
+  // 2) Blocos ao rolar
   var groups = [
-    '.hero h1, .hero .hero-lead, .hero .finder',
-    '.section-head, .parts-head, .page-head > *, .about > *, .faq-head .faq-page > *',
-    '.news-grid > .news-card, #svc-rail > .svc-card, .svc-stack > *, .svc-feature',
-    '.split > *, .result-top > *, .spec-card, .graph-card, .stage-bar',
-    '.faq-group, .contact-grid > *, .center-grid > *, .center-card, .footer-top > *',
-    '.photo-band'
+    ['.section-head, .parts-head, .page-head > *, .faq-head .faq-page > *, .result-top > div', 'up'],
+    ['.about > *, .split > div, .contact-grid > *, .faq-group, .footer-top > *, .footer-grid > *', 'up'],
+    ['.news-grid > .news-card, #svc-rail > .svc-card, .center-grid > *, .media-rail > figure, .stage-bar a', 'card'],
+    ['.svc-feature, .spec-card, .graph-card', 'card'],
+    ['.split .media, .result-top .media, .photo-band', 'img']
   ];
   var els = [];
-  groups.forEach(function (sel) {
-    document.querySelectorAll(sel).forEach(function (el) {
-      if (el.hasAttribute('data-reveal') || el.closest('[data-reveal]') && !el.matches('.svc-stack > *')) return;
-      el.setAttribute('data-reveal', '');
+  groups.forEach(function (g) {
+    document.querySelectorAll(g[0]).forEach(function (el) {
+      if (el.hasAttribute('data-reveal') || el.closest('.hero')) return;
+      el.setAttribute('data-reveal', g[1]);
       els.push(el);
     });
   });
-  // pequenos atrasos em sequência para itens lado a lado
   var lastParent = null, idx = 0;
   els.forEach(function (el) {
     if (el.parentElement === lastParent) idx++; else { idx = 0; lastParent = el.parentElement; }
-    el.style.setProperty('--d', Math.min(idx, 5) * 90 + 'ms');
+    el.style.setProperty('--d', Math.min(idx, 6) * 80 + 'ms');
   });
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (en) {
       if (en.isIntersecting) { en.target.classList.add('is-in'); io.unobserve(en.target); }
     });
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.06 });
   els.forEach(function (el) { io.observe(el); });
-  // segurança: se algo não disparar, mostra depois de 2,5 s
+  // conteúdo criado depois (página de resultado) também anima
+  window.CP = window.CP || {};
+  CP.reveal = function (el) { if (!el || el.hasAttribute('data-reveal')) return; el.setAttribute('data-reveal', 'card'); io.observe(el); };
   setTimeout(function () { els.forEach(function (el) { if (el.getBoundingClientRect().top < innerHeight) el.classList.add('is-in'); }); }, 2500);
+})();
+
+// ===== TOPO FIXO AO ROLAR =====
+// Depois de descer um pouco, o menu fica preso no alto com fundo escuro translúcido.
+(function () {
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+  var body = document.body, ticking = false, on = false;
+  var photo = body.classList.contains('has-photo-hero');
+  function update() {
+    ticking = false;
+    var want = window.scrollY > (photo ? 140 : 110);
+    if (want === on) return;
+    var h = header.offsetHeight;
+    on = want;
+    body.classList.toggle('header-stuck', on);
+    if (!photo) body.style.paddingTop = on ? h + 'px' : '';
+  }
+  window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  update();
 })();
