@@ -1,5 +1,5 @@
 // Carbon Performance — Configuração do site
-// Edite via /admin.html ou diretamente aqui
+// Edite diretamente aqui (o painel admin.html foi removido)
 
 const BRP_CONFIG = {
   empresa: {
@@ -27,20 +27,7 @@ const BRP_CONFIG = {
   }
 };
 
-// Mescla com localStorage se existir
 (function () {
-  try {
-    const saved = localStorage.getItem('brp_config');
-    if (saved) {
-      const parsed = JSON.parse(saved);
-      Object.keys(parsed).forEach(section => {
-        if (BRP_CONFIG[section]) {
-          Object.assign(BRP_CONFIG[section], parsed[section]);
-        }
-      });
-    }
-  } catch (e) {}
-
   // Aplica no DOM quando a página carregar
   document.addEventListener('DOMContentLoaded', function () {
     applyConfig(BRP_CONFIG);
