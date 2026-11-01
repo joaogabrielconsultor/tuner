@@ -19,7 +19,7 @@ const BRP_CONFIG = {
   },
   seo: {
     titulo_home: 'Home - MIDO Performance - Reprogramación de centralitas',
-    descricao: 'Chiptuning y reprogramación profesional de centralitas en Bilbao. TÜV Rheinland certificado.'
+    descricao: 'Chiptuning y reprogramación profesional de centralitas en Bilbao.'
   },
   links: {
     condicoes_venda: 'condiciones-de-venta.html',
