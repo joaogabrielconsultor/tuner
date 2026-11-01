@@ -5,350 +5,257 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vehículo / Coche - Carbon Performance - Reprogramación de centralitas</title>
   <meta name="description" content="Potenciación de motores y reprogramación profesional">
-  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/herprogrammatie.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+  <!-- layout:head -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/carbon.css">
+  <meta name="theme-color" content="#161616">
+  <!-- /layout:head -->
 </head>
-<body>
+<body class="page-catalog">
 
-<!-- TOP BAR -->
-<header class="row hide-for-small">
-  <div class="twelve columns offset-by-twelve search-extended">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
-    </ul>
-    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
-      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
-      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
-    </form>
-  </div>
-</header>
+<!-- layout:header -->
+<a class="sr-only" href="#main">Saltar al contenido</a>
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Carbon Performance, inicio"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156"></a>
 
-<!-- NAVIGATION -->
-<section class="row nav">
-  <div class="twentyfour navContainer">
-    <a href="#" class="nav-toggle button-full-rounded"></a>
-    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="Carbon Performance"></a></div>
-    <nav class="primary">
-      <div class="langselect">
-        <a href="#" class="flag" title="España / Español">
-          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
-        </a>
-      </div>
-      <ul class="brp-barcelona">
-        <li class="first"><a href="index.html">Home</a></li>
-        <li class="sub sel"><a href="vehiculos.html">Busca tu reprogramación</a>
-          <ul class="subnav left">
-            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
-            <li><a href="motos.html">Bikes - Quad</a></li>
-            <li><a href="moto-agua.html">Moto de Agua</a></li>
+    <nav class="main-nav" id="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" data-match="index.html">Inicio</a></li>
+        <li class="has-sub" data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html">
+          <a href="vehiculos.html">Reprogramación <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Reprogramación" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="motos.html">Motos / Quads</a></li>
+            <li><a href="moto-agua.html">Moto de agua</a></li>
             <li><a href="lancha.html">Lancha motora</a></li>
-            <li class="last"><a href="desarrollo.html">Desarrollo</a></li>
+            <li><a href="desarrollo.html">Desarrollo</a></li>
           </ul>
         </li>
-        <li class="sub"><a href="noticias.html">Noticias</a>
-          <ul class="subnav left">
-            <li class="first"><a href="noticias.html">Noticias</a></li>
-            <li class="last"><a href="promociones.html">Promociones</a></li>
+        <li class="has-sub" data-match="noticias.html promociones.html">
+          <a href="noticias.html">Noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
           </ul>
         </li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contacto.html">Solicita presupuesto</a></li>
-        <li class="last sub"><a href="contacto.html">Contacto</a>
-          <ul class="subnav right">
-            <li class="first"><a href="contacto.html">Contacto</a></li>
-            <li><a href="banco-de-rodillos.html">Banco de Rodillos</a></li>
+        <li><a href="faq.html" data-match="faq.html">FAQ</a></li>
+        <li class="has-sub" data-match="empresa.html banco-de-rodillos.html nuestro-equipo.html objetivos.html colaboradores.html">
+          <a href="empresa.html">Empresa <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Empresa" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
             <li><a href="empresa.html">Empresa</a></li>
+            <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
             <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
             <li><a href="objetivos.html">Objetivos</a></li>
-            <li class="last"><a href="colaboradores.html">Colaboradores</a></li>
+            <li><a href="colaboradores.html">Colaboradores</a></li>
           </ul>
         </li>
+        <li><a href="contacto.html" data-match="contacto.html">Solicita presupuesto</a></li>
       </ul>
+      <div class="drawer-extra">
+        <a href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a>
+        <a href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a>
+        <p><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></p>
+      </div>
     </nav>
+
+    <div class="header-actions">
+      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>
+        Bilbao
+      </a>
+      <a class="btn btn-sm" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <button class="icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
-</section>
+</header>
+<!-- /layout:header -->
 
-<div class="row" id="container">
-  <div class="twentyfour columns">
+<main id="main">
+  <section class="page-hero">
+    
+    <div class="container">
+      <nav aria-label="Ruta"><ol class="crumbs"><li><a href="index.html">Inicio</a></li><li><a href="vehiculos.html">Reprogramación</a></li><li><span aria-current="page">Vehículos</span></li></ol></nav>
+      <h1>Vehículos</h1>
+      <p class="lead">Selecciona una marca para ver los modelos y las etapas de reprogramación disponibles.</p>
+      
+    </div>
+  </section>
 
-    <!-- PAGE TITLE -->
-    <section class="row title">
-      <div class="twentyfour columns nopadding group">
-        <h1>Reprogramación</h1>
-        <h2>Vehículos</h2>
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+      <div class="catalog-tools">
+        <nav class="type-pills" aria-label="Tipo de vehículo"><a class="type-pill active" href="vehiculos.html" aria-current="page"><i class="vt-icon vt-car"></i>Vehículos</a><a class="type-pill" href="motos.html"><i class="vt-icon vt-moto"></i>Motos / Quads</a><a class="type-pill" href="moto-agua.html"><i class="vt-icon vt-jet"></i>Moto de agua</a><a class="type-pill" href="lancha.html"><i class="vt-icon vt-boat"></i>Lancha motora</a></nav>
+        <label class="brand-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr-only">Filtrar marcas</span><input type="search" id="brand-search" placeholder="Busca tu marca…" autocomplete="off"></label>
       </div>
-    </section>
+      <div class="brand-grid">
+        <a class="brand-tile" href="marca.html?marca=alfa-romeo" title="Alfa Romeo"><span class="logo"><img src="images/alfa-romeo_3.png" alt="" loading="lazy"></span><span>Alfa Romeo</span></a>
+        <a class="brand-tile" href="marca.html?marca=alpina" title="Alpina"><span class="logo"><img src="images/alpina-2.png" alt="" loading="lazy"></span><span>Alpina</span></a>
+        <a class="brand-tile" href="marca.html?marca=alpine" title="Alpine"><span class="logo"><img src="images/alpine_3.png" alt="" loading="lazy"></span><span>Alpine</span></a>
+        <a class="brand-tile" href="marca.html?marca=ariel-motors" title="Ariel Motors"><span class="logo"><img src="images/ariel-2.png" alt="" loading="lazy"></span><span>Ariel Motors</span></a>
+        <a class="brand-tile" href="marca.html?marca=artega" title="Artega"><span class="logo"><img src="images/artega-light.png" alt="" loading="lazy"></span><span>Artega</span></a>
+        <a class="brand-tile" href="marca.html?marca=aston-martin" title="Aston Martin"><span class="logo"><img src="images/aston-martin_3.png" alt="" loading="lazy"></span><span>Aston Martin</span></a>
+        <a class="brand-tile" href="marca.html?marca=audi" title="Audi"><span class="logo"><img src="images/audi_2.png" alt="" loading="lazy"></span><span>Audi</span></a>
+        <a class="brand-tile" href="marca.html?marca=bentley" title="Bentley"><span class="logo"><img src="images/bentley_2.png" alt="" loading="lazy"></span><span>Bentley</span></a>
+        <a class="brand-tile" href="marca.html?marca=bmw" title="BMW"><span class="logo"><img src="images/bmw_2.png" alt="" loading="lazy"></span><span>BMW</span></a>
+        <a class="brand-tile" href="marca.html?marca=borgward" title="Borgward"><span class="logo"><img src="images/borgward_3.png" alt="" loading="lazy"></span><span>Borgward</span></a>
+        <a class="brand-tile" href="marca.html?marca=bugatti" title="Bugatti"><span class="logo"><img src="images/bugatti_2.png" alt="" loading="lazy"></span><span>Bugatti</span></a>
+        <a class="brand-tile" href="marca.html?marca=buick" title="Buick"><span class="logo"><img src="images/buick_2.png" alt="" loading="lazy"></span><span>Buick</span></a>
+        <a class="brand-tile" href="marca.html?marca=byd" title="BYD"><span class="logo"><img src="images/byd-at-4x.png" alt="" loading="lazy"></span><span>BYD</span></a>
+        <a class="brand-tile" href="marca.html?marca=cadillac" title="Cadillac"><span class="logo"><img src="images/cadillac_2.png" alt="" loading="lazy"></span><span>Cadillac</span></a>
+        <a class="brand-tile" href="marca.html?marca=caterham" title="Caterham"><span class="logo"><img src="images/caterham.png" alt="" loading="lazy"></span><span>Caterham</span></a>
+        <a class="brand-tile" href="marca.html?marca=chevrolet" title="Chevrolet"><span class="logo"><img src="images/chevrolet_2.png" alt="" loading="lazy"></span><span>Chevrolet</span></a>
+        <a class="brand-tile" href="marca.html?marca=chrysler" title="Chrysler"><span class="logo"><img src="images/chrysler_2.png" alt="" loading="lazy"></span><span>Chrysler</span></a>
+        <a class="brand-tile" href="marca.html?marca=citroen" title="Citroën"><span class="logo"><img src="images/citroen-white.png" alt="" loading="lazy"></span><span>Citroën</span></a>
+        <a class="brand-tile" href="marca.html?marca=cupra" title="Cupra"><span class="logo"><img src="images/cupra-3.png" alt="" loading="lazy"></span><span>Cupra</span></a>
+        <a class="brand-tile" href="marca.html?marca=dacia" title="Dacia"><span class="logo"><img src="images/dacia-white_2.png" alt="" loading="lazy"></span><span>Dacia</span></a>
+        <a class="brand-tile" href="marca.html?marca=daewoo" title="Daewoo"><span class="logo"><img src="images/daewoo_2.png" alt="" loading="lazy"></span><span>Daewoo</span></a>
+        <a class="brand-tile" href="marca.html?marca=dodge" title="Dodge"><span class="logo"><img src="images/dodge_2.png" alt="" loading="lazy"></span><span>Dodge</span></a>
+        <a class="brand-tile" href="marca.html?marca=ds" title="DS"><span class="logo"><img src="images/ds-2.png" alt="" loading="lazy"></span><span>DS</span></a>
+        <a class="brand-tile" href="marca.html?marca=ferrari" title="Ferrari"><span class="logo"><img src="images/ferrari_2.png" alt="" loading="lazy"></span><span>Ferrari</span></a>
+        <a class="brand-tile" href="marca.html?marca=fiat" title="Fiat"><span class="logo"><img src="images/fiat_2.png" alt="" loading="lazy"></span><span>Fiat</span></a>
+        <a class="brand-tile" href="marca.html?marca=ford" title="Ford"><span class="logo"><img src="images/ford_2.png" alt="" loading="lazy"></span><span>Ford</span></a>
+        <a class="brand-tile" href="marca.html?marca=geely" title="Geely"><span class="logo"><img src="images/geely_4.png" alt="" loading="lazy"></span><span>Geely</span></a>
+        <a class="brand-tile" href="marca.html?marca=genesis" title="Genesis"><span class="logo"><img src="images/genesis-white.svg" alt="" loading="lazy"></span><span>Genesis</span></a>
+        <a class="brand-tile" href="marca.html?marca=gwm" title="GWM"><span class="logo"><img src="images/gwm_2.png" alt="" loading="lazy"></span><span>GWM</span></a>
+        <a class="brand-tile" href="marca.html?marca=holden" title="Holden"><span class="logo"><img src="images/holden_3.png" alt="" loading="lazy"></span><span>Holden</span></a>
+        <a class="brand-tile" href="marca.html?marca=honda" title="Honda"><span class="logo"><img src="images/honda_2.png" alt="" loading="lazy"></span><span>Honda</span></a>
+        <a class="brand-tile" href="marca.html?marca=hyundai" title="Hyundai"><span class="logo"><img src="images/hyundai_2.png" alt="" loading="lazy"></span><span>Hyundai</span></a>
+        <a class="brand-tile" href="marca.html?marca=ineos" title="Ineos"><span class="logo"><img src="images/ineos-grenadier-stacked-logo-white.png" alt="" loading="lazy"></span><span>Ineos</span></a>
+        <a class="brand-tile" href="marca.html?marca=infiniti" title="Infiniti"><span class="logo"><img src="images/infiniti_2.png" alt="" loading="lazy"></span><span>Infiniti</span></a>
+        <a class="brand-tile" href="marca.html?marca=isuzu" title="Isuzu"><span class="logo"><img src="images/isuzu_2.png" alt="" loading="lazy"></span><span>Isuzu</span></a>
+        <a class="brand-tile" href="marca.html?marca=iveco" title="Iveco"><span class="logo"><img src="images/iveco_2.png" alt="" loading="lazy"></span><span>Iveco</span></a>
+        <a class="brand-tile" href="marca.html?marca=jac" title="JAC"><span class="logo"><img src="images/jac-motors_2.png" alt="" loading="lazy"></span><span>JAC</span></a>
+        <a class="brand-tile" href="marca.html?marca=jaguar" title="Jaguar"><span class="logo"><img src="images/jaguar_2.png" alt="" loading="lazy"></span><span>Jaguar</span></a>
+        <a class="brand-tile" href="marca.html?marca=jeep" title="Jeep"><span class="logo"><img src="images/jeep_3.png" alt="" loading="lazy"></span><span>Jeep</span></a>
+        <a class="brand-tile" href="marca.html?marca=kia" title="Kia"><span class="logo"><img src="images/kia-white.png" alt="" loading="lazy"></span><span>Kia</span></a>
+        <a class="brand-tile" href="marca.html?marca=ktm" title="KTM"><span class="logo"><img src="images/ktm_2.png" alt="" loading="lazy"></span><span>KTM</span></a>
+        <a class="brand-tile" href="marca.html?marca=lamborghini" title="Lamborghini"><span class="logo"><img src="images/lamborghini_2.png" alt="" loading="lazy"></span><span>Lamborghini</span></a>
+        <a class="brand-tile" href="marca.html?marca=lancia" title="Lancia"><span class="logo"><img src="images/lancia_2.png" alt="" loading="lazy"></span><span>Lancia</span></a>
+        <a class="brand-tile" href="marca.html?marca=landrover" title="Landrover"><span class="logo"><img src="images/land-rover_2.png" alt="" loading="lazy"></span><span>Landrover</span></a>
+        <a class="brand-tile" href="marca.html?marca=lexus" title="Lexus"><span class="logo"><img src="images/lexus_2.png" alt="" loading="lazy"></span><span>Lexus</span></a>
+        <a class="brand-tile" href="marca.html?marca=lincoln" title="Lincoln"><span class="logo"><img src="images/lincoln_2.png" alt="" loading="lazy"></span><span>Lincoln</span></a>
+        <a class="brand-tile" href="marca.html?marca=lotus" title="Lotus"><span class="logo"><img src="images/lotus_2.png" alt="" loading="lazy"></span><span>Lotus</span></a>
+        <a class="brand-tile" href="marca.html?marca=mahindra" title="Mahindra"><span class="logo"><img src="images/mahindra_2.png" alt="" loading="lazy"></span><span>Mahindra</span></a>
+        <a class="brand-tile" href="marca.html?marca=man" title="MAN"><span class="logo"><img src="images/man_3.png" alt="" loading="lazy"></span><span>MAN</span></a>
+        <a class="brand-tile" href="marca.html?marca=maserati" title="Maserati"><span class="logo"><img src="images/maserati_3.png" alt="" loading="lazy"></span><span>Maserati</span></a>
+        <a class="brand-tile" href="marca.html?marca=mazda" title="Mazda"><span class="logo"><img src="images/mazda_2.png" alt="" loading="lazy"></span><span>Mazda</span></a>
+        <a class="brand-tile" href="marca.html?marca=mclaren" title="McLaren"><span class="logo"><img src="images/mclaren_3.png" alt="" loading="lazy"></span><span>McLaren</span></a>
+        <a class="brand-tile" href="marca.html?marca=mercedes" title="Mercedes"><span class="logo"><img src="images/mercedes_2.png" alt="" loading="lazy"></span><span>Mercedes</span></a>
+        <a class="brand-tile" href="marca.html?marca=mg" title="MG"><span class="logo"><img src="images/mg_2.png" alt="" loading="lazy"></span><span>MG</span></a>
+        <a class="brand-tile" href="marca.html?marca=mini" title="Mini"><span class="logo"><img src="images/mini_2.png" alt="" loading="lazy"></span><span>Mini</span></a>
+        <a class="brand-tile" href="marca.html?marca=mitsubishi" title="Mitsubishi"><span class="logo"><img src="images/mitsubishi_2.png" alt="" loading="lazy"></span><span>Mitsubishi</span></a>
+        <a class="brand-tile" href="marca.html?marca=morgan" title="Morgan"><span class="logo"><img src="images/morgan.png" alt="" loading="lazy"></span><span>Morgan</span></a>
+        <a class="brand-tile" href="marca.html?marca=mpm" title="MPM"><span class="logo"><img src="images/logo-mpm.png" alt="" loading="lazy"></span><span>MPM</span></a>
+        <a class="brand-tile" href="marca.html?marca=nissan" title="Nissan"><span class="logo"><img src="images/960px-nissan-2020-logo-white.png" alt="" loading="lazy"></span><span>Nissan</span></a>
+        <a class="brand-tile" href="marca.html?marca=opel" title="Opel"><span class="logo"><img src="images/opel-logo-2017-white.png" alt="" loading="lazy"></span><span>Opel</span></a>
+        <a class="brand-tile" href="marca.html?marca=pagani" title="Pagani"><span class="logo"><img src="images/pagani_2.png" alt="" loading="lazy"></span><span>Pagani</span></a>
+        <a class="brand-tile" href="marca.html?marca=peugeot" title="Peugeot"><span class="logo"><img src="images/peugeot_3.png" alt="" loading="lazy"></span><span>Peugeot</span></a>
+        <a class="brand-tile" href="marca.html?marca=pgo" title="PGO"><span class="logo"><img src="images/pgo_2.png" alt="" loading="lazy"></span><span>PGO</span></a>
+        <a class="brand-tile" href="marca.html?marca=piaggio" title="Piaggio"><span class="logo"><img src="images/piaggio_2.png" alt="" loading="lazy"></span><span>Piaggio</span></a>
+        <a class="brand-tile" href="marca.html?marca=polestar" title="Polestar"><span class="logo"><img src="images/polestar-white.png" alt="" loading="lazy"></span><span>Polestar</span></a>
+        <a class="brand-tile" href="marca.html?marca=porsche" title="Porsche"><span class="logo"><img src="images/porsche_2.png" alt="" loading="lazy"></span><span>Porsche</span></a>
+        <a class="brand-tile" href="marca.html?marca=renault" title="Renault"><span class="logo"><img src="images/renault-light.png" alt="" loading="lazy"></span><span>Renault</span></a>
+        <a class="brand-tile" href="marca.html?marca=rolls-royce" title="Rolls Royce"><span class="logo"><img src="images/rolls-royce_2.png" alt="" loading="lazy"></span><span>Rolls Royce</span></a>
+        <a class="brand-tile" href="marca.html?marca=saab" title="Saab"><span class="logo"><img src="images/saab_2.png" alt="" loading="lazy"></span><span>Saab</span></a>
+        <a class="brand-tile" href="marca.html?marca=samsung" title="Samsung"><span class="logo"><img src="images/samsung_2.png" alt="" loading="lazy"></span><span>Samsung</span></a>
+        <a class="brand-tile" href="marca.html?marca=scion" title="Scion"><span class="logo"><img src="images/scion-2.png" alt="" loading="lazy"></span><span>Scion</span></a>
+        <a class="brand-tile" href="marca.html?marca=seat" title="Seat"><span class="logo"><img src="images/960px-seat-logo-from-2017-white.png" alt="" loading="lazy"></span><span>Seat</span></a>
+        <a class="brand-tile" href="marca.html?marca=secma" title="Secma"><span class="logo"><img src="images/secma.png" alt="" loading="lazy"></span><span>Secma</span></a>
+        <a class="brand-tile" href="marca.html?marca=skoda" title="Skoda"><span class="logo"><img src="images/skoda-logo.png" alt="" loading="lazy"></span><span>Skoda</span></a>
+        <a class="brand-tile" href="marca.html?marca=smart" title="Smart"><span class="logo"><img src="images/smart-logo-white.png" alt="" loading="lazy"></span><span>Smart</span></a>
+        <a class="brand-tile" href="marca.html?marca=ssangyong" title="SsangYong"><span class="logo"><img src="images/ssangyong_3.png" alt="" loading="lazy"></span><span>SsangYong</span></a>
+        <a class="brand-tile" href="marca.html?marca=subaru" title="Subaru"><span class="logo"><img src="images/subaru_2.png" alt="" loading="lazy"></span><span>Subaru</span></a>
+        <a class="brand-tile" href="marca.html?marca=suzuki" title="Suzuki"><span class="logo"><img src="images/suzuki_3.png" alt="" loading="lazy"></span><span>Suzuki</span></a>
+        <a class="brand-tile" href="marca.html?marca=tata" title="Tata"><span class="logo"><img src="images/tata_2.png" alt="" loading="lazy"></span><span>Tata</span></a>
+        <a class="brand-tile" href="marca.html?marca=tesla" title="Tesla"><span class="logo"><img src="images/tesla.png" alt="" loading="lazy"></span><span>Tesla</span></a>
+        <a class="brand-tile" href="marca.html?marca=toyota" title="Toyota"><span class="logo"><img src="images/toyota-white.png" alt="" loading="lazy"></span><span>Toyota</span></a>
+        <a class="brand-tile" href="marca.html?marca=volkswagen" title="Volkswagen"><span class="logo"><img src="images/vw-white.png" alt="" loading="lazy"></span><span>Volkswagen</span></a>
+        <a class="brand-tile" href="marca.html?marca=volvo" title="Volvo"><span class="logo"><img src="images/volvo_2.png" alt="" loading="lazy"></span><span>Volvo</span></a>
+        <a class="brand-tile" href="marca.html?marca=westfield" title="Westfield"><span class="logo"><img src="images/westfield_3.png" alt="" loading="lazy"></span><span>Westfield</span></a>
+        <a class="brand-tile" href="marca.html?marca=wiesmann" title="Wiesmann"><span class="logo"><img src="images/wiesmann_2.png" alt="" loading="lazy"></span><span>Wiesmann</span></a>
+      </div>
+      <p class="disclaimer">Carbon Performance no tienes ninguna relación comercial con estas marcas, por lo tanto los logos son solo a título informativo.</p>
+    </div>
+  </section>
+</main>
 
-    <!-- VEHICLE TYPE TABS -->
-    <section class="row sub">
-      <div class="twentyfour columns">
-        <ul class="vehicle-types">
-          <li>
-            <a href="vehiculos.html" class="type active">
-              <img src="images/icon-vehicle-type-1.svg" width="54" height="26" class="icon" alt="Vehículos">
-              <span class="label">Vehículos</span>
-            </a>
-          </li>
-          <li>
-            <a href="motos.html" class="type">
-              <img src="images/icon-vehicle-type-3817.svg" width="54" height="26" class="icon" alt="Motos/Quads">
-              <span class="label">Motos/Quads</span>
-            </a>
-          </li>
-          <li>
-            <a href="moto-agua.html" class="type">
-              <img src="images/icon-vehicle-type-2.svg" width="54" height="26" class="icon" alt="Moto de agua">
-              <span class="label">Moto de agua</span>
-            </a>
-          </li>
-          <li>
-            <a href="lancha.html" class="type">
-              <img src="images/icon-vehicle-type-3565.svg" width="54" height="26" class="icon" alt="Lancha motora">
-              <span class="label">Lancha motora</span>
-            </a>
-          </li>
+<!-- layout:footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156" loading="lazy"></a>
+        <p><span data-cfg="slogan">Professional Chiptuning</span> · Reprogramación de centralitas en Bilbao</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
+        <a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a>
+        <a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="vehiculos.html">Reprogramación</a></li>
+          <li><a href="desarrollo.html">Desarrollo</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contacto.html">Solicita presupuesto</a></li>
         </ul>
       </div>
-    </section>
-
-    <!-- SELECT BRAND TITLE -->
-    <section class="row sub">
-      <div class="twentyfour columns">
-        <span class="title noback">Selecciona una marca ...</span>
-      </div>
-    </section>
-
-    <!-- BRANDS GRID -->
-    <section class="row main" id="brands">
-      <div class="twentyfour columns bigpadding">
-
-        <div class="brand-disclaimer">
-          Carbon Performance no tienes ninguna relación comercial con estas marcas, por lo tanto los logos son solo a título informativo.
-        </div>
-
-        
-        <a href="marca.html?marca=alfa-romeo" class="merk" title="Alfa Romeo"><span><img src="images/alfa-romeo_3.png" alt="Alfa Romeo" class="social"></span></a>
-        <a href="marca.html?marca=alpina" class="merk" title="Alpina"><span><img src="images/alpina-2.png" alt="Alpina" class="social"></span></a>
-        <a href="marca.html?marca=alpine" class="merk" title="Alpine"><span><img src="images/alpine_3.png" alt="Alpine" class="social"></span></a>
-        <a href="marca.html?marca=ariel-motors" class="merk" title="Ariel Motors"><span><img src="images/ariel-2.png" alt="Ariel Motors" class="social"></span></a>
-        <a href="marca.html?marca=artega" class="merk" title="Artega"><span><img src="images/artega-light.png" alt="Artega" class="social"></span></a>
-        <a href="marca.html?marca=aston-martin" class="merk" title="Aston Martin"><span><img src="images/aston-martin_3.png" alt="Aston Martin" class="social"></span></a>
-        <a href="marca.html?marca=audi" class="merk" title="Audi"><span><img src="images/audi_2.png" alt="Audi" class="social"></span></a>
-        <a href="marca.html?marca=bentley" class="merk" title="Bentley"><span><img src="images/bentley_2.png" alt="Bentley" class="social"></span></a>
-        <a href="marca.html?marca=bmw" class="merk" title="BMW"><span><img src="images/bmw_2.png" alt="BMW" class="social"></span></a>
-        <a href="marca.html?marca=borgward" class="merk" title="Borgward"><span><img src="images/borgward_3.png" alt="Borgward" class="social"></span></a>
-        <a href="marca.html?marca=bugatti" class="merk" title="Bugatti"><span><img src="images/bugatti_2.png" alt="Bugatti" class="social"></span></a>
-        <a href="marca.html?marca=buick" class="merk" title="Buick"><span><img src="images/buick_2.png" alt="Buick" class="social"></span></a>
-        <a href="marca.html?marca=byd" class="merk" title="BYD"><span><img src="images/byd-at-4x.png" alt="BYD" class="social"></span></a>
-        <a href="marca.html?marca=cadillac" class="merk" title="Cadillac"><span><img src="images/cadillac_2.png" alt="Cadillac" class="social"></span></a>
-        <a href="marca.html?marca=caterham" class="merk" title="Caterham"><span><img src="images/caterham.png" alt="Caterham" class="social"></span></a>
-        <a href="marca.html?marca=chevrolet" class="merk" title="Chevrolet"><span><img src="images/chevrolet_2.png" alt="Chevrolet" class="social"></span></a>
-        <a href="marca.html?marca=chrysler" class="merk" title="Chrysler"><span><img src="images/chrysler_2.png" alt="Chrysler" class="social"></span></a>
-        <a href="marca.html?marca=citroen" class="merk" title="Citroën"><span><img src="images/citroen-white.png" alt="Citroën" class="social"></span></a>
-        <a href="marca.html?marca=cupra" class="merk" title="Cupra"><span><img src="images/cupra-3.png" alt="Cupra" class="social"></span></a>
-        <a href="marca.html?marca=dacia" class="merk" title="Dacia"><span><img src="images/dacia-white_2.png" alt="Dacia" class="social"></span></a>
-        <a href="marca.html?marca=daewoo" class="merk" title="Daewoo"><span><img src="images/daewoo_2.png" alt="Daewoo" class="social"></span></a>
-        <a href="marca.html?marca=dodge" class="merk" title="Dodge"><span><img src="images/dodge_2.png" alt="Dodge" class="social"></span></a>
-        <a href="marca.html?marca=ds" class="merk" title="DS"><span><img src="images/ds-2.png" alt="DS" class="social"></span></a>
-        <a href="marca.html?marca=ferrari" class="merk" title="Ferrari"><span><img src="images/ferrari_2.png" alt="Ferrari" class="social"></span></a>
-        <a href="marca.html?marca=fiat" class="merk" title="Fiat"><span><img src="images/fiat_2.png" alt="Fiat" class="social"></span></a>
-        <a href="marca.html?marca=ford" class="merk" title="Ford"><span><img src="images/ford_2.png" alt="Ford" class="social"></span></a>
-        <a href="marca.html?marca=geely" class="merk" title="Geely"><span><img src="images/geely_4.png" alt="Geely" class="social"></span></a>
-        <a href="marca.html?marca=genesis" class="merk" title="Genesis"><span><img src="images/genesis-white.svg" alt="Genesis" class="social"></span></a>
-        <a href="marca.html?marca=gwm" class="merk" title="GWM"><span><img src="images/gwm_2.png" alt="GWM" class="social"></span></a>
-        <a href="marca.html?marca=holden" class="merk" title="Holden"><span><img src="images/holden_3.png" alt="Holden" class="social"></span></a>
-        <a href="marca.html?marca=honda" class="merk" title="Honda"><span><img src="images/honda_2.png" alt="Honda" class="social"></span></a>
-        <a href="marca.html?marca=hyundai" class="merk" title="Hyundai"><span><img src="images/hyundai_2.png" alt="Hyundai" class="social"></span></a>
-        <a href="marca.html?marca=ineos" class="merk" title="Ineos"><span><img src="images/ineos-grenadier-stacked-logo-white.png" alt="Ineos" class="social"></span></a>
-        <a href="marca.html?marca=infiniti" class="merk" title="Infiniti"><span><img src="images/infiniti_2.png" alt="Infiniti" class="social"></span></a>
-        <a href="marca.html?marca=isuzu" class="merk" title="Isuzu"><span><img src="images/isuzu_2.png" alt="Isuzu" class="social"></span></a>
-        <a href="marca.html?marca=iveco" class="merk" title="Iveco"><span><img src="images/iveco_2.png" alt="Iveco" class="social"></span></a>
-        <a href="marca.html?marca=jac" class="merk" title="JAC"><span><img src="images/jac-motors_2.png" alt="JAC" class="social"></span></a>
-        <a href="marca.html?marca=jaguar" class="merk" title="Jaguar"><span><img src="images/jaguar_2.png" alt="Jaguar" class="social"></span></a>
-        <a href="marca.html?marca=jeep" class="merk" title="Jeep"><span><img src="images/jeep_3.png" alt="Jeep" class="social"></span></a>
-        <a href="marca.html?marca=kia" class="merk" title="Kia"><span><img src="images/kia-white.png" alt="Kia" class="social"></span></a>
-        <a href="marca.html?marca=ktm" class="merk" title="KTM"><span><img src="images/ktm_2.png" alt="KTM" class="social"></span></a>
-        <a href="marca.html?marca=lamborghini" class="merk" title="Lamborghini"><span><img src="images/lamborghini_2.png" alt="Lamborghini" class="social"></span></a>
-        <a href="marca.html?marca=lancia" class="merk" title="Lancia"><span><img src="images/lancia_2.png" alt="Lancia" class="social"></span></a>
-        <a href="marca.html?marca=landrover" class="merk" title="Landrover"><span><img src="images/land-rover_2.png" alt="Landrover" class="social"></span></a>
-        <a href="marca.html?marca=lexus" class="merk" title="Lexus"><span><img src="images/lexus_2.png" alt="Lexus" class="social"></span></a>
-        <a href="marca.html?marca=lincoln" class="merk" title="Lincoln"><span><img src="images/lincoln_2.png" alt="Lincoln" class="social"></span></a>
-        <a href="marca.html?marca=lotus" class="merk" title="Lotus"><span><img src="images/lotus_2.png" alt="Lotus" class="social"></span></a>
-        <a href="marca.html?marca=mahindra" class="merk" title="Mahindra"><span><img src="images/mahindra_2.png" alt="Mahindra" class="social"></span></a>
-        <a href="marca.html?marca=man" class="merk" title="MAN"><span><img src="images/man_3.png" alt="MAN" class="social"></span></a>
-        <a href="marca.html?marca=maserati" class="merk" title="Maserati"><span><img src="images/maserati_3.png" alt="Maserati" class="social"></span></a>
-        <a href="marca.html?marca=mazda" class="merk" title="Mazda"><span><img src="images/mazda_2.png" alt="Mazda" class="social"></span></a>
-        <a href="marca.html?marca=mclaren" class="merk" title="McLaren"><span><img src="images/mclaren_3.png" alt="McLaren" class="social"></span></a>
-        <a href="marca.html?marca=mercedes" class="merk" title="Mercedes"><span><img src="images/mercedes_2.png" alt="Mercedes" class="social"></span></a>
-        <a href="marca.html?marca=mg" class="merk" title="MG"><span><img src="images/mg_2.png" alt="MG" class="social"></span></a>
-        <a href="marca.html?marca=mini" class="merk" title="Mini"><span><img src="images/mini_2.png" alt="Mini" class="social"></span></a>
-        <a href="marca.html?marca=mitsubishi" class="merk" title="Mitsubishi"><span><img src="images/mitsubishi_2.png" alt="Mitsubishi" class="social"></span></a>
-        <a href="marca.html?marca=morgan" class="merk" title="Morgan"><span><img src="images/morgan.png" alt="Morgan" class="social"></span></a>
-        <a href="marca.html?marca=mpm" class="merk" title="MPM"><span><img src="images/logo-mpm.png" alt="MPM" class="social"></span></a>
-        <a href="marca.html?marca=nissan" class="merk" title="Nissan"><span><img src="images/960px-nissan-2020-logo-white.png" alt="Nissan" class="social"></span></a>
-        <a href="marca.html?marca=opel" class="merk" title="Opel"><span><img src="images/opel-logo-2017-white.png" alt="Opel" class="social"></span></a>
-        <a href="marca.html?marca=pagani" class="merk" title="Pagani"><span><img src="images/pagani_2.png" alt="Pagani" class="social"></span></a>
-        <a href="marca.html?marca=peugeot" class="merk" title="Peugeot"><span><img src="images/peugeot_3.png" alt="Peugeot" class="social"></span></a>
-        <a href="marca.html?marca=pgo" class="merk" title="PGO"><span><img src="images/pgo_2.png" alt="PGO" class="social"></span></a>
-        <a href="marca.html?marca=piaggio" class="merk" title="Piaggio"><span><img src="images/piaggio_2.png" alt="Piaggio" class="social"></span></a>
-        <a href="marca.html?marca=polestar" class="merk" title="Polestar"><span><img src="images/polestar-white.png" alt="Polestar" class="social"></span></a>
-        <a href="marca.html?marca=porsche" class="merk" title="Porsche"><span><img src="images/porsche_2.png" alt="Porsche" class="social"></span></a>
-        <a href="marca.html?marca=renault" class="merk" title="Renault"><span><img src="images/renault-light.png" alt="Renault" class="social"></span></a>
-        <a href="marca.html?marca=rolls-royce" class="merk" title="Rolls Royce"><span><img src="images/rolls-royce_2.png" alt="Rolls Royce" class="social"></span></a>
-        <a href="marca.html?marca=saab" class="merk" title="Saab"><span><img src="images/saab_2.png" alt="Saab" class="social"></span></a>
-        <a href="marca.html?marca=samsung" class="merk" title="Samsung"><span><img src="images/samsung_2.png" alt="Samsung" class="social"></span></a>
-        <a href="marca.html?marca=scion" class="merk" title="Scion"><span><img src="images/scion-2.png" alt="Scion" class="social"></span></a>
-        <a href="marca.html?marca=seat" class="merk" title="Seat"><span><img src="images/960px-seat-logo-from-2017-white.png" alt="Seat" class="social"></span></a>
-        <a href="marca.html?marca=secma" class="merk" title="Secma"><span><img src="images/secma.png" alt="Secma" class="social"></span></a>
-        <a href="marca.html?marca=skoda" class="merk" title="Skoda"><span><img src="images/skoda-logo.png" alt="Skoda" class="social"></span></a>
-        <a href="marca.html?marca=smart" class="merk" title="Smart"><span><img src="images/smart-logo-white.png" alt="Smart" class="social"></span></a>
-        <a href="marca.html?marca=ssangyong" class="merk" title="SsangYong"><span><img src="images/ssangyong_3.png" alt="SsangYong" class="social"></span></a>
-        <a href="marca.html?marca=subaru" class="merk" title="Subaru"><span><img src="images/subaru_2.png" alt="Subaru" class="social"></span></a>
-        <a href="marca.html?marca=suzuki" class="merk" title="Suzuki"><span><img src="images/suzuki_3.png" alt="Suzuki" class="social"></span></a>
-        <a href="marca.html?marca=tata" class="merk" title="Tata"><span><img src="images/tata_2.png" alt="Tata" class="social"></span></a>
-        <a href="marca.html?marca=tesla" class="merk" title="Tesla"><span><img src="images/tesla.png" alt="Tesla" class="social"></span></a>
-        <a href="marca.html?marca=toyota" class="merk" title="Toyota"><span><img src="images/toyota-white.png" alt="Toyota" class="social"></span></a>
-        <a href="marca.html?marca=volkswagen" class="merk" title="Volkswagen"><span><img src="images/vw-white.png" alt="Volkswagen" class="social"></span></a>
-        <a href="marca.html?marca=volvo" class="merk" title="Volvo"><span><img src="images/volvo_2.png" alt="Volvo" class="social"></span></a>
-        <a href="marca.html?marca=westfield" class="merk" title="Westfield"><span><img src="images/westfield_3.png" alt="Westfield" class="social"></span></a>
-        <a href="marca.html?marca=wiesmann" class="merk" title="Wiesmann"><span><img src="images/wiesmann_2.png" alt="Wiesmann" class="social"></span></a>
-
-        <div class="doClear"></div>
-
-        <p>Para ofrecer mejor nuestros servicios hemos dividido las posibles mejoras en diferentes "Stages" echa un vistazo a ver cuales están disponibles para su coche. A continuación se muestra una breve descripción de lo que generalmente incluyen estas fases o modificacione.</p>
-
-        <ul class="block-grid one-up mobile-one-up articles stages">
-          <li>
-            <article>
-              <header>
-                <h2>Stage 1</h2>
-                <h3>Reprogramación</h3>
-              </header>
-              <div class="content">
-                <p>Consiste en una reprogramación individual del sistema de gestión del motor del vehículo. Por lo que el ajuste de los parámetros del motor tales como (encendido, inyección,...) están hechos a medida en el banco de potencia. Todos los valores de los parámetros del motor en esta Stage permanecen dentro de los estándares de seguridad prescritos por el fabricante.</p>
-                <p>La stage 1 es 100% de confianza, en resumen más placer de conducir sin preocupaciones.</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article>
-              <header>
-                <h2>Stage 2</h2>
-                <h3>Reprogramación y optimización intake y exhaust</h3>
-              </header>
-              <div class="content">
-                <p>Para aquellos que buscan algo más que una Stage 1, tenemos la Stage 2 la cual consiste en optimizar un número de elementos del motor para incrementar la eficiencia del bloque motor.</p>
-                <p>Principalmente estas modificaciones recaen sobre el consumo y el escape para incrementar la eficiencia del motor. Una gran cantidad de sistemas de admisión son restrictivos debido a su estructura de anti resonancia que está destinada a amortiguar el ruido de admisión. Al montar un filtro de aire deportivo o una admisión de aire personalizada, permite más flujo de aire al motor y obtenemos así una mayor ganancia de potencia. A medida que se alcanzan las normas de seguridad del fabricante en la Stage 2, ciertas partes deben ser reforzadas tales como el embrague. En cada Stage se indican que partes se sustituyen.</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article>
-              <header>
-                <h2>Stage 3</h2>
-                <h3>Nuevas piezas de motor</h3>
-              </header>
-              <div class="content">
-                <p>En la Stage 3 vamos un paso más allá, reemplazamos ciertas partes internas del motor tales como, turbocompresores, árboles de levas... con ello conseguimos aumentar la capacidad del cilindro, colocando árboles de levas deportivos o instalando turbocompresores de mayor caudal, en algunos casos pueden existir ciertos riesgos inherentes a la profesionalidad, pero no siempre. Los fabricantes construyen a menudo un bloque de motor más básico usando turbos más grandes y mismos inyectores para varias motorizaciones diferentes. Huelga decir que en ocasiones podemos potenciar el motor con componentes originales de la marca, pertenecientes a modelos más desarrollados sin comprometer a la fiabilidad ya que tecnológicamente el fabricante ya se había anticipado.</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article>
-              <header>
-                <h2>ECO</h2>
-              </header>
-              <div class="content">
-                <p>La preparación Eco es una reprogramacion individual de cada vehículo y gestión de los sistemas de motor. Los ajustes de los parámetros del motor tales como (encendido, inyección...) se hacen a medida en el banco de potencia.</p>
-                <p>Todos los valores que se programan y adaptan tienen un objetivo: reducir el consumo de combustible.</p>
-              </div>
-            </article>
-          </li>
-        </ul>
-
-      </div>
-    </section>
-
-    <!-- BRANDS BAR -->
-    <footer class="row brands hide-for-small">
-      <div class="twentyfour columns">
-        <ul class="list">
-          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
-          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
-          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs"></a></li>
-          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune"></a></li>
-          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW"></a></li>
-          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC"></a></li>
-          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
-          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
-          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
-          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
-          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
-          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
-          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
-          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
-          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
-          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
-          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
-          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
-          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
-          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
-          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
+          <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="colaboradores.html">Colaboradores</a></li>
         </ul>
       </div>
-    </footer>
-
-    <!-- MOBILE SEARCH -->
-    <footer class="row search-mobile show-for-small">
-      <div class="twentyfour columns">
-        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
-          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
-          <input type="submit" name="search" value="" class="button-full-rounded">
-        </form>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><span class="k">Teléfono</span><a class="v" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></li>
+          <li><span class="k">Correo electrónico</span><a class="v" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></li>
+          <li><span class="k">Dirección</span><span class="v"><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></li>
+        </ul>
       </div>
-    </footer>
+      <div>
+        <h4>Horario</h4>
+        <table class="hours">
+          <tr><td>Martes – Sábado</td><td>09:00–13:00</td></tr>
+          <tr><td></td><td>14:00–18:00</td></tr>
+          <tr class="closed"><td>Domingo y lunes</td><td>Cerrado</td></tr>
+        </table>
+        <p style="margin-top:12px;font-size:14px">Todos los servicios con cita previa.</p>
+      </div>
+    </div>
 
-  </div>
-</div>
-
-<!-- ADDRESS FOOTER -->
-<footer class="row address brp-barcelona">
-  <div class="seventeen columns address">
-    <ul>
-      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
-      <li>
-        <address>Carbon Performance <span class="dark">© ® 2026</span></address>
-        <address>Professional chiptuning</address>
-      </li>
-      <li>
-        <address>Zuberoa Etorb. 8, 10</address>
-        <address>48012 Errekalde, Bilbao, Bizkaia</address>
-      </li>
-      <li>
-        <address><a href="mailto:barcelona@br-performance.com" class="email">E-mail</a></address>
-        <address>Tel: +34 680 911 007</address>
-      </li>
-      <li>
-        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
-        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
-      </li>
-    </ul>
-  </div>
-  <div class="seven columns links">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
-    </ul>
+    <div class="footer-bottom">
+      <span class="tuv"><img src="images/footer_icon_tuv.png" alt="TÜV Rheinland - Certified" width="45" height="45" loading="lazy">© 2026 Carbon Performance. Todos los derechos reservados.</span>
+      <nav aria-label="Legal">
+        <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a>
+        <a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>
+      </nav>
+    </div>
   </div>
 </footer>
+<button class="icon-btn to-top" type="button" aria-label="Volver arriba"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<!-- /layout:footer -->
 
 <script src="js/config.js"></script>
-<script src="js/main.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

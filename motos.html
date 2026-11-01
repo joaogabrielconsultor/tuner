@@ -5,302 +5,232 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bikes - Quad - Carbon Performance - Reprogramación de centralitas</title>
   <meta name="description" content="Potenciación de motores y reprogramación profesional">
-  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/herprogrammatie.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+  <!-- layout:head -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/carbon.css">
+  <meta name="theme-color" content="#161616">
+  <!-- /layout:head -->
 </head>
-<body>
+<body class="page-catalog">
 
-<!-- TOP BAR -->
-<header class="row hide-for-small">
-  <div class="twelve columns offset-by-twelve search-extended">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
-    </ul>
-    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
-      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
-      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
-    </form>
-  </div>
-</header>
+<!-- layout:header -->
+<a class="sr-only" href="#main">Saltar al contenido</a>
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Carbon Performance, inicio"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156"></a>
 
-<!-- NAVIGATION -->
-<section class="row nav">
-  <div class="twentyfour navContainer">
-    <a href="#" class="nav-toggle button-full-rounded"></a>
-    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="Carbon Performance"></a></div>
-    <nav class="primary">
-      <div class="langselect">
-        <a href="#" class="flag" title="España / Español">
-          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
-        </a>
-      </div>
-      <ul class="brp-barcelona">
-        <li class="first"><a href="index.html">Home</a></li>
-        <li class="sub sel"><a href="motos.html">Busca tu reprogramación</a>
-          <ul class="subnav left">
-            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
-            <li><a href="motos.html">Bikes - Quad</a></li>
-            <li><a href="moto-agua.html">Moto de Agua</a></li>
+    <nav class="main-nav" id="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" data-match="index.html">Inicio</a></li>
+        <li class="has-sub" data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html">
+          <a href="vehiculos.html">Reprogramación <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Reprogramación" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="motos.html">Motos / Quads</a></li>
+            <li><a href="moto-agua.html">Moto de agua</a></li>
             <li><a href="lancha.html">Lancha motora</a></li>
-            <li class="last"><a href="desarrollo.html">Desarrollo</a></li>
+            <li><a href="desarrollo.html">Desarrollo</a></li>
           </ul>
         </li>
-        <li class="sub"><a href="noticias.html">Noticias</a>
-          <ul class="subnav left">
-            <li class="first"><a href="noticias.html">Noticias</a></li>
-            <li class="last"><a href="promociones.html">Promociones</a></li>
+        <li class="has-sub" data-match="noticias.html promociones.html">
+          <a href="noticias.html">Noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
           </ul>
         </li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contacto.html">Solicita presupuesto</a></li>
-        <li class="last sub"><a href="contacto.html">Contacto</a>
-          <ul class="subnav right">
-            <li class="first"><a href="contacto.html">Contacto</a></li>
-            <li><a href="banco-de-rodillos.html">Banco de Rodillos</a></li>
+        <li><a href="faq.html" data-match="faq.html">FAQ</a></li>
+        <li class="has-sub" data-match="empresa.html banco-de-rodillos.html nuestro-equipo.html objetivos.html colaboradores.html">
+          <a href="empresa.html">Empresa <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Empresa" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
             <li><a href="empresa.html">Empresa</a></li>
+            <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
             <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
             <li><a href="objetivos.html">Objetivos</a></li>
-            <li class="last"><a href="colaboradores.html">Colaboradores</a></li>
+            <li><a href="colaboradores.html">Colaboradores</a></li>
           </ul>
         </li>
+        <li><a href="contacto.html" data-match="contacto.html">Solicita presupuesto</a></li>
       </ul>
+      <div class="drawer-extra">
+        <a href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a>
+        <a href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a>
+        <p><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></p>
+      </div>
     </nav>
+
+    <div class="header-actions">
+      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>
+        Bilbao
+      </a>
+      <a class="btn btn-sm" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <button class="icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
-</section>
+</header>
+<!-- /layout:header -->
 
-<div class="row" id="container">
-  <div class="twentyfour columns">
+<main id="main">
+  <section class="page-hero">
+    
+    <div class="container">
+      <nav aria-label="Ruta"><ol class="crumbs"><li><a href="index.html">Inicio</a></li><li><a href="vehiculos.html">Reprogramación</a></li><li><span aria-current="page">Motos y quads</span></li></ol></nav>
+      <h1>Motos y quads</h1>
+      <p class="lead">Selecciona una marca para ver los modelos y las etapas de reprogramación disponibles.</p>
+      
+    </div>
+  </section>
 
-    <!-- PAGE TITLE -->
-    <section class="row title">
-      <div class="twentyfour columns nopadding group">
-        <h1>Reprogramación</h1>
-        <h2>Motos/Quads</h2>
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+      <div class="catalog-tools">
+        <nav class="type-pills" aria-label="Tipo de vehículo"><a class="type-pill" href="vehiculos.html"><i class="vt-icon vt-car"></i>Vehículos</a><a class="type-pill active" href="motos.html" aria-current="page"><i class="vt-icon vt-moto"></i>Motos / Quads</a><a class="type-pill" href="moto-agua.html"><i class="vt-icon vt-jet"></i>Moto de agua</a><a class="type-pill" href="lancha.html"><i class="vt-icon vt-boat"></i>Lancha motora</a></nav>
+        <label class="brand-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr-only">Filtrar marcas</span><input type="search" id="brand-search" placeholder="Busca tu marca…" autocomplete="off"></label>
       </div>
-    </section>
+      <div class="brand-grid">
+        <a class="brand-tile" href="marca.html?marca=ajp" title="AJP"><span class="logo"><img src="images/ajp-at-2x.png" alt="" loading="lazy"></span><span>AJP</span></a>
+        <a class="brand-tile" href="marca.html?marca=aprilia" title="Aprilia"><span class="logo"><img src="images/aprilia_2.svg" alt="" loading="lazy"></span><span>Aprilia</span></a>
+        <a class="brand-tile" href="marca.html?marca=argo" title="Argo"><span class="logo"><img src="images/argo.png" alt="" loading="lazy"></span><span>Argo</span></a>
+        <a class="brand-tile" href="marca.html?marca=bmw-motorrad" title="BMW"><span class="logo"><img src="images/bmw_2.png" alt="" loading="lazy"></span><span>BMW</span></a>
+        <a class="brand-tile" href="marca.html?marca=benelli" title="Benelli"><span class="logo"><img src="images/benelli.png" alt="" loading="lazy"></span><span>Benelli</span></a>
+        <a class="brand-tile" href="marca.html?marca=bimota" title="Bimota"><span class="logo"><img src="images/bimota.png" alt="" loading="lazy"></span><span>Bimota</span></a>
+        <a class="brand-tile" href="marca.html?marca=brixton" title="Brixton"><span class="logo"><img src="images/brixton-motorcycles-at-05x.png" alt="" loading="lazy"></span><span>Brixton</span></a>
+        <a class="brand-tile" href="marca.html?marca=buell" title="Buell"><span class="logo"><img src="images/buell_2.png" alt="" loading="lazy"></span><span>Buell</span></a>
+        <a class="brand-tile" href="marca.html?marca=campagna-motors" title="Campagna Motors"><span class="logo"><img src="images/campagna-motors_3.png" alt="" loading="lazy"></span><span>Campagna Motors</span></a>
+        <a class="brand-tile" href="marca.html?marca=can-am" title="Can-am"><span class="logo"><img src="images/can-am_3.png" alt="" loading="lazy"></span><span>Can-am</span></a>
+        <a class="brand-tile" href="marca.html?marca=ccm" title="CCM Motorcycle"><span class="logo"><img src="images/ccm-at-2x.png" alt="" loading="lazy"></span><span>CCM Motorcycle</span></a>
+        <a class="brand-tile" href="marca.html?marca=cfmoto" title="CF Moto"><span class="logo"><img src="images/cfmoto.png" alt="" loading="lazy"></span><span>CF Moto</span></a>
+        <a class="brand-tile" href="marca.html?marca=ducati" title="Ducati"><span class="logo"><img src="images/ducati_2.png" alt="" loading="lazy"></span><span>Ducati</span></a>
+        <a class="brand-tile" href="marca.html?marca=easy-trike" title="Easy Trike"><span class="logo"><img src="images/easy-trike_2.png" alt="" loading="lazy"></span><span>Easy Trike</span></a>
+        <a class="brand-tile" href="marca.html?marca=energica" title="Energica"><span class="logo"><img src="images/energica.png" alt="" loading="lazy"></span><span>Energica</span></a>
+        <a class="brand-tile" href="marca.html?marca=fantic" title="Fantic"><span class="logo"><img src="images/fantic.png" alt="" loading="lazy"></span><span>Fantic</span></a>
+        <a class="brand-tile" href="marca.html?marca=gasgas" title="GasGas"><span class="logo"><img src="images/logo-gasgas.png" alt="" loading="lazy"></span><span>GasGas</span></a>
+        <a class="brand-tile" href="marca.html?marca=gilera" title="Gilera"><span class="logo"><img src="images/gilera_2.svg" alt="" loading="lazy"></span><span>Gilera</span></a>
+        <a class="brand-tile" href="marca.html?marca=goes" title="Goes"><span class="logo"><img src="images/goes.png" alt="" loading="lazy"></span><span>Goes</span></a>
+        <a class="brand-tile" href="marca.html?marca=harley-davidson" title="Harley Davidson"><span class="logo"><img src="images/harley-davidson_2.svg" alt="" loading="lazy"></span><span>Harley Davidson</span></a>
+        <a class="brand-tile" href="marca.html?marca=honda-motorcycles" title="Honda"><span class="logo"><img src="images/honda-motorcycles_2.svg" alt="" loading="lazy"></span><span>Honda</span></a>
+        <a class="brand-tile" href="marca.html?marca=husqvarna" title="Husqvarna"><span class="logo"><img src="images/husqvarna-dark.png" alt="" loading="lazy"></span><span>Husqvarna</span></a>
+        <a class="brand-tile" href="marca.html?marca=hyosung" title="Hyosung"><span class="logo"><img src="images/hyosung-at-2x.png" alt="" loading="lazy"></span><span>Hyosung</span></a>
+        <a class="brand-tile" href="marca.html?marca=hytrack" title="Hytrack"><span class="logo"><img src="images/hytrack-at-2x.png" alt="" loading="lazy"></span><span>Hytrack</span></a>
+        <a class="brand-tile" href="marca.html?marca=indian" title="Indian"><span class="logo"><img src="images/indian.png" alt="" loading="lazy"></span><span>Indian</span></a>
+        <a class="brand-tile" href="marca.html?marca=kawasaki" title="Kawasaki"><span class="logo"><img src="images/kawasaki-white_4.png" alt="" loading="lazy"></span><span>Kawasaki</span></a>
+        <a class="brand-tile" href="marca.html?marca=ktm-moto" title="KTM"><span class="logo"><img src="images/ktm_2.png" alt="" loading="lazy"></span><span>KTM</span></a>
+        <a class="brand-tile" href="marca.html?marca=kymco" title="Kymco"><span class="logo"><img src="images/kymco-at-05x.png" alt="" loading="lazy"></span><span>Kymco</span></a>
+        <a class="brand-tile" href="marca.html?marca=linhai" title="Linhai"><span class="logo"><img src="images/linhai-at-3x.png" alt="" loading="lazy"></span><span>Linhai</span></a>
+        <a class="brand-tile" href="marca.html?marca=loncin" title="Loncin"><span class="logo"><img src="images/loncin-white.svg" alt="" loading="lazy"></span><span>Loncin</span></a>
+        <a class="brand-tile" href="marca.html?marca=macbor" title="Macbor"><span class="logo"><img src="images/macbor-2.png" alt="" loading="lazy"></span><span>Macbor</span></a>
+        <a class="brand-tile" href="marca.html?marca=magpower" title="Magpower"><span class="logo"><img src="images/x4-magpower-at-4x-1.png" alt="" loading="lazy"></span><span>Magpower</span></a>
+        <a class="brand-tile" href="marca.html?marca=masai" title="Masai"><span class="logo"><img src="images/masai.png" alt="" loading="lazy"></span><span>Masai</span></a>
+        <a class="brand-tile" href="marca.html?marca=mash" title="Mash Motorcycle"><span class="logo"><img src="images/mash-white-at-2x.png" alt="" loading="lazy"></span><span>Mash Motorcycle</span></a>
+        <a class="brand-tile" href="marca.html?marca=moto-guzzi" title="Moto Guzzi"><span class="logo"><img src="images/moto-guzzi_2.png" alt="" loading="lazy"></span><span>Moto Guzzi</span></a>
+        <a class="brand-tile" href="marca.html?marca=moto-morini" title="Moto Morini"><span class="logo"><img src="images/mm-logo-d9820611.png" alt="" loading="lazy"></span><span>Moto Morini</span></a>
+        <a class="brand-tile" href="marca.html?marca=motron" title="Motron"><span class="logo"><img src="images/motron.png" alt="" loading="lazy"></span><span>Motron</span></a>
+        <a class="brand-tile" href="marca.html?marca=mv-agusta" title="MV Agusta"><span class="logo"><img src="images/mv-agusta_2.png" alt="" loading="lazy"></span><span>MV Agusta</span></a>
+        <a class="brand-tile" href="marca.html?marca=norton" title="Norton Motorcycle"><span class="logo"><img src="images/norton-at-3x.png" alt="" loading="lazy"></span><span>Norton Motorcycle</span></a>
+        <a class="brand-tile" href="marca.html?marca=odes" title="Odes"><span class="logo"><img src="images/odes.png" alt="" loading="lazy"></span><span>Odes</span></a>
+        <a class="brand-tile" href="marca.html?marca=piaggio-moto" title="Piaggio"><span class="logo"><img src="images/piaggio_2.png" alt="" loading="lazy"></span><span>Piaggio</span></a>
+        <a class="brand-tile" href="marca.html?marca=polaris-moto" title="Polaris"><span class="logo"><img src="images/polaris_2.png" alt="" loading="lazy"></span><span>Polaris</span></a>
+        <a class="brand-tile" href="marca.html?marca=qj-motors" title="QJ Motors"><span class="logo"><img src="images/qj-motors-2_2.png" alt="" loading="lazy"></span><span>QJ Motors</span></a>
+        <a class="brand-tile" href="marca.html?marca=quadro" title="Quadro"><span class="logo"><img src="images/plan-de-travail-2-at-2x.png" alt="" loading="lazy"></span><span>Quadro</span></a>
+        <a class="brand-tile" href="marca.html?marca=rewaco" title="Rewaco"><span class="logo"><img src="images/rewaco.png" alt="" loading="lazy"></span><span>Rewaco</span></a>
+        <a class="brand-tile" href="marca.html?marca=royal-enfield" title="Royal Enfield"><span class="logo"><img src="images/royalenfield-logo.png" alt="" loading="lazy"></span><span>Royal Enfield</span></a>
+        <a class="brand-tile" href="marca.html?marca=segway" title="Segway Motors"><span class="logo"><img src="images/segway-white.png" alt="" loading="lazy"></span><span>Segway Motors</span></a>
+        <a class="brand-tile" href="marca.html?marca=sherco" title="Sherco"><span class="logo"><img src="images/sherco.png" alt="" loading="lazy"></span><span>Sherco</span></a>
+        <a class="brand-tile" href="marca.html?marca=stels" title="Stels"><span class="logo"><img src="images/stels-at-05x.png" alt="" loading="lazy"></span><span>Stels</span></a>
+        <a class="brand-tile" href="marca.html?marca=suzuki-moto" title="Suzuki"><span class="logo"><img src="images/suzuki_2.png" alt="" loading="lazy"></span><span>Suzuki</span></a>
+        <a class="brand-tile" href="marca.html?marca=swm" title="SWM"><span class="logo"><img src="images/swm.png" alt="" loading="lazy"></span><span>SWM</span></a>
+        <a class="brand-tile" href="marca.html?marca=sym" title="SYM"><span class="logo"><img src="images/sym-logo_2.png" alt="" loading="lazy"></span><span>SYM</span></a>
+        <a class="brand-tile" href="marca.html?marca=tgb" title="TGB"><span class="logo"><img src="images/tgb-at-05x.png" alt="" loading="lazy"></span><span>TGB</span></a>
+        <a class="brand-tile" href="marca.html?marca=triumph" title="Triumph"><span class="logo"><img src="images/triumph_3.png" alt="" loading="lazy"></span><span>Triumph</span></a>
+        <a class="brand-tile" href="marca.html?marca=orcal" title="Orcal"><span class="logo"><img src="images/orcal.png" alt="" loading="lazy"></span><span>Orcal</span></a>
+        <a class="brand-tile" href="marca.html?marca=vespa" title="Vespa"><span class="logo"><img src="images/vespa_2.png" alt="" loading="lazy"></span><span>Vespa</span></a>
+        <a class="brand-tile" href="marca.html?marca=voge" title="Voge"><span class="logo"><img src="images/voge_4.png" alt="" loading="lazy"></span><span>Voge</span></a>
+        <a class="brand-tile" href="marca.html?marca=yamaha-moto" title="Yamaha"><span class="logo"><img src="images/yamaha_2.png" alt="" loading="lazy"></span><span>Yamaha</span></a>
+        <a class="brand-tile" href="marca.html?marca=zero-motorcycle" title="Zero Motorcycle"><span class="logo"><img src="images/zero-motorcycles-logo.png" alt="" loading="lazy"></span><span>Zero Motorcycle</span></a>
+        <a class="brand-tile" href="marca.html?marca=zontes" title="Zontes"><span class="logo"><img src="images/zontes-light.svg" alt="" loading="lazy"></span><span>Zontes</span></a>
+      </div>
+      <p class="disclaimer">Carbon Performance no tienes ninguna relación comercial con estas marcas, por lo tanto los logos son solo a título informativo.</p>
+    </div>
+  </section>
+</main>
 
-    <!-- VEHICLE TYPE TABS -->
-    <section class="row sub">
-      <div class="twentyfour columns">
-        <ul class="vehicle-types">
-          <li>
-            <a href="vehiculos.html" class="type">
-              <img src="images/icon-vehicle-type-1.svg" width="54" height="26" class="icon" alt="Vehículos">
-              <span class="label">Vehículos</span>
-            </a>
-          </li>
-          <li>
-            <a href="motos.html" class="type active">
-              <img src="images/icon-vehicle-type-3817.svg" width="54" height="26" class="icon" alt="Motos/Quads">
-              <span class="label">Motos/Quads</span>
-            </a>
-          </li>
-          <li>
-            <a href="moto-agua.html" class="type">
-              <img src="images/icon-vehicle-type-2.svg" width="54" height="26" class="icon" alt="Moto de agua">
-              <span class="label">Moto de agua</span>
-            </a>
-          </li>
-          <li>
-            <a href="lancha.html" class="type">
-              <img src="images/icon-vehicle-type-3565.svg" width="54" height="26" class="icon" alt="Lancha motora">
-              <span class="label">Lancha motora</span>
-            </a>
-          </li>
+<!-- layout:footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156" loading="lazy"></a>
+        <p><span data-cfg="slogan">Professional Chiptuning</span> · Reprogramación de centralitas en Bilbao</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
+        <a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a>
+        <a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="vehiculos.html">Reprogramación</a></li>
+          <li><a href="desarrollo.html">Desarrollo</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contacto.html">Solicita presupuesto</a></li>
         </ul>
       </div>
-    </section>
-
-    <!-- SELECT BRAND TITLE -->
-    <section class="row sub">
-      <div class="twentyfour columns">
-        <span class="title noback">Selecciona una marca ...</span>
-      </div>
-    </section>
-
-    <!-- BRANDS GRID -->
-    <section class="row main" id="brands">
-      <div class="twentyfour columns bigpadding">
-
-        <div class="brand-disclaimer">
-          Carbon Performance no tienes ninguna relación comercial con estas marcas, por lo tanto los logos son solo a título informativo.
-        </div>
-
-        <a href="marca.html?marca=ajp" class="merk" title="AJP"><span><img src="images/ajp-at-2x.png" alt="AJP" class="social"></span></a>
-        <a href="marca.html?marca=aprilia" class="merk" title="Aprilia"><span><img src="images/aprilia_2.svg" alt="Aprilia" class="social"></span></a>
-        <a href="marca.html?marca=argo" class="merk" title="Argo"><span><img src="images/argo.png" alt="Argo" class="social"></span></a>
-        <a href="marca.html?marca=bmw-motorrad" class="merk" title="BMW"><span><img src="images/bmw_2.png" alt="BMW" class="social"></span></a>
-        <a href="marca.html?marca=benelli" class="merk" title="Benelli"><span><img src="images/benelli.png" alt="Benelli" class="social"></span></a>
-        <a href="marca.html?marca=bimota" class="merk" title="Bimota"><span><img src="images/bimota.png" alt="Bimota" class="social"></span></a>
-        <a href="marca.html?marca=brixton" class="merk" title="Brixton"><span><img src="images/brixton-motorcycles-at-05x.png" alt="Brixton" class="social"></span></a>
-        <a href="marca.html?marca=buell" class="merk" title="Buell"><span><img src="images/buell_2.png" alt="Buell" class="social"></span></a>
-        <a href="marca.html?marca=campagna-motors" class="merk" title="Campagna Motors"><span><img src="images/campagna-motors_3.png" alt="Campagna Motors" class="social"></span></a>
-        <a href="marca.html?marca=can-am" class="merk" title="Can-am"><span><img src="images/can-am_3.png" alt="Can-am" class="social"></span></a>
-        <a href="marca.html?marca=ccm" class="merk" title="CCM Motorcycle"><span><img src="images/ccm-at-2x.png" alt="CCM Motorcycle" class="social"></span></a>
-        <a href="marca.html?marca=cfmoto" class="merk" title="CF Moto"><span><img src="images/cfmoto.png" alt="CF Moto" class="social"></span></a>
-        <a href="marca.html?marca=ducati" class="merk" title="Ducati"><span><img src="images/ducati_2.png" alt="Ducati" class="social"></span></a>
-        <a href="marca.html?marca=easy-trike" class="merk" title="Easy Trike"><span><img src="images/easy-trike_2.png" alt="Easy Trike" class="social"></span></a>
-        <a href="marca.html?marca=energica" class="merk" title="Energica"><span><img src="images/energica.png" alt="Energica" class="social"></span></a>
-        <a href="marca.html?marca=fantic" class="merk" title="Fantic"><span><img src="images/fantic.png" alt="Fantic" class="social"></span></a>
-        <a href="marca.html?marca=gasgas" class="merk" title="GasGas"><span><img src="images/logo-gasgas.png" alt="GasGas" class="social"></span></a>
-        <a href="marca.html?marca=gilera" class="merk" title="Gilera"><span><img src="images/gilera_2.svg" alt="Gilera" class="social"></span></a>
-        <a href="marca.html?marca=goes" class="merk" title="Goes"><span><img src="images/goes.png" alt="Goes" class="social"></span></a>
-        <a href="marca.html?marca=harley-davidson" class="merk" title="Harley Davidson"><span><img src="images/harley-davidson_2.svg" alt="Harley Davidson" class="social"></span></a>
-        <a href="marca.html?marca=honda-motorcycles" class="merk" title="Honda"><span><img src="images/honda-motorcycles_2.svg" alt="Honda" class="social"></span></a>
-        <a href="marca.html?marca=husqvarna" class="merk" title="Husqvarna"><span><img src="images/husqvarna-dark.png" alt="Husqvarna" class="social"></span></a>
-        <a href="marca.html?marca=hyosung" class="merk" title="Hyosung"><span><img src="images/hyosung-at-2x.png" alt="Hyosung" class="social"></span></a>
-        <a href="marca.html?marca=hytrack" class="merk" title="Hytrack"><span><img src="images/hytrack-at-2x.png" alt="Hytrack" class="social"></span></a>
-        <a href="marca.html?marca=indian" class="merk" title="Indian"><span><img src="images/indian.png" alt="Indian" class="social"></span></a>
-        <a href="marca.html?marca=kawasaki" class="merk" title="Kawasaki"><span><img src="images/kawasaki-white_4.png" alt="Kawasaki" class="social"></span></a>
-        <a href="marca.html?marca=ktm-moto" class="merk" title="KTM"><span><img src="images/ktm_2.png" alt="KTM" class="social"></span></a>
-        <a href="marca.html?marca=kymco" class="merk" title="Kymco"><span><img src="images/kymco-at-05x.png" alt="Kymco" class="social"></span></a>
-        <a href="marca.html?marca=linhai" class="merk" title="Linhai"><span><img src="images/linhai-at-3x.png" alt="Linhai" class="social"></span></a>
-        <a href="marca.html?marca=loncin" class="merk" title="Loncin"><span><img src="images/loncin-white.svg" alt="Loncin" class="social"></span></a>
-        <a href="marca.html?marca=macbor" class="merk" title="Macbor"><span><img src="images/macbor-2.png" alt="Macbor" class="social"></span></a>
-        <a href="marca.html?marca=magpower" class="merk" title="Magpower"><span><img src="images/x4-magpower-at-4x-1.png" alt="Magpower" class="social"></span></a>
-        <a href="marca.html?marca=masai" class="merk" title="Masai"><span><img src="images/masai.png" alt="Masai" class="social"></span></a>
-        <a href="marca.html?marca=mash" class="merk" title="Mash Motorcycle"><span><img src="images/mash-white-at-2x.png" alt="Mash Motorcycle" class="social"></span></a>
-        <a href="marca.html?marca=moto-guzzi" class="merk" title="Moto Guzzi"><span><img src="images/moto-guzzi_2.png" alt="Moto Guzzi" class="social"></span></a>
-        <a href="marca.html?marca=moto-morini" class="merk" title="Moto Morini"><span><img src="images/mm-logo-d9820611.png" alt="Moto Morini" class="social"></span></a>
-        <a href="marca.html?marca=motron" class="merk" title="Motron"><span><img src="images/motron.png" alt="Motron" class="social"></span></a>
-        <a href="marca.html?marca=mv-agusta" class="merk" title="MV Agusta"><span><img src="images/mv-agusta_2.png" alt="MV Agusta" class="social"></span></a>
-        <a href="marca.html?marca=norton" class="merk" title="Norton Motorcycle"><span><img src="images/norton-at-3x.png" alt="Norton Motorcycle" class="social"></span></a>
-        <a href="marca.html?marca=odes" class="merk" title="Odes"><span><img src="images/odes.png" alt="Odes" class="social"></span></a>
-        <a href="marca.html?marca=piaggio-moto" class="merk" title="Piaggio"><span><img src="images/piaggio_2.png" alt="Piaggio" class="social"></span></a>
-        <a href="marca.html?marca=polaris-moto" class="merk" title="Polaris"><span><img src="images/polaris_2.png" alt="Polaris" class="social"></span></a>
-        <a href="marca.html?marca=qj-motors" class="merk" title="QJ Motors"><span><img src="images/qj-motors-2_2.png" alt="QJ Motors" class="social"></span></a>
-        <a href="marca.html?marca=quadro" class="merk" title="Quadro"><span><img src="images/plan-de-travail-2-at-2x.png" alt="Quadro" class="social"></span></a>
-        <a href="marca.html?marca=rewaco" class="merk" title="Rewaco"><span><img src="images/rewaco.png" alt="Rewaco" class="social"></span></a>
-        <a href="marca.html?marca=royal-enfield" class="merk" title="Royal Enfield"><span><img src="images/royalenfield-logo.png" alt="Royal Enfield" class="social"></span></a>
-        <a href="marca.html?marca=segway" class="merk" title="Segway Motors"><span><img src="images/segway-white.png" alt="Segway Motors" class="social"></span></a>
-        <a href="marca.html?marca=sherco" class="merk" title="Sherco"><span><img src="images/sherco.png" alt="Sherco" class="social"></span></a>
-        <a href="marca.html?marca=stels" class="merk" title="Stels"><span><img src="images/stels-at-05x.png" alt="Stels" class="social"></span></a>
-        <a href="marca.html?marca=suzuki-moto" class="merk" title="Suzuki"><span><img src="images/suzuki_2.png" alt="Suzuki" class="social"></span></a>
-        <a href="marca.html?marca=swm" class="merk" title="SWM"><span><img src="images/swm.png" alt="SWM" class="social"></span></a>
-        <a href="marca.html?marca=sym" class="merk" title="SYM"><span><img src="images/sym-logo_2.png" alt="SYM" class="social"></span></a>
-        <a href="marca.html?marca=tgb" class="merk" title="TGB"><span><img src="images/tgb-at-05x.png" alt="TGB" class="social"></span></a>
-        <a href="marca.html?marca=triumph" class="merk" title="Triumph"><span><img src="images/triumph_3.png" alt="Triumph" class="social"></span></a>
-        <a href="marca.html?marca=orcal" class="merk" title="Orcal"><span><img src="images/orcal.png" alt="Orcal" class="social"></span></a>
-        <a href="marca.html?marca=vespa" class="merk" title="Vespa"><span><img src="images/vespa_2.png" alt="Vespa" class="social"></span></a>
-        <a href="marca.html?marca=voge" class="merk" title="Voge"><span><img src="images/voge_4.png" alt="Voge" class="social"></span></a>
-        <a href="marca.html?marca=yamaha-moto" class="merk" title="Yamaha"><span><img src="images/yamaha_2.png" alt="Yamaha" class="social"></span></a>
-        <a href="marca.html?marca=zero-motorcycle" class="merk" title="Zero Motorcycle"><span><img src="images/zero-motorcycles-logo.png" alt="Zero Motorcycle" class="social"></span></a>
-        <a href="marca.html?marca=zontes" class="merk" title="Zontes"><span><img src="images/zontes-light.svg" alt="Zontes" class="social"></span></a>
-
-        <div class="doClear"></div>
-
-        <p>Para ofrecer mejor nuestros servicios hemos dividido las posibles mejoras en diferentes "Stages" echa un vistazo a ver cuales están disponibles para tu moto o quad. A continuación se muestra una breve descripción de lo que generalmente incluyen estas fases o modificaciones.</p>
-
-        <ul class="block-grid one-up mobile-one-up articles stages">
-          <li>
-            <article>
-              <header>
-                <h2>Stage 1</h2>
-                <h3>Reprogramación</h3>
-              </header>
-              <div class="content">
-                <p>Consiste en una reprogramación individual del sistema de gestión del motor del vehículo. Por lo que el ajuste de los parámetros del motor tales como (encendido, inyección,...) están hechos a medida en el banco de potencia. Todos los valores de los parámetros del motor en esta Stage permanecen dentro de los estándares de seguridad prescritos por el fabricante.</p>
-                <p>La stage 1 es 100% de confianza, en resumen más placer de conducir sin preocupaciones.</p>
-              </div>
-            </article>
-          </li>
-          <li>
-            <article>
-              <header>
-                <h2>Stage 2</h2>
-                <h3>Reprogramación y optimización intake y exhaust</h3>
-              </header>
-              <div class="content">
-                <p>Para aquellos que buscan algo más que una Stage 1, tenemos la Stage 2 la cual consiste en optimizar un número de elementos del motor para incrementar la eficiencia del bloque motor.</p>
-                <p>Principalmente estas modificaciones recaen sobre el consumo y el escape para incrementar la eficiencia del motor. Una gran cantidad de sistemas de admisión son restrictivos debido a su estructura de anti resonancia que está destinada a amortiguar el ruido de admisión. Al montar un filtro de aire deportivo o una admisión de aire personalizada, permite más flujo de aire al motor y obtenemos así una mayor ganancia de potencia.</p>
-              </div>
-            </article>
-          </li>
-        </ul>
-
-      </div>
-    </section>
-
-    <!-- BRANDS BAR -->
-    <footer class="row brands hide-for-small">
-      <div class="twentyfour columns">
-        <ul class="list">
-          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
-          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
-          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs"></a></li>
-          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune"></a></li>
-          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW"></a></li>
-          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC"></a></li>
-          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
-          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
-          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
-          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
-          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
-          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
-          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
-          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
-          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
-          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
-          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
-          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
-          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
-          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
-          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
+          <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="colaboradores.html">Colaboradores</a></li>
         </ul>
       </div>
-    </footer>
-
-    <!-- MOBILE SEARCH -->
-    <footer class="row search-mobile show-for-small">
-      <div class="twentyfour columns">
-        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
-          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
-          <input type="submit" name="search" value="" class="button-full-rounded">
-        </form>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><span class="k">Teléfono</span><a class="v" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></li>
+          <li><span class="k">Correo electrónico</span><a class="v" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></li>
+          <li><span class="k">Dirección</span><span class="v"><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></li>
+        </ul>
       </div>
-    </footer>
+      <div>
+        <h4>Horario</h4>
+        <table class="hours">
+          <tr><td>Martes – Sábado</td><td>09:00–13:00</td></tr>
+          <tr><td></td><td>14:00–18:00</td></tr>
+          <tr class="closed"><td>Domingo y lunes</td><td>Cerrado</td></tr>
+        </table>
+        <p style="margin-top:12px;font-size:14px">Todos los servicios con cita previa.</p>
+      </div>
+    </div>
 
-  </div>
-</div>
-
-<!-- ADDRESS FOOTER -->
-<footer class="row address brp-barcelona">
-  <div class="seventeen columns address">
-    <ul>
-      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
-      <li>
-        <address>Carbon Performance <span class="dark">© ® 2026</span></address>
-        <address>Professional chiptuning</address>
-      </li>
-      <li>
-        <address>Zuberoa Etorb. 8, 10</address>
-        <address>48012 Errekalde, Bilbao, Bizkaia</address>
-      </li>
-      <li>
-        <address><a href="mailto:barcelona@br-performance.com" class="email">E-mail</a></address>
-        <address>Tel: +34 680 911 007</address>
-      </li>
-      <li>
-        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
-        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
-      </li>
-    </ul>
-  </div>
-  <div class="seven columns links">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
-    </ul>
+    <div class="footer-bottom">
+      <span class="tuv"><img src="images/footer_icon_tuv.png" alt="TÜV Rheinland - Certified" width="45" height="45" loading="lazy">© 2026 Carbon Performance. Todos los derechos reservados.</span>
+      <nav aria-label="Legal">
+        <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a>
+        <a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>
+      </nav>
+    </div>
   </div>
 </footer>
+<button class="icon-btn to-top" type="button" aria-label="Volver arriba"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<!-- /layout:footer -->
 
 <script src="js/config.js"></script>
-<script src="js/main.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

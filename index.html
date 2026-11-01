@@ -5,360 +5,467 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Carbon Performance - Reprogramación de centralitas</title>
   <meta name="description" content="Potenciación de motores y reprogramación profesional">
-  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/home.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+  <!-- layout:head -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/carbon.css">
+  <meta name="theme-color" content="#161616">
+  <!-- /layout:head -->
 </head>
-<body>
+<body class="page-home">
 
-<!-- TOP BAR -->
-<header class="row hide-for-small">
-  <div class="twelve columns offset-by-twelve search-extended">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
-    </ul>
-    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
-      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
-      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
-    </form>
-  </div>
-</header>
+<!-- layout:header -->
+<a class="sr-only" href="#main">Saltar al contenido</a>
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Carbon Performance, inicio"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156"></a>
 
-<!-- NAVIGATION -->
-<section class="row nav">
-  <div class="twentyfour navContainer">
-    <a href="#" class="nav-toggle button-full-rounded"></a>
-    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="Carbon Performance"></a></div>
-    <nav class="primary">
-      <div class="langselect">
-        <a href="#" class="flag" title="España / Español">
-          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
-        </a>
-      </div>
-      <ul class="brp-barcelona">
-        <li class="first sel"><a href="index.html">Home</a></li>
-        <li class="sub"><a href="vehiculos.html">Busca tu reprogramación</a>
-          <ul class="subnav left">
-            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
-            <li><a href="motos.html">Bikes - Quad</a></li>
-            <li><a href="moto-agua.html">Moto de Agua</a></li>
+    <nav class="main-nav" id="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" data-match="index.html">Inicio</a></li>
+        <li class="has-sub" data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html">
+          <a href="vehiculos.html">Reprogramación <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Reprogramación" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="motos.html">Motos / Quads</a></li>
+            <li><a href="moto-agua.html">Moto de agua</a></li>
             <li><a href="lancha.html">Lancha motora</a></li>
-            <li class="last"><a href="desarrollo.html">Desarrollo</a></li>
+            <li><a href="desarrollo.html">Desarrollo</a></li>
           </ul>
         </li>
-        <li class="sub"><a href="noticias.html">Noticias</a>
-          <ul class="subnav left">
-            <li class="first"><a href="noticias.html">Noticias</a></li>
-            <li class="last"><a href="promociones.html">Promociones</a></li>
+        <li class="has-sub" data-match="noticias.html promociones.html">
+          <a href="noticias.html">Noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
           </ul>
         </li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contacto.html">Solicita presupuesto</a></li>
-        <li class="last sub"><a href="contacto.html">Contacto</a>
-          <ul class="subnav right">
-            <li class="first"><a href="contacto.html">Contacto</a></li>
-            <li><a href="banco-de-rodillos.html">Banco de Rodillos</a></li>
+        <li><a href="faq.html" data-match="faq.html">FAQ</a></li>
+        <li class="has-sub" data-match="empresa.html banco-de-rodillos.html nuestro-equipo.html objetivos.html colaboradores.html">
+          <a href="empresa.html">Empresa <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Empresa" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
             <li><a href="empresa.html">Empresa</a></li>
+            <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
             <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
             <li><a href="objetivos.html">Objetivos</a></li>
-            <li class="last"><a href="colaboradores.html">Colaboradores</a></li>
+            <li><a href="colaboradores.html">Colaboradores</a></li>
           </ul>
         </li>
+        <li><a href="contacto.html" data-match="contacto.html">Solicita presupuesto</a></li>
       </ul>
+      <div class="drawer-extra">
+        <a href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a>
+        <a href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a>
+        <p><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></p>
+      </div>
     </nav>
+
+    <div class="header-actions">
+      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>
+        Bilbao
+      </a>
+      <a class="btn btn-sm" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <button class="icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
-</section>
+</header>
+<!-- /layout:header -->
 
-<div class="row" id="container">
-  <div class="twentyfour columns">
+<main id="main">
 
-    <!-- HERO SLIDER -->
-    <section class="row kiosk">
-      <div class="twentyfour columns nopadding">
-        <div class="rsMinW slider">
-          <img class="rsImg" src="images/hero-01.jpg" alt="">
-          <img class="rsImg" src="images/hero-02.jpg" alt="">
-          <img class="rsImg" src="images/hero-03.jpg" alt="">
-          <img class="rsImg" src="images/hero-04.jpg" alt="">
-          <img class="rsImg" src="images/hero-05.jpg" alt="">
-          <img class="rsImg" src="images/hero-06.jpg" alt="">
-          <img class="rsImg" src="images/hero-07.jpg" alt="">
-          <img class="rsImg" src="images/hero-08.jpg" alt="">
-          <img class="rsImg" src="images/hero-09.jpg" alt="">
-          <img class="rsImg" src="images/hero-10.jpg" alt="">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-top">
+        <div>
+          <p class="muted" style="margin:0 0 14px;font-weight:600">Carbon Performance España</p>
+          <h1>Reprogramación de centralitas profesional en Bilbao</h1>
+        </div>
+        <div>
+          <p class="hero-lead">Carbon Performance ofrece la posibilidad de aumentar la potencia y el par del motor de tu coche en nuestro banco de potencia, mediante una <a href="vehiculos.html">optimización del software</a>.</p>
+          <div class="hero-actions">
+            <a class="btn btn-red" href="vehiculos.html">Busca tu reprogramación <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+            <a class="btn btn-line btn-plain" href="contacto.html">Solicita presupuesto</a>
+          </div>
         </div>
       </div>
-    </section>
 
-    <!-- COUNTRY SELECTOR -->
-    <section class="row title selector">
-      <div class="twentyfour columns nopadding group">
-        <h2>Selecciona <strong>tu país</strong></h2>
-        <form method="post">
-          <h3>
-            <select class="country">
-              <option data-image="images/es_ES.png" value="index.html" selected>España</option>
-            </select>
-            <strong>tu centro</strong>
-          </h3>
-          <h4>
-            <select class="center">
-              <option data-image="images/icon_selector_flag.png" value="index.html" selected>Bilbao</option>
-            </select>
-            <strong>tu idioma</strong>
-          </h4>
-          <h5>
-            <select class="language">
-              <option data-image="images/es_ES.png" value="index.html" selected>Español</option>
-            </select>
-          </h5>
-        </form>
+      <div class="showcase" data-showcase aria-label="Coches en nuestro banco de potencia">
+        <img src="images/hero-01.jpg" alt="" width="1200" height="334" fetchpriority="high">
+        <img data-src="images/hero-02.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-03.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-04.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-05.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-06.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-07.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-08.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-09.jpg" alt="" width="1200" height="334">
+        <img data-src="images/hero-10.jpg" alt="" width="1200" height="334">
+        <div class="showcase-dots"></div>
       </div>
-    </section>
 
-    <!-- MAIN CONTENT -->
-    <section class="row main smalltoppadding">
-      <div class="twentyfour columns">
-
-        <!-- Row 1: News slider + Intro -->
-        <div class="row">
-          <div class="fourteen columns norightpadding smallbottompadding news">
-            <div class="box-border rsMinW slider">
-              <figure class="label news">
-                <a href="noticias.html"><img class="rsImg" src="images/32375-SP_-_website.jpg" width="682" alt="¡Reprograma tu Mercedes!"></a>
-                <div class="labeltext">
-                  <div class="title"><a href="noticias.html">¡Reprograma tu Mercedes!</a></div>
-                  <div class="context">¡Nuevas reprogramaciones disponibles para varios modelos Mercedes! <a href="noticias.html">leer más</a></div>
-                </div>
-              </figure>
-              <figure class="label news">
-                <a href="noticias.html"><img class="rsImg" src="images/32349-SP_-_website.jpg" width="682" alt="Reprograma tu Audi/Cupra/Seat/Skoda/VW/Ford"></a>
-                <div class="labeltext">
-                  <div class="title"><a href="noticias.html">Reprograma tu Audi/Cupra/Seat/Skoda/VW/Ford</a></div>
-                  <div class="context">¡Nuevas reprogramaciones disponibles para motores 1.5 TSI, 2.0 TSI y más! <a href="noticias.html">leer más</a></div>
-                </div>
-              </figure>
-              <figure class="label news">
-                <a href="noticias.html"><img class="rsImg" src="images/32329-SP_-_website.jpg" width="682" alt="Reprograma tu Audi o VW 3.0 TDI EU6."></a>
-                <div class="labeltext">
-                  <div class="title"><a href="noticias.html">Reprograma tu Audi o VW 3.0 TDI EU6.</a></div>
-                  <div class="context">¡Nuevas reprogramaciones disponibles para motores 3.0 TDI EU6 de Audi y VW! <a href="noticias.html">leer más</a></div>
-                </div>
-              </figure>
-              <figure class="label news">
-                <a href="noticias.html"><img class="rsImg" src="images/32309-SP_-_website.jpg" width="682" alt="Optimiza tu motor 2.0 TDI o 2.0 EcoBlue"></a>
-                <div class="labeltext">
-                  <div class="title"><a href="noticias.html">Optimiza tu motor 2.0 TDI o 2.0 EcoBlue</a></div>
-                  <div class="context">¡Nuevas reprogramaciones disponibles para motores 2.0 TDI y 2.0 EcoBlue! <a href="noticias.html">leer más</a></div>
-                </div>
-              </figure>
-              <figure class="label news">
-                <a href="noticias.html"><img class="rsImg" src="images/32315-SP_-_website_thumbnail.jpg" width="682" alt="Descubre nuestra promoción especial de verano"></a>
-                <div class="labeltext">
-                  <div class="title"><a href="noticias.html">Descubre nuestra promoción especial de verano</a></div>
-                  <div class="context">Promoción especial de verano: aprovecha hasta un -20% en stage 1. <a href="noticias.html">leer más</a></div>
-                </div>
-              </figure>
-            </div>
+      <div class="finder" data-finder data-type="coche" style="margin-top:16px">
+        <div class="finder-search">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <input type="search" placeholder="Encuentra tu vehículo: marca o modelo" aria-label="Buscar por marca o modelo" autocomplete="off" role="combobox" aria-expanded="false" aria-controls="finder-results">
+          <button class="go" type="button" aria-label="Buscar"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          <ul class="finder-results" id="finder-results" role="listbox" hidden></ul>
+        </div>
+        <div class="finder-row">
+          <div class="type-pills" role="group" aria-label="Tipo de vehículo">
+            <button class="type-pill" type="button" data-type="coche" aria-pressed="true"><i class="vt-icon vt-car"></i>Vehículo</button>
+            <button class="type-pill" type="button" data-type="moto" aria-pressed="false"><i class="vt-icon vt-moto"></i>Moto / Quad</button>
+            <button class="type-pill" type="button" data-type="moto-agua" aria-pressed="false"><i class="vt-icon vt-jet"></i>Moto de agua</button>
+            <button class="type-pill" type="button" data-type="lancha" aria-pressed="false"><i class="vt-icon vt-boat"></i>Lancha motora</button>
           </div>
-          <div class="ten columns smallbottompadding team">
-            <div class="box-border rsMinW slider">
-              <div class="rsContent">
-                <div class="intro" style="background-image: url(images/intro.png)">
-                  <h1>Carbon Performance España</h1>
-                  <h2>Reprogramación de centralitas profesional en Bilbao</h2>
-                  <p>Carbon Performance ofrece la posibilidad de aumentar la potencia y el par del motor de tu coche en nuestro banco de potencia, mediante una <a href="vehiculos.html">optimización del software</a>.</p>
-                  <h3>Carbon Performance garantiza:</h3>
-                </div>
-              </div>
-            </div>
+          <div class="finder-selects">
+            <label class="select"><span class="sr-only">Marca</span><select name="brand" disabled><option value="">Marca</option></select></label>
+            <label class="select"><span class="sr-only">Modelo</span><select name="model" disabled><option value="">Modelo</option></select></label>
+            <label class="select"><span class="sr-only">Año</span><select name="year" disabled><option value="">Año</option></select></label>
+            <label class="select"><span class="sr-only">Motor</span><select name="engine" disabled><option value="">Motor</option></select></label>
+            <button class="btn btn-red finder-go" type="button">Ver reprogramación <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
           </div>
         </div>
-
-        <!-- Row 2: YouTube + Facebook -->
-        <div class="row">
-          <div class="fourteen columns norightpadding smallbottompadding youtube">
-            <section class="box box-border">
-              <header class="title"><span class="label">YouTube</span></header>
-              <div class="content nopadding rsMinW slider">
-                <ul class="block-grid three-up mobile-one-up items">
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/eB5yweeOcoI" class="vimeo"><img src="https://i.ytimg.com/vi/eB5yweeOcoI/mqdefault.jpg" alt="How's your financial situation?"></a></figure>
-                    <div class="date">21 Jul, 2026 &bull; 542 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/-l7HefUBU8I" class="vimeo"><img src="https://i.ytimg.com/vi/-l7HefUBU8I/mqdefault.jpg" alt="Kawasaki ZH2"></a></figure>
-                    <div class="date">20 Jul, 2026 &bull; 92 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/ogxI14Qi2SU" class="vimeo"><img src="https://i.ytimg.com/vi/ogxI14Qi2SU/mqdefault.jpg" alt="Mercedes AMG GT 53 AMG"></a></figure>
-                    <div class="date">19 Jul, 2026 &bull; 945 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/TiZBeKzC3DQ" class="vimeo"><img src="https://i.ytimg.com/vi/TiZBeKzC3DQ/mqdefault.jpg" alt="Admission Eventuri"></a></figure>
-                    <div class="date">17 Jul, 2026 &bull; 924 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/K7h8bFVhukU" class="vimeo"><img src="https://i.ytimg.com/vi/K7h8bFVhukU/mqdefault.jpg" alt="Audi RSQ8 - 4.0 V8 Bi-Turbo"></a></figure>
-                    <div class="date">16 Jul, 2026 &bull; 255 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/jRDfsIb8py4" class="vimeo"><img src="https://i.ytimg.com/vi/jRDfsIb8py4/mqdefault.jpg" alt="Lamborghini Huracan LP 580-2"></a></figure>
-                    <div class="date">15 Jul, 2026 &bull; 211 views</div>
-                  </li>
-                </ul>
-                <ul class="block-grid three-up mobile-one-up items">
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/44lID4q0xwg" class="vimeo"><img src="https://i.ytimg.com/vi/44lID4q0xwg/mqdefault.jpg" alt="L'intercooler pour votre moteur"></a></figure>
-                    <div class="date">14 Jul, 2026 &bull; 1054 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/4wzDA_JnN1E" class="vimeo"><img src="https://i.ytimg.com/vi/4wzDA_JnN1E/mqdefault.jpg" alt="Ducati Panigale V4S - 2023"></a></figure>
-                    <div class="date">13 Jul, 2026 &bull; 250 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/k9to4aCo08Y" class="vimeo"><img src="https://i.ytimg.com/vi/k9to4aCo08Y/mqdefault.jpg" alt="BMW Z4 E89 35i 3.0 Bi-Turbo N54"></a></figure>
-                    <div class="date">12 Jul, 2026 &bull; 250 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/XfZ0Ro-JN3g" class="vimeo"><img src="https://i.ytimg.com/vi/XfZ0Ro-JN3g/mqdefault.jpg" alt="Ford Ranger Raptor 3.0T Ecoboost"></a></figure>
-                    <div class="date">10 Jul, 2026 &bull; 1105 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/j7GlXcq3-pk" class="vimeo"><img src="https://i.ytimg.com/vi/j7GlXcq3-pk/mqdefault.jpg" alt="Bimmerfest"></a></figure>
-                    <div class="date">09 Jul, 2026 &bull; 1410 views</div>
-                  </li>
-                  <li class="item">
-                    <figure class="thumb"><a href="https://youtube.com/embed/KAFYHN5upDY" class="vimeo"><img src="https://i.ytimg.com/vi/KAFYHN5upDY/mqdefault.jpg" alt="Audi R8 V10 Performance"></a></figure>
-                    <div class="date">08 Jul, 2026 &bull; 825 views</div>
-                  </li>
-                </ul>
-              </div>
-            </section>
-          </div>
-          <div class="ten columns smallbottompadding facebook">
-            <section class="box box-border">
-              <header class="title"><span class="label">Facebook</span></header>
-              <div class="content nopadding" style="padding:20px;text-align:center">
-                <a class="button-full-rounded" href="https://www.facebook.com/BRPerformanceBarcelona" target="_blank" rel="noopener">Facebook feed</a>
-              </div>
-            </section>
-          </div>
-        </div>
-
-        <!-- Row 3: Promo Video + Webcam -->
-        <div class="row">
-          <div class="fourteen columns norightpadding smallbottompadding">
-            <div class="box-border">
-              <figure class="label video">
-                <a href="https://www.youtube.com/embed/4R0EV4Z-AM0" class="vimeo">
-                  <img src="images/promo_video_2021.jpg" width="682" height="250" alt="BRP video">
-                </a>
-                <div class="labeltext">
-                  <div class="title">BRP video</div>
-                </div>
-              </figure>
-            </div>
-          </div>
-          <div class="ten columns smallbottompadding">
-            <div class="box-border">
-              <figure class="label webcam">
-                <a href="https://live.netcamviewer.nl/Carbon Performance/432" class="webcam webcam-link"></a>
-                <div class="labeltext">
-                  <div class="title">BRP Research Facility Live Webcam!</div>
-                  <div class="context">Síguenos a través de nuestra webcam <a href="https://live.netcamviewer.nl/Carbon Performance/432" class="button-full-rounded webcam">Abrir streaming</a></div>
-                </div>
-              </figure>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- BRANDS BAR -->
-    <footer class="row brands hide-for-small">
-      <div class="twentyfour columns">
-        <ul class="list">
-          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
-          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
-          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs Performance"></a></li>
-          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune Performance"></a></li>
-          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW Suspensions"></a></li>
-          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC Air Filters"></a></li>
-          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
-          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
-          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
-          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
-          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
-          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
-          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
-          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
-          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
-          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
-          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
-          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
-          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
-          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
-          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+  <!-- SERVICIOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Nuestros servicios</h2>
+          <p>Del ahorro de combustible a un proyecto completo: elige la etapa que encaja con tu vehículo y cómo lo usas.</p>
+        </div>
+        <a class="btn" href="vehiculos.html">Optimiza tu vehículo <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+      <div class="services">
+        <a class="service featured" href="vehiculos.html">
+          <span class="badge">El más solicitado</span>
+          <span style="color:var(--muted);font-weight:600">Stage 1</span>
+          <h3>Reprogramación de centralitas</h3>
+          <p>Software a medida, ajustado en nuestro banco de potencia, con el hardware de serie de tu motor.</p>
+          <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </a>
+        <div class="service-grid">
+          <a class="service" href="vehiculos.html">
+            <span class="tag">ECO</span>
+            <h3>Más par, menos consumo</h3>
+            <p>Una optimización pensada para el ahorro de combustible.</p>
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="service" href="vehiculos.html">
+            <span class="tag">Stage 2</span>
+            <h3>Software y piezas</h3>
+            <p>Reprogramación combinada con escape, admisión o intercooler de alto rendimiento.</p>
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="service" href="vehiculos.html">
+            <span class="tag">Stage 3</span>
+            <h3>Proyecto a medida</h3>
+            <p>Reprogramación con mejoras mecánicas completas.</p>
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="service" href="vehiculos.html">
+            <span class="tag">Gearbox</span>
+            <h3>Cajas automáticas</h3>
+            <p>Reprogramación de cajas DSG y automáticas.</p>
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="service" href="banco-de-rodillos.html">
+            <span class="tag">Banco 4x4</span>
+            <h3>Banco de rodillos</h3>
+            <p>Medición real de potencia y par antes y después.</p>
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+          <a class="service" href="desarrollo.html">
+            <span class="tag">I+D</span>
+            <h3>Desarrollo propio</h3>
+            <p>Escribimos nuestro propio software para cada motor.</p>
+            <span class="arrow"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GARANTÍAS -->
+  <section class="section">
+    <div class="container promise">
+      <div>
+        <h2>Carbon Performance garantiza</h2>
+        <p class="lead">Cada coche se ajusta y se prueba individualmente en tiempo real, por un equipo de ingenieros automovilísticos cualificados.</p>
+        <a class="btn" href="empresa.html">Conoce la empresa <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+      <div class="promise-grid">
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 18a8 8 0 1116 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M12 18l4-6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>Más par motor</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13 3L5 13h6l-1 8 8-10h-6l1-8z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Más potencia</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 21V5a2 2 0 012-2h6a2 2 0 012 2v16M3 21h14M15 9h2a2 2 0 012 2v5a1.5 1.5 0 003 0V8l-3-3M8 7h4" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Menos consumo</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3.5 10.5l6.2 1M14.3 11.5l6.2-1M12 14.5V21" stroke="currentColor" stroke-width="2"/></svg><span>Más placer de conducir</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l8 3v6c0 4.5-3.4 8.2-8 9-4.6-.8-8-4.5-8-9V6l8-3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M8.5 12l2.5 2.5 4.5-5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>5 años de garantía</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 10h18M8 3v4M16 3v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>10 años de experiencia</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4" fill="none" stroke="currentColor" stroke-width="2"/><path d="M4 21a8 8 0 0116 0" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span>El experto</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="15" width="20" height="5" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="7" cy="17.5" r="1" fill="currentColor"/><circle cx="17" cy="17.5" r="1" fill="currentColor"/><path d="M5 12l2-5h10l2 5H5z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Banco de rodillos 4x4</span></div>
+        <div class="promise-item"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.6 2.6-2.4-.6-.6-2.4 2.6-2.6z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg><span>Ingenieros cualificados</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Novedades</h2>
+          <p>Nuevas reprogramaciones disponibles y promociones del taller.</p>
+        </div>
+        <div style="display:flex;gap:12px;align-items:center">
+          <div class="rail-nav" data-rail-nav="news-rail">
+            <button class="prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            <button class="next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <a class="btn" href="noticias.html">Todas las noticias <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </div>
+      <div class="rail" id="news-rail">
+        <a class="news-card" href="noticias.html">
+          <div class="thumb"><img src="images/32375-SP_-_website.jpg" alt="" loading="lazy"></div>
+          <div class="body"><h3>¡Reprograma tu Mercedes!</h3><p>¡Nuevas reprogramaciones disponibles para varios modelos Mercedes!</p><span class="more">Leer más</span></div>
+        </a>
+        <a class="news-card" href="noticias.html">
+          <div class="thumb"><img src="images/32349-SP_-_website.jpg" alt="" loading="lazy"></div>
+          <div class="body"><h3>Reprograma tu Audi/Cupra/Seat/Skoda/VW/Ford</h3><p>¡Nuevas reprogramaciones disponibles para motores 1.5 TSI, 2.0 TSI y más!</p><span class="more">Leer más</span></div>
+        </a>
+        <a class="news-card" href="noticias.html">
+          <div class="thumb"><img src="images/32329-SP_-_website.jpg" alt="" loading="lazy"></div>
+          <div class="body"><h3>Reprograma tu Audi o VW 3.0 TDI EU6.</h3><p>¡Nuevas reprogramaciones disponibles para motores 3.0 TDI EU6 de Audi y VW!</p><span class="more">Leer más</span></div>
+        </a>
+        <a class="news-card" href="noticias.html">
+          <div class="thumb"><img src="images/32309-SP_-_website.jpg" alt="" loading="lazy"></div>
+          <div class="body"><h3>Optimiza tu motor 2.0 TDI o 2.0 EcoBlue</h3><p>¡Nuevas reprogramaciones disponibles para motores 2.0 TDI y 2.0 EcoBlue!</p><span class="more">Leer más</span></div>
+        </a>
+        <a class="news-card" href="noticias.html">
+          <div class="thumb"><img src="images/32315-SP_-_website_thumbnail.jpg" alt="" loading="lazy"></div>
+          <div class="body"><h3>Descubre nuestra promoción especial de verano</h3><p>Promoción especial de verano: aprovecha hasta un -20% en stage 1.</p><span class="more">Leer más</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- VÍDEOS -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>En el banco de potencia</h2>
+          <p>Mediciones, proyectos y novedades en nuestro canal de YouTube.</p>
+        </div>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a class="btn btn-line btn-plain" href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" target="_blank" rel="noopener">Facebook feed</a>
+          <a class="btn" href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" target="_blank" rel="noopener">Ver canal <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </div>
+      <div class="video-feature">
+        <a class="video-card big" href="https://www.youtube.com/watch?v=4R0EV4Z-AM0" data-video="https://www.youtube.com/embed/4R0EV4Z-AM0">
+          <img src="images/promo_video_2021.jpg" alt="" loading="lazy">
+          <span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span>
+          <span class="cap">BRP video</span>
+        </a>
+        <div class="side-card">
+          <div>
+            <span class="live-dot">En directo</span>
+            <h3 style="margin-top:14px">BRP Research Facility Live Webcam!</h3>
+            <p>Síguenos a través de nuestra webcam.</p>
+          </div>
+          <a class="btn" href="https://live.netcamviewer.nl/Carbon Performance/432" target="_blank" rel="noopener">Abrir streaming <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </div>
+      <div class="video-grid">
+        <a class="video-card" href="https://www.youtube.com/watch?v=eB5yweeOcoI" data-video="https://www.youtube.com/embed/eB5yweeOcoI"><span class="media"><img src="https://i.ytimg.com/vi/eB5yweeOcoI/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">How's your financial situation?<small>21 Jul, 2026 &bull; 542 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=-l7HefUBU8I" data-video="https://www.youtube.com/embed/-l7HefUBU8I"><span class="media"><img src="https://i.ytimg.com/vi/-l7HefUBU8I/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Kawasaki ZH2<small>20 Jul, 2026 &bull; 92 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=ogxI14Qi2SU" data-video="https://www.youtube.com/embed/ogxI14Qi2SU"><span class="media"><img src="https://i.ytimg.com/vi/ogxI14Qi2SU/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Mercedes AMG GT 53 AMG<small>19 Jul, 2026 &bull; 945 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=TiZBeKzC3DQ" data-video="https://www.youtube.com/embed/TiZBeKzC3DQ"><span class="media"><img src="https://i.ytimg.com/vi/TiZBeKzC3DQ/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Admission Eventuri<small>17 Jul, 2026 &bull; 924 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=K7h8bFVhukU" data-video="https://www.youtube.com/embed/K7h8bFVhukU"><span class="media"><img src="https://i.ytimg.com/vi/K7h8bFVhukU/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Audi RSQ8 - 4.0 V8 Bi-Turbo<small>16 Jul, 2026 &bull; 255 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=jRDfsIb8py4" data-video="https://www.youtube.com/embed/jRDfsIb8py4"><span class="media"><img src="https://i.ytimg.com/vi/jRDfsIb8py4/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Lamborghini Huracan LP 580-2<small>15 Jul, 2026 &bull; 211 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=44lID4q0xwg" data-video="https://www.youtube.com/embed/44lID4q0xwg"><span class="media"><img src="https://i.ytimg.com/vi/44lID4q0xwg/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">L'intercooler pour votre moteur<small>14 Jul, 2026 &bull; 1054 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=4wzDA_JnN1E" data-video="https://www.youtube.com/embed/4wzDA_JnN1E"><span class="media"><img src="https://i.ytimg.com/vi/4wzDA_JnN1E/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Ducati Panigale V4S - 2023<small>13 Jul, 2026 &bull; 250 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=k9to4aCo08Y" data-video="https://www.youtube.com/embed/k9to4aCo08Y"><span class="media"><img src="https://i.ytimg.com/vi/k9to4aCo08Y/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">BMW Z4 E89 35i 3.0 Bi-Turbo N54<small>12 Jul, 2026 &bull; 250 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=XfZ0Ro-JN3g" data-video="https://www.youtube.com/embed/XfZ0Ro-JN3g"><span class="media"><img src="https://i.ytimg.com/vi/XfZ0Ro-JN3g/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Ford Ranger Raptor 3.0T Ecoboost<small>10 Jul, 2026 &bull; 1105 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=j7GlXcq3-pk" data-video="https://www.youtube.com/embed/j7GlXcq3-pk"><span class="media"><img src="https://i.ytimg.com/vi/j7GlXcq3-pk/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Bimmerfest<small>09 Jul, 2026 &bull; 1410 views</small></span></a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=KAFYHN5upDY" data-video="https://www.youtube.com/embed/KAFYHN5upDY"><span class="media"><img src="https://i.ytimg.com/vi/KAFYHN5upDY/mqdefault.jpg" alt="" loading="lazy"><span class="play"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg></span></span><span class="cap">Audi R8 V10 Performance<small>08 Jul, 2026 &bull; 825 views</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCEIROS -->
+  <section class="partners" aria-label="Marcas con las que trabajamos">
+    <div class="partners-track">
+      <img src="images/milltek.png" alt="Milltek" width="100" height="38" loading="lazy">
+      <img src="images/forge.png" alt="Forge" width="100" height="38" loading="lazy">
+      <img src="images/sachs.png" alt="Sachs Performance" width="100" height="38" loading="lazy">
+      <img src="images/mountune.png" alt="Mountune Performance" width="100" height="38" loading="lazy">
+      <img src="images/kw.png" alt="KW Suspensions" width="100" height="38" loading="lazy">
+      <img src="images/bmc.png" alt="BMC Air Filters" width="100" height="38" loading="lazy">
+      <img src="images/carbonio.png" alt="Carbonio" width="100" height="38" loading="lazy">
+      <img src="images/akrapovic.png" alt="Akrapovic" width="100" height="38" loading="lazy">
+      <img src="images/ragazzon.png" alt="Ragazzon" width="100" height="38" loading="lazy">
+      <img src="images/ferodo-racing.png" alt="Ferodo Racing" width="100" height="38" loading="lazy">
+      <img src="images/redbull.png" alt="Red Bull" width="100" height="38" loading="lazy">
+      <img src="images/cargraphic.png" alt="Cargraphic" width="100" height="38" loading="lazy">
+      <img src="images/supersprint.png" alt="Supersprint" width="100" height="38" loading="lazy">
+      <img src="images/pipercross.png" alt="Pipercross" width="100" height="38" loading="lazy">
+      <img src="images/rsrspa.png" alt="RSR Spa" width="100" height="38" loading="lazy">
+      <img src="images/remus.png" alt="Remus" width="100" height="38" loading="lazy">
+      <img src="images/armytrix.png" alt="Armytrix" width="100" height="38" loading="lazy">
+      <img src="images/hre.png" alt="HRE" width="100" height="38" loading="lazy">
+      <img src="images/ipe-exhaust.png" alt="IPE Exhaust" width="100" height="38" loading="lazy">
+      <img src="images/thor.png" alt="Thor" width="100" height="38" loading="lazy">
+      <img src="images/rsrnurburg.png" alt="RSR Nurburg" width="100" height="38" loading="lazy">
+      <img src="images/milltek.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/forge.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/sachs.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/mountune.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/kw.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/bmc.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/carbonio.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/akrapovic.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/ragazzon.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/ferodo-racing.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/redbull.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/cargraphic.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/supersprint.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/pipercross.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/rsrspa.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/remus.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/armytrix.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/hre.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/ipe-exhaust.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/thor.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+      <img src="images/rsrnurburg.png" alt="" aria-hidden="true" width="100" height="38" loading="lazy">
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section" style="padding-top:88px">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Visítanos en Bilbao</h2>
+          <p>Todos nuestros servicios se prestan con cita previa.</p>
+        </div>
+        <a class="btn btn-red" href="contacto.html">Solicita presupuesto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      </div>
+      <div class="contact-band">
+        <div class="info-card">
+          <div class="info-row">
+            <div><span class="k">Teléfono</span><a class="v" id="h-tel" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></div>
+            <button class="copy-btn" type="button" data-copy="h-tel" aria-label="Copiar teléfono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+          </div>
+          <div class="info-row">
+            <div><span class="k">Correo electrónico</span><a class="v" id="h-mail" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></div>
+            <button class="copy-btn" type="button" data-copy="h-mail" aria-label="Copiar correo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+          </div>
+          <div class="info-row">
+            <div><span class="k">Dirección</span><span class="v" id="h-addr">Carbon Performance<br><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></div>
+            <button class="copy-btn" type="button" data-copy="h-addr" aria-label="Copiar dirección"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+          </div>
+          <div class="info-row">
+            <div style="width:100%"><span class="k">Horario</span>
+              <table class="hours">
+                <tr><td>Martes – Sábado</td><td>09:00–13:00 · 14:00–18:00</td></tr>
+                <tr class="closed"><td>Domingo y lunes</td><td>Cerrado</td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="map-card">
+          <iframe src="https://maps.google.com/maps?width=100%25&amp;height=100%25&amp;hl=es&amp;q=Zuberoa%20Etorbidea%208%2C%2048012%20Bilbao%2C%20Bizkaia&amp;t=&amp;z=15&amp;ie=UTF8&amp;iwloc=B&amp;output=embed" title="Mapa: Carbon Performance en Bilbao" loading="lazy"></iframe>
+          <a class="btn" href="https://maps.google.com/maps?q=Zuberoa+Etorbidea+8,+48012+Bilbao,+Bizkaia" target="_blank" rel="noopener">Cómo llegar <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- layout:footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156" loading="lazy"></a>
+        <p><span data-cfg="slogan">Professional Chiptuning</span> · Reprogramación de centralitas en Bilbao</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
+        <a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a>
+        <a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="vehiculos.html">Reprogramación</a></li>
+          <li><a href="desarrollo.html">Desarrollo</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contacto.html">Solicita presupuesto</a></li>
         </ul>
       </div>
-    </footer>
-
-    <!-- MOBILE SEARCH -->
-    <footer class="row search-mobile show-for-small">
-      <div class="twentyfour columns">
-        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
-          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
-          <input type="submit" name="search" value="" class="button-full-rounded">
-        </form>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
+          <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="colaboradores.html">Colaboradores</a></li>
+        </ul>
       </div>
-    </footer>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><span class="k">Teléfono</span><a class="v" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></li>
+          <li><span class="k">Correo electrónico</span><a class="v" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></li>
+          <li><span class="k">Dirección</span><span class="v"><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Horario</h4>
+        <table class="hours">
+          <tr><td>Martes – Sábado</td><td>09:00–13:00</td></tr>
+          <tr><td></td><td>14:00–18:00</td></tr>
+          <tr class="closed"><td>Domingo y lunes</td><td>Cerrado</td></tr>
+        </table>
+        <p style="margin-top:12px;font-size:14px">Todos los servicios con cita previa.</p>
+      </div>
+    </div>
 
-  </div>
-</div>
-
-<!-- ADDRESS FOOTER -->
-<footer class="row address brp-barcelona">
-  <div class="seventeen columns address">
-    <ul>
-      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
-      <li>
-        <address>Carbon Performance <span class="dark">© ® 2026</span></address>
-        <address>Professional chiptuning</address>
-      </li>
-      <li>
-        <address>Zuberoa Etorb. 8, 10</address>
-        <address>48012 Errekalde, Bilbao, Bizkaia</address>
-      </li>
-      <li>
-        <address><a href="mailto:barcelona@br-performance.com" class="email">E-mail</a></address>
-        <address><span class="hide-for-small">Tel: +34 680 911 007</span><a href="tel:34680911007" class="show-for-small">Tel: +34 680 911 007</a></address>
-      </li>
-      <li>
-        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
-        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
-      </li>
-    </ul>
-  </div>
-  <div class="seven columns links">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
-    </ul>
+    <div class="footer-bottom">
+      <span class="tuv"><img src="images/footer_icon_tuv.png" alt="TÜV Rheinland - Certified" width="45" height="45" loading="lazy">© 2026 Carbon Performance. Todos los derechos reservados.</span>
+      <nav aria-label="Legal">
+        <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a>
+        <a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>
+      </nav>
+    </div>
   </div>
 </footer>
+<button class="icon-btn to-top" type="button" aria-label="Volver arriba"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<!-- /layout:footer -->
 
-<script src="js/jquery-1.9.1.min.js"></script>
 <script src="js/config.js"></script>
-<script src="js/jquery.royalslider.min.js"></script>
-<script src="js/general.js"></script>
-<script src="js/home.js"></script>
-<script src="js/main.js"></script>
+<script src="js/catalog.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>

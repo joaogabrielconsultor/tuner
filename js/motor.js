@@ -1,3 +1,5 @@
+// Página do motor: etapas de reprogramação com potência, par e preço
+// URL: motor.html?marca=&modelo=&periodo=&motor=&cv=[&stage=]
 document.addEventListener('DOMContentLoaded', function () {
   var params = new URLSearchParams(window.location.search);
   var marcaSlug = params.get('marca');
@@ -6,227 +8,154 @@ document.addEventListener('DOMContentLoaded', function () {
   var motorParam = params.get('motor');
   var cvParam = parseInt(params.get('cv'), 10) || 0;
   var stageParam = params.get('stage') || 'stage1';
+  var esc = CP.esc;
+  var ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var LEVEL = { 'brp-eco': 1, 'stage1': 1, 'stage2': 2, 'stage3': 3 };
 
-  if (!marcaSlug || !BRANDS[marcaSlug] || !modeloParam || !periodoParam || !motorParam) {
+  if (!marcaSlug || !modeloParam || !periodoParam || !motorParam) {
     window.location.href = 'vehiculos.html';
     return;
   }
 
-  var brand = BRANDS[marcaSlug];
-  var model = findModel(brand, modeloParam);
-  var period = model ? findPeriod(model, periodoParam) : null;
-  var engine = period ? findEngine(period, motorParam, cvParam) : null;
+  CP.catalog.brand(marcaSlug).then(render).catch(function () { window.location.href = 'vehiculos.html'; });
 
-  if (!engine) {
-    window.location.href = 'marca.html?marca=' + encodeURIComponent(marcaSlug);
-    return;
+  function periodLabel(p) {
+    return String(p.label).replace(/(\d{4}) (\d{4}|\.\.\.)\s*$/, '$1 – $2');
   }
 
-  var stages = engine.stages || [];
-  var currentStage = stages.find(function (s) { return s.id === stageParam; }) || stages[0] || null;
-
-  initKiosk();
-  initBreadcrumb();
-  initBackButton();
-  initStageTabs();
-  initStageTable();
-  initSecondSection();
-
-  function initKiosk() {
-    var bg = document.querySelector('.kiosk-bg');
-    var bgImg = brand.banner || brand.logo;
-    if (bg && bgImg) {
-      bg.style.backgroundImage = 'url(' + bgImg + ')';
-      bg.style.backgroundSize = 'contain';
-      bg.style.backgroundRepeat = 'no-repeat';
-      bg.style.backgroundPosition = 'center center';
-    }
-    var sel = document.querySelector('.selectionname');
-    if (sel) {
-      var periodLabel = period ? period.label : periodoParam;
-      var stageLabel = currentStage ? ' ' + currentStage.label : '';
-      sel.innerHTML =
-        escHtml(brand.name) + ' ' +
-        escHtml(modeloParam) + ' ' +
-        escHtml(periodLabel) +
-        ' ' + escHtml(motorParam) + escHtml(stageLabel);
-    }
-  }
-
-  function initBreadcrumb() {
+  function render(brand) {
+    var model = findModel(brand, modeloParam);
+    var period = model ? findPeriod(model, periodoParam) : null;
+    var engine = period ? findEngine(period, motorParam, cvParam) : null;
     var base = 'marca.html?marca=' + encodeURIComponent(marcaSlug);
+    if (!engine) { window.location.href = base; return; }
+
     var modelUrl = base + '&modelo=' + encodeURIComponent(modeloParam);
     var periodUrl = modelUrl + '&periodo=' + encodeURIComponent(periodoParam);
-    var periodLabel = period ? period.label : periodoParam;
+    var stages = engine.stages || [];
+    var stage = stages.find(function (s) { return s.id === stageParam; }) || stages[0] || null;
+    var pLabel = period ? periodLabel(period) : periodoParam;
 
-    document.getElementById('bc-brand').textContent = brand.name;
-    document.getElementById('bc-brand').href = base;
+    // Nome do veículo sem repetir os cv quando o motor já se chama "150cv"
+    var engineText = String(motorParam).indexOf(engine.cv + 'cv') >= 0 ? motorParam : motorParam + ' ' + engine.cv + 'cv';
+    var vehicle = brand.name + ' ' + modeloParam + ' ' + engineText;
+    document.title = vehicle + (stage ? ' ' + stage.label : '') + ' - Carbon Performance - Reprogramación de centralitas';
 
-    document.getElementById('bc-modelo').textContent = modeloParam;
-    document.getElementById('bc-modelo').href = modelUrl;
+    // Trilha, logo e título
+    var crumbs = [['Inicio', 'index.html'], ['Reprogramación', 'vehiculos.html'], [brand.name, base], [modeloParam, modelUrl], [pLabel, periodUrl], [motorParam, '']];
+    document.getElementById('crumbs').innerHTML = crumbs.map(function (c, i) {
+      return i === crumbs.length - 1
+        ? '<li><span aria-current="page">' + esc(c[0]) + '</span></li>'
+        : '<li><a href="' + c[1] + '">' + esc(c[0]) + '</a></li>';
+    }).join('');
+    var logo = document.getElementById('brand-logo');
+    if (brand.logo) { logo.innerHTML = '<img src="' + esc(brand.logo) + '" alt="' + esc(brand.name) + '">'; logo.hidden = false; }
+    document.getElementById('page-title').textContent = vehicle;
 
-    document.getElementById('bc-periodo').innerHTML =
-      '<a href="' + periodUrl + '">' + escHtml(periodLabel) + '</a>';
-
-    document.getElementById('bc-motor').textContent = motorParam;
-  }
-
-  function initBackButton() {
-    var base = 'marca.html?marca=' + encodeURIComponent(marcaSlug);
-    var periodUrl = base + '&modelo=' + encodeURIComponent(modeloParam) + '&periodo=' + encodeURIComponent(periodoParam);
-    document.querySelectorAll('.back-to-selection').forEach(function (a) {
-      a.href = periodUrl;
-    });
-  }
-
-  function initStageTabs() {
-    var header = document.querySelector('.stages > div');
-    if (!header) return;
-    header.innerHTML = '';
-
-    if (stages.length === 0) {
-      header.innerHTML = '<span style="color:#aaa;font-size:12px;padding:4px 10px">Sin stages disponibles</span>';
-      return;
-    }
-
-    stages.forEach(function (s) {
-      var isSel = s.id === (currentStage ? currentStage.id : '');
+    // Abas das etapas
+    var tabs = document.getElementById('stage-tabs');
+    tabs.innerHTML = stages.length ? stages.map(function (s) {
       var url = 'motor.html?marca=' + encodeURIComponent(marcaSlug) +
-                '&modelo=' + encodeURIComponent(modeloParam) +
-                '&periodo=' + encodeURIComponent(periodoParam) +
-                '&motor=' + encodeURIComponent(motorParam) +
-                '&cv=' + cvParam +
-                '&stage=' + encodeURIComponent(s.id);
-      var span = document.createElement('span');
-      span.className = 'stage' + (isSel ? ' sel' : '');
-      span.innerHTML = '<a href="' + url + '" class="' + escHtml(s.cssClass || s.id) + '">' + escHtml(s.label) + '</a>';
-      header.appendChild(span);
-    });
-  }
+        '&modelo=' + encodeURIComponent(modeloParam) +
+        '&periodo=' + encodeURIComponent(periodoParam) +
+        '&motor=' + encodeURIComponent(motorParam) +
+        '&cv=' + cvParam +
+        '&stage=' + encodeURIComponent(s.id);
+      var lv = LEVEL[s.id];
+      var bars = lv ? '<span class="lv" aria-hidden="true">' + [1, 2, 3].map(function (n) { return '<i class="' + (n <= lv ? 'on' : '') + '"></i>'; }).join('') + '</span>' : '';
+      var cur = stage && s.id === stage.id ? ' aria-current="page"' : '';
+      return '<a role="listitem" class="stage-tab ' + esc(s.cssClass || s.id) + '" href="' + url + '"' + cur + '>' + bars + esc(s.label) + '</a>';
+    }).join('') : '<span class="muted">Sin stages disponibles</span>';
 
-  function initStageTable() {
-    var tableWrap = document.getElementById('stage-table-wrap');
-    var moreInfo = document.getElementById('more-info-wrap');
-    if (!tableWrap) return;
-
-    if (!currentStage) {
-      tableWrap.innerHTML =
-        '<tr><td colspan="4" style="padding:20px;text-align:center;color:#666">No hay datos disponibles para este stage.</td></tr>';
-      return;
-    }
-
-    var s = currentStage;
-    var motorUrl = 'contacto.html?modelo=' + encodeURIComponent(modeloParam) +
-                   '&motor=' + encodeURIComponent(motorParam) +
-                   '&stage=' + encodeURIComponent(s.id);
-
-    var isEco = s.cssClass === 'brp-eco';
-    var tu = s.torque_unit || 'Nm';
-    var rows =
-      '<tr>' +
-        '<th scope="col" class="empty"><a href="vehiculos.html">Más información</a></th>' +
-        '<th scope="col">Original</th>' +
-        '<th scope="col">Modificado</th>' +
-        '<th scope="col">Diferencia</th>' +
-      '</tr>';
-
-    if (!isEco) {
-      rows +=
-        '<tr>' +
-          '<th scope="row">Potencia</th>' +
-          '<td>' + s.power_orig + ' cv</td>' +
-          '<td class="highlight info">' + s.power_mod + ' cv</td>' +
-          '<td class="highlight info">+ ' + s.power_diff + ' cv</td>' +
-        '</tr>';
-    }
-
-    rows +=
-      '<tr>' +
-        '<th scope="row">Par</th>' +
-        '<td>' + s.torque_orig + ' ' + tu + '</td>' +
-        '<td class="highlight">' + s.torque_mod + ' ' + tu + '</td>' +
-        '<td class="highlight">+ ' + s.torque_diff + ' ' + tu + '</td>' +
-      '</tr>';
-
-    if (isEco && s.fuel_saving) {
-      rows +=
-        '<tr>' +
-          '<td colspan="3" class="noborder ecolabel" style="text-align:right;color:#33cc00;">Ahorro de combustible estimado</td>' +
-          '<td class="ecolabel" style="color:#33cc00;">' + s.fuel_saving + '</td>' +
-        '</tr>';
-    }
-
-    rows +=
-      '<tr>' +
-        '<td colspan="3" class="noborder">' +
-          '<div class="big">Precio</div>' +
-          '<div><a href="contacto.html">Métodos de pago</a></div>' +
-        '</td>' +
-        '<td class="price">&euro;' + s.price + '</td>' +
-      '</tr>';
-
-    tableWrap.innerHTML = rows;
-
-    if (moreInfo) {
-      moreInfo.querySelector('a').href = motorUrl;
-    }
-  }
-
-  function initSecondSection() {
-    // Monta o link de contato carregando marca/modelo/motor/stage e os numeros,
-    // para o formulario gerar a mensagem de WhatsApp ja com a reprogramacion de interes.
+    // Link de contato com o veículo e os números (o formulário monta a mensagem de WhatsApp)
     var q = 'contacto.html?marca=' + encodeURIComponent(brand.name) +
             '&modelo=' + encodeURIComponent(modeloParam) +
             '&motor=' + encodeURIComponent(motorParam);
-    if (currentStage) {
-      q += '&stage=' + encodeURIComponent(currentStage.label || '');
-      if (currentStage.power_orig != null && currentStage.power_orig !== '') {
-        q += '&po=' + currentStage.power_orig +
-             '&pm=' + (currentStage.power_mod != null ? currentStage.power_mod : '') +
-             '&pd=' + (currentStage.power_diff != null ? currentStage.power_diff : '');
+    if (stage) {
+      q += '&stage=' + encodeURIComponent(stage.label || '');
+      if (stage.power_orig != null && stage.power_orig !== '' && stage.power_mod != null) {
+        q += '&po=' + stage.power_orig + '&pm=' + (stage.power_mod != null ? stage.power_mod : '') + '&pd=' + (stage.power_diff != null ? stage.power_diff : '');
       }
-      if (currentStage.torque_orig != null && currentStage.torque_orig !== '') {
-        q += '&to=' + currentStage.torque_orig +
-             '&tm=' + (currentStage.torque_mod != null ? currentStage.torque_mod : '') +
-             '&td=' + (currentStage.torque_diff != null ? currentStage.torque_diff : '');
+      if (stage.torque_orig != null && stage.torque_orig !== '' && stage.torque_mod != null) {
+        q += '&to=' + stage.torque_orig + '&tm=' + (stage.torque_mod != null ? stage.torque_mod : '') + '&td=' + (stage.torque_diff != null ? stage.torque_diff : '');
       }
-      if (currentStage.price) q += '&price=' + currentStage.price;
+      if (stage.price) q += '&price=' + stage.price;
     }
     var testBtn = document.getElementById('btn-testimonio');
     if (testBtn) testBtn.href = q;
-    document.querySelectorAll('span.mail a').forEach(function (a) { a.href = q; });
+
+    renderDyno(stage);
+    renderPrice(stage, q, periodUrl);
   }
 
-  function findModel(b, modelName) {
+  function readout(title, orig, mod, diff, unit, eco) {
+    var pct = mod ? Math.max(8, Math.min(100, orig / mod * 100)) : 0;
+    return '<div class="readout' + (eco ? ' eco' : '') + '">' +
+      '<div class="what"><span>' + title + '</span><span class="gain">+' + diff + ' ' + unit + '</span></div>' +
+      '<div class="big">' + mod + '<small>' + unit + '</small></div>' +
+      '<div class="bar" role="img" aria-label="' + title + ': de ' + orig + ' a ' + mod + ' ' + unit + '"><span class="mod" style="width:100%"></span><span class="orig" style="width:' + pct.toFixed(1) + '%"></span></div>' +
+      '<div class="scale"><span>Original <b>' + orig + ' ' + unit + '</b></span><span>Modificado <b>' + mod + ' ' + unit + '</b></span></div>' +
+      '</div>';
+  }
+
+  function renderDyno(s) {
+    var box = document.getElementById('dyno');
+    if (!s) {
+      box.innerHTML = '<p class="muted" style="padding:28px;margin:0">No hay datos disponibles para este stage.</p>';
+      return;
+    }
+    var isEco = s.cssClass === 'brp-eco';
+    var tu = s.torque_unit || 'Nm';
+    var pu = s.power_unit || 'cv';
+    var hasPower = !isEco && s.power_orig != null && s.power_mod != null;
+    var hasTorque = s.torque_orig != null && s.torque_mod != null;
+
+    if (!hasPower && !hasTorque) {
+      box.innerHTML = '<div class="readout"><div class="what"><span>' + esc(s.label) + '</span></div>' +
+        '<p style="margin:14px 0 0;color:var(--muted)">Reprogramación del software de la caja de cambios. Consúltanos los detalles para tu vehículo.</p></div>';
+      return;
+    }
+
+    var html = '<div class="dyno-readout"' + (hasPower && hasTorque ? '' : ' style="grid-template-columns:1fr"') + '>';
+    if (hasPower) html += readout('Potencia', s.power_orig, s.power_mod, s.power_diff, pu, false);
+    if (hasTorque) html += readout('Par', s.torque_orig, s.torque_mod, s.torque_diff, tu, isEco);
+    html += '</div>';
+
+    html += '<table class="dyno-table"><thead><tr><th scope="col"></th><th scope="col">Original</th><th scope="col">Modificado</th><th scope="col">Diferencia</th></tr></thead><tbody>';
+    if (hasPower) html += '<tr><th scope="row" style="text-align:left">Potencia</th><td>' + s.power_orig + ' ' + pu + '</td><td class="hl">' + s.power_mod + ' ' + pu + '</td><td class="plus">+ ' + s.power_diff + ' ' + pu + '</td></tr>';
+    if (hasTorque) html += '<tr><th scope="row" style="text-align:left">Par</th><td>' + s.torque_orig + ' ' + tu + '</td><td class="hl">' + s.torque_mod + ' ' + tu + '</td><td class="' + (isEco ? 'eco' : 'plus') + '">+ ' + s.torque_diff + ' ' + tu + '</td></tr>';
+    if (isEco && s.fuel_saving) html += '<tr><th scope="row" style="text-align:left">Ahorro de combustible estimado</th><td></td><td></td><td class="eco">' + esc(s.fuel_saving) + '</td></tr>';
+    html += '</tbody></table>';
+    box.innerHTML = html;
+  }
+
+  function renderPrice(s, q, periodUrl) {
+    var card = document.getElementById('price-card');
+    var price = s && s.price ? '<div class="price">€' + s.price + '</div>' : '<div class="price ask">Consultar precio</div>';
+    card.innerHTML =
+      (s ? '<span class="badge stage-name">' + esc(s.label) + '</span>' : '') +
+      '<div class="label">Precio</div>' + price +
+      '<p class="note"><a href="contacto.html">Métodos de pago</a> · ¿Tiene alguna duda sobre esta stage? <a href="' + q + '">Contáctenos para más información.</a></p>' +
+      '<a class="btn btn-red" href="' + q + '">Solicita presupuesto <span class="ico">' + ARROW + '</span></a>' +
+      '<a class="btn" href="' + periodUrl + '">Editar selección <span class="ico">' + ARROW + '</span></a>';
+  }
+
+  function findModel(b, name) {
     if (!b.models || !b.models.length) return null;
-    return b.models.find(function (m) {
-      return (typeof m === 'string' ? m : m.name) === modelName;
-    }) || null;
+    return b.models.find(function (m) { return CP.catalog.modelName(m) === name; }) || null;
   }
-
-  function findPeriod(m, periodId) {
+  function findPeriod(m, id) {
     if (typeof m === 'string' || !m.periods) return null;
-    return m.periods.find(function (p) { return p.id === periodId; }) || null;
+    return m.periods.find(function (p) { return p.id === id; }) || null;
   }
-
-  function findEngine(p, motorName, cv) {
+  function findEngine(p, name, cv) {
     if (!p.fuels) return null;
-    for (var fi = 0; fi < p.fuels.length; fi++) {
-      var fuel = p.fuels[fi];
-      if (!fuel.engines) continue;
-      for (var ei = 0; ei < fuel.engines.length; ei++) {
-        var eng = fuel.engines[ei];
-        if (eng.name === motorName && eng.cv === cv) return eng;
+    for (var i = 0; i < p.fuels.length; i++) {
+      var f = p.fuels[i];
+      for (var j = 0; j < (f.engines || []).length; j++) {
+        if (f.engines[j].name === name && f.engines[j].cv === cv) return f.engines[j];
       }
     }
     return null;
-  }
-
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
   }
 });

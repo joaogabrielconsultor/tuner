@@ -1,224 +1,133 @@
+// Página de marca: escolha de modelo → ano → motor
+// URL: marca.html?marca=<slug>[&modelo=<nome>][&periodo=<id>]
 document.addEventListener('DOMContentLoaded', function () {
   var params = new URLSearchParams(window.location.search);
   var marcaSlug = params.get('marca');
   var modeloParam = params.get('modelo');
   var periodoParam = params.get('periodo');
+  var esc = CP.esc;
+  var ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  var TYPE_PAGE = { 'coche': ['vehiculos.html', 'Vehículos'], 'moto': ['motos.html', 'Motos y quads'], 'moto-agua': ['moto-agua.html', 'Motos de agua'], 'lancha': ['lancha.html', 'Lanchas motoras'] };
 
-  if (!marcaSlug || !BRANDS[marcaSlug]) {
-    window.location.href = 'vehiculos.html';
-    return;
+  if (!marcaSlug) { window.location.href = 'vehiculos.html'; return; }
+
+  var picker = document.getElementById('picker');
+
+  Promise.all([CP.catalog.brand(marcaSlug), CP.catalog.index().catch(function () { return null; })])
+    .then(function (res) { render(res[0], res[1]); })
+    .catch(function () { window.location.href = 'vehiculos.html'; });
+
+  function periodLabel(p) {
+    return String(p.label).replace(/(\d{4}) (\d{4}|\.\.\.)\s*$/, '$1 – $2');
   }
 
-  var brand = BRANDS[marcaSlug];
+  function render(brand, index) {
+    var base = 'marca.html?marca=' + encodeURIComponent(marcaSlug);
+    var model = modeloParam ? findModel(brand, modeloParam) : null;
+    var period = model && periodoParam ? findPeriod(model, periodoParam) : null;
+    var modelUrl = base + '&modelo=' + encodeURIComponent(modeloParam || '');
+    var type = index && index.brands[marcaSlug] ? index.brands[marcaSlug].type : 'coche';
+    var tp = TYPE_PAGE[type] || TYPE_PAGE.coche;
 
-  initKiosk();
-  initBreadcrumb();
-  initSubNav();
-  initCards();
+    // Título da aba
+    var parts = [brand.name, modeloParam, period ? periodLabel(period) : ''].filter(Boolean).join(' ');
+    document.title = parts + ' - Carbon Performance - Reprogramación de centralitas';
 
-  function initKiosk() {
-    var bg = document.querySelector('.kiosk-bg');
-    if (bg && brand.logo) {
-      bg.style.backgroundImage = 'url(' + brand.logo + ')';
-      bg.style.backgroundSize = 'contain';
-      bg.style.backgroundRepeat = 'no-repeat';
-      bg.style.backgroundPosition = 'center center';
-      bg.style.backgroundColor = '#0d1117';
-    }
-    var sel = document.querySelector('.kiosk .selectionname');
-    if (sel) sel.textContent = brand.name;
-  }
+    // Trilha
+    var crumbs = [['Inicio', 'index.html'], [tp[1], tp[0]], [brand.name, base]];
+    if (modeloParam) crumbs.push([modeloParam, modelUrl]);
+    if (period) crumbs.push([periodLabel(period), '']);
+    document.getElementById('crumbs').innerHTML = crumbs.map(function (c, i) {
+      return i === crumbs.length - 1
+        ? '<li><span aria-current="page">' + esc(c[0]) + '</span></li>'
+        : '<li><a href="' + c[1] + '">' + esc(c[0]) + '</a></li>';
+    }).join('');
 
-  function initBreadcrumb() {
-    var bcBrand = document.getElementById('bc-brand');
-    if (bcBrand) bcBrand.textContent = brand.name;
+    // Logo e título
+    var logo = document.getElementById('brand-logo');
+    if (brand.logo) { logo.innerHTML = '<img src="' + esc(brand.logo) + '" alt="' + esc(brand.name) + '">'; logo.hidden = false; }
+    document.getElementById('page-title').textContent = modeloParam ? brand.name + ' ' + modeloParam : brand.name;
 
-    var bcModelo = document.getElementById('bc-modelo');
-    if (bcModelo) {
-      if (modeloParam) {
-        bcModelo.style.display = '';
-        var link = bcModelo.querySelector('a');
-        if (link) {
-          link.textContent = modeloParam;
-          link.href = 'marca.html?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(modeloParam);
-        }
-      } else {
-        bcModelo.style.display = 'none';
-      }
-    }
+    // Etapas
+    var stepNow = period ? 4 : (modeloParam ? 3 : 2);
+    var steps = [
+      ['Marca', 'vehiculos.html', brand.name],
+      ['Modelo', base, modeloParam],
+      ['Año', modelUrl, period ? periodLabel(period) : ''],
+      ['Motor', '', '']
+    ];
+    document.getElementById('steps').innerHTML = steps.map(function (s, i) {
+      var n = i + 1;
+      var cls = n < stepNow ? 'done' : (n === stepNow ? 'now' : '');
+      var text = s[2] ? s[2] : s[0];
+      if (n < stepNow && s[1]) return '<a class="step ' + cls + '" href="' + s[1] + '" title="Cambiar ' + s[0].toLowerCase() + '"><b>' + n + '</b>' + esc(text) + '</a>';
+      return '<span class="step ' + cls + '"' + (n === stepNow ? ' aria-current="step"' : '') + '><b>' + n + '</b>' + esc(text) + '</span>';
+    }).join('');
 
-    var bcPeriodo = document.getElementById('bc-periodo');
-    if (bcPeriodo) {
-      if (periodoParam && modeloParam) {
-        bcPeriodo.style.display = '';
-        var model = findModel(modeloParam);
-        var period = model ? findPeriod(model, periodoParam) : null;
-        var lbl = bcPeriodo.querySelector('span');
-        if (lbl) lbl.textContent = period ? period.label : periodoParam.replace(/-/g, ' > ');
-      } else {
-        bcPeriodo.style.display = 'none';
-      }
-    }
-  }
-
-  function initSubNav() {
-    var backBtn = document.querySelector('.sub .back a');
-    var titleSpan = document.querySelector('.sub .title');
-
-    if (periodoParam && modeloParam) {
-      if (backBtn) backBtn.href = 'marca.html?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(modeloParam);
-      if (titleSpan) titleSpan.textContent = 'Selecciona el tipo de motor ...';
-    } else if (modeloParam) {
-      if (backBtn) backBtn.href = 'marca.html?marca=' + encodeURIComponent(marcaSlug);
-      if (titleSpan) titleSpan.textContent = 'Selecciona el año de fabricación...';
+    // Conteúdo
+    if (period) {
+      picker.innerHTML = head('Selecciona el tipo de motor', modelUrl, 'Cambiar año') + engines(brand, model, period);
+    } else if (model) {
+      picker.innerHTML = head('Selecciona el año de fabricación', base, 'Cambiar modelo') + years(model);
     } else {
-      if (backBtn) backBtn.href = 'vehiculos.html';
-      if (titleSpan) titleSpan.textContent = 'Selecciona un modelo ...';
+      picker.innerHTML = head('Selecciona un modelo', tp[0], 'Otras marcas') + models(brand);
     }
   }
 
-  function initCards() {
-    var grid = document.querySelector('.row.main .block-grid');
-    if (!grid) return;
-    grid.innerHTML = '';
-
-    grid.appendChild(buildBrandCard());
-
-    if (modeloParam) {
-      var model = findModel(modeloParam);
-      grid.appendChild(buildPeriodCard(model));
-    }
-
-    if (periodoParam && modeloParam) {
-      var m = findModel(modeloParam);
-      var p = m ? findPeriod(m, periodoParam) : null;
-      if (p) {
-        grid.appendChild(buildEngineCard(m, p));
-      }
-    }
+  function head(title, backHref, backLabel) {
+    return '<div class="pick-head"><h2>' + title + '</h2>' +
+      '<a class="btn btn-line btn-plain btn-sm" href="' + backHref + '">' + backLabel + '</a></div>';
   }
 
-  function buildBrandCard() {
-    var li = document.createElement('li');
-    var modelsHtml = '';
-
-    if (!brand.models || brand.models.length === 0) {
-      modelsHtml = '<li><a href="contacto.html" class="contact-link">Contacta para más información</a></li>';
-    } else {
-      brand.models.forEach(function (m) {
-        var name = getModelName(m);
-        var isActive = name === modeloParam;
-        var url = 'marca.html?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(name);
-        modelsHtml += '<li' + (isActive ? ' class="active-item"' : '') + '><a href="' + url + '" title="' + escHtml(brand.name) + ' ' + escHtml(name) + '">' + escHtml(name) + '</a></li>';
-      });
-    }
-
-    li.innerHTML =
-      '<article>' +
-        '<header>' +
-          '<h2>' + escHtml(brand.name) + '</h2>' +
-          '<img src="' + escHtml(brand.logo) + '" alt="' + escHtml(brand.name) + '" class="logo">' +
-        '</header>' +
-        '<ul class="content">' + modelsHtml + '</ul>' +
-      '</article>';
-    return li;
+  function contactHint() {
+    return '<div class="contact-hint"><h3 style="font-size:22px;margin-bottom:8px">Contacta para más información</h3>' +
+      '<p>Aún no tenemos los datos de este vehículo publicados. Pregúntanos y te decimos qué podemos hacer.</p>' +
+      '<a class="btn btn-red" href="contacto.html">Solicita presupuesto <span class="ico">' + ARROW + '</span></a></div>';
   }
 
-  function buildPeriodCard(model) {
-    var li = document.createElement('li');
-    var modelName = getModelName(model);
-    var periodsHtml = '';
-
-    var hasPeriods = model && typeof model === 'object' && model.periods && model.periods.length > 0;
-
-    if (!hasPeriods) {
-      periodsHtml = '<li><a href="contacto.html" class="contact-link">Contacta para más información</a></li>';
-    } else {
-      model.periods.forEach(function (p) {
-        var isActive = p.id === periodoParam;
-        var url = 'marca.html?marca=' + encodeURIComponent(marcaSlug) +
-                  '&modelo=' + encodeURIComponent(modelName) +
-                  '&periodo=' + encodeURIComponent(p.id);
-        periodsHtml += '<li' + (isActive ? ' class="active-item"' : '') + '>' +
-          '<a href="' + url + '">' + escHtml(p.label) + '</a>' +
-          '</li>';
-      });
-    }
-
-    li.innerHTML =
-      '<article>' +
-        '<header>' +
-          '<h2>' + escHtml(modelName) + '</h2>' +
-          '<img src="' + escHtml(brand.logo) + '" alt="' + escHtml(brand.name) + '" class="logo">' +
-        '</header>' +
-        '<ul class="content">' + periodsHtml + '</ul>' +
-      '</article>';
-    return li;
+  function models(brand) {
+    if (!brand.models || !brand.models.length) return contactHint();
+    return '<div class="chip-grid">' + brand.models.map(function (m) {
+      var name = CP.catalog.modelName(m);
+      var url = 'marca.html?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(name);
+      return '<a class="chip" href="' + url + '" title="' + esc(brand.name + ' ' + name) + '">' + esc(name) + ARROW + '</a>';
+    }).join('') + '</div>';
   }
 
-  function buildEngineCard(model, period) {
-    var li = document.createElement('li');
-    var modelName = getModelName(model);
-    var inner = '';
-
-    if (!period.fuels || period.fuels.length === 0) {
-      inner =
-        '<header>' +
-          '<h2>' + escHtml(period.label) + '</h2>' +
-          '<img src="' + escHtml(brand.logo) + '" alt="' + escHtml(brand.name) + '" class="logo">' +
-        '</header>' +
-        '<ul class="content">' +
-          '<li><a href="contacto.html" class="contact-link">Contacta para más información</a></li>' +
-        '</ul>';
-    } else {
-      period.fuels.forEach(function (fuel) {
-        inner +=
-          '<header class="small">' +
-            '<h2>' + escHtml(period.label) + '</h2>' +
-            '<span class="named engine">' + escHtml(fuel.type) + '</span>' +
-            '<img src="' + escHtml(brand.logo) + '" alt="' + escHtml(brand.name) + '" class="logo">' +
-          '</header>' +
-          '<ul class="content">';
-        fuel.engines.forEach(function (eng) {
-          var engUrl = 'motor.html?marca=' + encodeURIComponent(marcaSlug) +
-                       '&modelo=' + encodeURIComponent(modelName) +
-                       '&periodo=' + encodeURIComponent(period.id) +
-                       '&motor=' + encodeURIComponent(eng.name) +
-                       '&cv=' + eng.cv;
-          inner +=
-            '<li>' +
-              '<a href="' + engUrl + '" title="' + escHtml(brand.name + ' ' + modelName + ' ' + eng.name + ' ' + eng.cv + 'cv') + '">' + escHtml(eng.name) + '</a>' +
-              '<span class="specs"><span class="spec">' + eng.cv + 'cv</span></span>' +
-            '</li>';
-        });
-        inner += '</ul>';
-      });
-    }
-
-    li.innerHTML = '<article>' + inner + '</article>';
-    return li;
+  function years(model) {
+    if (typeof model === 'string' || !model.periods || !model.periods.length) return contactHint();
+    var name = CP.catalog.modelName(model);
+    return '<div class="chip-grid years">' + model.periods.map(function (p) {
+      var url = 'marca.html?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(name) + '&periodo=' + encodeURIComponent(p.id);
+      return '<a class="chip" href="' + url + '">' + esc(periodLabel(p)) + ARROW + '</a>';
+    }).join('') + '</div>';
   }
 
-  function findModel(modelName) {
-    if (!brand.models || !brand.models.length) return null;
-    return brand.models.find(function (m) { return getModelName(m) === modelName; }) || null;
+  function engines(brand, model, period) {
+    if (!period.fuels || !period.fuels.length) return contactHint();
+    var modelName = CP.catalog.modelName(model);
+    return period.fuels.map(function (fuel) {
+      var rows = fuel.engines.map(function (eng) {
+        var url = 'motor.html?marca=' + encodeURIComponent(marcaSlug) +
+          '&modelo=' + encodeURIComponent(modelName) +
+          '&periodo=' + encodeURIComponent(period.id) +
+          '&motor=' + encodeURIComponent(eng.name) +
+          '&cv=' + eng.cv;
+        return '<li><a href="' + url + '" title="' + esc(brand.name + ' ' + modelName + ' ' + eng.name + ' ' + eng.cv + 'cv') + '">' +
+          '<span class="name">' + esc(eng.name) + '</span>' +
+          '<span class="cv">' + eng.cv + '<small>cv</small></span>' +
+          '<span class="go">' + ARROW + '</span></a></li>';
+      }).join('');
+      return '<div class="fuel-group"><h3><span class="dot"></span>' + esc(CP.fuelLabel(fuel.type)) + '</h3><ul class="engine-list">' + rows + '</ul></div>';
+    }).join('');
   }
 
-  function findPeriod(model, periodId) {
+  function findModel(brand, name) {
+    if (!brand.models) return null;
+    return brand.models.find(function (m) { return CP.catalog.modelName(m) === name; }) || null;
+  }
+  function findPeriod(model, id) {
     if (typeof model === 'string' || !model.periods) return null;
-    return model.periods.find(function (p) { return p.id === periodId; }) || null;
-  }
-
-  function getModelName(m) {
-    if (!m) return '';
-    return typeof m === 'string' ? m : m.name;
-  }
-
-  function escHtml(str) {
-    return String(str)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+    return model.periods.find(function (p) { return p.id === id; }) || null;
   }
 });

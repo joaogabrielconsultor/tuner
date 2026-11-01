@@ -5,217 +5,176 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moto de Agua - Carbon Performance - Reprogramación de centralitas</title>
   <meta name="description" content="Potenciación de motores y reprogramación profesional">
-  <link rel="stylesheet" type="text/css" href="css/screen.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/royalslider.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/rs-minimal-white.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/herprogrammatie.css" media="screen">
-  <link rel="stylesheet" type="text/css" href="css/custom.css" media="screen">
+  <!-- layout:head -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/carbon.css">
+  <meta name="theme-color" content="#161616">
+  <!-- /layout:head -->
 </head>
-<body>
+<body class="page-catalog">
 
-<!-- TOP BAR -->
-<header class="row hide-for-small">
-  <div class="twelve columns offset-by-twelve search-extended">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/header_icon_fb.png" width="26" height="26" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/header_icon_yt.png" width="26" height="26" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/header_icon_inst.png" width="26" height="26" alt="Instagram"></a></li>
-    </ul>
-    <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search right es" method="get">
-      <input type="text" name="q" id="search-extended-q" placeholder="Buscar por marca o modelo ..." class="left default">
-      <input type="submit" name="search" id="search-button-extended" value="" class="button-full-rounded left">
-    </form>
-  </div>
-</header>
+<!-- layout:header -->
+<a class="sr-only" href="#main">Saltar al contenido</a>
+<header class="site-header" id="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Carbon Performance, inicio"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156"></a>
 
-<!-- NAVIGATION -->
-<section class="row nav">
-  <div class="twentyfour navContainer">
-    <a href="#" class="nav-toggle button-full-rounded"></a>
-    <div class="logo"><a href="index.html"><img src="images/logo.png" width="399" height="78" alt="Carbon Performance"></a></div>
-    <nav class="primary">
-      <div class="langselect">
-        <a href="#" class="flag" title="España / Español">
-          <img src="images/es_ES.png" height="16" alt="España / Español"> España / Español
-        </a>
-      </div>
-      <ul class="brp-barcelona">
-        <li class="first"><a href="index.html">Home</a></li>
-        <li class="sub sel"><a href="moto-agua.html">Busca tu reprogramación</a>
-          <ul class="subnav left">
-            <li class="first"><a href="vehiculos.html">Vehículo / Coche</a></li>
-            <li><a href="motos.html">Bikes - Quad</a></li>
-            <li><a href="moto-agua.html">Moto de Agua</a></li>
+    <nav class="main-nav" id="main-nav" aria-label="Principal">
+      <ul>
+        <li><a href="index.html" data-match="index.html">Inicio</a></li>
+        <li class="has-sub" data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html">
+          <a href="vehiculos.html">Reprogramación <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Reprogramación" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="vehiculos.html">Vehículo / Coche</a></li>
+            <li><a href="motos.html">Motos / Quads</a></li>
+            <li><a href="moto-agua.html">Moto de agua</a></li>
             <li><a href="lancha.html">Lancha motora</a></li>
-            <li class="last"><a href="desarrollo.html">Desarrollo</a></li>
+            <li><a href="desarrollo.html">Desarrollo</a></li>
           </ul>
         </li>
-        <li class="sub"><a href="noticias.html">Noticias</a>
-          <ul class="subnav left">
-            <li class="first"><a href="noticias.html">Noticias</a></li>
-            <li class="last"><a href="promociones.html">Promociones</a></li>
+        <li class="has-sub" data-match="noticias.html promociones.html">
+          <a href="noticias.html">Noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
+            <li><a href="noticias.html">Noticias</a></li>
+            <li><a href="promociones.html">Promociones</a></li>
           </ul>
         </li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="contacto.html">Solicita presupuesto</a></li>
-        <li class="last sub"><a href="contacto.html">Contacto</a>
-          <ul class="subnav right">
-            <li class="first"><a href="contacto.html">Contacto</a></li>
-            <li><a href="banco-de-rodillos.html">Banco de Rodillos</a></li>
+        <li><a href="faq.html" data-match="faq.html">FAQ</a></li>
+        <li class="has-sub" data-match="empresa.html banco-de-rodillos.html nuestro-equipo.html objetivos.html colaboradores.html">
+          <a href="empresa.html">Empresa <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Empresa" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <ul class="sub-menu">
             <li><a href="empresa.html">Empresa</a></li>
+            <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
             <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
             <li><a href="objetivos.html">Objetivos</a></li>
-            <li class="last"><a href="colaboradores.html">Colaboradores</a></li>
+            <li><a href="colaboradores.html">Colaboradores</a></li>
           </ul>
         </li>
+        <li><a href="contacto.html" data-match="contacto.html">Solicita presupuesto</a></li>
       </ul>
+      <div class="drawer-extra">
+        <a href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a>
+        <a href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a>
+        <p><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></p>
+      </div>
     </nav>
+
+    <div class="header-actions">
+      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>
+        Bilbao
+      </a>
+      <a class="btn btn-sm" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <button class="icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
-</section>
+</header>
+<!-- /layout:header -->
 
-<div class="row" id="container">
-  <div class="twentyfour columns">
+<main id="main">
+  <section class="page-hero">
+    
+    <div class="container">
+      <nav aria-label="Ruta"><ol class="crumbs"><li><a href="index.html">Inicio</a></li><li><a href="vehiculos.html">Reprogramación</a></li><li><span aria-current="page">Motos de agua</span></li></ol></nav>
+      <h1>Motos de agua</h1>
+      <p class="lead">Selecciona una marca para ver los modelos y las etapas de reprogramación disponibles.</p>
+      
+    </div>
+  </section>
 
-    <!-- PAGE TITLE -->
-    <section class="row title">
-      <div class="twentyfour columns nopadding group">
-        <h1>Reprogramación</h1>
-        <h2>Moto de agua</h2>
+  <section class="section" style="padding-top:28px">
+    <div class="container">
+      <div class="catalog-tools">
+        <nav class="type-pills" aria-label="Tipo de vehículo"><a class="type-pill" href="vehiculos.html"><i class="vt-icon vt-car"></i>Vehículos</a><a class="type-pill" href="motos.html"><i class="vt-icon vt-moto"></i>Motos / Quads</a><a class="type-pill active" href="moto-agua.html" aria-current="page"><i class="vt-icon vt-jet"></i>Moto de agua</a><a class="type-pill" href="lancha.html"><i class="vt-icon vt-boat"></i>Lancha motora</a></nav>
+        <label class="brand-filter"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span class="sr-only">Filtrar marcas</span><input type="search" id="brand-search" placeholder="Busca tu marca…" autocomplete="off"></label>
       </div>
-    </section>
+      <div class="brand-grid">
+        <a class="brand-tile" href="marca.html?marca=kawasaki-moto-agua" title="Kawasaki"><span class="logo"><img src="images/kawasaki_2.svg" alt="" loading="lazy"></span><span>Kawasaki</span></a>
+        <a class="brand-tile" href="marca.html?marca=sea-doo" title="Sea-doo"><span class="logo"><img src="images/sea-doo_3.svg" alt="" loading="lazy"></span><span>Sea-doo</span></a>
+        <a class="brand-tile" href="marca.html?marca=taiga" title="Taiga"><span class="logo"><img src="images/taiga-white.png" alt="" loading="lazy"></span><span>Taiga</span></a>
+        <a class="brand-tile" href="marca.html?marca=yamaha-moto-agua" title="Yamaha"><span class="logo"><img src="images/yamaha_2.png" alt="" loading="lazy"></span><span>Yamaha</span></a>
+      </div>
+      <p class="disclaimer">Carbon Performance no tienes ninguna relación comercial con estas marcas, por lo tanto los logos son solo a título informativo.</p>
+    </div>
+  </section>
+</main>
 
-    <!-- VEHICLE TYPE TABS -->
-    <section class="row sub">
-      <div class="twentyfour columns">
-        <ul class="vehicle-types">
-          <li>
-            <a href="vehiculos.html" class="type">
-              <img src="images/icon-vehicle-type-1.svg" width="54" height="26" class="icon" alt="Vehículos">
-              <span class="label">Vehículos</span>
-            </a>
-          </li>
-          <li>
-            <a href="motos.html" class="type">
-              <img src="images/icon-vehicle-type-3817.svg" width="54" height="26" class="icon" alt="Motos/Quads">
-              <span class="label">Motos/Quads</span>
-            </a>
-          </li>
-          <li>
-            <a href="moto-agua.html" class="type active">
-              <img src="images/icon-vehicle-type-2.svg" width="54" height="26" class="icon" alt="Moto de agua">
-              <span class="label">Moto de agua</span>
-            </a>
-          </li>
-          <li>
-            <a href="lancha.html" class="type">
-              <img src="images/icon-vehicle-type-3565.svg" width="54" height="26" class="icon" alt="Lancha motora">
-              <span class="label">Lancha motora</span>
-            </a>
-          </li>
+<!-- layout:footer -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156" loading="lazy"></a>
+        <p><span data-cfg="slogan">Professional Chiptuning</span> · Reprogramación de centralitas en Bilbao</p>
+      </div>
+      <div class="socials">
+        <a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
+        <a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a>
+        <a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>YouTube</a>
+      </div>
+    </div>
+
+    <div class="footer-grid">
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="vehiculos.html">Reprogramación</a></li>
+          <li><a href="desarrollo.html">Desarrollo</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contacto.html">Solicita presupuesto</a></li>
         </ul>
       </div>
-    </section>
-
-    <!-- SELECT BRAND TITLE -->
-    <section class="row sub">
-      <div class="twentyfour columns">
-        <span class="title noback">Selecciona una marca ...</span>
-      </div>
-    </section>
-
-    <!-- BRANDS GRID -->
-    <section class="row main" id="brands">
-      <div class="twentyfour columns bigpadding">
-
-        <div class="brand-disclaimer">
-          Carbon Performance no tienes ninguna relación comercial con estas marcas, por lo tanto los logos son solo a título informativo.
-        </div>
-
-        <a href="marca.html?marca=kawasaki-moto-agua" class="merk" title="Kawasaki"><span><img src="images/kawasaki_2.svg" alt="Kawasaki" class="social"></span></a>
-        <a href="marca.html?marca=sea-doo" class="merk" title="Sea-doo"><span><img src="images/sea-doo_3.svg" alt="Sea-doo" class="social"></span></a>
-        <a href="marca.html?marca=taiga" class="merk" title="Taiga"><span><img src="images/taiga-white.png" alt="Taiga" class="social"></span></a>
-        <a href="marca.html?marca=yamaha-moto-agua" class="merk" title="Yamaha"><span><img src="images/yamaha_2.png" alt="Yamaha" class="social"></span></a>
-
-        <div class="doClear"></div>
-
-      </div>
-    </section>
-
-    <!-- BRANDS BAR -->
-    <footer class="row brands hide-for-small">
-      <div class="twentyfour columns">
-        <ul class="list">
-          <li><a href="#"><img src="images/milltek.png" width="100" height="38" alt="Milltek"></a></li>
-          <li><a href="#"><img src="images/forge.png" width="100" height="38" alt="Forge"></a></li>
-          <li><a href="#"><img src="images/sachs.png" width="100" height="38" alt="Sachs"></a></li>
-          <li><a href="#"><img src="images/mountune.png" width="100" height="38" alt="Mountune"></a></li>
-          <li><a href="#"><img src="images/kw.png" width="100" height="38" alt="KW"></a></li>
-          <li><a href="#"><img src="images/bmc.png" width="100" height="38" alt="BMC"></a></li>
-          <li><a href="#"><img src="images/carbonio.png" width="100" height="38" alt="Carbonio"></a></li>
-          <li><a href="#"><img src="images/akrapovic.png" width="100" height="38" alt="Akrapovic"></a></li>
-          <li><a href="#"><img src="images/ragazzon.png" width="100" height="38" alt="Ragazzon"></a></li>
-          <li><a href="#"><img src="images/ferodo-racing.png" width="100" height="38" alt="Ferodo Racing"></a></li>
-          <li><a href="#"><img src="images/redbull.png" width="100" height="38" alt="Red Bull"></a></li>
-          <li><a href="#"><img src="images/cargraphic.png" width="100" height="38" alt="Cargraphic"></a></li>
-          <li><a href="#"><img src="images/supersprint.png" width="100" height="38" alt="Supersprint"></a></li>
-          <li><a href="#"><img src="images/pipercross.png" width="100" height="38" alt="Pipercross"></a></li>
-          <li><a href="#"><img src="images/rsrspa.png" width="100" height="38" alt="RSR Spa"></a></li>
-          <li><a href="#"><img src="images/remus.png" width="100" height="38" alt="Remus"></a></li>
-          <li><a href="#"><img src="images/armytrix.png" width="100" height="38" alt="Armytrix"></a></li>
-          <li><a href="#"><img src="images/hre.png" width="100" height="38" alt="HRE"></a></li>
-          <li><a href="#"><img src="images/ipe-exhaust.png" width="100" height="38" alt="IPE Exhaust"></a></li>
-          <li><a href="#"><img src="images/thor.png" width="100" height="38" alt="Thor"></a></li>
-          <li><a href="#"><img src="images/rsrnurburg.png" width="100" height="38" alt="RSR Nurburg"></a></li>
+      <div>
+        <h4>Empresa</h4>
+        <ul>
+          <li><a href="empresa.html">Empresa</a></li>
+          <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
+          <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
+          <li><a href="objetivos.html">Objetivos</a></li>
+          <li><a href="colaboradores.html">Colaboradores</a></li>
         </ul>
       </div>
-    </footer>
-
-    <!-- MOBILE SEARCH -->
-    <footer class="row search-mobile show-for-small">
-      <div class="twentyfour columns">
-        <form action="https://www.br-performance.com/brp-barcelona/buscar/" class="search" method="get">
-          <input type="text" name="q" placeholder="Buscar por marca o modelo ..." class="default">
-          <input type="submit" name="search" value="" class="button-full-rounded">
-        </form>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><span class="k">Teléfono</span><a class="v" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></li>
+          <li><span class="k">Correo electrónico</span><a class="v" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></li>
+          <li><span class="k">Dirección</span><span class="v"><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></li>
+        </ul>
       </div>
-    </footer>
+      <div>
+        <h4>Horario</h4>
+        <table class="hours">
+          <tr><td>Martes – Sábado</td><td>09:00–13:00</td></tr>
+          <tr><td></td><td>14:00–18:00</td></tr>
+          <tr class="closed"><td>Domingo y lunes</td><td>Cerrado</td></tr>
+        </table>
+        <p style="margin-top:12px;font-size:14px">Todos los servicios con cita previa.</p>
+      </div>
+    </div>
 
-  </div>
-</div>
-
-<!-- ADDRESS FOOTER -->
-<footer class="row address brp-barcelona">
-  <div class="seventeen columns address">
-    <ul>
-      <li><img src="images/footer_icon_tuv.png" width="45" height="45" alt="TÜVRheinland - Certified"></li>
-      <li>
-        <address>Carbon Performance <span class="dark">© ® 2026</span></address>
-        <address>Professional chiptuning</address>
-      </li>
-      <li>
-        <address>Zuberoa Etorb. 8, 10</address>
-        <address>48012 Errekalde, Bilbao, Bizkaia</address>
-      </li>
-      <li>
-        <address><a href="mailto:barcelona@br-performance.com" class="email">E-mail</a></address>
-        <address>Tel: +34 680 911 007</address>
-      </li>
-      <li>
-        <div><a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a></div>
-        <div><a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a></div>
-      </li>
-    </ul>
-  </div>
-  <div class="seven columns links">
-    <ul class="links right">
-      <li><a href="https://www.facebook.com/BRPerformanceBarcelona" title="Visita nuestra página de Facebook" target="_blank" rel="noopener"><img src="images/footer_icon_fb.png" width="28" height="28" alt="Facebook"></a></li>
-      <li><a href="http://www.youtube.com/user/BRPerformances" title="Visita nuestro canal de Youtube" target="_blank" rel="noopener"><img src="images/footer_icon_yt.png" width="28" height="28" alt="YouTube"></a></li>
-      <li><a href="https://www.instagram.com/brperformance_bcn" title="Visita nuestro Instagram" target="_blank" rel="noopener"><img src="images/footer_icon_inst.png" width="28" height="28" alt="Instagram"></a></li>
-    </ul>
+    <div class="footer-bottom">
+      <span class="tuv"><img src="images/footer_icon_tuv.png" alt="TÜV Rheinland - Certified" width="45" height="45" loading="lazy">© 2026 Carbon Performance. Todos los derechos reservados.</span>
+      <nav aria-label="Legal">
+        <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a>
+        <a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>
+      </nav>
+    </div>
   </div>
 </footer>
+<button class="icon-btn to-top" type="button" aria-label="Volver arriba"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+<!-- /layout:footer -->
 
 <script src="js/config.js"></script>
-<script src="js/main.js"></script>
+<script src="js/site.js"></script>
 </body>
 </html>
