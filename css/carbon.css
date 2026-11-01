@@ -620,7 +620,7 @@ body.nav-open .site-header { z-index: 70; }
 /* Piezas performance */
 
 /* ---------- Configurador por fases ---------- */
-.hero { overflow: visible; }
+.hero { overflow: visible; z-index: 5; } /* painel de marcas por cima das seções seguintes */
 .hero-bg { clip-path: inset(0); }
 .finder { position: relative; }
 .finder-steps { display: flex; gap: 8px; }
@@ -1050,3 +1050,7 @@ body.nav-open.header-stuck .site-header { background: var(--bg); -webkit-backdro
 @media (prefers-reduced-motion: reduce) { .site-intro .intro { display: none; } .site-intro { overflow: auto; } }
 /* celular: texto da capa legível sobre a parte clara da foto */
 @media (max-width: 768px) { .hero h1, .hero .hero-lead { text-shadow: 0 2px 14px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.6); } }
+/* botão do WhatsApp: só o círculo (e o balão quando visível) recebem toque — a área invisível ao lado não */
+.wa-float { pointer-events: none; }
+.wa-float .wa-icon { pointer-events: auto; }
+.wa-float.show-bubble .wa-bubble { pointer-events: auto; }
