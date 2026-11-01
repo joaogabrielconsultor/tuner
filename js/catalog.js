@@ -102,6 +102,7 @@ CP.catalog = (function () {
     reset(selYear, 'Año');
     reset(selEngine, 'Motor');
     brand = null;
+    root.classList.remove('has-brand');
     if (!index) return;
     var slugs = (index.types[type] || []).slice().sort(function (a, b) {
       return index.brands[a].name.localeCompare(index.brands[b].name, 'es');
@@ -119,6 +120,7 @@ CP.catalog = (function () {
   });
 
   selBrand.addEventListener('change', function () {
+    root.classList.toggle('has-brand', !!selBrand.value);
     reset(selModel, 'Modelo'); reset(selYear, 'Año'); reset(selEngine, 'Motor');
     brand = null;
     var slug = selBrand.value;

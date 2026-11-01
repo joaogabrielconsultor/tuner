@@ -8,9 +8,9 @@
   <!-- layout:head -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,500;0,600;0,700;1,700&family=Manrope:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/carbon.css">
-  <meta name="theme-color" content="#161616">
+  <meta name="theme-color" content="#171718">
   <!-- /layout:head -->
 </head>
 <body class="page-motor">
@@ -18,12 +18,11 @@
 <!-- layout:header -->
 <a class="sr-only" href="#main">Saltar al contenido</a>
 <header class="site-header" id="site-header">
-  <div class="container header-inner">
+  <div class="header-inner">
     <a class="brand" href="index.html" aria-label="Carbon Performance, inicio"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156"></a>
 
     <nav class="main-nav" id="main-nav" aria-label="Principal">
       <ul>
-        <li><a href="index.html" data-match="index.html">Inicio</a></li>
         <li class="has-sub" data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html">
           <a href="vehiculos.html">Reprogramación <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
           <button class="sub-toggle" type="button" aria-label="Ver Reprogramación" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
@@ -36,8 +35,8 @@
           </ul>
         </li>
         <li class="has-sub" data-match="noticias.html promociones.html">
-          <a href="noticias.html">Noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          <button class="sub-toggle" type="button" aria-label="Ver Noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <a href="noticias.html">Promos y noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Promos y noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
           <ul class="sub-menu">
             <li><a href="noticias.html">Noticias</a></li>
             <li><a href="promociones.html">Promociones</a></li>
@@ -55,7 +54,6 @@
             <li><a href="colaboradores.html">Colaboradores</a></li>
           </ul>
         </li>
-        <li><a href="contacto.html" data-match="contacto.html">Solicita presupuesto</a></li>
       </ul>
       <div class="drawer-extra">
         <a href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a>
@@ -65,11 +63,15 @@
     </nav>
 
     <div class="header-actions">
-      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>
-        Bilbao
+      <a class="header-search" href="vehiculos.html" aria-label="Busca tu vehículo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-      <a class="btn btn-sm" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        Bilbao
+        <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </a>
+      <a class="btn" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <button class="icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
@@ -118,15 +120,23 @@
 <footer class="site-footer">
   <div class="container">
     <div class="footer-top">
-      <div class="footer-brand">
-        <a href="index.html"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156" loading="lazy"></a>
-        <p><span data-cfg="slogan">Professional Chiptuning</span> · Reprogramación de centralitas en Bilbao</p>
+      <div>
+        <h2>Síguenos</h2>
+        <ul class="follow-list">
+          <li><a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10" fill="currentColor"/><path fill="#171718" d="M13.4 21.9v-7.2h2.4l.4-2.8h-2.8v-1.8c0-.8.2-1.4 1.4-1.4h1.5V6.2c-.3 0-1.1-.1-2.1-.1-2.1 0-3.5 1.3-3.5 3.6v2.1H8.3v2.8h2.4v7.2"/></svg>Facebook</a></li>
+          <li><a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg>Instagram</a></li>
+          <li><a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>YouTube</a></li>
+        </ul>
       </div>
-      <div class="socials">
-        <a href="https://www.facebook.com/BRPerformanceBarcelona" data-cfg="facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5H16l.4-3h-2.9V8.6c0-.9.3-1.5 1.5-1.5h1.5V4.4c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8v2.4H8v3h2.6V21h2.9z"/></svg>Facebook</a>
-        <a href="https://www.instagram.com/brperformance_bcn" data-cfg="instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg>Instagram</a>
-        <a href="http://www.youtube.com/user/BRPerformances" data-cfg="youtube" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M21.6 7.2a2.5 2.5 0 00-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 002.4 7.2 26 26 0 002 12a26 26 0 00.4 4.8 2.5 2.5 0 001.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 001.8-1.8A26 26 0 0022 12a26 26 0 00-.4-4.8zM10 15V9l5.2 3L10 15z"/></svg>YouTube</a>
-      </div>
+      <form class="footer-news" data-newsletter novalidate>
+        <input type="text" name="nombre" placeholder="Nombre *" aria-label="Nombre" required autocomplete="given-name">
+        <input type="text" name="apellidos" placeholder="Apellidos *" aria-label="Apellidos" required autocomplete="family-name">
+        <input class="full" type="email" name="email" placeholder="Correo electrónico *" aria-label="Correo electrónico" required autocomplete="email">
+        <div class="row">
+          <button class="btn" type="submit">Suscribirse <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <small>Al suscribirte aceptas nuestra <a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a> y aceptas recibir novedades de nuestra empresa.</small>
+        </div>
+      </form>
     </div>
 
     <div class="footer-grid">
@@ -134,47 +144,42 @@
         <h4>Navegación</h4>
         <ul>
           <li><a href="vehiculos.html">Reprogramación</a></li>
-          <li><a href="desarrollo.html">Desarrollo</a></li>
-          <li><a href="noticias.html">Noticias</a></li>
-          <li><a href="promociones.html">Promociones</a></li>
+          <li><a href="noticias.html">Promos y noticias</a></li>
           <li><a href="faq.html">FAQ</a></li>
-          <li><a href="contacto.html">Solicita presupuesto</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Empresa</h4>
-        <ul>
           <li><a href="empresa.html">Empresa</a></li>
           <li><a href="banco-de-rodillos.html">Banco de rodillos</a></li>
-          <li><a href="nuestro-equipo.html">Nuestro equipo</a></li>
-          <li><a href="objetivos.html">Objetivos</a></li>
-          <li><a href="colaboradores.html">Colaboradores</a></li>
+          <li><a href="desarrollo.html">Desarrollo</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
         </ul>
       </div>
-      <div>
-        <h4>Contacto</h4>
-        <ul>
-          <li><span class="k">Teléfono</span><a class="v" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></li>
-          <li><span class="k">Correo electrónico</span><a class="v" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></li>
-          <li><span class="k">Dirección</span><span class="v"><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></li>
-        </ul>
+      <div class="footer-center">
+        <h4>Tu centro</h4>
+        <label class="sr-only" for="footer-center">Tu centro</label>
+        <select id="footer-center"><option>Bilbao</option></select>
+      </div>
+      <div class="f-contact">
+        <h4 style="margin-bottom:8px">Contacto</h4>
+        <div class="info-row"><div><span class="k">Teléfono</span><a class="v" id="f-tel" href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a></div><button class="copy-btn" type="button" data-copy="f-tel" aria-label="Copiar teléfono"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
+        <div class="info-row"><div><span class="k">Correo electrónico</span><a class="v" id="f-mail" href="mailto:barcelona@br-performance.com" data-cfg="email"><span data-cfg="email-text">barcelona@br-performance.com</span></a></div><button class="copy-btn" type="button" data-copy="f-mail" aria-label="Copiar correo"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
+        <div class="info-row"><div><span class="k">Dirección</span><span class="v" id="f-addr">Carbon Performance<br><span data-cfg="morada1">Zuberoa Etorb. 8, 10</span><br><span data-cfg="morada2">48012 Errekalde, Bilbao, Bizkaia</span></span></div><button class="copy-btn" type="button" data-copy="f-addr" aria-label="Copiar dirección"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 8V6a2 2 0 00-2-2H6a2 2 0 00-2 2v8a2 2 0 002 2h2" fill="none" stroke="currentColor" stroke-width="2"/></svg></button></div>
+        <div><a class="btn" href="https://maps.google.com/maps?q=Zuberoa+Etorbidea+8,+48012+Bilbao,+Bizkaia" target="_blank" rel="noopener">Ver en el mapa <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a></div>
       </div>
       <div>
         <h4>Horario</h4>
         <table class="hours">
-          <tr><td>Martes – Sábado</td><td>09:00–13:00</td></tr>
-          <tr><td></td><td>14:00–18:00</td></tr>
-          <tr class="closed"><td>Domingo y lunes</td><td>Cerrado</td></tr>
+          <tr><td>Martes - Sábado</td><td>09:00-13:00 y 14:00-18:00</td></tr>
+          <tr class="closed"><td>Domingo y Lunes</td><td>CERRADO</td></tr>
         </table>
-        <p style="margin-top:12px;font-size:14px">Todos los servicios con cita previa.</p>
+        <p style="margin-top:12px;font-size:14px;color:var(--muted)">Todos los servicios con cita previa.</p>
       </div>
     </div>
 
     <div class="footer-bottom">
       <span class="tuv"><img src="images/footer_icon_tuv.png" alt="TÜV Rheinland - Certified" width="45" height="45" loading="lazy">© 2026 Carbon Performance. Todos los derechos reservados.</span>
       <nav aria-label="Legal">
-        <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a>
         <a href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>
+        <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">Condiciones de venta</a>
+        <a href="#" data-cookie-settings>Configuración de cookies</a>
       </nav>
     </div>
   </div>

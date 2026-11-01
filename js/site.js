@@ -1,6 +1,9 @@
 // Carbon Performance — comportamento comum a todas as páginas
 // (menu, header, carrosséis, vídeos, FAQ, filtro de marcas, avisos e formulário de contato)
 
+// Número de WhatsApp que recebe os pedidos (formulários do site)
+var CP_WA = '393758172444'; // +39 375 817 2444
+
 var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 
 // ===== HEADER E MENU =====
@@ -267,7 +270,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   var form = document.querySelector('form.content.contact');
   if (!form) return;
 
-  var WA = '393758172444'; // +39 375 817 2444
+  var WA = CP_WA;
   var params = new URLSearchParams(window.location.search);
   // Monta o nome do veiculo evitando repetir o modelo quando o motor ja o contem
   // (ex.: modelo "RSQ8" + motor "RSQ8 4.0 V8 TFSI" -> "Audi RSQ8 4.0 V8 TFSI")
@@ -377,5 +380,85 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     var url = 'https://wa.me/' + WA + '?text=' + encodeURIComponent(lines.join('\n'));
     var w = window.open(url, '_blank');
     if (!w) window.location.href = url;
+  });
+})();
+
+
+// ===== FORMULÁRIO RÁPIDO DA HOME -> WHATSAPP =====
+(function () {
+  var form = document.querySelector('form[data-quick-contact]');
+  if (!form) return;
+  var toggle = form.querySelector('[data-toggle-extra]');
+  var extra = form.querySelector('.extra-fields');
+  if (toggle && extra) {
+    toggle.addEventListener('change', function () { extra.hidden = !toggle.checked; });
+  }
+  function val(n) { var el = form.elements[n]; return el ? String(el.value).trim() : ''; }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var required = ['nombre', 'apellidos', 'email', 'telefono', 'mensaje'];
+    for (var i = 0; i < required.length; i++) {
+      var el = form.elements[required[i]];
+      if (el && !el.value.trim()) {
+        el.classList.add('field-error');
+        el.addEventListener('input', function () { this.classList.remove('field-error'); }, { once: true });
+        el.focus();
+        return;
+      }
+    }
+    var ok = form.elements.acepto;
+    if (ok && !ok.checked) { ok.focus(); ok.closest('.check').style.color = 'var(--red)'; return; }
+    var B = function (s) { return '*' + s + '*'; };
+    var lines = ['🔧 ' + B('Consulta — Carbon Performance'), '',
+      '👤 ' + B('CLIENTE'),
+      'Nombre: ' + val('nombre') + ' ' + val('apellidos'),
+      'E-mail: ' + val('email'),
+      'Teléfono: ' + val('telefono')];
+    if (toggle && toggle.checked && (val('coche') || val('km') || val('caja'))) {
+      lines.push('', '🚗 ' + B('VEHÍCULO'));
+      if (val('coche')) lines.push('Coche: ' + val('coche'));
+      if (val('km')) lines.push('Kilómetros: ' + val('km'));
+      if (val('caja')) lines.push('Caja de cambios: ' + val('caja'));
+    }
+    lines.push('', '💬 ' + B('CONSULTA'), val('mensaje'));
+    var url = 'https://wa.me/' + CP_WA + '?text=' + encodeURIComponent(lines.join('\n'));
+    var w = window.open(url, '_blank');
+    if (!w) window.location.href = url;
+  });
+})();
+
+// ===== BOLETIM DO RODAPÉ -> WHATSAPP =====
+(function () {
+  var form = document.querySelector('form[data-newsletter]');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var fields = ['nombre', 'apellidos', 'email'];
+    for (var i = 0; i < fields.length; i++) {
+      var el = form.elements[fields[i]];
+      if (!el.value.trim() || (el.type === 'email' && !/^\S+@\S+\.\S+$/.test(el.value))) {
+        el.style.borderColor = 'var(--red)';
+        el.addEventListener('input', function () { this.style.borderColor = ''; }, { once: true });
+        el.focus();
+        return;
+      }
+    }
+    var msg = '📬 *Alta en el boletín — Carbon Performance*\nNombre: ' + form.elements.nombre.value.trim() + ' ' +
+      form.elements.apellidos.value.trim() + '\nE-mail: ' + form.elements.email.value.trim();
+    var url = 'https://wa.me/' + CP_WA + '?text=' + encodeURIComponent(msg);
+    var w = window.open(url, '_blank');
+    if (!w) window.location.href = url;
+    form.innerHTML = '<p class="done">¡Gracias! Confirma el envío en WhatsApp para completar tu suscripción.</p>';
+  });
+})();
+
+// ===== REABRIR O AVISO DE COOKIES =====
+(function () {
+  document.querySelectorAll('[data-cookie-settings]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      try { localStorage.removeItem('brpCookieChoice'); } catch (err) {}
+      location.reload();
+    });
   });
 })();

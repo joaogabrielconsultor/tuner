@@ -1,11 +1,10 @@
 <a class="sr-only" href="#main">Saltar al contenido</a>
 <header class="site-header" id="site-header">
-  <div class="container header-inner">
+  <div class="header-inner">
     <a class="brand" href="index.html" aria-label="Carbon Performance, inicio"><img src="images/logo.png" alt="Carbon Performance" width="798" height="156"></a>
 
     <nav class="main-nav" id="main-nav" aria-label="Principal">
       <ul>
-        <li><a href="index.html" data-match="index.html">Inicio</a></li>
         <li class="has-sub" data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html">
           <a href="vehiculos.html">Reprogramación <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
           <button class="sub-toggle" type="button" aria-label="Ver Reprogramación" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
@@ -18,8 +17,8 @@
           </ul>
         </li>
         <li class="has-sub" data-match="noticias.html promociones.html">
-          <a href="noticias.html">Noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
-          <button class="sub-toggle" type="button" aria-label="Ver Noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+          <a href="noticias.html">Promos y noticias <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <button class="sub-toggle" type="button" aria-label="Ver Promos y noticias" aria-expanded="false"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
           <ul class="sub-menu">
             <li><a href="noticias.html">Noticias</a></li>
             <li><a href="promociones.html">Promociones</a></li>
@@ -37,7 +36,6 @@
             <li><a href="colaboradores.html">Colaboradores</a></li>
           </ul>
         </li>
-        <li><a href="contacto.html" data-match="contacto.html">Solicita presupuesto</a></li>
       </ul>
       <div class="drawer-extra">
         <a href="tel:34680911007" data-cfg="telefono-href"><span data-cfg="telefono">+34 680 911 007</span></a>
@@ -47,11 +45,15 @@
     </nav>
 
     <div class="header-actions">
-      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></svg>
-        Bilbao
+      <a class="header-search" href="vehiculos.html" aria-label="Busca tu vehículo">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 20l-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </a>
-      <a class="btn btn-sm" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="header-loc" href="contacto.html" title="Nuestro centro en Bilbao">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s7-6.2 7-12a7 7 0 10-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        Bilbao
+        <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </a>
+      <a class="btn" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <button class="icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
       </button>
