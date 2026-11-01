@@ -54,39 +54,43 @@
 <!-- /layout:header -->
 
 <main id="main">
-  <section class="page-hero">
-    <div class="container">
-      <nav aria-label="Ruta"><ol class="crumbs" id="crumbs"><li><a href="index.html">Inicio</a></li><li><a href="vehiculos.html">Reprogramación</a></li></ol></nav>
-      <div class="brand-hero-logo" id="brand-logo" hidden></div>
+  <section class="container result-top">
+    <div>
+      <a class="btn btn-back" id="back-link" href="vehiculos.html">Configurador <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <h1 id="page-title">Reprogramación</h1>
-      <div class="stage-tabs" id="stage-tabs" role="list"></div>
+      <p class="sub" id="page-sub"></p>
+    </div>
+    <figure class="media"><img src="images/DSC01072.jpg" alt="" width="1200" height="334"></figure>
+  </section>
+
+  <section class="container">
+    <nav class="stage-bar" id="stage-tabs" aria-label="Etapas"></nav>
+    <article class="result-grid">
+      <div class="spec-card" id="spec" aria-live="polite"><p class="muted">Cargando…</p></div>
+      <div class="graph-card">
+        <h3>Gráfico de potencia</h3>
+        <div id="graph"></div>
+        <div class="imp">
+          <h4>Importante</h4>
+          <p>Cada reprogramación se desarrolla de forma individual en nuestro banco de potencia. Los valores indicados de potencia y par son orientativos y pueden variar según el vehículo.</p>
+        </div>
+        <div class="imp">
+          <h4>Nuestra calidad</h4>
+          <ul class="quality-list"><li>Cada coche es <strong>ajustado y probado individualmente en tiempo real</strong>.</li> <li>Equipo de <strong>ingenieros automovilísticos cualificados</strong>.</li> <li>Apto para la inspección técnica del vehículo (ITV).</li> <li>Ofrecemos una <strong>garantía de 5 años</strong>.</li> <li><u>Dentro de los límites de tolerancia mecánica</u>.</li> <li>Mayor experiencia en el mercado, con más de 20.000 coches reprogramados anualmente.</li></ul>
+        </div>
+      </div>
+    </article>
+    <p class="disclaimer">Nuestras <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">condiciones generales de venta</a> se aplican a todas nuestras entregas y servicios.</p>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head"><h3 class="h2">Multimedia</h3></div>
+      <div class="rail media-rail" id="media-rail"><figure><img src="images/DSC01070.jpg" alt="" loading="lazy"></figure><figure><img src="images/DSC01072.jpg" alt="" loading="lazy"></figure><figure><img src="images/DSC01073.jpg" alt="" loading="lazy"></figure><figure><img src="images/Porsche_918_Spyder_dyno.jpg" alt="" loading="lazy"></figure><figure><img src="images/21015-Mclaren_720_S_Banc_infos_jauneBBB.jpg" alt="" loading="lazy"></figure></div>
+      <div class="rail-foot"><div class="rail-nav" data-rail-nav="media-rail"><button class="prev" type="button" aria-label="Anterior"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button class="next" type="button" aria-label="Siguiente"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div></div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:28px">
-    <div class="container">
-      <div class="motor-layout">
-        <div>
-          <div class="dyno" id="dyno" aria-live="polite"><p class="muted" style="padding:28px;margin:0">Cargando…</p></div>
-          <div class="motor-extra">
-            <div class="panel">
-              <h3>Nuestra calidad</h3>
-              <ul class="quality-list"><li>Cada coche es <strong>ajustado y probado individualmente en tiempo real</strong>.</li> <li>Equipo de <strong>ingenieros automovilísticos cualificados</strong>.</li> <li>Apto para la inspección técnica del vehículo (ITV).</li> <li>Ofrecemos una <strong>garantía de 5 años</strong>.</li> <li><u>Dentro de los límites de tolerancia mecánica</u>.</li> <li>Mayor experiencia en el mercado, con más de 20.000 coches reprogramados anualmente.</li></ul>
-            </div>
-            <div class="panel">
-              <h3>Información importante</h3>
-              <p>Los valores mostrados son orientativos. Cada coche se ajusta y se mide individualmente en nuestro banco de potencia.</p>
-              <h3 style="margin-top:22px">Testimonios</h3>
-              <p>¿Ya has reprogramado tu vehículo con nosotros? Cuéntanos tu experiencia.</p>
-              <a href="contacto.html" id="btn-testimonio" class="btn btn-sm">Escribir testimonio <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
-            </div>
-          </div>
-          <p class="disclaimer">Nuestras <a href="https://www.br-performance.com/brp-barcelona/condiciones-de-venta/">condiciones generales de venta</a> se aplican a todas nuestras entregas y servicios.</p>
-        </div>
-        <aside class="price-card" id="price-card"></aside>
-      </div>
-    </div>
-  </section>
   <!-- layout:contact -->
   <section class="section">
     <div class="container">
@@ -150,6 +154,7 @@
     </div>
   </section>
   <!-- /layout:contact -->
+
 </main>
 
 <!-- layout:footer -->

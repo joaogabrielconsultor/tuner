@@ -67,7 +67,17 @@ CP.catalog = (function () {
   };
 })();
 
-// ===== BUSCADOR DE VEÍCULO =====
+// ===== CONFIGURADOR DE VEÍCULO (fase por fase) =====
+// Tipo → Marca → Modelo → Año → Motor. Cada fase abre um painel com as opções
+// embaixo dos campos; ao escolher o motor, vai para a página de resultado.
+CP.TYPE_PAGE = { 'coche': 'vehiculos.html', 'moto': 'motos.html', 'moto-agua': 'moto-agua.html', 'lancha': 'lancha.html' };
+CP.TYPE_LABEL = { 'coche': 'Vehículo', 'moto': 'Moto / Quad', 'moto-agua': 'Moto de agua', 'lancha': 'Lancha motora' };
+CP.periodLabel = function (p) { return String(p.label).replace(/(\d{4}) (\d{4}|\.\.\.)\s*$/, '$1 > $2'); };
+CP.engineLabel = function (e) {
+  var n = String(e.name);
+  return n.toLowerCase().indexOf(e.cv + 'cv') >= 0 ? e.cv + ' CV' : n + ' (' + e.cv + ' CV)';
+};
+
 (function () {
   var root = document.querySelector('[data-finder]');
   if (!root) return;
@@ -76,124 +86,166 @@ CP.catalog = (function () {
   var results = root.querySelector('.finder-results');
   var goSearch = root.querySelector('.finder-search .go');
   var pills = root.querySelectorAll('.type-pill');
-  var selBrand = root.querySelector('[name=brand]');
-  var selModel = root.querySelector('[name=model]');
-  var selYear = root.querySelector('[name=year]');
-  var selEngine = root.querySelector('[name=engine]');
-  var go = root.querySelector('.finder-go');
+  var fields = {};
+  root.querySelectorAll('.step-field').forEach(function (f) { fields[f.getAttribute('data-step')] = f; });
+  var panel = root.querySelector('.finder-panel');
+  var grid = panel.querySelector('.panel-grid');
+  var ARROW_DOWN = '<svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>';
+  var esc = CP.esc;
 
-  var type = root.getAttribute('data-type') || 'coche';
+  var LABELS = { brand: 'Marca', model: 'Modelo', year: 'Año', engine: 'Motor' };
+  var FILTER = { brand: 'Escribe una marca', model: 'Escribe un modelo' };
+  var S = { type: root.getAttribute('data-type') || null, slug: null, brand: null, model: null, period: null, open: null };
   var index = null;
-  var brand = null;
 
-  function reset(sel, label) {
-    sel.innerHTML = '<option value="">' + label + '</option>';
-    sel.disabled = true;
+  // ---------- estado visual dos campos ----------
+  function modelName(m) { return CP.catalog.modelName(m); }
+  function valueOf(step) {
+    if (step === 'brand') return S.brand ? S.brand.name : '';
+    if (step === 'model') return S.model ? modelName(S.model) : '';
+    if (step === 'year') return S.period ? CP.periodLabel(S.period) : '';
+    return '';
   }
-  function option(value, text) {
-    var o = document.createElement('option');
-    o.value = value; o.textContent = text;
-    return o;
+  function enabled(step) {
+    if (step === 'brand') return !!S.type;
+    if (step === 'model') return !!S.brand;
+    if (step === 'year') return !!S.model;
+    if (step === 'engine') return !!S.period;
   }
-
-  function fillBrands() {
-    reset(selBrand, 'Marca');
-    reset(selModel, 'Modelo');
-    reset(selYear, 'Año');
-    reset(selEngine, 'Motor');
-    brand = null;
-    root.classList.remove('has-brand');
-    if (!index) return;
-    var slugs = (index.types[type] || []).slice().sort(function (a, b) {
-      return index.brands[a].name.localeCompare(index.brands[b].name, 'es');
+  function paint() {
+    pills.forEach(function (p) { p.setAttribute('aria-pressed', p.getAttribute('data-type') === S.type ? 'true' : 'false'); });
+    Object.keys(fields).forEach(function (step) {
+      var f = fields[step];
+      var btn = f.querySelector('.step-btn');
+      var val = valueOf(step);
+      f.classList.toggle('is-open', S.open === step);
+      f.classList.toggle('has-value', !!val);
+      btn.disabled = !enabled(step);
+      btn.setAttribute('aria-expanded', S.open === step ? 'true' : 'false');
+      btn.querySelector('.lbl').textContent = val || LABELS[step];
+      var input = f.querySelector('.step-input');
+      if (input) {
+        var showInput = S.open === step;
+        input.hidden = !showInput;
+        btn.hidden = showInput;
+        if (!showInput) input.value = '';
+      }
     });
-    slugs.forEach(function (s) { selBrand.appendChild(option(s, index.brands[s].name)); });
-    selBrand.disabled = false;
+    // migalhas na barra de busca
+    var crumbs = [];
+    if (S.type) crumbs.push(CP.TYPE_LABEL[S.type]);
+    if (S.brand) crumbs.push(S.brand.name);
+    if (S.model) crumbs.push(modelName(S.model));
+    if (S.period) crumbs.push(CP.periodLabel(S.period));
+    q.placeholder = crumbs.length ? crumbs.join('  ›  ') : 'Encuentra tu vehículo';
+    root.classList.toggle('has-crumbs', crumbs.length > 0);
   }
 
-  pills.forEach(function (p) {
-    p.addEventListener('click', function () {
-      pills.forEach(function (x) { x.setAttribute('aria-pressed', x === p ? 'true' : 'false'); });
-      type = p.getAttribute('data-type');
-      fillBrands();
-    });
-  });
+  // ---------- painel de opções ----------
+  function tile(html, onClick, cls, title) {
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'tile' + (cls ? ' ' + cls : '');
+    b.innerHTML = html;
+    if (title) b.title = title;
+    b.addEventListener('click', onClick);
+    return b;
+  }
+  function msg(text) { grid.innerHTML = '<p class="panel-msg">' + text + '</p>'; }
 
-  selBrand.addEventListener('change', function () {
-    root.classList.toggle('has-brand', !!selBrand.value);
-    reset(selModel, 'Modelo'); reset(selYear, 'Año'); reset(selEngine, 'Motor');
-    brand = null;
-    var slug = selBrand.value;
-    if (!slug) return;
-    selModel.innerHTML = '<option value="">Cargando…</option>';
-    CP.catalog.brand(slug).then(function (b) {
-      if (selBrand.value !== slug) return;
-      brand = b;
-      reset(selModel, 'Modelo');
-      (b.models || []).forEach(function (m) {
-        var n = CP.catalog.modelName(m);
-        selModel.appendChild(option(n, n));
+  function render(step, filter) {
+    grid.innerHTML = '';
+    grid.className = 'panel-grid step-' + step;
+    var f = (filter || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+    var match = function (t) { return !f || String(t).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').indexOf(f) >= 0; };
+
+    if (step === 'brand') {
+      if (!index) { msg('Cargando…'); return; }
+      var slugs = (index.types[S.type] || []).slice().sort(function (a, b) { return index.brands[a].name.localeCompare(index.brands[b].name, 'es'); });
+      slugs.filter(function (s) { return match(index.brands[s].name); }).forEach(function (s) {
+        var b = index.brands[s];
+        grid.appendChild(tile((b.logo ? '<img src="' + esc(b.logo) + '" alt="" loading="lazy">' : '') + '<span>' + esc(b.name) + '</span>', function () { pickBrand(s); }, 'brand'));
       });
-      selModel.disabled = !(b.models && b.models.length);
-    }).catch(function () {
-      reset(selModel, 'Modelo');
-    });
-  });
-
-  function currentModel() {
-    if (!brand) return null;
-    return (brand.models || []).find(function (m) { return CP.catalog.modelName(m) === selModel.value; }) || null;
-  }
-  function currentPeriod() {
-    var m = currentModel();
-    if (!m || typeof m === 'string' || !m.periods) return null;
-    return m.periods.find(function (p) { return p.id === selYear.value; }) || null;
-  }
-
-  selModel.addEventListener('change', function () {
-    reset(selYear, 'Año'); reset(selEngine, 'Motor');
-    var m = currentModel();
-    if (!m || typeof m === 'string' || !m.periods) return;
-    m.periods.forEach(function (p) { selYear.appendChild(option(p.id, p.label)); });
-    selYear.disabled = !m.periods.length;
-  });
-
-  selYear.addEventListener('change', function () {
-    reset(selEngine, 'Motor');
-    var p = currentPeriod();
-    if (!p || !p.fuels) return;
-    p.fuels.forEach(function (f) {
-      var g = document.createElement('optgroup');
-      g.label = CP.fuelLabel(f.type);
-      f.engines.forEach(function (e, i) {
-        var o = option(e.name + '|' + e.cv, e.name + (String(e.name).indexOf(e.cv + 'cv') === -1 ? ' · ' + e.cv + ' cv' : ''));
-        g.appendChild(o);
+    } else if (step === 'model') {
+      (S.brand.models || []).filter(function (m) { return match(modelName(m)); }).forEach(function (m) {
+        grid.appendChild(tile('<span>' + esc(modelName(m)) + '</span>', function () { pickModel(m); }));
       });
-      selEngine.appendChild(g);
-    });
-    selEngine.disabled = false;
-  });
-
-  go.addEventListener('click', function () {
-    var slug = selBrand.value;
-    if (!slug) { selBrand.focus(); return; }
-    var url = 'marca.html?marca=' + encodeURIComponent(slug);
-    if (selModel.value) url += '&modelo=' + encodeURIComponent(selModel.value);
-    if (selModel.value && selYear.value) url += '&periodo=' + encodeURIComponent(selYear.value);
-    if (selModel.value && selYear.value && selEngine.value) {
-      var parts = selEngine.value.split('|');
-      url = 'motor.html?marca=' + encodeURIComponent(slug) +
-            '&modelo=' + encodeURIComponent(selModel.value) +
-            '&periodo=' + encodeURIComponent(selYear.value) +
-            '&motor=' + encodeURIComponent(parts[0]) + '&cv=' + encodeURIComponent(parts[1]);
+    } else if (step === 'year') {
+      var periods = (typeof S.model === 'object' && S.model.periods) || [];
+      periods.forEach(function (p) { grid.appendChild(tile('<span>' + esc(CP.periodLabel(p)) + '</span>', function () { pickPeriod(p); })); });
+      if (!periods.length) noData();
+    } else if (step === 'engine') {
+      var count = 0;
+      (S.period.fuels || []).forEach(function (fuel) {
+        fuel.engines.forEach(function (e) {
+          count++;
+          grid.appendChild(tile('<span>' + esc(CP.engineLabel(e)) + '</span>', function () { pickEngine(e); }, '', CP.fuelLabel(fuel.type)));
+        });
+      });
+      if (!count) noData();
     }
-    location.href = url;
-  });
+    if (!grid.children.length && filter) msg('No encontramos resultados para «' + esc(filter) + '».');
+  }
+  function noData() {
+    grid.innerHTML = '<div class="panel-msg">Aún no tenemos los datos de este vehículo publicados. <a href="contacto.html">Pregúntanos</a> y te decimos qué podemos hacer.</div>';
+  }
 
-  // ----- Busca por texto (marca ou modelo) -----
+  function open(step) {
+    if (!enabled(step)) return;
+    S.open = step;
+    paint();
+    render(step);
+    panel.hidden = false;
+    var input = fields[step].querySelector('.step-input');
+    if (input) setTimeout(function () { input.focus(); }, 0);
+  }
+  function close() { S.open = null; panel.hidden = true; paint(); }
+
+  // ---------- escolhas ----------
+  function pickType(t) {
+    S.type = t; S.slug = null; S.brand = null; S.model = null; S.period = null;
+    CP.catalog.index().then(function (ix) { index = ix; if (S.open === 'brand') render('brand'); });
+    open('brand');
+  }
+  function pickBrand(slug, then) {
+    S.slug = slug; S.model = null; S.period = null;
+    S.brand = { name: index ? index.brands[slug].name : slug, models: [] };
+    S.open = 'model'; paint(); msg('Cargando…'); panel.hidden = false;
+    return CP.catalog.brand(slug).then(function (b) {
+      if (S.slug !== slug) return;
+      S.brand = b;
+      if (then) return then();
+      open('model');
+    }).catch(function () { msg('No se pudo cargar esta marca. Inténtalo de nuevo.'); });
+  }
+  function pickModel(m) { S.model = m; S.period = null; open('year'); }
+  function pickPeriod(p) { S.period = p; open('engine'); }
+  function pickEngine(e) {
+    location.href = 'motor.html?marca=' + encodeURIComponent(S.slug) +
+      '&modelo=' + encodeURIComponent(modelName(S.model)) +
+      '&periodo=' + encodeURIComponent(S.period.id) +
+      '&motor=' + encodeURIComponent(e.name) + '&cv=' + e.cv;
+  }
+
+  pills.forEach(function (p) { p.addEventListener('click', function () { pickType(p.getAttribute('data-type')); }); });
+  Object.keys(fields).forEach(function (step) {
+    var f = fields[step];
+    f.querySelector('.step-btn').addEventListener('click', function () {
+      if (S.open === step) close(); else open(step);
+    });
+    var input = f.querySelector('.step-input');
+    if (input) input.addEventListener('input', function () { render(step, input.value.trim()); });
+  });
+  document.addEventListener('click', function (e) {
+    // composedPath guarda o caminho do clique mesmo se o botão já foi redesenhado
+    var inside = (e.composedPath ? e.composedPath() : [e.target]).indexOf(root) >= 0;
+    if (!inside) { if (S.open) close(); results.hidden = true; }
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && S.open) close(); });
+
+  // ---------- busca por texto (marca ou modelo) ----------
   function norm(s) { return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, ' ').trim(); }
   var hl = -1;
-
   function search(text) {
     var t = norm(text);
     if (!t || !index) return [];
@@ -201,44 +253,49 @@ CP.catalog = (function () {
     Object.keys(index.brands).forEach(function (slug) {
       var b = index.brands[slug];
       var bn = norm(b.name);
-      if (bn.indexOf(t) === 0 || (' ' + bn).indexOf(' ' + t) >= 0) {
-        out.push({ score: bn === t ? 0 : 1, label: b.name, sub: 'Marca', logo: b.logo, href: 'marca.html?marca=' + slug });
-      }
+      if (bn.indexOf(t) === 0 || (' ' + bn).indexOf(' ' + t) >= 0) out.push({ score: bn === t ? 0 : 1, label: b.name, sub: 'Marca', logo: b.logo, slug: slug });
       b.models.forEach(function (m) {
-        var full = norm(b.name + ' ' + m);
-        var mn = norm(m);
+        var full = norm(b.name + ' ' + m), mn = norm(m);
         if (mn.indexOf(t) === 0 || full.indexOf(t) === 0 || (t.length > 1 && (' ' + full).indexOf(' ' + t) >= 0)) {
-          out.push({ score: mn === t || full === t ? 2 : 3, label: b.name + ' ' + m, sub: 'Modelo', logo: b.logo,
-            href: 'marca.html?marca=' + slug + '&modelo=' + encodeURIComponent(m) });
+          out.push({ score: mn === t || full === t ? 2 : 3, label: b.name + ' ' + m, sub: 'Modelo', logo: b.logo, slug: slug, model: m });
         }
       });
     });
     out.sort(function (a, b) { return a.score - b.score || a.label.localeCompare(b.label, 'es'); });
     return out.slice(0, 8);
   }
-
-  function render(list) {
-    hl = -1;
+  function choose(r) {
+    results.hidden = true;
+    q.value = '';
+    S.type = index.brands[r.slug].type;
+    pickBrand(r.slug, r.model ? function () {
+      var m = (S.brand.models || []).find(function (x) { return modelName(x) === r.model; });
+      if (m) pickModel(m); else open('model');
+    } : null);
+  }
+  var current = [];
+  function renderResults(list) {
+    current = list; hl = -1;
     if (!q.value.trim()) { results.hidden = true; q.setAttribute('aria-expanded', 'false'); return; }
     if (!list.length) {
       results.innerHTML = '<li class="empty">No encontramos ese vehículo. Prueba con la marca, o <a href="contacto.html" style="text-decoration:underline">pregúntanos</a>.</li>';
     } else {
       results.innerHTML = list.map(function (r, i) {
-        return '<li><a href="' + r.href + '" id="fr-' + i + '" role="option">' +
-          (r.logo ? '<img src="' + CP.esc(r.logo) + '" alt="" loading="lazy">' : '') +
-          '<span>' + CP.esc(r.label) + '</span><small>' + r.sub + '</small></a></li>';
+        return '<li><a href="#" data-i="' + i + '" id="fr-' + i + '" role="option">' +
+          (r.logo ? '<img src="' + esc(r.logo) + '" alt="" loading="lazy">' : '') +
+          '<span>' + esc(r.label) + '</span><small>' + r.sub + '</small></a></li>';
       }).join('');
+      results.querySelectorAll('a[data-i]').forEach(function (a) {
+        a.addEventListener('click', function (e) { e.preventDefault(); choose(current[+a.getAttribute('data-i')]); });
+      });
     }
     results.hidden = false;
     q.setAttribute('aria-expanded', 'true');
   }
-
-  q.addEventListener('focus', function () { if (!index) CP.catalog.index(); });
-  q.addEventListener('input', function () {
-    CP.catalog.index().then(function (ix) { index = ix; render(search(q.value)); });
-  });
+  q.addEventListener('focus', function () { if (S.open) close(); CP.catalog.index().then(function (ix) { index = ix; }); });
+  q.addEventListener('input', function () { CP.catalog.index().then(function (ix) { index = ix; renderResults(search(q.value)); }); });
   q.addEventListener('keydown', function (e) {
-    var links = results.querySelectorAll('a');
+    var links = results.querySelectorAll('a[data-i]');
     if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
       if (!links.length) return;
       e.preventDefault();
@@ -247,26 +304,35 @@ CP.catalog = (function () {
       q.setAttribute('aria-activedescendant', links[hl].id);
     } else if (e.key === 'Enter') {
       e.preventDefault();
-      var target = links[hl >= 0 ? hl : 0];
-      if (target) location.href = target.getAttribute('href');
-    } else if (e.key === 'Escape') {
-      results.hidden = true;
-    }
+      if (current.length) choose(current[hl >= 0 ? hl : 0]);
+    } else if (e.key === 'Escape') { results.hidden = true; }
   });
   goSearch.addEventListener('click', function () {
-    var first = results.querySelector('a');
-    if (first && !results.hidden) location.href = first.getAttribute('href');
+    if (q.value.trim() && current.length) choose(current[0]);
+    else if (S.type) open(S.brand ? (S.model ? (S.period ? 'engine' : 'year') : 'model') : 'brand');
     else q.focus();
   });
-  document.addEventListener('click', function (e) {
-    if (!root.querySelector('.finder-search').contains(e.target)) results.hidden = true;
-  });
-  // Fecha as sugestões quando o foco sai da busca (ex.: ao usar os seletores com o teclado)
-  root.querySelector('.finder-search').addEventListener('focusout', function (e) {
-    if (!e.relatedTarget || !root.querySelector('.finder-search').contains(e.relatedTarget)) {
-      setTimeout(function () { results.hidden = true; }, 150);
+
+  // ---------- estado inicial (ex.: voltando da página do motor) ----------
+  var params = new URLSearchParams(location.search);
+  CP.catalog.index().then(function (ix) {
+    index = ix;
+    var slug = params.get('marca');
+    if (slug && ix.brands[slug]) {
+      S.type = ix.brands[slug].type;
+      pickBrand(slug, function () {
+        var m = (S.brand.models || []).find(function (x) { return modelName(x) === params.get('modelo'); });
+        if (!m) return open('model');
+        S.model = m;
+        var p = (typeof m === 'object' && m.periods || []).find(function (x) { return x.id === params.get('periodo'); });
+        if (!p) return open('year');
+        S.period = p;
+        open('engine');
+      });
+      root.scrollIntoView({ block: 'center' });
+    } else {
+      paint();
     }
   });
-
-  CP.catalog.index().then(function (ix) { index = ix; fillBrands(); });
+  paint();
 })();

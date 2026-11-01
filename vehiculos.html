@@ -73,14 +73,14 @@
             <button class="type-pill" type="button" data-type="moto-agua" aria-pressed="false">Moto de agua</button>
             <button class="type-pill" type="button" data-type="lancha" aria-pressed="false">Lancha motora</button>
           </div>
-          <div class="finder-selects">
-            <label class="select"><span class="sr-only">Marca</span><select name="brand" disabled><option value="">Marca</option></select></label>
-            <label class="select"><span class="sr-only">Modelo</span><select name="model" disabled><option value="">Modelo</option></select></label>
-            <label class="select"><span class="sr-only">Año</span><select name="year" disabled><option value="">Año</option></select></label>
-            <label class="select"><span class="sr-only">Motor</span><select name="engine" disabled><option value="">Motor</option></select></label>
-            <button class="btn btn-red finder-go" type="button">Ver <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
+          <div class="finder-steps">
+            <div class="step-field" data-step="brand"><button class="step-btn" type="button" aria-haspopup="listbox" disabled><span class="lbl">Marca</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><input class="step-input" type="search" placeholder="Escribe una marca" aria-label="Escribe una marca" autocomplete="off" hidden></div>
+            <div class="step-field" data-step="model"><button class="step-btn" type="button" aria-haspopup="listbox" disabled><span class="lbl">Modelo</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button><input class="step-input" type="search" placeholder="Escribe un modelo" aria-label="Escribe un modelo" autocomplete="off" hidden></div>
+            <div class="step-field" data-step="year"><button class="step-btn" type="button" aria-haspopup="listbox" disabled><span class="lbl">Año</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></div>
+            <div class="step-field" data-step="engine"><button class="step-btn" type="button" aria-haspopup="listbox" disabled><span class="lbl">Motor</span><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button></div>
           </div>
         </div>
+        <div class="finder-panel" hidden><div class="panel-grid" role="listbox" aria-label="Opciones"></div></div>
       </div>
     </div>
   </section>
