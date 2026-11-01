@@ -192,74 +192,30 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   });
 })();
 
-// ===== AVISOS: FAIXA DE PROMOÇÃO, COOKIES E BOLETIM =====
+// ===== AVISO DE COOKIES (lembra a escolha) =====
 (function () {
   var body = document.body;
   if (!body) return;
-
-  // --- Faixa de anúncio no topo ---
-  if (!document.querySelector('.announcement-bar')) {
-    body.insertAdjacentHTML('afterbegin',
-      '<section class="announcement-bar"><div class="announcement-track">' +
-      '<span class="announcement-marquee"><span class="announcement-item">' +
-      '<a href="promociones.html">☀️ Promoción especial de verano ☀️ Hasta un -20% en stage 1 hasta el sábado 1 de agosto</a>' +
-      '</span></span>' +
-      '</div></section>');
-    body.classList.add('has-announcement');
-  }
-
-  // --- Boletim (canto inferior direito) ---
-  // Só aparece depois que o aviso de cookies for resolvido, para não se sobreporem no celular.
-  function showNewsletter() {
-    if (document.querySelector('.newsletter-popup')) return;
-    try { if (sessionStorage.getItem('brpNewsletterClosed') === '1') return; } catch (e) {}
-    var np = document.createElement('div');
-    np.className = 'newsletter-popup';
-    np.setAttribute('role', 'dialog');
-    np.setAttribute('aria-label', 'Boletín');
-    np.innerHTML =
-      '<button class="newsletter-close" type="button" aria-label="Cerrar">&times;</button>' +
-      '<div class="newsletter-inner">' +
-      '<h3>¡Mantente informado!</h3>' +
-      '<p>Suscríbete al boletín.</p>' +
-      '<form class="newsletter-form">' +
-      '<input type="email" placeholder="Tu e-mail" aria-label="Tu e-mail" required>' +
-      '<button type="submit">Suscribirse</button>' +
-      '</form></div>';
-    body.appendChild(np);
-    function remember() { try { sessionStorage.setItem('brpNewsletterClosed', '1'); } catch (e) {} }
-    np.querySelector('.newsletter-close').addEventListener('click', function () { np.remove(); remember(); });
-    np.querySelector('.newsletter-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-      np.querySelector('.newsletter-inner').innerHTML = '<h3>¡Gracias!</h3><p>Te has suscrito correctamente.</p>';
-      remember();
-      setTimeout(function () { np.remove(); }, 2500);
-    });
-  }
-
-  // --- Aviso de cookies (lembra a escolha) ---
   var choice = null;
   try { choice = localStorage.getItem('brpCookieChoice'); } catch (e) { choice = 'unknown'; }
-  if (!document.querySelector('.cookie-consent') && choice === null) {
-    var cc = document.createElement('div');
-    cc.className = 'cookie-consent';
-    cc.setAttribute('role', 'dialog');
-    cc.setAttribute('aria-label', 'Política de cookies');
-    cc.innerHTML =
-      '<div class="cookie-text"><strong>Usamos cookies</strong>' +
-      '<p>Este sitio utiliza cookies esenciales para funcionar correctamente y cookies de seguimiento para entender cómo lo usas. Estas últimas solo se activan con tu consentimiento.</p></div>' +
-      '<div class="cookie-actions">' +
-      '<button type="button" class="cookie-reject">Rechazar</button>' +
-      '<button type="button" class="cookie-accept">Aceptar</button></div>' +
-      '<a href="#" class="cookie-choose">Solo las esenciales</a>';
-    body.appendChild(cc);
-    var closeCookie = function (c) { try { localStorage.setItem('brpCookieChoice', c); } catch (e) {} cc.remove(); showNewsletter(); };
-    cc.querySelector('.cookie-accept').addEventListener('click', function () { closeCookie('all'); });
-    cc.querySelector('.cookie-reject').addEventListener('click', function () { closeCookie('reject'); });
-    cc.querySelector('.cookie-choose').addEventListener('click', function (e) { e.preventDefault(); closeCookie('essential'); });
-  } else {
-    showNewsletter();
-  }
+  if (document.querySelector('.cookie-consent') || choice !== null) return;
+  var cc = document.createElement('div');
+  cc.className = 'cookie-consent';
+  cc.setAttribute('role', 'dialog');
+  cc.setAttribute('aria-label', 'Política de cookies');
+  cc.innerHTML =
+    '<div class="cookie-text"><strong>Política de cookies</strong>' +
+    '<p>Para ofrecerte la mejor experiencia, este sitio utiliza cookies esenciales para funcionar correctamente y cookies de seguimiento para entender cómo lo usas. Estas últimas solo se activan con tu consentimiento.</p>' +
+    '<a href="#" class="cookie-choose">Solo las esenciales</a></div>' +
+    '<div class="cookie-actions">' +
+    '<button type="button" class="cookie-reject">Rechazar</button>' +
+    '<button type="button" class="cookie-accept">Aceptar</button></div>' +
+    '<hr class="cookie-sep"><a class="cookie-policy" href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>';
+  body.appendChild(cc);
+  var closeCookie = function (v) { try { localStorage.setItem('brpCookieChoice', v); } catch (e) {} cc.remove(); };
+  cc.querySelector('.cookie-accept').addEventListener('click', function () { closeCookie('all'); });
+  cc.querySelector('.cookie-reject').addEventListener('click', function () { closeCookie('reject'); });
+  cc.querySelector('.cookie-choose').addEventListener('click', function (e) { e.preventDefault(); closeCookie('essential'); });
 })();
 
 
