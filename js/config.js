@@ -8,23 +8,22 @@ const BRP_CONFIG = {
     morada_linha1: 'Zuberoa Etorb. 8, 10',
     morada_linha2: '48012 Errekalde, Bilbao, Bizkaia',
     telefone: '+34 680 911 007',
-    telefone_link: 'tel:34680911007',
+    telefone_link: 'tel:+34680911007',
     email: 'barcelona@br-performance.com',
     horario: 'Lunes–Viernes: 9:00–18:00 | Sábado: Con cita previa'
   },
   redes: {
-    facebook: 'https://www.facebook.com/BRPerformanceBarcelona',
-    youtube: 'http://www.youtube.com/user/BRPerformances',
-    instagram: 'https://www.instagram.com/brperformance_bcn'
+    facebook: '',
+    youtube: '',
+    instagram: ''
   },
   seo: {
     titulo_home: 'Home - Carbon Performance - Reprogramación de centralitas',
-    descricao: 'Chiptuning y reprogramación profesional de centralitas en Barcelona. TÜV Rheinland certificado.'
+    descricao: 'Chiptuning y reprogramación profesional de centralitas en Bilbao. TÜV Rheinland certificado.'
   },
   links: {
     condicoes_venda: 'https://www.br-performance.com/brp-barcelona/condiciones-de-venta/',
-    politica_privacidade: 'https://www.br-performance.com/brp-barcelona/privacy-policy',
-    langselect: 'https://www.br-performance.eu/langselect/'
+    politica_privacidade: 'https://www.br-performance.com/brp-barcelona/privacy-policy'
   }
 };
 
@@ -58,10 +57,10 @@ function applyConfig(cfg) {
   // Morada
   document.querySelectorAll('[data-cfg="morada1"]').forEach(el => el.textContent = cfg.empresa.morada_linha1);
   document.querySelectorAll('[data-cfg="morada2"]').forEach(el => el.textContent = cfg.empresa.morada_linha2);
-  // Redes sociais
-  document.querySelectorAll('[data-cfg="facebook"]').forEach(el => el.href = cfg.redes.facebook);
-  document.querySelectorAll('[data-cfg="youtube"]').forEach(el => el.href = cfg.redes.youtube);
-  document.querySelectorAll('[data-cfg="instagram"]').forEach(el => el.href = cfg.redes.instagram);
+  // Redes sociais (só quando houver endereço)
+  ['facebook', 'youtube', 'instagram'].forEach(function (k) {
+    if (cfg.redes[k]) document.querySelectorAll('[data-cfg="' + k + '"]').forEach(el => el.href = cfg.redes[k]);
+  });
   // Slogan
   document.querySelectorAll('[data-cfg="slogan"]').forEach(el => el.textContent = cfg.empresa.slogan);
 }
