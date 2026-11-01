@@ -1001,3 +1001,4 @@ body.nav-open .site-header { z-index: 70; }
 @media (max-width: 768px) { .sec-parts, .section + .section.sec-parts { padding-top: 56px; } .parts-head .h1 { font-size: 32px; line-height: 1.25; } .parts-head { margin-bottom: 32px; } .part-feature h2 { font-size: 26px; } }
 .page-home .hero-bg { object-position: 72% 50%; }
 @media (max-width: 768px) { .page-home .hero-bg { object-position: 78% 50%; } }
+.photo-band img { object-position: 50% 55%; }
