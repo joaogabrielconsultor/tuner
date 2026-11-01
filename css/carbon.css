@@ -1071,3 +1071,12 @@ body:has(.finder-panel:not([hidden])) .wa-bubble { opacity: 0 !important; pointe
 .legal .pendiente { color: #ffb4ad; background: rgba(225,6,0,.14); padding: 1px 6px; border-radius: 6px; font-size: .92em; }
 @media (max-width: 768px) { .legal h2 { font-size: 19px; margin-top: 32px; } .legal p, .legal li { font-size: 15px; } .legal { padding-bottom: 64px; } }
 .legal .subnav a { text-decoration: none; }
+
+/* ---------- Página 404 ---------- */
+.notfound { min-height: 62vh; display: flex; flex-direction: column; justify-content: center; padding-block: 64px 96px; }
+.notfound .nf-code { margin: 0; font-family: var(--font-display); font-weight: 800; font-size: clamp(96px, 18vw, 200px); line-height: 1; letter-spacing: -.04em;
+  background: linear-gradient(180deg, #fff 0%, #9a9a9e 70%); -webkit-background-clip: text; background-clip: text; color: transparent; font-style: italic; }
+.notfound .nf-code::after { content: ""; display: block; width: 120px; height: 6px; margin-top: 8px; background: var(--red); transform: skewX(-24deg); }
+.notfound h1 { font-size: clamp(28px, 4vw, 44px); margin: 28px 0 12px; }
+.notfound p { color: var(--body); font-size: 18px; max-width: 560px; }
+.nf-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }

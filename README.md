@@ -12,7 +12,7 @@ Site estático (HTML, CSS e JavaScript, sem servidor), publicado no Render a par
 | `js/catalog.js` | Leitura do catálogo e configurador de veículo (tipo → marca → modelo → ano → motor) |
 | `js/motor.js` | Página de resultado (etapas, potência, par, preço e pedido por WhatsApp) |
 | `js/config.js` | Telefone, endereço, e-mail e redes sociais |
-| `js/brands.js` | Catálogo completo — fonte oficial, gerado pelo editor `custom.html` |
+| `js/brands.js` | Catálogo completo — fonte oficial (editar aqui e rodar `node tools/build-catalog.js`) |
 | `data/catalog/` | Catálogo dividido por marca, usado pelo site (gerado a partir do `js/brands.js`) |
 | `partials/` | Cabeçalho, rodapé e recursos comuns a todas as páginas |
 | `tools/` | Scripts de manutenção |

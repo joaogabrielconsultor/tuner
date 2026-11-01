@@ -29,16 +29,6 @@ CP.catalog = (function () {
   var indexPromise = null;
   var brandCache = {};
 
-  // Marcas editadas no editor de catálogo (custom.html) ficam no navegador de quem editou
-  function customOverride(slug) {
-    try {
-      var raw = localStorage.getItem('brp_brands_custom');
-      if (!raw) return null;
-      var c = JSON.parse(raw);
-      return c && c[slug] ? Object.assign({ slug: slug }, c[slug]) : null;
-    } catch (e) { return null; }
-  }
-
   function getJSON(url) {
     return fetch(url, { cache: 'force-cache' }).then(function (r) {
       if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -53,8 +43,6 @@ CP.catalog = (function () {
     },
     brand: function (slug) {
       if (!slug || !/^[a-z0-9-]+$/.test(slug)) return Promise.reject(new Error('Marca inválida'));
-      var custom = customOverride(slug);
-      if (custom) return Promise.resolve(custom);
       if (!brandCache[slug]) {
         brandCache[slug] = getJSON('data/catalog/' + slug + '.json').catch(function (e) {
           delete brandCache[slug];

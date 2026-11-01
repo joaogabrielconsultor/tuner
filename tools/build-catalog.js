@@ -5,7 +5,7 @@
  *   data/catalog/index.json      -> lista leve de marcas (nome, logo, tipo, modelos)
  *   data/catalog/<marca>.json    -> dados completos de uma marca (modelos, anos, motores, stages)
  *
- * js/brands.js continua sendo a fonte oficial (é o que o editor custom.html gera).
+ * js/brands.js continua sendo a fonte oficial.
  * Sempre que trocar o js/brands.js, rode:   node tools/build-catalog.js
  */
 const fs = require('fs');
