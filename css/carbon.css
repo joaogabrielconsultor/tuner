@@ -999,3 +999,5 @@ body.nav-open .site-header { z-index: 70; }
 .part-feature .logos { display: flex; flex-wrap: wrap; gap: 20px; align-items: center; margin-bottom: 32px; }
 .part-feature .logos img { height: 28px; width: auto; filter: brightness(0) invert(1); opacity: .9; }
 @media (max-width: 768px) { .sec-parts, .section + .section.sec-parts { padding-top: 56px; } .parts-head .h1 { font-size: 32px; line-height: 1.25; } .parts-head { margin-bottom: 32px; } .part-feature h2 { font-size: 26px; } }
+.page-home .hero-bg { object-position: 72% 50%; }
+@media (max-width: 768px) { .page-home .hero-bg { object-position: 78% 50%; } }
