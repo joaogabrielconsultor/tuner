@@ -420,14 +420,35 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   if (!root.classList.contains('site-intro')) return;
   var intro = document.querySelector('.intro');
   var t0 = Date.now(), MIN = 2000, MAX = 3800, closing = false, ended = false;
+
+  // Som do motor: tenta tocar sozinho; se o navegador bloquear (o normal antes de um toque),
+  // o primeiro toque na tela de carregamento faz o som tocar em vez de pular a animação.
+  var snd = null, sndOn = false;
+  try {
+    snd = new Audio('audio/intro-motor.mp3');
+    snd.volume = 0.6;
+    var p = snd.play();
+    if (p && p.then) p.then(function () { sndOn = true; }, function () {});
+  } catch (e) { snd = null; }
+  function fadeSound() {
+    if (!snd || snd.paused) return;
+    var v = snd.volume, id = setInterval(function () {
+      v -= 0.08; if (v <= 0) { clearInterval(id); snd.pause(); } else snd.volume = v;
+    }, 40);
+  }
+
   function finish() {
     if (ended) return; ended = true;
+    fadeSound();
     root.classList.remove('site-intro');
     if (intro) intro.remove();
     document.dispatchEvent(new Event('cp:intro-end'));
   }
+  var holdUntil = 0;
   function close(now) {
-    if (closing) return; closing = true;
+    if (closing) return;
+    if (now !== true && Date.now() < holdUntil) { setTimeout(close, holdUntil - Date.now()); return; }
+    closing = true;
     if (!intro || now) return finish();
     intro.classList.add('is-done');
     setTimeout(finish, 800);
@@ -435,6 +456,14 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   function whenLoaded() { setTimeout(close, Math.max(0, MIN - (Date.now() - t0))); }
   if (document.readyState === 'complete') whenLoaded(); else window.addEventListener('load', whenLoaded, { once: true });
   setTimeout(close, MAX);
-  if (intro) intro.addEventListener('click', function () { close(true); });
+  if (intro) intro.addEventListener('click', function () {
+    if (snd && !sndOn && !closing) {            // 1º toque: liga o som e segura a tela até ele acabar
+      sndOn = true; snd.currentTime = 0;
+      snd.play().catch(function () {});
+      holdUntil = Date.now() + 2200;
+      return;
+    }
+    close(true);
+  });
   window.addEventListener('keydown', function () { close(true); }, { once: true });
 })();
