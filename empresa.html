@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/carbon.css">
-  <script>try{if(!sessionStorage.getItem('mpIntro')&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('site-intro');sessionStorage.setItem('mpIntro','1')}}catch(e){}</script>
+  <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('site-intro')}catch(e){}</script>
   <meta name="theme-color" content="#171718">
   <!-- /layout:head -->
 </head>
@@ -19,13 +19,15 @@
 <!-- layout:header -->
 <a class="sr-only" href="#main">Saltar al contenido</a>
 <div class="intro" aria-hidden="true">
-  <div class="intro-bg"></div>
   <div class="intro-glow"></div>
-  <div class="intro-logo"><img src="images/logo-mido.webp" alt="" width="600" height="191"><span class="brand-fx brand-shine"></span><span class="brand-fx brand-trail"></span></div>
+  <div class="intro-stage">
+    <div class="intro-logo"><img src="images/logo-mido.webp" alt="" width="760" height="302"><span class="brand-fx brand-shine"></span><span class="brand-fx brand-trail"></span><span class="brand-fx brand-lights"></span></div>
+    <div class="intro-bar"><span></span></div>
+  </div>
 </div>
 <header class="site-header" id="site-header">
   <div class="header-inner">
-    <a class="brand" href="index.html" aria-label="Mido Performance, inicio"><span class="brand-logo"><img src="images/logo-mido.webp" alt="Mido Performance" width="600" height="191" fetchpriority="high"></span></a>
+    <a class="brand" href="index.html" aria-label="Mido Performance, inicio"><span class="brand-logo"><img src="images/logo-mido.webp" alt="Mido Performance" width="760" height="302" fetchpriority="high"></span></a>
 
     <nav class="main-nav" id="main-nav" aria-label="Principal">
       <ul>
@@ -159,7 +161,7 @@
   <div class="container">
     <div class="footer-top">
       <div>
-        <a class="footer-logo" href="index.html" aria-label="Mido Performance, inicio"><img src="images/logo-mido.webp" alt="Mido Performance" width="600" height="191" loading="lazy"></a>
+        <a class="footer-logo" href="index.html" aria-label="Mido Performance, inicio"><img src="images/logo-mido.webp" alt="Mido Performance" width="760" height="302" loading="lazy"></a>
         <p class="footer-tagline">Reprogramación de centralitas profesional en Bilbao, probada en nuestro banco de potencia 4x4.</p>
       </div>
       <div>

@@ -357,7 +357,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   heroBits.forEach(function (el, i) { el.classList.add('hero-in'); el.style.setProperty('--d', (380 + i * 110) + 'ms'); });
   var heroGo = function () { requestAnimationFrame(function () { requestAnimationFrame(function () { root.classList.add('hero-ready'); }); }); };
   // com a tela de abertura, o título da capa só anima quando ela some
-  if (root.classList.contains('site-intro')) { document.addEventListener('cp:intro-end', heroGo, { once: true }); setTimeout(heroGo, 2400); }
+  if (root.classList.contains('site-intro')) { document.addEventListener('cp:intro-end', heroGo, { once: true }); setTimeout(heroGo, 4600); }
   else heroGo();
 
   // 2) Blocos ao rolar
@@ -413,19 +413,28 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   update();
 })();
 
-/* Abertura: some depois de ~2,5 s (ou num toque/tecla) e libera a página */
+/* Tela de carregamento: fica no mínimo ~2 s (tempo da animação), espera a página carregar
+   e então completa a barra e some. Um toque ou tecla pula. Trava de segurança no CSS (4,2 s). */
 (function () {
   var root = document.documentElement;
   if (!root.classList.contains('site-intro')) return;
   var intro = document.querySelector('.intro');
-  var done = false;
-  function end() {
-    if (done) return; done = true;
+  var t0 = Date.now(), MIN = 2000, MAX = 3800, closing = false, ended = false;
+  function finish() {
+    if (ended) return; ended = true;
     root.classList.remove('site-intro');
     if (intro) intro.remove();
     document.dispatchEvent(new Event('cp:intro-end'));
   }
-  setTimeout(end, 2550);
-  if (intro) intro.addEventListener('click', end);
-  window.addEventListener('keydown', end, { once: true });
+  function close(now) {
+    if (closing) return; closing = true;
+    if (!intro || now) return finish();
+    intro.classList.add('is-done');
+    setTimeout(finish, 800);
+  }
+  function whenLoaded() { setTimeout(close, Math.max(0, MIN - (Date.now() - t0))); }
+  if (document.readyState === 'complete') whenLoaded(); else window.addEventListener('load', whenLoaded, { once: true });
+  setTimeout(close, MAX);
+  if (intro) intro.addEventListener('click', function () { close(true); });
+  window.addEventListener('keydown', function () { close(true); }, { once: true });
 })();
