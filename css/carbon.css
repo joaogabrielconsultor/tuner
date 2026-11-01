@@ -1003,3 +1003,5 @@ body.nav-open .site-header { z-index: 70; }
 @media (max-width: 768px) { .page-home .hero-bg { object-position: 78% 50%; } }
 .photo-band img { object-position: 50% 55%; }
 .hero-reprog .hero-bg { object-position: 70% 50%; }
+.footer-tagline { max-width: 420px; margin: 0; font-size: 16px; line-height: 1.6; color: var(--body); }
+.footer-grid .hours td { text-align: left; } .footer-grid .hours td:last-child { margin-top: 2px; }
