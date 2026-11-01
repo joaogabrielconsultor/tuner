@@ -1056,3 +1056,18 @@ body.nav-open.header-stuck .site-header { background: var(--bg); -webkit-backdro
 .wa-float.show-bubble .wa-bubble { pointer-events: auto; }
 /* balão do WhatsApp não aparece por cima da lista do configurador aberta */
 body:has(.finder-panel:not([hidden])) .wa-bubble { opacity: 0 !important; pointer-events: none !important; }
+/* ---------- Páginas legales ---------- */
+.legal { max-width: 860px; padding-top: calc(var(--header-h) + 40px); padding-bottom: 96px; }
+.page-legal .legal { padding-top: 48px; }
+.legal h1 { margin: 8px 0 8px; }
+.legal .legal-date { color: var(--muted); font-size: 14px; margin: 0 0 8px; }
+.legal .subnav { margin: 24px 0 40px; }
+.legal h2 { font-size: 22px; margin: 40px 0 12px; }
+.legal p, .legal li { color: var(--body); line-height: 1.7; font-size: 16px; }
+.legal ul { padding-left: 20px; margin: 0 0 16px; }
+.legal li { margin-bottom: 6px; }
+.legal a { color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
+.legal .legal-data { list-style: none; padding: 20px 24px; border-radius: var(--r-lg); background: var(--surface); }
+.legal .pendiente { color: #ffb4ad; background: rgba(225,6,0,.14); padding: 1px 6px; border-radius: 6px; font-size: .92em; }
+@media (max-width: 768px) { .legal h2 { font-size: 19px; margin-top: 32px; } .legal p, .legal li { font-size: 15px; } .legal { padding-bottom: 64px; } }
+.legal .subnav a { text-decoration: none; }

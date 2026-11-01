@@ -136,12 +136,12 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   cc.setAttribute('aria-label', 'Política de cookies');
   cc.innerHTML =
     '<div class="cookie-text"><strong>Política de cookies</strong>' +
-    '<p>Para ofrecerte la mejor experiencia, este sitio utiliza cookies esenciales para funcionar correctamente y cookies de seguimiento para entender cómo lo usas. Estas últimas solo se activan con tu consentimiento.</p>' +
+    '<p>Este sitio solo guarda en tu navegador lo necesario para funcionar y no usa cookies de publicidad ni de analítica. El mapa de Google en la página de contacto puede instalar cookies de Google.</p>' +
     '<a href="#" class="cookie-choose">Solo las esenciales</a></div>' +
     '<div class="cookie-actions">' +
     '<button type="button" class="cookie-reject">Rechazar</button>' +
     '<button type="button" class="cookie-accept">Aceptar</button></div>' +
-    '<hr class="cookie-sep"><a class="cookie-policy" href="https://www.br-performance.com/brp-barcelona/privacy-policy">Política de privacidad</a>';
+    '<hr class="cookie-sep"><a class="cookie-policy" href="politica-de-privacidad.html">Política de privacidad</a>';
   body.appendChild(cc);
   body.classList.add('cookie-open');
   var closeCookie = function (v) { try { localStorage.setItem('brpCookieChoice', v); } catch (e) {} cc.remove(); body.classList.remove('cookie-open'); };

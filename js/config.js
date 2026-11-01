@@ -22,8 +22,8 @@ const BRP_CONFIG = {
     descricao: 'Chiptuning y reprogramación profesional de centralitas en Bilbao. TÜV Rheinland certificado.'
   },
   links: {
-    condicoes_venda: 'https://www.br-performance.com/brp-barcelona/condiciones-de-venta/',
-    politica_privacidade: 'https://www.br-performance.com/brp-barcelona/privacy-policy'
+    condicoes_venda: 'condiciones-de-venta.html',
+    politica_privacidade: 'politica-de-privacidad.html'
   }
 };
 
