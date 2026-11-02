@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var stage = stages.find(function (s) { return s.id === stageParam; }) || stages[0] || null;
     var sub = CP.periodLabel(period) + ', ' + CP.engineLabel(engine);
 
-    document.title = brand.name + ', ' + modeloParam + ' ' + sub + ' - MIDO Performance';
+    document.title = 'MIDO Performance | ' + brand.name + ' ' + modeloParam + ' ' + sub;
     document.getElementById('page-title').textContent = brand.name + ', ' + modeloParam;
     document.getElementById('page-sub').textContent = sub;
     document.getElementById('back-link').href = configUrl;
