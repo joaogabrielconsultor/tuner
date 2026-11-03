@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: br-performance-site
+    name: mido-performance
     runtime: static
     buildCommand: ""
     staticPublishPath: .
