@@ -10,7 +10,7 @@ const BRP_CONFIG = {
     telefone: '+39 375 817 2444',
     telefone_link: 'tel:+393758172444',
     email: '', // sem e-mail por enquanto (o da BR foi retirado)
-    horario: 'Lunes–Sábado: 9:00–15:00 | Domingo: Cerrado'
+    horario: 'Lunes–Viernes: 9:00–13:00 y 15:00–19:00 | Sábado: 10:00–15:00 | Domingo: Cerrado'
   },
   redes: {
     facebook: '',
