@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '&periodo=' + encodeURIComponent(periodoParam) + '&motor=' + encodeURIComponent(motorParam) + '&cv=' + cvParam +
         '&stage=' + encodeURIComponent(s.id);
       var cur = stage && s.id === stage.id ? ' aria-current="page"' : '';
-      return '<a href="' + url + '"' + cur + '>' + esc(STAGE_NAME[s.id] || s.label) + '</a>';
+      return '<a href="' + url + '"' + cur + (s.id === 'brp-eco' ? ' class="tab-eco"' : '') + '>' + esc(STAGE_NAME[s.id] || s.label) + '</a>';
     }).join('');
 
     // Link de contato com o veículo e os números (vai para o formulário → WhatsApp)
@@ -66,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function () {
       torque: (stage.torque_orig != null && stage.torque_mod != null) ? stage.torque_orig + ' → ' + stage.torque_mod + ' ' + (stage.torque_unit || 'Nm') : '',
       price: stage.price ? stage.price + ' €' : ''
     } : { veh: vehLabel };
+    var PHOTO = { 'brp-eco': 'svc-eco.jpg', stage1: 'svc-stage1.jpg', stage2: 'svc-stage2.jpg', stage3: 'svc-stage3.jpg', gearbox: 'svc-gearbox.jpg' };
+    var mediaImg = document.querySelector('.result-top .media img');
+    if (mediaImg && stage && PHOTO[stage.id]) { mediaImg.src = 'images/' + PHOTO[stage.id]; mediaImg.alt = cap(STAGE_NAME[stage.id] || stage.label) + ', MIDO Performance'; }
     renderSpec(stage, q);
     // Formulário Contáctanos desta página já leva o veículo e a etapa
     var vehName = brand.name + ' ' + modeloParam + ' ' + motorParam;
@@ -102,21 +105,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var pu = s.power_unit || 'cv', tu = s.torque_unit || 'Nm';
     var hasPower = !isEco && s.power_orig != null && s.power_mod != null;
     var hasTorque = s.torque_orig != null && s.torque_mod != null;
-    var html = '<h2>Reprogramación</h2>';
-    if (hasPower) {
-      html += '<div class="spec-block"><h3>Potencia</h3>' +
-        row('Original', s.power_orig + ' ' + pu) +
-        row('Después de la optimización', s.power_mod + ' ' + pu, 'mod') +
-        row('Diferencia', '+' + s.power_diff + ' ' + pu, 'diff') + '</div>';
+    var fuel = isEco ? (s.fuel_saving || (typeof BRP_CONFIG !== 'undefined' && BRP_CONFIG.consumo_eco) || '') : '';
+    var cls = isEco ? ' eco' : '';
+    function tr(k, o, m, d) {
+      return '<tr><th scope="row">' + k + '</th><td>' + o + '</td><td class="mod' + cls + '">' + m + '</td><td class="diff' + cls + '">' + d + '</td></tr>';
     }
-    if (hasTorque) {
-      html += '<div class="spec-block"><h3>Par</h3>' +
-        row('Original', s.torque_orig + ' ' + tu) +
-        row('Después de la optimización', s.torque_mod + ' ' + tu, 'mod' + (isEco ? ' eco' : '')) +
-        row('Diferencia', '+' + s.torque_diff + ' ' + tu, 'diff' + (isEco ? ' eco' : '')) +
-        (isEco && s.fuel_saving ? row('Ahorro de combustible estimado', esc(s.fuel_saving), 'diff eco') : '') + '</div>';
-    }
-    if (!hasPower && !hasTorque) {
+    var html = '<h2>' + (isEco ? 'Reprogramación ECO' : 'Reprogramación') + '</h2>';
+    if (isEco) html += '<p class="note">Más par a bajas vueltas y menos consumo, sin cambiar la potencia máxima.</p>';
+    if (hasPower || hasTorque || fuel) {
+      html += '<div class="spec-table-wrap"><table class="spec-table"><thead><tr><th></th><th>Original</th><th>Modificado</th><th>Diferencia</th></tr></thead><tbody>';
+      if (hasPower) html += tr('Potencia', s.power_orig + ' ' + pu, s.power_mod + ' ' + pu, '+' + s.power_diff + ' ' + pu);
+      if (hasTorque) html += tr('Par', s.torque_orig + ' ' + tu, s.torque_mod + ' ' + tu, '+' + s.torque_diff + ' ' + tu);
+      if (fuel) {
+        var pct = parseInt(String(fuel).replace(/[^0-9]/g, ''), 10);
+        html += '<tr class="fuel"><th scope="row">Consumo</th><td>100%</td><td class="mod eco">' + (pct ? (100 - pct) + '%' : '') + '</td><td class="diff eco">' + (pct ? '-' + pct + '%' : esc(fuel)) + '</td></tr>';
+      }
+      html += '</tbody></table></div>';
+    } else {
       html += '<div class="spec-block"><p class="note">Reprogramación del software de la caja de cambios. Consúltanos los detalles para tu vehículo.</p></div>';
     }
     html += '<div class="spec-price"><h3>Precio</h3><div class="p">' +

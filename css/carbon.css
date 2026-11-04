@@ -930,7 +930,8 @@ body.nav-open.header-stuck .site-header { background: var(--bg); -webkit-backdro
   .hours td { display: block; padding: 0; text-align: left !important; }
   /* página de resultado: números primeiro */
   .result-top { padding-block: 32px 16px; gap: 0; }
-  .result-top .media { display: none; }
+  .result-top .media { display: block; order: -1; aspect-ratio: 2 / 1; margin: -16px calc(var(--gutter) * -1) 20px; border-radius: 0; clip-path: none !important; }
+  .spec-card h2 { font-size: 28px; }
   .result-top h1 { font-size: 34px; margin-top: 24px; }
   .stage-bar { padding-bottom: 20px; margin-inline: calc(var(--gutter) * -1); padding-inline: var(--gutter); }
   .stage-bar a { height: 46px; padding: 0 16px; }
@@ -1080,3 +1081,24 @@ body:has(.finder-panel:not([hidden])) .wa-bubble { opacity: 0 !important; pointe
 .notfound h1 { font-size: clamp(28px, 4vw, 44px); margin: 28px 0 12px; }
 .notfound p { color: var(--body); font-size: 18px; max-width: 560px; }
 .nf-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 24px; }
+
+/* Tabela de resultado (estilo comparativo Original / Modificado / Diferencia) */
+.spec-table-wrap { margin: 16px 0 8px; border-radius: var(--r-md); overflow: hidden; border: 1px solid var(--surface-3); }
+.spec-table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; table-layout: fixed; }
+.spec-table th, .spec-table td { padding: 14px 10px; text-align: right; font-size: 17px; border-bottom: 1px solid var(--surface-3); white-space: nowrap; }
+.spec-table thead th { background: var(--surface-2); color: #b0b0b3; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+.spec-table thead th:first-child, .spec-table tbody th { text-align: left; width: 24%; }
+.spec-table tbody th { color: #fff; font-weight: 600; }
+.spec-table tbody tr:last-child > * { border-bottom: 0; }
+.spec-table td { color: var(--body); }
+.spec-table td.mod { color: var(--red); font-weight: 700; }
+.spec-table td.diff { color: var(--red); }
+.spec-table td.eco { color: var(--green); }
+.spec-table tr.fuel { background: rgba(46, 204, 113, .07); }
+.stage-bar a.tab-eco { color: var(--green); font-style: italic; font-weight: 800; }
+.stage-bar a.tab-eco[aria-current] { background: var(--green); color: #0b0b0c; }
+@media (max-width: 560px) {
+  .spec-table th, .spec-table td { padding: 12px 6px; font-size: 14px; }
+  .spec-table thead th { font-size: 11px; letter-spacing: 0; }
+  .spec-table td.mod { font-size: 15px; }
+}

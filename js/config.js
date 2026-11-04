@@ -21,6 +21,8 @@ const BRP_CONFIG = {
     titulo_home: 'Home - MIDO Performance - Reprogramación de centralitas',
     descricao: 'Chiptuning y reprogramación profesional de centralitas en Bilbao.'
   },
+  // Redução de consumo mostrada na aba ECO do configurador (deixe '' para esconder)
+  consumo_eco: '-10%',
   links: {
     condicoes_venda: 'condiciones-de-venta.html',
     politica_privacidade: 'politica-de-privacidad.html'
