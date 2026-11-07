@@ -1161,3 +1161,14 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
   .main-nav li.sub-always > .sub-menu { display: block; padding: 0 0 14px 14px; border-left: 2px solid var(--red); border-radius: 0; margin: -6px 0 16px; }
   .main-nav li.sub-always > .sub-menu a { padding: 8px 0; color: var(--body); }
 }
+
+/* Árabe (direita para a esquerda) */
+[dir="rtl"] .ico svg, [dir="rtl"] .go svg, [dir="rtl"] .svc-card .go svg, [dir="rtl"] .finder-search .go svg, [dir="rtl"] .carousel-nav svg { transform: scaleX(-1); }
+[dir="rtl"] .wa-float { direction: ltr; }
+[dir="rtl"] .taller-list li { padding-left: 0; padding-right: 30px; }
+[dir="rtl"] .taller-list li::before { left: auto; right: 0; }
+[dir="rtl"] .main-nav li.sub-always > .sub-menu { border-left: 0; border-right: 2px solid var(--red); padding: 0 14px 14px 0; }
+[dir="rtl"] .sub-menu { left: auto; right: -12px; }
+[dir="rtl"] .spec-table th, [dir="rtl"] .spec-table td { text-align: left; }
+[dir="rtl"] .spec-table thead th:first-child, [dir="rtl"] .spec-table tbody th { text-align: right; }
+[dir="rtl"] .btn-back .ico svg { transform: none; }
