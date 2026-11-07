@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="stylesheet" href="css/carbon.css">
+  <script>try{var mpH=document.documentElement,mpOK={en:'en',nl:'nl',de:'de',fr:'fr',it:'it',el:'el',pt:'pt',zh:'zh-Hans'},mpL=new URLSearchParams(location.search).get('lang');if(mpL&&(mpOK[mpL]||mpL==='es'))localStorage.setItem('mpLang',mpL);mpL=localStorage.getItem('mpLang');if(mpOK[mpL]){mpH.lang=mpOK[mpL];mpH.setAttribute('data-lang',mpL);mpH.classList.add('i18n-wait');setTimeout(function(){mpH.classList.remove('i18n-wait')},2500);document.write('<script src="js/i18n-'+mpL+'.js?v=1"><\/script><script src="js/i18n.js?v=1"><\/script>')}}catch(e){}</script>
   <script>try{var n=performance.getEntriesByType('navigation')[0],rl=n?n.type==='reload':performance.navigation&&performance.navigation.type===1;if((rl||!sessionStorage.getItem('mpIntro'))&&!matchMedia('(prefers-reduced-motion: reduce)').matches){document.documentElement.classList.add('site-intro');sessionStorage.setItem('mpIntro','1')}}catch(e){}</script>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="images/icon-16.png" type="image/png" sizes="16x16">
@@ -22,6 +23,7 @@
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="MIDO Performance">
   <meta property="og:locale" content="es_ES">
+  <meta property="og:locale:alternate" content="en_GB">
   <meta property="og:image" content="https://midoperformance.es/images/og-mido.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -49,6 +51,7 @@
     <nav class="main-nav" id="main-nav" aria-label="Principal">
       <ul>
         <li data-match="vehiculos.html motos.html moto-agua.html lancha.html marca.html motor.html desarrollo.html banco-de-rodillos.html"><a href="vehiculos.html">Reprogramación</a></li>
+        <li data-match="taller.html"><a href="taller.html">Taller</a></li>
         <li data-match="piezas.html"><a href="piezas.html">Piezas performance</a></li>
         <li data-match="faq.html"><a href="faq.html">FAQ</a></li>
         <li data-match="noticias.html"><a href="noticias.html">Promos y noticias</a></li>
@@ -69,6 +72,22 @@
         Bilbao
         <svg class="chev" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
       </a>
+      <label class="lang-switch" data-no-i18n>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        <span class="sr-only">Idioma / Language</span>
+        <select data-lang-select aria-label="Idioma / Language">
+          <option value="es" lang="es">ES · Español</option>
+          <option value="en" lang="en">EN · English</option>
+          <option value="nl" lang="nl">NL · Nederlands</option>
+          <option value="de" lang="de">DE · Deutsch</option>
+          <option value="fr" lang="fr">FR · Français</option>
+          <option value="it" lang="it">IT · Italiano</option>
+          <option value="el" lang="el">EL · Ελληνικά</option>
+          <option value="pt" lang="pt">PT · Português</option>
+          <option value="zh" lang="zh-Hans">中文</option>
+        </select>
+        <span class="lang-cur" aria-hidden="true">ES</span>
+      </label>
       <a class="btn" href="contacto.html">Contacto <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
       <button class="icon-btn nav-burger" type="button" aria-label="Abrir menú" aria-controls="main-nav" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path class="l1" d="M4 7h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l2" d="M4 12h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path class="l3" d="M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
@@ -187,6 +206,7 @@
         <h4>Navegación</h4>
         <ul>
           <li><a href="vehiculos.html">Reprogramación</a></li>
+          <li><a href="taller.html">Taller: mecánica, chapa y diagnóstico</a></li>
           <li><a href="piezas.html">Piezas performance</a></li>
           <li><a href="noticias.html">Promos y noticias</a></li>
           <li><a href="faq.html">FAQ</a></li>

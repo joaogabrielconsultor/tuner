@@ -30,3 +30,12 @@ node tools/build-catalog.js
 ```
 python3 tools/sync-layout.py
 ```
+
+## Idiomas (ES, EN, NL, DE, FR, IT, EL, PT, 中文)
+
+O site é escrito em espanhol. Os outros idiomas são traduzidos no navegador, quando o visitante escolhe o idioma no seletor 🌐 do topo (a escolha fica guardada; também dá para mandar um link com `?lang=en`, `?lang=de`, etc.).
+
+- Textos traduzidos: `tools/i18n/<idioma>.json` (frase em espanhol → tradução).
+- Depois de editar, rode `python3 tools/build-i18n.py` para gerar `js/i18n-<idioma>.js`.
+- Texto novo em espanhol no site precisa de uma linha nova em cada JSON; para ver o que falta: `python3 tools/build-i18n.py --faltando de`.
+- Mensagens de WhatsApp continuam em espanhol (são para a oficina).
