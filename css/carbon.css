@@ -1178,3 +1178,20 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 .svc-page .kicker { display: block; }
 .split .btn-back { display: flex; width: max-content; }
 .split > div > .kicker { display: block; }
+
+/* Caso real (Chapa y pintura) */
+.paint-case { padding-block: 24px 96px; }
+.paint-case .kicker { display: inline-block; font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.paint-case h2 { margin: 8px 0 12px; font-size: 40px; line-height: 1.2; }
+@media (max-width: 768px) { .paint-case h2 { font-size: 28px; } }
+.paint-case > p { max-width: 720px; color: var(--body); margin: 0 0 32px; }
+.paint-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.paint-grid figure { margin: 0; }
+.paint-grid img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; border-radius: var(--r-lg, 16px); border: 1px solid var(--surface-3); display: block; }
+.paint-grid figcaption { margin-top: 10px; font-size: 15px; color: var(--body); }
+@media (max-width: 768px) {
+  .paint-case { padding-bottom: 64px; }
+  .paint-grid { grid-template-columns: minmax(0, 1fr); }
+  .paint-grid img { aspect-ratio: 4 / 3; }
+  .paint-grid figure:last-child img { aspect-ratio: 3 / 4; }
+}

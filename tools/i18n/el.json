@@ -560,7 +560,14 @@
   "Coche en el banco de potencia con el capó abierto durante un diagnóstico": "Αυτοκίνητο στο δυναμόμετρο με ανοιχτό καπό κατά τη διάγνωση",
   "Coche en el banco de potencia con la curva de potencia en pantalla": "Αυτοκίνητο στο δυναμόμετρο με την καμπύλη ισχύος στην οθόνη",
   "Vano motor de un coche abierto en el taller de MIDO Performance": "Ανοιχτός χώρος κινητήρα αυτοκινήτου στο συνεργείο της MIDO Performance",
-  "Pintor aplicando pintura con pistola en la carrocería de un coche": "Βαφέας ψεκάζει βαφή στο αμάξωμα αυτοκινήτου"
+  "Pintor aplicando pintura con pistola en la carrocería de un coche": "Βαφέας ψεκάζει βαφή στο αμάξωμα αυτοκινήτου",
+  "BMW M3 en nuestra cabina de pintura, imprimado y enmascarado": "BMW M3 στον θάλαμο βαφής μας, με αστάρι και μάσκαρισμα",
+  "Caso real": "Πραγματική περίπτωση",
+  "Un trabajo real de nuestro taller": "Μια πραγματική δουλειά από το συνεργείο μας",
+  "BMW M3 repintado por completo en blanco perlado: preparación, pintura en cabina y el resultado final.": "BMW M3 βαμμένη ολόκληρη σε λευκό περλέ: προετοιμασία, βαφή στον θάλαμο και το τελικό αποτέλεσμα.",
+  "Antes: el coche entra en la cabina": "Πριν: το αυτοκίνητο μπαίνει στον θάλαμο",
+  "Preparación: imprimación y enmascarado": "Προετοιμασία: αστάρι και μάσκαρισμα",
+  "Resultado: blanco perlado con efecto tornasol": "Αποτέλεσμα: λευκό περλέ με ιριδίζον εφέ"
  },
  "patterns": [
   [

@@ -560,7 +560,14 @@
   "Coche en el banco de potencia con el capó abierto durante un diagnóstico": "سيارة على جهاز قياس القدرة وغطاء المحرك مفتوح أثناء التشخيص",
   "Coche en el banco de potencia con la curva de potencia en pantalla": "سيارة على جهاز قياس القدرة ومنحنى القدرة على الشاشة",
   "Vano motor de un coche abierto en el taller de MIDO Performance": "حجرة محرك سيارة مفتوحة في ورشة MIDO Performance",
-  "Pintor aplicando pintura con pistola en la carrocería de un coche": "دهّان يرش الطلاء بالمسدس على هيكل سيارة"
+  "Pintor aplicando pintura con pistola en la carrocería de un coche": "دهّان يرش الطلاء بالمسدس على هيكل سيارة",
+  "BMW M3 en nuestra cabina de pintura, imprimado y enmascarado": "BMW M3 في كابينة الدهان لدينا بعد الطبقة الأساسية والتغطية",
+  "Caso real": "حالة حقيقية",
+  "Un trabajo real de nuestro taller": "عمل حقيقي من ورشتنا",
+  "BMW M3 repintado por completo en blanco perlado: preparación, pintura en cabina y el resultado final.": "BMW M3 أعيد دهانها بالكامل بالأبيض اللؤلؤي: التحضير، والدهان في الكابينة، والنتيجة النهائية.",
+  "Antes: el coche entra en la cabina": "قبل: السيارة تدخل الكابينة",
+  "Preparación: imprimación y enmascarado": "التحضير: الطبقة الأساسية والتغطية",
+  "Resultado: blanco perlado con efecto tornasol": "النتيجة: أبيض لؤلؤي بتأثير متقزّح"
  },
  "patterns": [
   [
