@@ -1176,3 +1176,5 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 @media (max-width: 900px) { .taller-grid { grid-template-columns: minmax(0, 1fr); padding-bottom: 64px; } .taller-grid .svc-card { aspect-ratio: 16 / 10; } }
 .svc-page .btn-back { display: flex; width: max-content; margin-bottom: 28px; }
 .svc-page .kicker { display: block; }
+.split .btn-back { display: flex; width: max-content; }
+.split > div > .kicker { display: block; }

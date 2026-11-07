@@ -556,7 +556,9 @@
   "MIDO Performance | Diagnóstico y reparación de averías ocultas": "MIDO Performance | تشخيص وإصلاح الأعطال الخفية",
   "Mecánica en Bilbao: revisiones, mantenimiento, frenos, embrague, distribución y reparaciones de cualquier marca. Con cita previa en MIDO Performance.": "الميكانيك في بلباو: فحوصات وصيانة وفرامل وقابض وسير توقيت وإصلاحات لجميع الماركات. بموعد مسبق لدى MIDO Performance.",
   "Chapa y pintura en Bilbao: golpes, abolladuras, arañazos y pintura igualando el color de fábrica. Presupuesto sin compromiso en MIDO Performance.": "السمكرة والدهان في بلباو: الصدمات والانبعاجات والخدوش والدهان بلون المصنع. عرض سعر دون التزام لدى MIDO Performance.",
-  "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "تشخيص الأعطال في بلباو: أضواء التحذير وفقدان القدرة والارتجاج والأعطال المتقطعة. قراءة وحدة التحكم واختبارات على جهاز قياس القدرة."
+  "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "تشخيص الأعطال في بلباو: أضواء التحذير وفقدان القدرة والارتجاج والأعطال المتقطعة. قراءة وحدة التحكم واختبارات على جهاز قياس القدرة.",
+  "Coche en el banco de potencia con el capó abierto durante un diagnóstico": "سيارة على جهاز قياس القدرة وغطاء المحرك مفتوح أثناء التشخيص",
+  "Coche en el banco de potencia con la curva de potencia en pantalla": "سيارة على جهاز قياس القدرة ومنحنى القدرة على الشاشة"
  },
  "patterns": [
   [

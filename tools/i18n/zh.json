@@ -556,7 +556,9 @@
   "MIDO Performance | Diagnóstico y reparación de averías ocultas": "MIDO Performance | 隐性故障诊断与维修",
   "Mecánica en Bilbao: revisiones, mantenimiento, frenos, embrague, distribución y reparaciones de cualquier marca. Con cita previa en MIDO Performance.": "毕尔巴鄂机修：各品牌车辆的检查、保养、刹车、离合器、正时及维修。MIDO Performance 预约服务。",
   "Chapa y pintura en Bilbao: golpes, abolladuras, arañazos y pintura igualando el color de fábrica. Presupuesto sin compromiso en MIDO Performance.": "毕尔巴鄂钣金与喷漆：碰撞、凹陷、划痕修复，按原厂颜色喷漆。MIDO Performance 免费报价。",
-  "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "毕尔巴鄂故障诊断：仪表盘故障灯、动力下降、顿挫和间歇性故障。ECU 读取与测功机测试。"
+  "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "毕尔巴鄂故障诊断：仪表盘故障灯、动力下降、顿挫和间歇性故障。ECU 读取与测功机测试。",
+  "Coche en el banco de potencia con el capó abierto durante un diagnóstico": "诊断时打开引擎盖、停在测功机上的汽车",
+  "Coche en el banco de potencia con la curva de potencia en pantalla": "停在测功机上的汽车，屏幕上显示功率曲线"
  },
  "patterns": [
   [
