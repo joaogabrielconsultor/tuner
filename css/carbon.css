@@ -1172,3 +1172,7 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 [dir="rtl"] .spec-table th, [dir="rtl"] .spec-table td { text-align: left; }
 [dir="rtl"] .spec-table thead th:first-child, [dir="rtl"] .spec-table tbody th { text-align: right; }
 [dir="rtl"] .btn-back .ico svg { transform: none; }
+.taller-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; padding-block: 24px 96px; }
+@media (max-width: 900px) { .taller-grid { grid-template-columns: minmax(0, 1fr); padding-bottom: 64px; } .taller-grid .svc-card { aspect-ratio: 16 / 10; } }
+.svc-page .btn-back { display: flex; width: max-content; margin-bottom: 28px; }
+.svc-page .kicker { display: block; }

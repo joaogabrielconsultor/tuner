@@ -550,7 +550,13 @@
   "La": "L'",
   "El": "L'",
   "y": "e",
-  "Mapa": "Mappa"
+  "Mapa": "Mappa",
+  "MIDO Performance | Mecánica": "MIDO Performance | Meccanica",
+  "MIDO Performance | Chapa y pintura": "MIDO Performance | Carrozzeria e verniciatura",
+  "MIDO Performance | Diagnóstico y reparación de averías ocultas": "MIDO Performance | Diagnosi e riparazione di guasti nascosti",
+  "Mecánica en Bilbao: revisiones, mantenimiento, frenos, embrague, distribución y reparaciones de cualquier marca. Con cita previa en MIDO Performance.": "Meccanica a Bilbao: tagliandi, manutenzione, freni, frizione, distribuzione e riparazioni di qualsiasi marca. Su appuntamento da MIDO Performance.",
+  "Chapa y pintura en Bilbao: golpes, abolladuras, arañazos y pintura igualando el color de fábrica. Presupuesto sin compromiso en MIDO Performance.": "Carrozzeria e verniciatura a Bilbao: urti, ammaccature, graffi e verniciatura con il colore di fabbrica. Preventivo senza impegno da MIDO Performance.",
+  "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "Diagnosi guasti a Bilbao: spie accese, perdite di potenza, strattoni e guasti intermittenti. Lettura della centralina e prove al banco prova."
  },
  "patterns": [
   [
