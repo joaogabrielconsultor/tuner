@@ -1146,4 +1146,5 @@ html.i18n-wait body { visibility: hidden; }
 .lang-switch:focus-within { outline: 2px solid var(--red); outline-offset: 2px; }
 @media (max-width: 480px) { .lang-switch { height: 36px; padding: 0 8px; } }
 /* palavras longas em outros idiomas (alemão, holandês, grego) não estouram os cards */
-h1, h2, h3, h4 { overflow-wrap: break-word; hyphens: auto; }
+h1, h2, h3, h4 { overflow-wrap: break-word; }
+html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
