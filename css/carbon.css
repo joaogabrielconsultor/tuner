@@ -1148,3 +1148,16 @@ html.i18n-wait body { visibility: hidden; }
 /* palavras longas em outros idiomas (alemão, holandês, grego) não estouram os cards */
 h1, h2, h3, h4 { overflow-wrap: break-word; }
 html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
+
+/* Submenu do Taller: abre ao passar o mouse no computador; no celular fica sempre visível */
+.main-nav > ul > li > a .chev { width: 10px; height: 10px; opacity: .7; transition: transform .2s; }
+@media (min-width: 1181px) {
+  .main-nav li.has-sub:hover > .sub-menu, .main-nav li.has-sub:focus-within > .sub-menu { opacity: 1; visibility: visible; transform: none; }
+  .main-nav li.has-sub:hover > a .chev { transform: rotate(180deg); }
+  .sub-menu { min-width: 300px; }
+}
+@media (max-width: 1180px) {
+  .main-nav > ul > li > a .chev { display: none; }
+  .main-nav li.sub-always > .sub-menu { display: block; padding: 0 0 14px 14px; border-left: 2px solid var(--red); border-radius: 0; margin: -6px 0 16px; }
+  .main-nav li.sub-always > .sub-menu a { padding: 8px 0; color: var(--body); }
+}
