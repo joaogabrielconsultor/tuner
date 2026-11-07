@@ -23,6 +23,13 @@ const BRP_CONFIG = {
   },
   // Redução de consumo mostrada na aba ECO do configurador (deixe '' para esconder)
   consumo_eco: '-10%',
+  // Servicio de archivos para talleres (archivos.html)
+  archivos: {
+    email: '',          // e-mail que recebe os pedidos com o arquivo (ex.: 'archivos@midoperformance.es'); vazio = pedido vai pelo WhatsApp
+    credito_eur: 0,     // valor de 1 crédito em euros (0 = mostrar só créditos)
+    paypal: '',         // usuário do PayPal.me (ex.: 'midoperformance'); vazio = sem botão de PayPal
+    entrega: '30–60 min'
+  },
   links: {
     condicoes_venda: 'condiciones-de-venta.html',
     politica_privacidade: 'politica-de-privacidad.html'

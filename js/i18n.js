@@ -53,7 +53,7 @@
     var n;
     while ((n = w.nextNode())) {
       if (n.nodeType === 3) doText(n);
-      else if (!SKIP[n.nodeName]) doEl(n);
+      else if (!SKIP[n.nodeName] || n.nodeName === 'TEXTAREA') doEl(n);
     }
   }
 
