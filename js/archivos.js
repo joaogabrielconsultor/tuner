@@ -107,10 +107,26 @@
   function fail(msg, el) { err.textContent = msg; err.hidden = false; if (el) { el.focus(); el.scrollIntoView({ block: 'center', behavior: 'smooth' }); } }
   function v(id) { return document.getElementById(id).value.trim(); }
 
+  // Modo vitrine: com o portal configurado, esta página só apresenta o serviço e o botão leva ao portal
+  if (CFG.portal) {
+    form.querySelectorAll('.files-step').forEach(function (f, i) { if (i === 0 || i === 3) f.hidden = true; });
+    document.getElementById('f-terms').closest('label').hidden = true;
+    emisWrap.remove();
+    var btn = document.getElementById('f-send');
+    btn.firstChild.nodeValue = 'Continuar al portal ';
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     err.hidden = true;
     var s = state();
+    if (CFG.portal) {
+      var u = new URL(CFG.portal);
+      if (s.t) u.searchParams.set('tuning', s.t.value);
+      if (s.xs.length) u.searchParams.set('opciones', s.xs.map(function (x) { return x.value; }).join('|'));
+      location.href = u.toString();
+      return;
+    }
     var req = ['f-marca', 'f-modelo', 'f-motor', 'f-ecu'];
     for (var i = 0; i < req.length; i++) if (!v(req[i])) return fail('Completa los datos del vehículo.', document.getElementById(req[i]));
     if (!file.files[0] && CFG.email) return fail('Adjunta el archivo original de la centralita.', file);

@@ -647,7 +647,8 @@
   "Pagar con PayPal": "الدفع عبر PayPal",
   "Immo off (si es posible)": "Immo off (إن أمكن)",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "السعر النهائي حسب المركبة؛ نؤكده لك قبل الدفع.",
-  "Mínimo 60 € si solo eliges funciones.": "الحد الأدنى 60 € إذا اخترت وظائف فقط."
+  "Mínimo 60 € si solo eliges funciones.": "الحد الأدنى 60 € إذا اخترت وظائف فقط.",
+  "Continuar al portal": "المتابعة إلى البوابة"
  },
  "patterns": [
   [

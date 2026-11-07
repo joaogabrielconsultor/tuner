@@ -27,7 +27,8 @@ const BRP_CONFIG = {
   archivos: {
     email: '',          // e-mail que recebe os pedidos com o arquivo (ex.: 'archivos@midoperformance.es'); vazio = pedido vai pelo WhatsApp
     paypal: '',         // usuário do PayPal.me (ex.: 'midoperformance'); vazio = sem botão de PayPal
-    entrega: '30–60 min'
+    entrega: '30–60 min',
+    portal: ''          // endereço do portal com login (ex.: 'https://archivos.midoperformance.es'); preenchido = botão "Continuar al portal"
   },
   links: {
     condicoes_venda: 'condiciones-de-venta.html',

@@ -647,7 +647,8 @@
   "Pagar con PayPal": "Mit PayPal bezahlen",
   "Immo off (si es posible)": "Immo off (wenn möglich)",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "Der Endpreis hängt vom Fahrzeug ab; wir bestätigen ihn vor der Zahlung.",
-  "Mínimo 60 € si solo eliges funciones.": "Mindestens 60 €, wenn Sie nur Funktionen wählen."
+  "Mínimo 60 € si solo eliges funciones.": "Mindestens 60 €, wenn Sie nur Funktionen wählen.",
+  "Continuar al portal": "Weiter zum Portal"
  },
  "patterns": [
   [

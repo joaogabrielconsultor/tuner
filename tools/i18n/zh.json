@@ -647,7 +647,8 @@
   "Pagar con PayPal": "使用 PayPal 支付",
   "Immo off (si es posible)": "Immo off（如可行）",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "最终价格视车辆而定，付款前我们会与您确认。",
-  "Mínimo 60 € si solo eliges funciones.": "仅选择功能时最低 60 €。"
+  "Mínimo 60 € si solo eliges funciones.": "仅选择功能时最低 60 €。",
+  "Continuar al portal": "前往订购平台"
  },
  "patterns": [
   [
