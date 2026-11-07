@@ -1,29 +1,31 @@
 // MIDO Performance — Servicio de archivos para talleres (archivos.html)
-// Preços em créditos. Para mudar preços/opções, edite as listas abaixo.
-// Para mudar e-mail, valor do crédito e PayPal: js/config.js -> archivos
+// Preços em euros ("desde": o preço final depende do veículo e é confirmado antes do pagamento).
+// Para mudar preços/opções, edite as listas abaixo. E-mail e PayPal: js/config.js -> archivos
 (function () {
   var form = document.getElementById('files-form');
   if (!form) return;
   var CFG = (typeof BRP_CONFIG !== 'undefined' && BRP_CONFIG.archivos) || {};
   var WA = '393758172444';
 
-  // [id, nome, créditos]
+  var EXTRA_EUR = 20;   // cada função extra: desde +20 € (o Mido falou em 20–30 €)
+  var MIN_SOLO = 60;    // só funções, sem stage: mínimo 60 €
+  // [id, nome, preço desde em € (null = consultar), só opções?]
   var TUNING = [
-    ['stage1', 'Stage 1 (coche)', 1],
-    ['stage2', 'Stage 2 (coche)', 1.5],
-    ['stage3', 'Stage 3 (coche)', 5],
-    ['opt-car', 'Solo opciones (coche)', 0],
-    ['truck1', 'Camión / agrícola Stage 1', 1],
-    ['opt-truck', 'Solo opciones (camión / agrícola)', 0],
-    ['bike1', 'Moto y quad Stage 1', 1],
-    ['opt-bike', 'Solo opciones (moto y quad)', 0],
-    ['tcu', 'Caja automática (TCU): más par y cambios más rápidos', 1],
-    ['cpc', 'CPC tuning', 1],
-    ['opt-tcu', 'Solo opciones (TCU)', 0],
-    ['e85', 'Conversión E85', 2],
-    ['stock', 'Volver a original', 0.5]
+    ['stage1', 'Stage 1 (coche)', 60],
+    ['stage2', 'Stage 2 (coche)', null],
+    ['stage3', 'Stage 3 (coche)', null],
+    ['opt-car', 'Solo opciones (coche)', 0, 1],
+    ['truck1', 'Camión / agrícola Stage 1', null],
+    ['opt-truck', 'Solo opciones (camión / agrícola)', 0, 1],
+    ['bike1', 'Moto y quad Stage 1', null],
+    ['opt-bike', 'Solo opciones (moto y quad)', 0, 1],
+    ['tcu', 'Caja automática (TCU): más par y cambios más rápidos', null],
+    ['cpc', 'CPC tuning', null],
+    ['opt-tcu', 'Solo opciones (TCU)', 0, 1],
+    ['e85', 'Conversión E85', null],
+    ['stock', 'Volver a original', null]
   ];
-  // [nome, créditos, emissões?]
+  // [nome, (não usado), emissões?]  — todas as funções custam desde +EXTRA_EUR
   var EXTRAS = [
     ['Active Grill Shutter', 0.2], ['AdBlue off', 1, 1], ['Anti Lag', 1], ['Checksum', 0.2],
     ['Cylinder on Demand off', 0.2], ['DPF off', 0.5, 1], ['DPF off + EGR off', 0.5, 1], ['DSG Farts', 0.5],
@@ -31,26 +33,22 @@
     ['Full Emission (DPF / EGR / AdBlue)', 1.2, 1], ['Hard Cut limiter', 0.5], ['Hot Start', 0.2], ['Idle RPM', 0.2],
     ['Launch Control', 0.5], ['Vmax limitada a una velocidad', 0.5], ['MAF (off o escalado)', 0.2], ['Max RPM', 0.1],
     ['Neutral RPM', 0.2], ['NOx off', 0.5, 1], ['Oil Pressure', 0.2], ['Performance Gauge (BMW / Mini / VAG)', 0],
-    ['Pop & Bang / Crackle map', 1], ['Readiness Monitor', 0.5, 1], ['Secondary Air Pump off', 0.2, 1], ['Smart Regeneration', 1],
+    ['Pop & Bang / Crackle map', 1], ['Immo off (si es posible)', 1], ['Readiness Monitor', 0.5, 1], ['Secondary Air Pump off', 0.2, 1], ['Smart Regeneration', 1],
     ['Start / Stop off', 0.2], ['Swirl Flaps off', 0.2], ['Thermal Control', 0.2], ['Vmax off', 0],
     ['Warranty Patch (BMW / Mini / VAG)', 0.5]
   ];
 
-  function fmt(n) { return (Math.round(n * 10) / 10).toString().replace('.', ','); }
-  function cred(n) {
-    if (!n) return 'gratis';
-    return fmt(n) + (n === 1 ? ' crédito' : ' créditos');
-  }
-  function eur(n) { return CFG.credito_eur ? Math.round(n * CFG.credito_eur * 100) / 100 : 0; }
+  function tPrice(p, solo) { return solo ? 'mínimo ' + MIN_SOLO + ' €' : (p == null ? 'Consultar' : 'desde ' + p + ' €'); }
+  var xPrice = '+' + EXTRA_EUR + ' €';
 
   var tList = document.getElementById('tuning-list');
   var xList = document.getElementById('extra-list');
   tList.innerHTML = TUNING.map(function (t) {
-    return '<label class="opt"><input type="radio" name="Tipo de tuning" value="' + t[1] + '" data-c="' + t[2] + '"><span class="opt-name">' + t[1] + '</span><span class="opt-price">' + cred(t[2]) + '</span></label>';
+    return '<label class="opt"><input type="radio" name="Tipo de tuning" value="' + t[1] + '" data-p="' + (t[2] == null ? '' : t[2]) + '"' + (t[3] ? ' data-solo="1"' : '') + '><span class="opt-name">' + t[1] + '</span><span class="opt-price">' + tPrice(t[2], t[3]) + '</span></label>';
   }).join('');
   xList.innerHTML = EXTRAS.map(function (x) {
-    return '<label class="opt" data-name="' + x[0].toLowerCase() + '"><input type="checkbox" name="Opciones[]" value="' + x[0] + '" data-c="' + x[1] + '"' + (x[2] ? ' data-emis="1"' : '') + '><span class="opt-name">' + x[0] +
-      (x[2] ? ' <span class="opt-tag">Solo competición</span>' : '') + '</span><span class="opt-price">' + cred(x[1]) + '</span></label>';
+    return '<label class="opt" data-name="' + x[0].toLowerCase() + '"><input type="checkbox" name="Opciones[]" value="' + x[0] + '"' + (x[2] ? ' data-emis="1"' : '') + '><span class="opt-name">' + x[0] +
+      (x[2] ? ' <span class="opt-tag">Solo competición</span>' : '') + '</span><span class="opt-price">' + xPrice + '</span></label>';
   }).join('');
 
   document.querySelectorAll('[data-cfg-files="entrega"]').forEach(function (el) { if (CFG.entrega) el.textContent = CFG.entrega; });
@@ -79,16 +77,25 @@
   function state() {
     var t = form.querySelector('input[name="Tipo de tuning"]:checked');
     var xs = Array.prototype.slice.call(form.querySelectorAll('input[name="Opciones[]"]:checked'));
-    var total = (t ? +t.getAttribute('data-c') : 0) + xs.reduce(function (a, x) { return a + +x.getAttribute('data-c'); }, 0);
-    return { t: t, xs: xs, total: total, emis: xs.some(function (x) { return x.hasAttribute('data-emis'); }) };
+    var solo = t && t.hasAttribute('data-solo');
+    var base = t ? (t.getAttribute('data-p') === '' ? null : +t.getAttribute('data-p')) : 0;
+    var total = base == null ? null : base + xs.length * EXTRA_EUR;
+    if (solo) total = Math.max(MIN_SOLO, xs.length * EXTRA_EUR);
+    return { t: t, xs: xs, solo: solo, base: base, total: total, emis: xs.some(function (x) { return x.hasAttribute('data-emis'); }) };
+  }
+  function totalText(s) {
+    if (!s.t) return '—';
+    if (s.total == null) return 'Consultar';
+    return 'desde ' + s.total + ' €';
   }
   function render() {
     var s = state(), rows = [];
-    if (s.t) rows.push('<li><span>' + s.t.value + '</span><b>' + cred(+s.t.getAttribute('data-c')) + '</b></li>');
-    s.xs.forEach(function (x) { rows.push('<li><span>' + x.value + '</span><b>' + cred(+x.getAttribute('data-c')) + '</b></li>'); });
+    if (s.t) rows.push('<li><span>' + s.t.value + '</span><b>' + (s.solo ? '' : (s.base == null ? 'Consultar' : 'desde ' + s.base + ' €')) + '</b></li>');
+    s.xs.forEach(function (x) { rows.push('<li><span>' + x.value + '</span><b>' + xPrice + '</b></li>'); });
     sumList.innerHTML = rows.length ? rows.join('') : '<li class="muted">Elige un tipo de tuning</li>';
-    sumTotal.textContent = cred(s.total) === 'gratis' ? '0 créditos' : cred(s.total);
-    if (CFG.credito_eur && s.total) { sumEur.hidden = false; sumEur.textContent = '≈ ' + fmt(eur(s.total)) + ' € (IVA incl.)'; } else sumEur.hidden = true;
+    sumTotal.textContent = totalText(s);
+    sumEur.hidden = false;
+    sumEur.textContent = s.solo ? 'Mínimo ' + MIN_SOLO + ' € si solo eliges funciones.' : 'Precio final según el vehículo; te lo confirmamos antes del pago.';
     emisWrap.hidden = !s.emis;
     form.querySelectorAll('.opt').forEach(function (o) { o.classList.toggle('on', o.querySelector('input').checked); });
   }
@@ -117,9 +124,9 @@
     var lines = [
       'Vehículo: ' + [v('f-marca'), v('f-modelo'), v('f-motor'), v('f-anio')].filter(Boolean).join(' '),
       'Caja: ' + v('f-caja'), 'ECU: ' + v('f-ecu'), 'Lectura: ' + v('f-tool'),
-      'Tuning: ' + s.t.value + ' (' + cred(+s.t.getAttribute('data-c')) + ')',
+      'Tuning: ' + s.t.value,
       'Opciones: ' + (s.xs.length ? s.xs.map(function (x) { return x.value; }).join(', ') : 'ninguna'),
-      'Total: ' + cred(s.total) + (CFG.credito_eur ? ' (≈ ' + fmt(eur(s.total)) + ' €)' : ''),
+      'Precio: ' + totalText(s),
       'Taller: ' + v('f-taller') + ' · ' + v('f-nombre') + ' · ' + v('f-email') + ' · ' + v('f-tel')
     ];
     if (v('f-notas')) lines.push('Comentarios: ' + v('f-notas'));

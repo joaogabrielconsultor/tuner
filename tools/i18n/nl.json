@@ -644,9 +644,20 @@
   "Revisa el email.": "Controleer het e-mailadres.",
   "Confirma el aviso sobre las opciones de emisiones.": "Bevestig de melding over de emissie-opties.",
   "Acepta las condiciones de venta.": "Ga akkoord met de verkoopvoorwaarden.",
-  "Pagar con PayPal": "Betalen met PayPal"
+  "Pagar con PayPal": "Betalen met PayPal",
+  "Immo off (si es posible)": "Immo off (indien mogelijk)",
+  "Precio final según el vehículo; te lo confirmamos antes del pago.": "De eindprijs hangt af van het voertuig; we bevestigen hem vóór de betaling.",
+  "Mínimo 60 € si solo eliges funciones.": "Minimaal 60 € als je alleen functies kiest."
  },
  "patterns": [
+  [
+   "desde ([0-9]+) €",
+   "vanaf $1 €"
+  ],
+  [
+   "mínimo ([0-9]+) €",
+   "minimaal $1 €"
+  ],
   [
    "1 crédito",
    "1 credit"

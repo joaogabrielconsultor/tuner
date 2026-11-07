@@ -644,9 +644,20 @@
   "Revisa el email.": "Ελέγξτε το e-mail.",
   "Confirma el aviso sobre las opciones de emisiones.": "Επιβεβαιώστε την ειδοποίηση για τις επιλογές εκπομπών.",
   "Acepta las condiciones de venta.": "Αποδεχτείτε τους όρους πώλησης.",
-  "Pagar con PayPal": "Πληρωμή με PayPal"
+  "Pagar con PayPal": "Πληρωμή με PayPal",
+  "Immo off (si es posible)": "Immo off (αν είναι δυνατό)",
+  "Precio final según el vehículo; te lo confirmamos antes del pago.": "Η τελική τιμή εξαρτάται από το όχημα· την επιβεβαιώνουμε πριν την πληρωμή.",
+  "Mínimo 60 € si solo eliges funciones.": "Ελάχιστο 60 € αν επιλέξετε μόνο λειτουργίες."
  },
  "patterns": [
+  [
+   "desde ([0-9]+) €",
+   "από $1 €"
+  ],
+  [
+   "mínimo ([0-9]+) €",
+   "ελάχιστο $1 €"
+  ],
   [
    "1 crédito",
    "1 μονάδα"

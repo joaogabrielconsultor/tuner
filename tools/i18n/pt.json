@@ -354,7 +354,7 @@
   "se aplican a todas nuestras entregas y servicios.": "aplicam-se a todas as nossas entregas e serviços.",
   "Pedir cita": "Marcar",
   "Potencia": "Potência",
-  "Consultar": "Consultar",
+  "Consultar": "Sob consulta",
   "MIDO Performance | Motos y quads": "MIDO Performance | Motas e quads",
   "Moto en el banco de potencia de MIDO Performance": "Mota no banco de potência da MIDO Performance",
   "Reprogramación de motos y quads": "Reprogramação de motas e quads",
@@ -644,9 +644,20 @@
   "Revisa el email.": "Verifique o e-mail.",
   "Confirma el aviso sobre las opciones de emisiones.": "Confirme o aviso sobre as opções de emissões.",
   "Acepta las condiciones de venta.": "Aceite as condições de venda.",
-  "Pagar con PayPal": "Pagar com PayPal"
+  "Pagar con PayPal": "Pagar com PayPal",
+  "Immo off (si es posible)": "Immo off (se possível)",
+  "Precio final según el vehículo; te lo confirmamos antes del pago.": "Preço final conforme o veículo; confirmamos antes do pagamento.",
+  "Mínimo 60 € si solo eliges funciones.": "Mínimo 60 € se escolher só funções."
  },
  "patterns": [
+  [
+   "desde ([0-9]+) €",
+   "desde $1 €"
+  ],
+  [
+   "mínimo ([0-9]+) €",
+   "mínimo $1 €"
+  ],
   [
    "1 crédito",
    "1 crédito"

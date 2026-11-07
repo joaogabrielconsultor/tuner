@@ -644,9 +644,20 @@
   "Revisa el email.": "Vérifiez l'e-mail.",
   "Confirma el aviso sobre las opciones de emisiones.": "Confirmez l'avertissement sur les options d'émissions.",
   "Acepta las condiciones de venta.": "Acceptez les conditions de vente.",
-  "Pagar con PayPal": "Payer avec PayPal"
+  "Pagar con PayPal": "Payer avec PayPal",
+  "Immo off (si es posible)": "Immo off (si possible)",
+  "Precio final según el vehículo; te lo confirmamos antes del pago.": "Prix final selon le véhicule ; nous le confirmons avant le paiement.",
+  "Mínimo 60 € si solo eliges funciones.": "Minimum 60 € si vous ne choisissez que des fonctions."
  },
  "patterns": [
+  [
+   "desde ([0-9]+) €",
+   "à partir de $1 €"
+  ],
+  [
+   "mínimo ([0-9]+) €",
+   "minimum $1 €"
+  ],
   [
    "1 crédito",
    "1 crédit"

@@ -644,9 +644,20 @@
   "Revisa el email.": "请检查电子邮箱。",
   "Confirma el aviso sobre las opciones de emisiones.": "请确认排放选项的提示。",
   "Acepta las condiciones de venta.": "请接受销售条款。",
-  "Pagar con PayPal": "使用 PayPal 支付"
+  "Pagar con PayPal": "使用 PayPal 支付",
+  "Immo off (si es posible)": "Immo off（如可行）",
+  "Precio final según el vehículo; te lo confirmamos antes del pago.": "最终价格视车辆而定，付款前我们会与您确认。",
+  "Mínimo 60 € si solo eliges funciones.": "仅选择功能时最低 60 €。"
  },
  "patterns": [
+  [
+   "desde ([0-9]+) €",
+   "$1 € 起"
+  ],
+  [
+   "mínimo ([0-9]+) €",
+   "最低 $1 €"
+  ],
   [
    "1 crédito",
    "1 积分"
