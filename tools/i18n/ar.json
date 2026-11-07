@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "سيارة بغطاء محرك مفتوح أثناء التشخيص",
   "Software propio, comprobado en banco de potencia": "برامجنا الخاصة، مختبرة على جهاز قياس القدرة",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "أضواء تحذير مضاءة في لوحة العدادات، فقدان القدرة، ارتجاج، أعطال تظهر وتختفي أو أصوات لا يجد أحد مصدرها. نوصل جهاز التشخيص ونبحث عن السبب الحقيقي قبل تغيير أي قطعة.",
-  "Comprobado": "مُختبر"
+  "Comprobado": "مُختبر",
+  "Copiar email": "نسخ البريد الإلكتروني"
  },
  "patterns": [
   [

@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "诊断时打开引擎盖的汽车",
   "Software propio, comprobado en banco de potencia": "自主软件，经测功机验证",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "仪表盘故障灯亮起、动力下降、顿挫、时有时无的故障或找不到原因的异响。我们连接诊断设备，在更换零件之前找到真正的原因。",
-  "Comprobado": "经过验证"
+  "Comprobado": "经过验证",
+  "Copiar email": "复制邮箱"
  },
  "patterns": [
   [

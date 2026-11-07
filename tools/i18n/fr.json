@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "Voiture capot ouvert pendant un diagnostic",
   "Software propio, comprobado en banco de potencia": "Logiciel maison, vérifié au banc de puissance",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Voyants allumés au tableau de bord, pertes de puissance, à-coups, pannes qui vont et viennent ou bruits que personne ne trouve. Nous branchons l'outil de diagnostic et cherchons la vraie cause avant de changer des pièces.",
-  "Comprobado": "Vérifié"
+  "Comprobado": "Vérifié",
+  "Copiar email": "Copier l'e-mail"
  },
  "patterns": [
   [

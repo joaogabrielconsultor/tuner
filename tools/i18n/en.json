@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "Car with the bonnet open during a diagnosis",
   "Software propio, comprobado en banco de potencia": "Our own software, tested on a dynamometer",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Warning lights on the dashboard, loss of power, juddering, faults that come and go, or noises nobody can find. We connect our diagnostic equipment and find the real cause before replacing any parts.",
-  "Comprobado": "Tested"
+  "Comprobado": "Tested",
+  "Copiar email": "Copy email"
  },
  "patterns": [
   [

@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "Auto mit offener Motorhaube bei einer Diagnose",
   "Software propio, comprobado en banco de potencia": "Eigene Software, auf dem Leistungsprüfstand geprüft",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Leuchtende Warnlampen im Cockpit, Leistungsverlust, Ruckeln, Fehler, die kommen und gehen, oder Geräusche, die niemand findet. Wir schließen das Diagnosegerät an und suchen die eigentliche Ursache, bevor Teile getauscht werden.",
-  "Comprobado": "Geprüft"
+  "Comprobado": "Geprüft",
+  "Copiar email": "E-Mail kopieren"
  },
  "patterns": [
   [

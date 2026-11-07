@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "Αυτοκίνητο με ανοιχτό καπό κατά τη διάγνωση",
   "Software propio, comprobado en banco de potencia": "Δικό μας λογισμικό, ελεγμένο σε δυναμόμετρο",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Αναμμένες λυχνίες στο ταμπλό, απώλεια ισχύος, τινάγματα, βλάβες που πάνε κι έρχονται ή θόρυβοι που κανείς δεν βρίσκει. Συνδέουμε τον διαγνωστικό εξοπλισμό και βρίσκουμε την πραγματική αιτία πριν αλλάξουμε ανταλλακτικά.",
-  "Comprobado": "Ελεγμένο"
+  "Comprobado": "Ελεγμένο",
+  "Copiar email": "Αντιγραφή e-mail"
  },
  "patterns": [
   [

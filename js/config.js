@@ -9,7 +9,7 @@ const BRP_CONFIG = {
     morada_linha2: '48012 Errekalde, Bilbao, Bizkaia',
     telefone: '+39 375 817 2444',
     telefone_link: 'tel:+393758172444',
-    email: '', // sem e-mail por enquanto (o da BR foi retirado)
+    email: 'mido-performance@hotmail.com',
     horario: 'Lunes–Viernes: 9:00–13:00 y 15:00–19:00 | Sábado: 10:00–15:00 | Domingo: Cerrado'
   },
   redes: {
@@ -25,7 +25,7 @@ const BRP_CONFIG = {
   consumo_eco: '',
   // Servicio de archivos para talleres (archivos.html)
   archivos: {
-    email: '',          // e-mail que recebe os pedidos com o arquivo (ex.: 'archivos@midoperformance.es'); vazio = pedido vai pelo WhatsApp
+    email: 'mido-performance@hotmail.com',          // e-mail que recebe os pedidos com o arquivo (ex.: 'archivos@midoperformance.es'); vazio = pedido vai pelo WhatsApp
     paypal: '',         // usuário do PayPal.me (ex.: 'midoperformance'); vazio = sem botão de PayPal
     entrega: '30–60 min',
     vitrine: true,      // true = página só apresenta o serviço (os pedidos vão para o portal)

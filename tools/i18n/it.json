@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "Auto con il cofano aperto durante una diagnosi",
   "Software propio, comprobado en banco de potencia": "Software proprio, verificato al banco prova",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Spie accese sul cruscotto, perdite di potenza, strattoni, guasti che vanno e vengono o rumori che nessuno trova. Colleghiamo lo strumento di diagnosi e cerchiamo la vera causa prima di sostituire pezzi.",
-  "Comprobado": "Verificato"
+  "Comprobado": "Verificato",
+  "Copiar email": "Copia email"
  },
  "patterns": [
   [

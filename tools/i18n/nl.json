@@ -682,7 +682,8 @@
   "Coche con el capó abierto durante un diagnóstico": "Auto met open motorkap tijdens een diagnose",
   "Software propio, comprobado en banco de potencia": "Eigen software, getest op een rollenbank",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Waarschuwingslampjes op het dashboard, vermogensverlies, schokken, storingen die komen en gaan of geluiden die niemand vindt. We sluiten de diagnoseapparatuur aan en zoeken de echte oorzaak voordat we onderdelen vervangen.",
-  "Comprobado": "Getest"
+  "Comprobado": "Getest",
+  "Copiar email": "E-mailadres kopiëren"
  },
  "patterns": [
   [
