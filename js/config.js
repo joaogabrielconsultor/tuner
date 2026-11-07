@@ -22,7 +22,7 @@ const BRP_CONFIG = {
     descricao: 'Chiptuning y reprogramación profesional de centralitas en Bilbao.'
   },
   // Redução de consumo mostrada na aba ECO do configurador (deixe '' para esconder)
-  consumo_eco: '-10%',
+  consumo_eco: '',
   // Servicio de archivos para talleres (archivos.html)
   archivos: {
     email: '',          // e-mail que recebe os pedidos com o arquivo (ex.: 'archivos@midoperformance.es'); vazio = pedido vai pelo WhatsApp
