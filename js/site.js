@@ -474,7 +474,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   document.querySelectorAll('[data-lang-select]').forEach(function (sel) {
     sel.value = cur;
     var lab = sel.parentNode.querySelector('.lang-cur');
-    if (lab) lab.textContent = cur === 'zh' ? '中文' : cur.toUpperCase();
+    if (lab) lab.textContent = cur.toUpperCase();
     sel.addEventListener('change', function () {
       var l = sel.value, u = new URL(location.href);
       u.searchParams.delete('lang');
