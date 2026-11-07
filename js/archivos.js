@@ -107,13 +107,34 @@
   function fail(msg, el) { err.textContent = msg; err.hidden = false; if (el) { el.focus(); el.scrollIntoView({ block: 'center', behavior: 'smooth' }); } }
   function v(id) { return document.getElementById(id).value.trim(); }
 
-  // Modo vitrine: com o portal configurado, esta página só apresenta o serviço e o botão leva ao portal
-  if (CFG.portal) {
-    form.querySelectorAll('.files-step').forEach(function (f, i) { if (i === 0 || i === 3) f.hidden = true; });
-    document.getElementById('f-terms').closest('label').hidden = true;
+  // Modo vitrine: a página só apresenta o serviço; a compra é feita no portal com login.
+  // Sem endereço do portal ainda: botão "próximamente" + pedido pelo WhatsApp com a seleção.
+  var VITRINE = !!(CFG.vitrine || CFG.portal);
+  if (VITRINE) {
+    var n = 0;
+    form.querySelectorAll('.files-step').forEach(function (f, i) {
+      if (i === 0 || i === 3) f.hidden = true; else f.querySelector('.n').textContent = ++n;
+    });
+    document.getElementById('f-terms').closest('label').style.display = 'none';
     emisWrap.remove();
     var btn = document.getElementById('f-send');
-    btn.firstChild.nodeValue = 'Continuar al portal ';
+    if (CFG.portal) {
+      btn.firstChild.nodeValue = 'Continuar al portal ';
+    } else {
+      btn.firstChild.nodeValue = 'Portal para talleres: próximamente ';
+      btn.disabled = true;
+      btn.classList.add('btn-soon');
+      var ico = btn.querySelector('.ico'); if (ico) ico.remove();
+      btn.insertAdjacentHTML('afterend', '<a class="soon-wa" id="soon-wa" href="#" target="_blank" rel="noopener">Mientras tanto, pídelo por WhatsApp</a>');
+      document.getElementById('soon-wa').addEventListener('click', function () {
+        var s = state();
+        var msg = 'Hola MIDO Performance, quiero pedir un archivo modificado.' +
+          (s.t ? '\nTuning: ' + s.t.value : '') +
+          (s.xs.length ? '\nOpciones: ' + s.xs.map(function (x) { return x.value; }).join(', ') : '') +
+          (s.t ? '\nPrecio: ' + totalText(s) : '') + '\n\n(Adjunto la lectura de la centralita en este chat.)';
+        this.href = 'https://api.whatsapp.com/send?phone=' + WA + '&text=' + encodeURIComponent(msg);
+      });
+    }
   }
 
   form.addEventListener('submit', function (e) {

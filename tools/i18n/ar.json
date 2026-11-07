@@ -648,7 +648,15 @@
   "Immo off (si es posible)": "Immo off (إن أمكن)",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "السعر النهائي حسب المركبة؛ نؤكده لك قبل الدفع.",
   "Mínimo 60 € si solo eliges funciones.": "الحد الأدنى 60 € إذا اخترت وظائف فقط.",
-  "Continuar al portal": "المتابعة إلى البوابة"
+  "Continuar al portal": "المتابعة إلى البوابة",
+  "Crea tu cuenta": "أنشئ حسابك",
+  "Regístrate en el portal y compra tus créditos con PayPal u otros métodos.": "سجّل في البوابة واشترِ رصيدك عبر PayPal أو طرق أخرى.",
+  "Sube la lectura": "ارفع ملف القراءة",
+  "Envía el archivo original y elige el stage y las funciones.": "أرسل الملف الأصلي واختر المرحلة والوظائف.",
+  "Descarga el archivo": "حمّل الملف",
+  "En 30–60 min lo tienes modificado, con checksum corregido y listo para escribir.": "خلال 30–60 دقيقة يصبح معدّلًا مع تصحيح الـ checksum وجاهزًا للكتابة.",
+  "Portal para talleres: próximamente": "بوابة الورش: قريبًا",
+  "Mientras tanto, pídelo por WhatsApp": "في الأثناء، اطلبه عبر واتساب"
  },
  "patterns": [
   [

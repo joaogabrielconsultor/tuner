@@ -648,7 +648,15 @@
   "Immo off (si es posible)": "Immo off (αν είναι δυνατό)",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "Η τελική τιμή εξαρτάται από το όχημα· την επιβεβαιώνουμε πριν την πληρωμή.",
   "Mínimo 60 € si solo eliges funciones.": "Ελάχιστο 60 € αν επιλέξετε μόνο λειτουργίες.",
-  "Continuar al portal": "Συνέχεια στην πύλη"
+  "Continuar al portal": "Συνέχεια στην πύλη",
+  "Crea tu cuenta": "Δημιουργήστε λογαριασμό",
+  "Regístrate en el portal y compra tus créditos con PayPal u otros métodos.": "Εγγραφείτε στην πύλη και αγοράστε μονάδες με PayPal ή άλλους τρόπους.",
+  "Sube la lectura": "Ανεβάστε την ανάγνωση",
+  "Envía el archivo original y elige el stage y las funciones.": "Στείλτε το αρχικό αρχείο και επιλέξτε stage και λειτουργίες.",
+  "Descarga el archivo": "Κατεβάστε το αρχείο",
+  "En 30–60 min lo tienes modificado, con checksum corregido y listo para escribir.": "Σε 30–60 λεπτά είναι τροποποιημένο, με διορθωμένο checksum και έτοιμο για εγγραφή.",
+  "Portal para talleres: próximamente": "Πύλη συνεργείων: σύντομα",
+  "Mientras tanto, pídelo por WhatsApp": "Μέχρι τότε, παραγγείλτε μέσω WhatsApp"
  },
  "patterns": [
   [

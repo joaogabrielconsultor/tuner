@@ -648,7 +648,15 @@
   "Immo off (si es posible)": "Immo off (si possible)",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "Prix final selon le véhicule ; nous le confirmons avant le paiement.",
   "Mínimo 60 € si solo eliges funciones.": "Minimum 60 € si vous ne choisissez que des fonctions.",
-  "Continuar al portal": "Continuer vers le portail"
+  "Continuar al portal": "Continuer vers le portail",
+  "Crea tu cuenta": "Créez votre compte",
+  "Regístrate en el portal y compra tus créditos con PayPal u otros métodos.": "Inscrivez-vous sur le portail et achetez vos crédits avec PayPal ou d'autres moyens.",
+  "Sube la lectura": "Envoyez la lecture",
+  "Envía el archivo original y elige el stage y las funciones.": "Envoyez le fichier d'origine et choisissez le stage et les fonctions.",
+  "Descarga el archivo": "Téléchargez le fichier",
+  "En 30–60 min lo tienes modificado, con checksum corregido y listo para escribir.": "En 30–60 min il est modifié, checksum corrigé et prêt à écrire.",
+  "Portal para talleres: próximamente": "Portail garages : bientôt disponible",
+  "Mientras tanto, pídelo por WhatsApp": "En attendant, commandez-le par WhatsApp"
  },
  "patterns": [
   [

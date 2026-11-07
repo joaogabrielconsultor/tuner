@@ -648,7 +648,15 @@
   "Immo off (si es posible)": "Immo off (if possible)",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "Final price depends on the vehicle; we confirm it before payment.",
   "Mínimo 60 € si solo eliges funciones.": "Minimum 60 € if you only choose functions.",
-  "Continuar al portal": "Continue to the portal"
+  "Continuar al portal": "Continue to the portal",
+  "Crea tu cuenta": "Create your account",
+  "Regístrate en el portal y compra tus créditos con PayPal u otros métodos.": "Sign up on the portal and buy your credits with PayPal or other methods.",
+  "Sube la lectura": "Upload the read",
+  "Envía el archivo original y elige el stage y las funciones.": "Send the original file and choose the stage and functions.",
+  "Descarga el archivo": "Download the file",
+  "En 30–60 min lo tienes modificado, con checksum corregido y listo para escribir.": "Within 30–60 min it's modified, checksum corrected and ready to write.",
+  "Portal para talleres: próximamente": "Workshop portal: coming soon",
+  "Mientras tanto, pídelo por WhatsApp": "Meanwhile, order it on WhatsApp"
  },
  "patterns": [
   [

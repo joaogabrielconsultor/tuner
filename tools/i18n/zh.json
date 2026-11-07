@@ -648,7 +648,15 @@
   "Immo off (si es posible)": "Immo off（如可行）",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "最终价格视车辆而定，付款前我们会与您确认。",
   "Mínimo 60 € si solo eliges funciones.": "仅选择功能时最低 60 €。",
-  "Continuar al portal": "前往订购平台"
+  "Continuar al portal": "前往订购平台",
+  "Crea tu cuenta": "创建账户",
+  "Regístrate en el portal y compra tus créditos con PayPal u otros métodos.": "在平台注册，并通过 PayPal 或其他方式购买积分。",
+  "Sube la lectura": "上传读取文件",
+  "Envía el archivo original y elige el stage y las funciones.": "上传原始文件并选择 Stage 和功能。",
+  "Descarga el archivo": "下载文件",
+  "En 30–60 min lo tienes modificado, con checksum corregido y listo para escribir.": "30–60 分钟内完成修改，校验和已校正，可直接写入。",
+  "Portal para talleres: próximamente": "车间平台：即将上线",
+  "Mientras tanto, pídelo por WhatsApp": "在此之前，请通过 WhatsApp 下单"
  },
  "patterns": [
   [

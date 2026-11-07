@@ -648,7 +648,15 @@
   "Immo off (si es posible)": "Immo off (indien mogelijk)",
   "Precio final según el vehículo; te lo confirmamos antes del pago.": "De eindprijs hangt af van het voertuig; we bevestigen hem vóór de betaling.",
   "Mínimo 60 € si solo eliges funciones.": "Minimaal 60 € als je alleen functies kiest.",
-  "Continuar al portal": "Verder naar het portaal"
+  "Continuar al portal": "Verder naar het portaal",
+  "Crea tu cuenta": "Maak je account aan",
+  "Regístrate en el portal y compra tus créditos con PayPal u otros métodos.": "Registreer je op het portaal en koop je credits met PayPal of andere methoden.",
+  "Sube la lectura": "Upload de uitlezing",
+  "Envía el archivo original y elige el stage y las funciones.": "Stuur het originele bestand en kies de stage en functies.",
+  "Descarga el archivo": "Download het bestand",
+  "En 30–60 min lo tienes modificado, con checksum corregido y listo para escribir.": "Binnen 30–60 min is het aangepast, met gecorrigeerde checksum en klaar om te schrijven.",
+  "Portal para talleres: próximamente": "Portaal voor werkplaatsen: binnenkort",
+  "Mientras tanto, pídelo por WhatsApp": "Bestel het intussen via WhatsApp"
  },
  "patterns": [
   [
