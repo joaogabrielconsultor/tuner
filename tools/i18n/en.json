@@ -559,7 +559,8 @@
   "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "Fault diagnosis in Bilbao: dashboard warning lights, loss of power, juddering and intermittent faults. ECU reading and dynamometer tests.",
   "Coche en el banco de potencia con el capó abierto durante un diagnóstico": "Car on the dynamometer with the bonnet open during a diagnosis",
   "Coche en el banco de potencia con la curva de potencia en pantalla": "Car on the dynamometer with the power curve on screen",
-  "Vano motor de un coche abierto en el taller de MIDO Performance": "Open engine bay of a car in the MIDO Performance workshop"
+  "Vano motor de un coche abierto en el taller de MIDO Performance": "Open engine bay of a car in the MIDO Performance workshop",
+  "Pintor aplicando pintura con pistola en la carrocería de un coche": "Painter spraying paint onto a car's bodywork"
  },
  "patterns": [
   [

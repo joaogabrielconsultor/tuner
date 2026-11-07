@@ -559,7 +559,8 @@
   "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "Διάγνωση βλαβών στο Μπιλμπάο: λυχνίες στο ταμπλό, απώλεια ισχύος, τινάγματα και διακοπτόμενες βλάβες. Ανάγνωση εγκεφάλου και δοκιμές σε δυναμόμετρο.",
   "Coche en el banco de potencia con el capó abierto durante un diagnóstico": "Αυτοκίνητο στο δυναμόμετρο με ανοιχτό καπό κατά τη διάγνωση",
   "Coche en el banco de potencia con la curva de potencia en pantalla": "Αυτοκίνητο στο δυναμόμετρο με την καμπύλη ισχύος στην οθόνη",
-  "Vano motor de un coche abierto en el taller de MIDO Performance": "Ανοιχτός χώρος κινητήρα αυτοκινήτου στο συνεργείο της MIDO Performance"
+  "Vano motor de un coche abierto en el taller de MIDO Performance": "Ανοιχτός χώρος κινητήρα αυτοκινήτου στο συνεργείο της MIDO Performance",
+  "Pintor aplicando pintura con pistola en la carrocería de un coche": "Βαφέας ψεκάζει βαφή στο αμάξωμα αυτοκινήτου"
  },
  "patterns": [
   [

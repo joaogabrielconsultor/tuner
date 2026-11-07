@@ -559,7 +559,8 @@
   "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura de centralita y pruebas en banco de potencia.": "Fehlerdiagnose in Bilbao: Warnlampen, Leistungsverlust, Ruckeln und sporadische Fehler. Auslesen des Steuergeräts und Tests auf dem Leistungsprüfstand.",
   "Coche en el banco de potencia con el capó abierto durante un diagnóstico": "Auto auf dem Leistungsprüfstand mit offener Motorhaube bei einer Diagnose",
   "Coche en el banco de potencia con la curva de potencia en pantalla": "Auto auf dem Leistungsprüfstand mit der Leistungskurve auf dem Bildschirm",
-  "Vano motor de un coche abierto en el taller de MIDO Performance": "Geöffneter Motorraum eines Autos in der Werkstatt von MIDO Performance"
+  "Vano motor de un coche abierto en el taller de MIDO Performance": "Geöffneter Motorraum eines Autos in der Werkstatt von MIDO Performance",
+  "Pintor aplicando pintura con pistola en la carrocería de un coche": "Lackierer lackiert die Karosserie eines Autos mit der Lackierpistole"
  },
  "patterns": [
   [
