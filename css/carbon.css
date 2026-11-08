@@ -1298,3 +1298,5 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 .files-cta p { max-width: 680px; color: var(--body); margin: 0; }
 .files-cta small { display: block; margin-top: 14px; color: var(--muted); font-size: 14px; }
 @media (max-width: 640px) { .files-cta > div { padding: 24px; } .files-cta-btns .btn { width: 100%; justify-content: space-between; } .files-cta-btns .btn-ghost { justify-content: center; } }
+.files-hero.files-only { padding-bottom: 112px; }
+@media (max-width: 768px) { .files-hero.files-only { padding-bottom: 64px; } }
