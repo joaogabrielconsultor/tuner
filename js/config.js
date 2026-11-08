@@ -29,7 +29,7 @@ const BRP_CONFIG = {
     paypal: '',         // usuário do PayPal.me (ex.: 'midoperformance'); vazio = sem botão de PayPal
     entrega: '30–60 min',
     vitrine: true,      // true = página só apresenta o serviço (os pedidos vão para o portal)
-    portal: 'https://archivos.midoperformance.es'          // endereço do portal com login (ex.: 'https://archivos.midoperformance.es'); preenchido = botão "Continuar al portal"
+    portal: 'https://mido-archivos.onrender.com'          // endereço do portal com login (ex.: 'https://mido-archivos.onrender.com'); preenchido = botão "Continuar al portal"
   },
   links: {
     condicoes_venda: 'condiciones-de-venta.html',
