@@ -1271,3 +1271,18 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 @media (max-width: 900px) { .files-how ol { grid-template-columns: minmax(0, 1fr); } }
 [dir="rtl"] .files-how li { padding: 24px 72px 24px 24px; }
 [dir="rtl"] .files-how li::before { left: auto; right: 24px; }
+
+/* archivos: tabela de preços */
+.files-prices { padding-bottom: 40px; max-width: 760px; }
+.files-prices-head { margin-bottom: 18px; }
+.files-prices-head h2 { margin: 6px 0 8px; }
+.files-prices-head p { color: var(--body); margin: 0; }
+.price-table { width: 100%; border-collapse: collapse; border: 1px solid var(--surface-3); border-radius: var(--r-md); overflow: hidden; background: var(--surface); }
+.price-table th, .price-table td { padding: 14px 20px; border-bottom: 1px solid var(--surface-3); text-align: start; vertical-align: middle; }
+.price-table tr:last-child th, .price-table tr:last-child td { border-bottom: 0; }
+.price-table th { color: #fff; font-weight: 600; }
+.price-table th small { display: block; color: var(--body); font-weight: 400; font-size: 13px; margin-top: 2px; }
+.price-table td { text-align: end; white-space: nowrap; color: var(--body); }
+.price-table td b { color: var(--red); font-size: 17px; }
+.price-note { color: var(--body); font-size: 14px; margin: 12px 0 0; }
+@media (max-width: 560px) { .price-table th, .price-table td { padding: 12px 14px; } .price-table td { white-space: normal; } }

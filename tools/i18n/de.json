@@ -683,7 +683,19 @@
   "Software propio, comprobado en banco de potencia": "Eigene Software, auf dem Leistungsprüfstand geprüft",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Leuchtende Warnlampen im Cockpit, Leistungsverlust, Ruckeln, Fehler, die kommen und gehen, oder Geräusche, die niemand findet. Wir schließen das Diagnosegerät an und suchen die eigentliche Ursache, bevor Teile getauscht werden.",
   "Comprobado": "Geprüft",
-  "Copiar email": "E-Mail kopieren"
+  "Copiar email": "E-Mail kopieren",
+  "Regístrate gratis en el portal, sin comprar créditos por adelantado.": "Kostenlos im Portal registrieren, ohne vorher Credits zu kaufen.",
+  "Paga y descarga": "Bezahlen und herunterladen",
+  "Te confirmamos el precio, pagas con PayPal u otros métodos y en 30–60 min tienes el archivo listo para escribir.": "Wir bestätigen den Preis, Sie zahlen per PayPal oder anderen Methoden und in 30–60 Min. ist Ihre Datei schreibbereit.",
+  "Precios": "Preise",
+  "Precios claros, sin sorpresas": "Klare Preise, keine Überraschungen",
+  "Sin cuotas ni packs de créditos: pagas solo los archivos que pides.": "Keine Gebühren oder Credit-Pakete: Sie zahlen nur die Dateien, die Sie bestellen.",
+  "Función extra con Stage": "Zusatzfunktion mit Stage",
+  "+20 € cada una": "+20 € pro Funktion",
+  "Solo DPF, AdBlue o EGR": "Nur DPF, AdBlue oder EGR",
+  "Sin Stage": "Ohne Stage",
+  "Caja automática (TCU)": "Automatikgetriebe (TCU)",
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "Der Endpreis hängt vom Steuergerät (ECU) ab. Wir bestätigen ihn nach Erhalt der Datei, vor der Zahlung."
  },
  "patterns": [
   [

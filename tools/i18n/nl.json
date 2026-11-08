@@ -683,7 +683,19 @@
   "Software propio, comprobado en banco de potencia": "Eigen software, getest op een rollenbank",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Waarschuwingslampjes op het dashboard, vermogensverlies, schokken, storingen die komen en gaan of geluiden die niemand vindt. We sluiten de diagnoseapparatuur aan en zoeken de echte oorzaak voordat we onderdelen vervangen.",
   "Comprobado": "Getest",
-  "Copiar email": "E-mailadres kopiëren"
+  "Copiar email": "E-mailadres kopiëren",
+  "Regístrate gratis en el portal, sin comprar créditos por adelantado.": "Registreer gratis op het portaal, zonder vooraf credits te kopen.",
+  "Paga y descarga": "Betaal en download",
+  "Te confirmamos el precio, pagas con PayPal u otros métodos y en 30–60 min tienes el archivo listo para escribir.": "Wij bevestigen de prijs, u betaalt met PayPal of andere methoden en binnen 30–60 min is uw bestand klaar om te schrijven.",
+  "Precios": "Prijzen",
+  "Precios claros, sin sorpresas": "Duidelijke prijzen, geen verrassingen",
+  "Sin cuotas ni packs de créditos: pagas solo los archivos que pides.": "Geen abonnement of creditpakketten: u betaalt alleen voor de bestanden die u bestelt.",
+  "Función extra con Stage": "Extra functie bij Stage",
+  "+20 € cada una": "+€20 per stuk",
+  "Solo DPF, AdBlue o EGR": "Alleen DPF, AdBlue of EGR",
+  "Sin Stage": "Zonder Stage",
+  "Caja automática (TCU)": "Automatische versnellingsbak (TCU)",
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "De uiteindelijke prijs hangt af van de ECU. Wij bevestigen die bij ontvangst van het bestand, vóór betaling."
  },
  "patterns": [
   [

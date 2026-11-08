@@ -683,7 +683,19 @@
   "Software propio, comprobado en banco de potencia": "برامجنا الخاصة، مختبرة على جهاز قياس القدرة",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "أضواء تحذير مضاءة في لوحة العدادات، فقدان القدرة، ارتجاج، أعطال تظهر وتختفي أو أصوات لا يجد أحد مصدرها. نوصل جهاز التشخيص ونبحث عن السبب الحقيقي قبل تغيير أي قطعة.",
   "Comprobado": "مُختبر",
-  "Copiar email": "نسخ البريد الإلكتروني"
+  "Copiar email": "نسخ البريد الإلكتروني",
+  "Regístrate gratis en el portal, sin comprar créditos por adelantado.": "سجّل مجانًا في البوابة دون شراء رصيد مسبقًا.",
+  "Paga y descarga": "ادفع وحمّل",
+  "Te confirmamos el precio, pagas con PayPal u otros métodos y en 30–60 min tienes el archivo listo para escribir.": "نؤكد لك السعر، وتدفع عبر PayPal أو وسائل أخرى، وخلال 30–60 دقيقة يكون الملف جاهزًا للكتابة.",
+  "Precios": "الأسعار",
+  "Precios claros, sin sorpresas": "أسعار واضحة بلا مفاجآت",
+  "Sin cuotas ni packs de créditos: pagas solo los archivos que pides.": "بلا اشتراكات ولا باقات رصيد: تدفع فقط مقابل الملفات التي تطلبها.",
+  "Función extra con Stage": "وظيفة إضافية مع Stage",
+  "+20 € cada una": "‎+20 € لكل وظيفة",
+  "Solo DPF, AdBlue o EGR": "DPF أو AdBlue أو EGR فقط",
+  "Sin Stage": "بدون Stage",
+  "Caja automática (TCU)": "ناقل الحركة الأوتوماتيكي (TCU)",
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "يعتمد السعر النهائي على وحدة التحكم (ECU). نؤكده لك عند استلام الملف وقبل الدفع."
  },
  "patterns": [
   [

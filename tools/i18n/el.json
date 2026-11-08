@@ -683,7 +683,19 @@
   "Software propio, comprobado en banco de potencia": "Δικό μας λογισμικό, ελεγμένο σε δυναμόμετρο",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Αναμμένες λυχνίες στο ταμπλό, απώλεια ισχύος, τινάγματα, βλάβες που πάνε κι έρχονται ή θόρυβοι που κανείς δεν βρίσκει. Συνδέουμε τον διαγνωστικό εξοπλισμό και βρίσκουμε την πραγματική αιτία πριν αλλάξουμε ανταλλακτικά.",
   "Comprobado": "Ελεγμένο",
-  "Copiar email": "Αντιγραφή e-mail"
+  "Copiar email": "Αντιγραφή e-mail",
+  "Regístrate gratis en el portal, sin comprar créditos por adelantado.": "Εγγραφείτε δωρεάν στην πύλη, χωρίς να αγοράσετε credits εκ των προτέρων.",
+  "Paga y descarga": "Πληρωμή και λήψη",
+  "Te confirmamos el precio, pagas con PayPal u otros métodos y en 30–60 min tienes el archivo listo para escribir.": "Επιβεβαιώνουμε την τιμή, πληρώνετε με PayPal ή άλλους τρόπους και σε 30–60 λεπτά το αρχείο είναι έτοιμο για εγγραφή.",
+  "Precios": "Τιμές",
+  "Precios claros, sin sorpresas": "Ξεκάθαρες τιμές, χωρίς εκπλήξεις",
+  "Sin cuotas ni packs de créditos: pagas solo los archivos que pides.": "Χωρίς συνδρομές ή πακέτα credits: πληρώνετε μόνο τα αρχεία που παραγγέλνετε.",
+  "Función extra con Stage": "Επιπλέον λειτουργία με Stage",
+  "+20 € cada una": "+20 € η καθεμία",
+  "Solo DPF, AdBlue o EGR": "Μόνο DPF, AdBlue ή EGR",
+  "Sin Stage": "Χωρίς Stage",
+  "Caja automática (TCU)": "Αυτόματο κιβώτιο (TCU)",
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "Η τελική τιμή εξαρτάται από την εγκέφαλο (ECU). Σας την επιβεβαιώνουμε μόλις λάβουμε το αρχείο, πριν την πληρωμή."
  },
  "patterns": [
   [

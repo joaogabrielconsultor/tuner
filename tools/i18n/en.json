@@ -683,7 +683,19 @@
   "Software propio, comprobado en banco de potencia": "Our own software, tested on a dynamometer",
   "Testigos encendidos en el cuadro, pérdidas de potencia, tirones, fallos que van y vienen o ruidos que nadie encuentra. Conectamos el equipo de diagnóstico y buscamos la causa real antes de cambiar piezas.": "Warning lights on the dashboard, loss of power, juddering, faults that come and go, or noises nobody can find. We connect our diagnostic equipment and find the real cause before replacing any parts.",
   "Comprobado": "Tested",
-  "Copiar email": "Copy email"
+  "Copiar email": "Copy email",
+  "Regístrate gratis en el portal, sin comprar créditos por adelantado.": "Sign up for free on the portal, no need to buy credits in advance.",
+  "Paga y descarga": "Pay and download",
+  "Te confirmamos el precio, pagas con PayPal u otros métodos y en 30–60 min tienes el archivo listo para escribir.": "We confirm the price, you pay with PayPal or other methods and within 30–60 min your file is ready to write.",
+  "Precios": "Prices",
+  "Precios claros, sin sorpresas": "Clear prices, no surprises",
+  "Sin cuotas ni packs de créditos: pagas solo los archivos que pides.": "No fees or credit packs: you only pay for the files you order.",
+  "Función extra con Stage": "Extra function with Stage",
+  "+20 € cada una": "+€20 each",
+  "Solo DPF, AdBlue o EGR": "DPF, AdBlue or EGR only",
+  "Sin Stage": "Without Stage",
+  "Caja automática (TCU)": "Automatic gearbox (TCU)",
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "The final price depends on the ECU. We confirm it when we receive the file, before you pay."
  },
  "patterns": [
   [
