@@ -1286,3 +1286,15 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 .price-table td b { color: var(--red); font-size: 17px; }
 .price-note { color: var(--body); font-size: 14px; margin: 12px 0 0; }
 @media (max-width: 560px) { .price-table th, .price-table td { padding: 12px 14px; } .price-table td { white-space: normal; } }
+
+/* Archivos: botões do portal para talleres */
+.files-cta-btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.files-cta-btns .btn-ghost { background: var(--surface-2); color: var(--heading); padding: 0 28px; justify-content: center; }
+.files-cta-btns .btn-ghost:hover { background: var(--surface-3); filter: none; }
+.files-cta { padding-bottom: 40px; }
+.files-cta > div { border: 1px solid var(--surface-3); border-radius: var(--r-lg, 16px); padding: 40px; background: radial-gradient(circle at 15% 0%, rgba(227, 18, 27, .28), transparent 55%), var(--surface); }
+.files-cta .kicker { display: inline-block; font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.files-cta h2 { margin: 8px 0 12px; }
+.files-cta p { max-width: 680px; color: var(--body); margin: 0; }
+.files-cta small { display: block; margin-top: 14px; color: var(--muted); font-size: 14px; }
+@media (max-width: 640px) { .files-cta > div { padding: 24px; } .files-cta-btns .btn { width: 100%; justify-content: space-between; } .files-cta-btns .btn-ghost { justify-content: center; } }

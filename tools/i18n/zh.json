@@ -1,5 +1,11 @@
 {
  "strings": {
+  "Entrar al portal": "进入门户",
+  "Crear cuenta gratis": "免费注册账户",
+  "Portal para talleres": "车间门户",
+  "Pide tus archivos desde el portal": "在门户中订购文件",
+  "Con tu cuenta subes la lectura, eliges el Stage y las funciones, pagas con PayPal y descargas el archivo modificado. Todos tus pedidos quedan en un solo sitio.": "注册账户后，您可以上传读取文件、选择 Stage 和功能、通过 PayPal 付款并下载修改后的文件。所有订单集中管理。",
+  "Registro gratis, sin créditos ni cuotas.": "免费注册，无需积分或月费。",
   "MIDO Performance | Página no encontrada": "MIDO Performance | 页面未找到",
   "La página que buscas no existe.": "您要找的页面不存在。",
   "Esta página se ha quedado sin gasolina": "这个页面没油了",

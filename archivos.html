@@ -110,6 +110,10 @@
     <span class="kicker">Para talleres</span>
     <h1>Servicio de archivos</h1>
     <p>Lee la centralita, súbenos el archivo y elige lo que quieres hacer. Te lo devolvemos modificado, con checksum corregido y listo para escribir.</p>
+    <div class="files-cta-btns">
+      <a class="btn" href="https://archivos.midoperformance.es/" data-portal-link>Entrar al portal <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+      <a class="btn btn-ghost" href="https://archivos.midoperformance.es/?registro=1" data-portal-link="registro">Crear cuenta gratis</a>
+    </div>
     <ul class="files-perks">
       <li><b data-cfg-files="entrega">30–60 min</b><span>Entrega en horario laboral</span></li>
       <li><b>Comprobado</b><span>Software propio, comprobado en banco de potencia</span></li>
@@ -144,65 +148,17 @@
     <p class="price-note">El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.</p>
   </section>
 
-  <section class="container files-wrap">
-    <form class="files-form" id="files-form" method="POST" enctype="multipart/form-data" novalidate>
-      <fieldset class="files-step">
-        <legend><span class="n">1</span>Vehículo y lectura</legend>
-        <div class="form-grid">
-          <div class="field half"><label for="f-marca">Marca *</label><input type="text" id="f-marca" name="Marca" required placeholder="Ej.: Audi"></div>
-          <div class="field half"><label for="f-modelo">Modelo *</label><input type="text" id="f-modelo" name="Modelo" required placeholder="Ej.: A3 (8V)"></div>
-          <div class="field"><label for="f-motor">Motor *</label><input type="text" id="f-motor" name="Motor" required placeholder="Ej.: 2.0 TDI 184 cv"></div>
-          <div class="field"><label for="f-anio">Año</label><input type="text" id="f-anio" name="Año" inputmode="numeric" placeholder="Ej.: 2017"></div>
-          <div class="field"><label for="f-caja">Caja de cambios</label><select id="f-caja" name="Caja de cambios"><option>Manual</option><option>Automática</option></select></div>
-          <div class="field half"><label for="f-ecu">Centralita (ECU) *</label><input type="text" id="f-ecu" name="ECU" required placeholder="Ej.: Bosch EDC17C74"></div>
-          <div class="field half"><label for="f-tool">Método de lectura *</label><select id="f-tool" name="Herramienta de lectura" required><option>Alientech KESS3 OBD</option><option>Alientech KESS3 Bench</option><option>Alientech KESS3 Boot</option><option>Alientech KTAG</option><option>Autotuner OBD</option><option>Autotuner Bench / Boot</option><option>Magicmotorsport FLEX</option><option>bFlash</option><option>CMDFlash</option><option>PCMFlash</option><option>Otra herramienta</option></select></div>
-          <div class="field full"><label for="f-file">Archivo original *</label>
-            <label class="file-drop" for="f-file"><input type="file" id="f-file" name="attachment" required><span class="file-name" data-empty="Elige el archivo de lectura (.bin, .ori, .slave…)">Elige el archivo de lectura (.bin, .ori, .slave…)</span></label>
-          </div>
-        </div>
-      </fieldset>
-
-      <fieldset class="files-step">
-        <legend><span class="n">2</span>Tipo de tuning</legend>
-        <div class="opt-list" id="tuning-list"></div>
-      </fieldset>
-
-      <fieldset class="files-step">
-        <legend><span class="n">3</span>Opciones adicionales</legend>
-        <div class="field full opt-search"><input type="text" id="opt-search" placeholder="Buscar opciones…" aria-label="Buscar opciones"></div>
-        <div class="opt-list" id="extra-list"></div>
-        <p class="opt-empty" id="opt-empty" hidden>Ninguna opción coincide con la búsqueda.</p>
-      </fieldset>
-
-      <fieldset class="files-step">
-        <legend><span class="n">4</span>Datos del taller</legend>
-        <div class="form-grid">
-          <div class="field half"><label for="f-taller">Taller *</label><input type="text" id="f-taller" name="Taller" required></div>
-          <div class="field half"><label for="f-nombre">Nombre de contacto *</label><input type="text" id="f-nombre" name="Contacto" required></div>
-          <div class="field half"><label for="f-email">Email *</label><input type="email" id="f-email" name="email" required></div>
-          <div class="field half"><label for="f-tel">Teléfono / WhatsApp *</label><input type="tel" id="f-tel" name="Teléfono" required></div>
-          <div class="field full"><label for="f-notas">Comentarios</label><textarea id="f-notas" name="Comentarios" placeholder="Modificaciones del coche, piezas montadas, lo que debamos saber…"></textarea></div>
-        </div>
-      </fieldset>
-      <input type="hidden" name="Pedido" id="f-pedido">
-      <input type="hidden" name="_subject" id="f-subject" value="Nuevo pedido de archivo">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" id="f-next">
-    </form>
-
-    <aside class="files-summary" aria-live="polite">
-      <h2>Resumen del pedido</h2>
-      <ul id="sum-list"><li class="muted">Elige un tipo de tuning</li></ul>
-      <div class="sum-total"><span>Total</span><b id="sum-total">—</b></div>
-      <p class="sum-eur" id="sum-eur" hidden></p>
-      <p class="sum-note">Entrega en <b data-cfg-files="entrega">30–60 min</b> en horario laboral. El pago se confirma antes de enviarte el archivo.</p>
-      <label class="check emis-check" id="emis-wrap" hidden><input type="checkbox" id="f-emis"> <span>Las opciones de emisiones (DPF, EGR, AdBlue, NOx…) son <b>solo para uso en competición y fuera de la vía pública</b>. El taller asume la responsabilidad de su uso.</span></label>
-      <label class="check"><input type="checkbox" id="f-terms"> <span>Acepto las <a href="condiciones-de-venta.html">condiciones de venta</a> y la <a href="politica-de-privacidad.html">política de privacidad</a>.</span></label>
-      <p class="sum-error" id="sum-error" hidden></p>
-      <button class="btn btn-block" type="submit" form="files-form" id="f-send">Enviar pedido <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></button>
-      <p class="sum-sent" id="sum-sent" hidden>¡Pedido enviado! Te avisamos en cuanto el archivo esté listo.</p>
-    </aside>
+  <section class="container files-cta" id="portal">
+    <div>
+      <span class="kicker">Portal para talleres</span>
+      <h2>Pide tus archivos desde el portal</h2>
+      <p>Con tu cuenta subes la lectura, eliges el Stage y las funciones, pagas con PayPal y descargas el archivo modificado. Todos tus pedidos quedan en un solo sitio.</p>
+      <div class="files-cta-btns">
+        <a class="btn" href="https://archivos.midoperformance.es/" data-portal-link>Entrar al portal <span class="ico"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></a>
+        <a class="btn btn-ghost" href="https://archivos.midoperformance.es/?registro=1" data-portal-link="registro">Crear cuenta gratis</a>
+      </div>
+      <small>Registro gratis, sin créditos ni cuotas.</small>
+    </div>
   </section>
 
   <section class="container files-mail">
@@ -360,7 +316,6 @@
 <!-- /layout:footer -->
 
 <script src="js/config.js?v=2"></script>
-<script src="js/archivos.js?v=5" defer></script>
 <script src="js/site.js?v=2"></script>
 </body>
 </html>
