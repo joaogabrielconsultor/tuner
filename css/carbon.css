@@ -1300,3 +1300,28 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 @media (max-width: 640px) { .files-cta > div { padding: 24px; } .files-cta-btns .btn { width: 100%; justify-content: space-between; } .files-cta-btns .btn-ghost { justify-content: center; } }
 .files-hero.files-only { padding-bottom: 112px; }
 @media (max-width: 768px) { .files-hero.files-only { padding-bottom: 64px; } }
+/* Archivos: serviços em acordeão (abre e mostra o que cada um faz) */
+.files-hero.files-only { padding-bottom: 48px; }
+.files-acc { padding-bottom: 96px; max-width: 900px; }
+.files-acc .kicker { display: inline-block; font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
+.files-acc h2 { margin: 8px 0 8px; }
+.files-acc-lead { color: var(--body); margin: 0 0 24px; }
+.acc { display: grid; gap: 10px; }
+.acc details { border-radius: 14px; background: var(--surface); border: 1px solid var(--surface-3); overflow: hidden; }
+.acc summary { list-style: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 14px; min-height: 56px; padding: 12px 20px; font-family: var(--font-display); font-weight: 700; font-size: 17px; color: var(--heading); transition: background .2s, color .2s; }
+.acc summary::-webkit-details-marker { display: none; }
+.acc summary::before { content: ""; width: 9px; height: 9px; border-right: 2.5px solid currentColor; border-bottom: 2.5px solid currentColor; transform: rotate(-45deg); transition: transform .25s; flex: none; }
+.acc summary:hover { background: var(--surface-2); }
+.acc details[open] { border-color: var(--red); }
+.acc details[open] summary { background: var(--red); color: #fff; }
+.acc details[open] summary::before { transform: rotate(45deg); }
+.acc-body { padding: 20px 24px 22px; animation: acc-in .3s ease; }
+.acc-body p { margin: 0; color: var(--body); line-height: 1.6; }
+.acc-tags { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.acc-tags li { padding: 4px 12px; border-radius: 999px; background: var(--surface-2); color: var(--heading); font-size: 13px; font-weight: 600; }
+.acc-tags li.tag-warn { background: #3a2a10; color: #f0b44c; }
+.files-acc-note { margin: 18px 0 0; font-size: 13px; color: var(--muted); }
+@keyframes acc-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+[dir=rtl] .acc summary::before { transform: rotate(135deg); }
+[dir=rtl] .acc details[open] summary::before { transform: rotate(45deg); }
+@media (max-width: 640px) { .acc summary { font-size: 16px; } .acc-body { padding: 16px 18px 18px; } }
