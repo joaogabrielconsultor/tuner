@@ -152,11 +152,38 @@
   function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
   function tags(x) { return x.g.length ? '<ul class="acc-tags">' + x.g.map(function (g) { return '<li' + (g === 'Solo competición' ? ' class="tag-warn"' : '') + '>' + esc(g) + '</li>'; }).join('') + '</ul>' : ''; }
 
+  // Imagens: foto do site (images/) + ícone ilustrado próprio para cada tipo de serviço
+  var ICON = {
+    gauge: '<path d="M4 16a8 8 0 1116 0"/><path d="M12 16l4.5-5"/><circle cx="12" cy="16" r="1.5"/><path d="M6.5 11.5l1 .7M12 8v1.2M17.5 11.5l-1 .7"/>',
+    gear: '<circle cx="12" cy="12" r="3.2"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M5.3 18.7l2.1-2.1M16.6 7.4l2.1-2.1"/>',
+    drop: '<path d="M12 3s6 6.4 6 11a6 6 0 01-12 0c0-4.6 6-11 6-11z"/><path d="M9.5 14.5a2.5 2.5 0 002.5 2.5"/>',
+    filter: '<rect x="3" y="7" width="18" height="10" rx="2.5"/><path d="M7.5 7v10M12 7v10M16.5 7v10"/><path d="M1 12h2M21 12h2"/>',
+    valve: '<path d="M2 12h5M17 12h5"/><circle cx="12" cy="12" r="5"/><path d="M8.5 15.5l7-7"/>',
+    sensor: '<path d="M12 2v7"/><rect x="8.5" y="9" width="7" height="7" rx="1.8"/><path d="M4 20c2.5-2 5-2 8 0s5.5 2 8 0"/>',
+    air: '<path d="M3 9h11a3 3 0 10-3-3M3 15h15a3 3 0 11-3 3M3 12h7"/>',
+    warn: '<path d="M12 3l9.5 17h-19z"/><path d="M12 10v4.5M12 17.5v.5"/>',
+    key: '<circle cx="8" cy="15.5" r="4.5"/><path d="M11.3 12.2L20 3.5M16.5 7l3 3M14 9.5l2 2"/>',
+    power: '<path d="M12 3v8"/><path d="M6.4 7.4a8 8 0 1011.2 0"/>',
+    flag: '<path d="M5 21V4"/><path d="M5 4h13l-3.2 4.5L18 13H5"/>',
+    flame: '<path d="M12 21a6 6 0 006-6c0-4.5-4-6.5-5-12-2 2.5-3 4.5-3 7-1-1-1.6-2-1.8-3.2C6.6 8.6 6 10.6 6 15a6 6 0 006 6z"/>',
+    speed: '<path d="M3 18a9 9 0 1118 0"/><path d="M12 18l6.5-6.5"/><path d="M15 11.5h3.5V15"/>',
+    restore: '<path d="M4 12a8 8 0 108-8H8"/><path d="M10.5 1.5L7.5 4l3 2.5"/>'
+  };
+  var MEDIA = { stage1: ['svc-stage1.jpg', 'gauge'], stage2: ['svc-stage2.jpg', 'gauge'], stage3: ['svc-stage3.jpg', 'gauge'],
+    tcu: ['svc-gearbox.jpg', 'gear'], e85: ['svc-dyno.jpg', 'drop'], dpf: ['', 'filter'],
+    egr: ['mecanica-gtr.jpg', 'valve'], adblue: ['', 'drop'], nox: ['', 'sensor'],
+    evap: ['', 'drop'], readiness: ['diag-gtr.jpg', 'sensor'], sap: ['', 'air'],
+    swirl: ['motor-nissan.jpg', 'valve'], flaps: ['parts-coupe.jpg', 'valve'], dtc: ['svc-desarrollo.jpg', 'warn'],
+    immo: ['', 'key'], hotstart: ['', 'power'], launch: ['hero-carbon-gtr-960.jpg', 'flag'],
+    popbang: ['dyno-gtr.jpg', 'flame'], hardcut: ['band-carbon-dyno.jpg', 'flame'], vmax: ['svc-eco.jpg', 'speed'],
+    startstop: ['', 'power'], original: ['', 'restore'] };
+  function icon(id, cls) { var m = MEDIA[id]; return m ? '<svg class="' + cls + '" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">' + ICON[m[1]] + '</svg>' : ''; }
+
   // Acordeão (archivos.html)
   var acc = document.getElementById('acc-list');
   if (acc) {
     acc.innerHTML = S.map(function (x, i) {
-      return '<details name="svc"' + (i === 0 ? ' open' : '') + '><summary>' + esc(x.t) + '</summary><div class="acc-body"><p>' + esc(x.r) + '</p>' + tags(x) +
+      return '<details name="svc"' + (i === 0 ? ' open' : '') + '><summary>' + icon(x.id, 'acc-ico') + '<span>' + esc(x.t) + '</span></summary><div class="acc-body"><p>' + esc(x.r) + '</p>' + tags(x) +
         '<a class="acc-more" href="servicio.html?s=' + x.id + '">Ver más</a></div></details>';
     }).join('');
   }
@@ -178,10 +205,11 @@
     ['Entrega y soporte', 'Te devolvemos el archivo listo para escribir y te ayudamos si lo necesitas.']];
   var others = S.filter(function (o) { return o.c === x.c && o.id !== x.id; }).slice(0, 8);
   page.innerHTML =
-    '<section class="container sv-hero"><span class="kicker">' + esc(CAT[x.c]) + '</span><h1>' + esc(x.t) + '</h1><p>' + esc(x.r) + '</p>' + tags(x) +
-      '<div class="files-cta-btns"><a class="btn" href="' + PORTAL + '">Pedir en el portal ' + ARROW + '</a><a class="btn btn-ghost" href="' + WA + waText + '" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></section>' +
+    '<section class="container sv-hero"><div class="sv-hero-txt"><span class="kicker">' + esc(CAT[x.c]) + '</span><h1>' + esc(x.t) + '</h1><p>' + esc(x.r) + '</p>' + tags(x) +
+      '<div class="files-cta-btns"><a class="btn" href="' + PORTAL + '">Pedir en el portal ' + ARROW + '</a><a class="btn btn-ghost" href="' + WA + waText + '" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></div>' +
+      (MEDIA[x.id][0] ? '<figure class="sv-photo"><img src="images/' + MEDIA[x.id][0] + '" alt="' + esc(x.t) + '" width="960" height="640" fetchpriority="high"><span class="sv-badge">' + icon(x.id, 'sv-badge-ico') + '</span></figure>' : '<figure class="sv-photo sv-illus" aria-hidden="true"><span class="sv-illus-ring"></span>' + icon(x.id, 'sv-illus-ico') + '<span class="sv-illus-name">' + esc(x.t) + '</span></figure>') + '</section>' +
     '<section class="container sv-grid">' +
-      '<div class="sv-card"><h2>Qué es</h2><p>' + esc(x.q) + '</p></div>' +
+      '<div class="sv-card"><span class="sv-card-ico">' + icon(x.id, '') + '</span><h2>Qué es</h2><p>' + esc(x.q) + '</p></div>' +
       '<div class="sv-card"><h2>Cuándo lo necesitas</h2><ul class="sv-list">' + x.s.map(function (s) { return '<li>' + esc(s) + '</li>'; }).join('') + '</ul></div>' +
     '</section>' +
     '<section class="container sv-steps"><h2>Cómo trabajamos</h2><ol>' + steps.map(function (s) { return '<li><b>' + s[0] + '</b><span>' + s[1] + '</span></li>'; }).join('') + '</ol></section>' +

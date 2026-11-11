@@ -1373,3 +1373,28 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 }
 .sv-faq.files-acc { max-width: calc(var(--container) + var(--gutter) * 2); }
 .sv-faq .acc, .sv-faq .files-acc-note { max-width: 900px; }
+/* Serviços: foto e ícones ilustrados */
+.sv-hero { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.sv-hero > * { max-width: none; }
+.sv-photo { position: relative; margin: 0; border-radius: var(--r-xl, 20px); overflow: hidden; aspect-ratio: 4 / 3; border: 1px solid var(--surface-3); box-shadow: 0 30px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(227,18,27,.15); }
+.sv-photo::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 45%, rgba(23,23,24,.75)), radial-gradient(circle at 85% 15%, rgba(227,18,27,.25), transparent 50%); pointer-events: none; }
+.sv-photo img { width: 100%; height: 100%; object-fit: cover; }
+.sv-badge { position: absolute; z-index: 1; left: 20px; bottom: 20px; width: 64px; height: 64px; border-radius: 18px; background: var(--red); display: grid; place-items: center; box-shadow: 0 12px 30px rgba(227,18,27,.45); }
+.sv-badge-ico { width: 34px; height: 34px; color: #fff; }
+[dir=rtl] .sv-badge { left: auto; right: 20px; }
+.sv-card-ico { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 14px; background: var(--red-soft); color: var(--red); margin-bottom: 16px; }
+.sv-card-ico svg { width: 26px; height: 26px; }
+.acc .acc-ico { width: 22px; height: 22px; flex: none; color: var(--red); transition: color .2s; }
+.acc details[open] .acc-ico { color: #fff; }
+@media (max-width: 900px) { .sv-hero { grid-template-columns: minmax(0, 1fr); gap: 28px; } .sv-photo { aspect-ratio: 16 / 10; } }
+/* Ilustração criada (serviços sem foto) */
+.sv-illus { display: grid; place-items: center; background: radial-gradient(circle at 50% 45%, rgba(227,18,27,.35), transparent 60%), linear-gradient(160deg, #232324, #141415); }
+.sv-illus::before { content: ""; position: absolute; inset: 0; opacity: .5; background-image: linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px); background-size: 32px 32px; }
+.sv-illus::after { background: radial-gradient(circle at 85% 15%, rgba(227,18,27,.2), transparent 50%); }
+.sv-illus-ring { position: absolute; width: 58%; aspect-ratio: 1; border-radius: 50%; border: 1px dashed rgba(255,255,255,.18); box-shadow: inset 0 0 60px rgba(227,18,27,.25); animation: sv-spin 40s linear infinite; }
+.sv-illus-ring::before { content: ""; position: absolute; top: -5px; left: 50%; width: 10px; height: 10px; border-radius: 50%; background: var(--red); box-shadow: 0 0 16px var(--red); }
+.sv-illus-ico { position: relative; z-index: 1; width: 34%; height: auto; color: #fff; filter: drop-shadow(0 0 22px rgba(227,18,27,.75)); stroke-width: 1.3; }
+.sv-illus-name { position: absolute; z-index: 1; left: 22px; bottom: 18px; font-family: var(--font-display); font-weight: 800; font-size: 22px; letter-spacing: .04em; text-transform: uppercase; color: rgba(255,255,255,.85); }
+[dir=rtl] .sv-illus-name { left: auto; right: 22px; }
+@keyframes sv-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .sv-illus-ring { animation: none; } }
