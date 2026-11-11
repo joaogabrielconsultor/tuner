@@ -1301,7 +1301,6 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 .files-hero.files-only { padding-bottom: 112px; }
 @media (max-width: 768px) { .files-hero.files-only { padding-bottom: 64px; } }
 /* Archivos: serviços em acordeão (abre e mostra o que cada um faz) */
-.files-hero.files-only { padding-bottom: 48px; }
 .files-acc { padding-bottom: 96px; max-width: 900px; }
 .files-acc .kicker { display: inline-block; font-family: var(--font-display); font-size: 14px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--red); }
 .files-acc h2 { margin: 8px 0 8px; }
