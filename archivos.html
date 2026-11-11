@@ -119,25 +119,7 @@
     <span class="kicker">Servicios</span>
     <h2>Qué podemos hacer en tu archivo</h2>
     <p class="files-acc-lead">Toca cada servicio para ver qué hace.</p>
-    <div class="acc">
-      <details name="svc" open><summary>Stage 1</summary><div class="acc-body"><p>Reprogramamos la centralita sin cambiar ninguna pieza. Ajustamos inyección, presión de turbo, avance y limitadores de par para ganar potencia y respuesta sin salir de los márgenes de seguridad del motor.</p><ul class="acc-tags"><li>Sin piezas nuevas</li><li>Reversible</li></ul></div></details>
-      <details name="svc"><summary>Stage 2</summary><div class="acc-body"><p>Para coches con mejoras mecánicas como downpipe, admisión, intercooler o escape. Calibramos el software para aprovechar esas piezas con seguridad.</p><ul class="acc-tags"><li>Con piezas de mejora</li></ul></div></details>
-      <details name="svc"><summary>Stage 3</summary><div class="acc-body"><p>Proyectos a medida con turbo mayor, inyectores, embrague y otras piezas. Desarrollamos el archivo según la configuración exacta de tu coche.</p><ul class="acc-tags"><li>A medida</li><li>Consúltanos antes de pedir</li></ul></div></details>
-      <details name="svc"><summary>Caja automática (TCU)</summary><div class="acc-body"><p>Reprogramamos el cambio automático para que cambie más rápido, admita más par y responda mejor, en sintonía con la centralita del motor.</p><ul class="acc-tags"><li>Ideal junto a un Stage</li></ul></div></details>
-      <details name="svc"><summary>Conversión E85</summary><div class="acc-body"><p>Adaptamos la centralita para funcionar con bioetanol E85, ajustando inyección y encendido para aprovechar su mayor octanaje.</p><ul class="acc-tags"><li>Consúltanos antes de pedir</li></ul></div></details>
-      <details name="svc"><summary>DPF off</summary><div class="acc-body"><p>Desactivamos en la centralita la gestión del filtro de partículas: regeneraciones, avisos y modo de emergencia.</p><ul class="acc-tags"><li class="tag-warn">Solo competición</li></ul></div></details>
-      <details name="svc"><summary>EGR off</summary><div class="acc-body"><p>Desactivamos la válvula EGR por software para que no recircule gases de escape y la admisión se mantenga más limpia.</p><ul class="acc-tags"><li class="tag-warn">Solo competición</li></ul></div></details>
-      <details name="svc"><summary>AdBlue off</summary><div class="acc-body"><p>Desactivamos el sistema SCR/AdBlue: sin consumo de AdBlue y sin avisos ni cuenta atrás de arranque.</p><ul class="acc-tags"><li class="tag-warn">Solo competición</li></ul></div></details>
-      <details name="svc"><summary>NOx off</summary><div class="acc-body"><p>Desactivamos la gestión de los sensores de NOx y las averías asociadas a ellos.</p><ul class="acc-tags"><li class="tag-warn">Solo competición</li></ul></div></details>
-      <details name="svc"><summary>DTC off</summary><div class="acc-body"><p>Eliminamos códigos de avería concretos que quedan tras una modificación, para que no se encienda el testigo del motor.</p></div></details>
-      <details name="svc"><summary>Immo off</summary><div class="acc-body"><p>Desactivamos el inmovilizador en la centralita, útil al cambiar o reparar una centralita. Depende de cada modelo de ECU.</p><ul class="acc-tags"><li>Consúltanos antes de pedir</li></ul></div></details>
-      <details name="svc"><summary>Launch Control</summary><div class="acc-body"><p>Activamos un control de salida: el motor se mantiene a unas revoluciones fijas para arrancar con la máxima tracción.</p></div></details>
-      <details name="svc"><summary>Pop &amp; Bang</summary><div class="acc-body"><p>Petardeo y explosiones en el escape al soltar el acelerador, con la intensidad que prefieras.</p><ul class="acc-tags"><li>Mejor con escape deportivo</li></ul></div></details>
-      <details name="svc"><summary>Hard Cut limiter</summary><div class="acc-body"><p>Corte de inyección seco al llegar al limitador de revoluciones, con sonido de competición.</p></div></details>
-      <details name="svc"><summary>Vmax off</summary><div class="acc-body"><p>Eliminamos o subimos el limitador de velocidad máxima de fábrica.</p></div></details>
-      <details name="svc"><summary>Start / Stop off</summary><div class="acc-body"><p>Desactivamos el sistema Start/Stop para que el motor no se apague en cada parada.</p></div></details>
-      <details name="svc"><summary>Volver a original</summary><div class="acc-body"><p>Devolvemos la centralita a su software de fábrica, por ejemplo para vender el coche o pasar una revisión en el concesionario.</p></div></details>
-    </div>
+    <div class="acc" id="acc-list"></div>
     <p class="files-acc-note">Las funciones antipolución son solo para competición o uso fuera de vías públicas. Consulta la normativa de tu país.</p>
   </section>
 
@@ -288,5 +270,6 @@
 
 <script src="js/config.js?v=2"></script>
 <script src="js/site.js?v=2"></script>
+<script src="js/servicios.js?v=1"></script>
 </body>
 </html>
