@@ -58,7 +58,7 @@ CP.catalog = (function () {
 // ===== CONFIGURADOR DE VEÍCULO (fase por fase) =====
 // Tipo → Marca → Modelo → Año → Motor. Cada fase abre um painel com as opções
 // embaixo dos campos; ao escolher o motor, vai para a página de resultado.
-CP.TYPE_PAGE = { 'coche': 'vehiculos.html', 'moto': 'motos.html', 'moto-agua': 'moto-agua.html', 'lancha': 'lancha.html' };
+CP.TYPE_PAGE = { 'coche': '/vehiculos/', 'moto': '/motos/', 'moto-agua': '/moto-agua/', 'lancha': '/lancha/' };
 CP.TYPE_LABEL = { 'coche': 'Vehículo', 'moto': 'Moto / Quad', 'moto-agua': 'Moto de agua', 'lancha': 'Lancha motora' };
 CP.periodLabel = function (p) { return String(p.label).replace(/(\d{4}) (\d{4}|\.\.\.)\s*$/, '$1 > $2'); };
 CP.engineLabel = function (e) {
@@ -175,7 +175,7 @@ CP.engineLabel = function (e) {
     if (!grid.children.length && filter) msg('No encontramos resultados para «' + esc(filter) + '».');
   }
   function noData() {
-    grid.innerHTML = '<div class="panel-msg">Aún no tenemos los datos de este vehículo publicados. <a href="contacto.html">Pregúntanos</a> y te decimos qué podemos hacer.</div>';
+    grid.innerHTML = '<div class="panel-msg">Aún no tenemos los datos de este vehículo publicados. <a href="/contacto/">Pregúntanos</a> y te decimos qué podemos hacer.</div>';
   }
 
   function open(step) {
@@ -209,7 +209,7 @@ CP.engineLabel = function (e) {
   function pickModel(m) { S.model = m; S.period = null; open('year'); }
   function pickPeriod(p) { S.period = p; open('engine'); }
   function pickEngine(e) {
-    location.href = 'motor.html?marca=' + encodeURIComponent(S.slug) +
+    location.href = '/motor/?marca=' + encodeURIComponent(S.slug) +
       '&modelo=' + encodeURIComponent(modelName(S.model)) +
       '&periodo=' + encodeURIComponent(S.period.id) +
       '&motor=' + encodeURIComponent(e.name) + '&cv=' + e.cv;
@@ -266,7 +266,7 @@ CP.engineLabel = function (e) {
     current = list; hl = -1;
     if (!q.value.trim()) { results.hidden = true; q.setAttribute('aria-expanded', 'false'); return; }
     if (!list.length) {
-      results.innerHTML = '<li class="empty">No encontramos ese vehículo. Prueba con la marca, o <a href="contacto.html" style="text-decoration:underline">pregúntanos</a>.</li>';
+      results.innerHTML = '<li class="empty">No encontramos ese vehículo. Prueba con la marca, o <a href="/contacto/" style="text-decoration:underline">pregúntanos</a>.</li>';
     } else {
       results.innerHTML = list.map(function (r, i) {
         return '<li><a href="#" data-i="' + i + '" id="fr-' + i + '" role="option">' +

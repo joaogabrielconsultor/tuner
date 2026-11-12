@@ -15,8 +15,10 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   var body = document.body;
 
   // Item ativo do menu conforme a página atual
-  var page = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-  if (page === '') page = 'index.html';
+  // funciona com /vehiculos.html e com o endereço limpo /vehiculos/
+  var seg = location.pathname.split('/').filter(Boolean);
+  var page = (seg.length ? seg[0] : 'index').toLowerCase();
+  if (!/\.html$/.test(page)) page += '.html';
   header.querySelectorAll('[data-match]').forEach(function (el) {
     var pages = el.getAttribute('data-match').split(' ');
     if (pages.indexOf(page) >= 0) (el.closest('li') || el).classList.add('active');
@@ -108,7 +110,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   var empty = document.createElement('div');
   empty.className = 'empty-state no-results';
   empty.hidden = true;
-  empty.innerHTML = '<h2>Ninguna marca coincide</h2><p>Revisa cómo está escrito o pregúntanos directamente por tu vehículo.</p><a class="btn" href="contacto.html">Solicita presupuesto <span class="ico">' + CP_ICON_ARROW + '</span></a>';
+  empty.innerHTML = '<h2>Ninguna marca coincide</h2><p>Revisa cómo está escrito o pregúntanos directamente por tu vehículo.</p><a class="btn" href="/contacto/">Solicita presupuesto <span class="ico">' + CP_ICON_ARROW + '</span></a>';
   grid.appendChild(empty);
   function norm(s) { return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, ''); }
   input.addEventListener('input', function () {
@@ -141,7 +143,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     '<div class="cookie-actions">' +
     '<button type="button" class="cookie-reject">Rechazar</button>' +
     '<button type="button" class="cookie-accept">Aceptar</button></div>' +
-    '<hr class="cookie-sep"><a class="cookie-policy" href="politica-de-privacidad.html">Política de privacidad</a>';
+    '<hr class="cookie-sep"><a class="cookie-policy" href="/politica-de-privacidad/">Política de privacidad</a>';
   body.appendChild(cc);
   body.classList.add('cookie-open');
   var closeCookie = function (v) { try { localStorage.setItem('brpCookieChoice', v); } catch (e) {} cc.remove(); body.classList.remove('cookie-open'); };

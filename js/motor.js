@@ -13,11 +13,11 @@ document.addEventListener('DOMContentLoaded', function () {
   var STAGE_NAME = { 'gearbox': 'Caja de cambios' };
   function cap(t) { t = String(t || ''); return t.charAt(0).toUpperCase() + t.slice(1); }
 
-  if (!marcaSlug || !modeloParam || !periodoParam || !motorParam) { location.href = 'vehiculos.html'; return; }
+  if (!marcaSlug || !modeloParam || !periodoParam || !motorParam) { location.href = '/vehiculos/'; return; }
 
   Promise.all([CP.catalog.brand(marcaSlug), CP.catalog.index().catch(function () { return null; })])
     .then(function (r) { render(r[0], r[1]); })
-    .catch(function () { location.href = 'vehiculos.html'; });
+    .catch(function () { location.href = '/vehiculos/'; });
 
   function render(brand, index) {
     var model = (brand.models || []).find(function (m) { return CP.catalog.modelName(m) === modeloParam; });
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var engine = null;
     if (period) (period.fuels || []).forEach(function (f) { (f.engines || []).forEach(function (e) { if (e.name === motorParam && e.cv === cvParam) engine = e; }); });
     var type = index && index.brands[marcaSlug] ? index.brands[marcaSlug].type : 'coche';
-    var typePage = CP.TYPE_PAGE[type] || 'vehiculos.html';
+    var typePage = CP.TYPE_PAGE[type] || '/vehiculos/';
     var configUrl = typePage + '?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(modeloParam) + '&periodo=' + encodeURIComponent(periodoParam);
     if (!engine) { location.href = configUrl; return; }
 
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Abas das etapas
     var tabs = document.getElementById('stage-tabs');
     tabs.innerHTML = stages.map(function (s) {
-      var url = 'motor.html?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(modeloParam) +
+      var url = '/motor/?marca=' + encodeURIComponent(marcaSlug) + '&modelo=' + encodeURIComponent(modeloParam) +
         '&periodo=' + encodeURIComponent(periodoParam) + '&motor=' + encodeURIComponent(motorParam) + '&cv=' + cvParam +
         '&stage=' + encodeURIComponent(s.id);
       var cur = stage && s.id === stage.id ? ' aria-current="page"' : '';
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }).join('');
 
     // Link de contato com o veículo e os números (vai para o formulário → WhatsApp)
-    var q = 'contacto.html?marca=' + encodeURIComponent(brand.name) + '&modelo=' + encodeURIComponent(modeloParam) + '&motor=' + encodeURIComponent(motorParam);
+    var q = '/contacto/?marca=' + encodeURIComponent(brand.name) + '&modelo=' + encodeURIComponent(modeloParam) + '&motor=' + encodeURIComponent(motorParam);
     if (stage) {
       q += '&stage=' + encodeURIComponent(stage.label || '');
       if (stage.power_orig != null && stage.power_mod != null) q += '&po=' + stage.power_orig + '&pm=' + stage.power_mod + '&pd=' + stage.power_diff;

@@ -32,8 +32,8 @@ const BRP_CONFIG = {
     portal: 'https://mido-archivos.onrender.com'          // endereço do portal com login (ex.: 'https://mido-archivos.onrender.com'); preenchido = botão "Continuar al portal"
   },
   links: {
-    condicoes_venda: 'condiciones-de-venta.html',
-    politica_privacidade: 'politica-de-privacidad.html'
+    condicoes_venda: '/condiciones-de-venta/',
+    politica_privacidade: '/politica-de-privacidad/'
   }
 };
 
