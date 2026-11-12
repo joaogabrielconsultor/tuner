@@ -1,0 +1,103 @@
+/* Serviços (servicio.html e listas em archivos.html / vehiculos.html) — mesmo visual do portal */
+.sv-photo.sv-schema { background: #141415; }
+.sv-photo.sv-schema::after { display: none; }
+.sv-photo.sv-schema img { object-fit: contain; }
+
+/* ===== Página de servicio didáctica (svx) ===== */
+.svx-sec { margin-top: 72px; }
+.svx-head { margin-bottom: 24px; }
+.svx-kicker { display: inline-block; padding: 6px 14px; border-radius: 999px; background: var(--red-soft); color: #ff6b70; font-family: var(--font-display); font-size: 12px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+.svx-head h2 { font-size: 34px; line-height: 1.2; margin: 12px 0 0; }
+.svx-card { position: relative; background: linear-gradient(160deg, #262628, #1d1d1f); border: 1px solid var(--surface-3); border-radius: var(--r-lg); padding: 24px; }
+.svx-card h3 { font-size: 18px; margin: 0 0 10px; display: flex; align-items: center; gap: 10px; }
+.svx-card p { margin: 0; color: var(--body); line-height: 1.6; }
+.svx-ico { display: grid; place-items: center; flex: none; width: 48px; height: 48px; border-radius: 14px; background: var(--red-soft); color: var(--red); }
+.svx-ico svg { width: 26px; height: 26px; }
+.svx-ico-lg { width: 64px; height: 64px; border-radius: 18px; margin-bottom: 18px; }
+.svx-ico-lg svg { width: 34px; height: 34px; }
+.svx-ico-red { background: linear-gradient(145deg, var(--red-hover), var(--red-deep)); color: #fff; box-shadow: 0 10px 24px rgba(227,18,27,.35); }
+.svx-ico-ok { background: rgba(63,191,106,.14); color: var(--green); }
+.svx-h3-ico { width: 22px; height: 22px; color: var(--red); flex: none; }
+
+/* Destaques */
+.svx-hl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 8px; }
+.svx-hl > div { display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: var(--r-lg); border: 1px solid rgba(227,18,27,.35); background: linear-gradient(120deg, rgba(227,18,27,.12), rgba(227,18,27,.02)); }
+.svx-hl small { display: block; font-family: var(--font-display); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: #ff6b70; }
+.svx-hl b { display: block; color: var(--heading); font-family: var(--font-display); font-size: 16px; margin-top: 2px; }
+
+/* Qué es + síntomas */
+.svx-split { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 20px; }
+.svx-what p { font-size: 17px; }
+.svx-symptoms { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; }
+.svx-symptoms li { display: flex; gap: 12px; align-items: flex-start; padding: 12px 14px; border-radius: var(--r-md); background: rgba(255,255,255,.03); border-left: 3px solid var(--red); color: var(--body); line-height: 1.5; }
+.svx-symptoms svg { width: 20px; height: 20px; flex: none; color: var(--red); margin-top: 1px; }
+
+/* Cómo funciona */
+.svx-how { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.svx-how .svx-ico { margin-bottom: 16px; }
+
+/* Niveles / problemas */
+.svx-levels { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.svx-levels.svx-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.svx-levels .svx-card { border-top: 3px solid var(--red); }
+.svx-pill { display: inline-block; margin-bottom: 12px; padding: 4px 12px; border-radius: 999px; background: var(--red); color: #fff; font-family: var(--font-display); font-size: 12px; font-weight: 800; letter-spacing: .06em; }
+
+/* Códigos / datos */
+.svx-codes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.svx-codes > div { padding: 18px 20px; border-radius: var(--r-md); background: var(--surface); border: 1px solid var(--surface-3); border-left: 4px solid var(--red); }
+.svx-codes b { display: block; font-family: var(--font-display); font-size: 22px; color: #fff; }
+.svx-codes span { display: block; margin-top: 4px; color: var(--muted); font-size: 14px; line-height: 1.45; }
+.svx-note { display: flex; gap: 10px; align-items: center; margin: 14px 0 0; color: var(--muted); font-size: 14px; }
+.svx-note svg { width: 18px; height: 18px; flex: none; color: var(--red); }
+
+/* Cómo trabajamos */
+.svx-banner { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; padding: 16px 20px; border-radius: var(--r-lg); background: rgba(63,191,106,.08); border: 1px solid rgba(63,191,106,.35); }
+.svx-banner svg { width: 24px; height: 24px; flex: none; color: var(--green); }
+.svx-banner p { margin: 0; color: var(--body); line-height: 1.55; }
+.svx-banner b { color: var(--heading); }
+.svx-steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.svx-steps .svx-card { text-align: center; padding-top: 28px; }
+.svx-steps .svx-ico { margin: 0 auto 14px; width: 60px; height: 60px; border-radius: 18px; }
+.svx-steps small { display: block; color: #ff6b70; font-family: var(--font-display); font-weight: 800; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-bottom: 4px; }
+.svx-steps h3 { justify-content: center; }
+.svx-steps p { font-size: 14px; }
+
+/* Beneficios */
+.svx-benefits { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.svx-benefits .svx-card { display: flex; flex-direction: column; gap: 16px; }
+.svx-benefits p { color: var(--heading); font-family: var(--font-display); font-weight: 700; font-size: 15px; line-height: 1.4; }
+
+/* Indicado para: franja de color */
+.svx-band { margin-top: 80px; padding: 64px 0; background: radial-gradient(ellipse at 50% 0%, rgba(227,18,27,.35), transparent 70%), linear-gradient(180deg, #2a0d0f, #171718); border-block: 1px solid rgba(227,18,27,.3); }
+.svx-band .svx-head { text-align: center; }
+.svx-apps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+.svx-apps > div { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 26px 18px; border-radius: var(--r-lg); background: rgba(0,0,0,.35); border: 1px solid rgba(255,255,255,.08); }
+.svx-apps .svx-ico { width: 60px; height: 60px; border-radius: 50%; background: rgba(227,18,27,.2); color: #fff; }
+.svx-apps b { color: var(--heading); font-family: var(--font-display); font-size: 16px; line-height: 1.35; }
+
+/* FAQ */
+.svx-faq { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.svx-faq .svx-card { border-left: 4px solid var(--red); border-radius: 0 var(--r-lg) var(--r-lg) 0; }
+.svx-faq h3 { font-size: 17px; align-items: flex-start; }
+.svx-faq p { font-size: 15px; }
+.svx-legal { display: flex; gap: 14px; align-items: flex-start; margin-top: 24px; padding: 18px 22px; border-radius: var(--r-lg); border: 2px dashed rgba(240,180,76,.6); background: rgba(240,180,76,.06); }
+.svx-legal svg { width: 26px; height: 26px; flex: none; color: #f0b44c; }
+.svx-legal p { margin: 0; color: var(--body); font-size: 14px; line-height: 1.55; }
+.svx-legal b { color: #f0b44c; }
+
+.svx-sec + .files-cta, .svx-band + .svx-sec { margin-top: 72px; }
+
+@media (max-width: 1100px) {
+  .svx-steps, .svx-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .svx-sec { margin-top: 52px; }
+  .svx-head h2 { font-size: 26px; }
+  .svx-hl, .svx-split, .svx-levels, .svx-levels.svx-2, .svx-faq { grid-template-columns: minmax(0, 1fr); }
+  .svx-steps, .svx-benefits { grid-template-columns: minmax(0, 1fr); }
+  .svx-steps .svx-card { text-align: left; display: grid; grid-template-columns: auto 1fr; column-gap: 16px; padding-top: 22px; }
+  .svx-steps .svx-ico { grid-row: span 3; margin: 0; width: 52px; height: 52px; }
+  .svx-steps h3 { justify-content: flex-start; }
+  .svx-benefits .svx-card { flex-direction: row; align-items: center; }
+  .svx-band { padding: 48px 0; margin-top: 56px; }
+}
