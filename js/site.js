@@ -425,23 +425,17 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
 
   // Som do motor: tenta tocar sozinho; se o navegador bloquear (o normal antes de um toque),
   // o primeiro toque na tela de carregamento faz o som tocar em vez de pular a animação.
+  // O áudio toca inteiro (~11 s), mesmo depois que a tela de carregamento some.
   var snd = null, sndOn = false;
   try {
-    snd = new Audio('/audio/intro-gtr.mp3');
+    snd = new Audio('/audio/intro-gtr-v2.mp3');
     snd.volume = 0.6;
     var p = snd.play();
     if (p && p.then) p.then(function () { sndOn = true; }, function () { if (intro && !sndOn) { intro.classList.add('needs-tap'); MIN = 2600; } });
   } catch (e) { snd = null; }
-  function fadeSound() {
-    if (!snd || snd.paused) return;
-    var v = snd.volume, id = setInterval(function () {
-      v -= 0.08; if (v <= 0) { clearInterval(id); snd.pause(); } else snd.volume = v;
-    }, 40);
-  }
 
   function finish() {
     if (ended) return; ended = true;
-    fadeSound();
     root.classList.remove('site-intro');
     if (intro) intro.remove();
     document.dispatchEvent(new Event('cp:intro-end'));

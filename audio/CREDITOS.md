@@ -2,4 +2,4 @@
 
 | Arquivo | Origem | Uso |
 |---|---|---|
-| intro-gtr.mp3 | Gravação de motor de Nissan GT-R fornecida pelo cliente (MIDO Performance), com permissão de uso confirmada em 12/11/2026. Trecho de 2,7 s (4,9 s–7,6 s do original), com fade e volume ajustado. | Tela de carregamento do site |
+| intro-gtr-v2.mp3 | Áudio de motor de Nissan GT-R fornecido pelo cliente (MIDO Performance), editado no CapCut, com permissão de uso confirmada em 12/11/2026. Usado inteiro (11,2 s); só o volume foi ajustado. | Som da tela de carregamento do site (toca até o fim) |
