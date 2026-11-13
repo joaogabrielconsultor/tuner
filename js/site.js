@@ -427,7 +427,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   // o primeiro toque na tela de carregamento faz o som tocar em vez de pular a animação.
   var snd = null, sndOn = false;
   try {
-    snd = new Audio('audio/intro-motor.mp3');
+    snd = new Audio('/audio/intro-gtr.mp3');
     snd.volume = 0.6;
     var p = snd.play();
     if (p && p.then) p.then(function () { sndOn = true; }, function () { if (intro && !sndOn) { intro.classList.add('needs-tap'); MIN = 2600; } });
