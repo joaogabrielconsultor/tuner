@@ -1002,7 +1002,9 @@
   "Solo DPF, AdBlue o EGR": "仅 DPF、AdBlue 或 EGR",
   "Sin Stage": "不含 Stage",
   "Caja automática (TCU)": "自动变速箱 (TCU)",
-  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "最终价格取决于 ECU。收到文件后、付款前我们会向您确认。"
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "最终价格取决于 ECU。收到文件后、付款前我们会向您确认。",
+  "Más opciones": "更多选项",
+  "Cerrar": "关闭"
  },
  "patterns": [
   [

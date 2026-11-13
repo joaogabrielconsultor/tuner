@@ -1002,7 +1002,9 @@
   "Solo DPF, AdBlue o EGR": "DPF, AdBlue or EGR only",
   "Sin Stage": "Without Stage",
   "Caja automática (TCU)": "Automatic gearbox (TCU)",
-  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "The final price depends on the ECU. We confirm it when we receive the file, before you pay."
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "The final price depends on the ECU. We confirm it when we receive the file, before you pay.",
+  "Más opciones": "More options",
+  "Cerrar": "Close"
  },
  "patterns": [
   [

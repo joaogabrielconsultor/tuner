@@ -593,7 +593,9 @@
   "Moto en un banco de potencia": "Moto em um dinamômetro",
   "Diagnóstico de averías en Bilbao: testigos en el cuadro, pérdidas de potencia, tirones y fallos intermitentes. Lectura y análisis de la centralita.": "Diagnóstico de falhas em Bilbao: luzes de alerta no painel, perdas de potência, trancos e falhas intermitentes. Leitura e análise da central.",
   "Coche con el capó abierto durante un diagnóstico": "Carro com o capô aberto durante um diagnóstico",
-  "Copiar email": "Copiar e-mail"
+  "Copiar email": "Copiar e-mail",
+  "Más opciones": "Mais opções",
+  "Cerrar": "Fechar"
  },
  "patterns": [
   [

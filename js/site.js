@@ -41,8 +41,7 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
   if (burger) {
     burger.addEventListener('click', function () {
       var open = body.classList.toggle('nav-open');
-      burger.setAttribute('aria-expanded', open ? 'true' : 'false');
-      burger.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+      burger.setAttribute('aria-expanded', open ? 'true' : 'false');   // o texto visível troca sozinho (Más opciones / Cerrar)
     });
   }
   document.addEventListener('keydown', function (e) {
@@ -433,6 +432,27 @@ var CP_ICON_ARROW = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5
     var p = snd.play();
     if (p && p.then) p.then(function () { sndOn = true; }, function () { if (intro && !sndOn) { intro.classList.add('needs-tap'); MIN = 2600; } });
   } catch (e) { snd = null; }
+
+  // Logo do topo treme no ritmo do motor enquanto o som toca.
+  // ENV = volume do áudio a cada 50 ms (0 a 9), medido do próprio arquivo intro-gtr-v2.mp3.
+  var ENV = '0100011211222221211211121232103123779126798641121112214354333212111212111111030001400011521012122122122223221332212212212133599323989763002101231223743343423433342010011021415101110000310000221101232110012122212102200100000';
+  var logo = document.querySelector('.site-header .brand-logo img'), shaking = false, lv = 0;
+  function shake() {
+    if (!shaking || !logo) return;
+    var i = Math.floor(snd.currentTime / 0.05), target = 0.2 + 0.8 * (+(ENV.charAt(i) || 0) / 9);
+    lv += (target - lv) * 0.35;                                   // suaviza a troca de intensidade
+    var a = 2.4 * lv, t = performance.now() / 1000;
+    var x = (Math.sin(t * 61) + Math.sin(t * 97) * 0.5) * a, y = (Math.sin(t * 73 + 1) + Math.sin(t * 131) * 0.4) * a * 0.7;
+    logo.style.transform = 'translate(' + x.toFixed(2) + 'px,' + y.toFixed(2) + 'px) rotate(' + (Math.sin(t * 53) * lv * 0.9).toFixed(2) + 'deg) scale(' + (1 + lv * 0.05).toFixed(3) + ')';
+    logo.style.filter = 'drop-shadow(0 0 ' + (lv * 14).toFixed(1) + 'px rgba(227,18,27,' + (lv * 0.75).toFixed(2) + '))';
+    requestAnimationFrame(shake);
+  }
+  function stopShake() { shaking = false; if (logo) { logo.style.transform = ''; logo.style.filter = ''; } }
+  if (snd && logo) {
+    snd.addEventListener('playing', function () { if (!shaking) { shaking = true; lv = 0; requestAnimationFrame(shake); } });
+    snd.addEventListener('pause', stopShake);
+    snd.addEventListener('ended', stopShake);
+  }
 
   function finish() {
     if (ended) return; ended = true;

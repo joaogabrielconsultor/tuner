@@ -1002,7 +1002,9 @@
   "Solo DPF, AdBlue o EGR": "Μόνο DPF, AdBlue ή EGR",
   "Sin Stage": "Χωρίς Stage",
   "Caja automática (TCU)": "Αυτόματο κιβώτιο (TCU)",
-  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "Η τελική τιμή εξαρτάται από την εγκέφαλο (ECU). Σας την επιβεβαιώνουμε μόλις λάβουμε το αρχείο, πριν την πληρωμή."
+  "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "Η τελική τιμή εξαρτάται από την εγκέφαλο (ECU). Σας την επιβεβαιώνουμε μόλις λάβουμε το αρχείο, πριν την πληρωμή.",
+  "Más opciones": "Περισσότερα",
+  "Cerrar": "Κλείσιμο"
  },
  "patterns": [
   [
