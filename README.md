@@ -31,6 +31,17 @@ node tools/build-catalog.js
 python3 tools/sync-layout.py
 ```
 
+## Páginas de venta cinematográficas
+
+| Ruta | Para quién | Archivos |
+| --- | --- | --- |
+| `/performance/` | Clientes del taller: mecánica, chapa y pintura, diagnóstico y reprogramación. Objetivo: presupuestos y conversaciones por WhatsApp. | `performance.html` |
+| `/arquivos/` | Talleres y preparadores (B2B). Objetivo: altas y accesos al portal `mido-archivos`; precios en vivo del portal y demostración sin pedidos. | `arquivos.html` |
+
+Estilo y efectos compartidos: `css/cinematic.css` y `js/cinematic.js` (cuentarrevoluciones con el audio del GT-R solo al pulsar, luz de cambio como progreso, revelado de fotos, progreso del proceso, formulario → WhatsApp, eventos `mido_*` en `window.dataLayer` sin datos personales). Respeta `prefers-reduced-motion` y activa una versión ligera (`html.fx-lite`) en aparatos modestos. Fotos optimizadas en `images/cine/` (WebP). Tras editar: `node tools/sync-layout.js && node tools/clean-urls.js`.
+
+Pruebas (Playwright): con un servidor estático en la carpeta del proyecto, `BASE=http://127.0.0.1:8092 node tests/landings.e2e.js`.
+
 ## Idiomas (ES, EN, NL, DE, FR, IT, EL, PT, 中文, العربية)
 
 O site é escrito em espanhol. Os outros idiomas são traduzidos no navegador, quando o visitante escolhe o idioma no seletor 🌐 do topo (a escolha fica guardada; também dá para mandar um link com `?lang=en`, `?lang=de`, etc.).
