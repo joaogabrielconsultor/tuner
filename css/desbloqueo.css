@@ -1,0 +1,120 @@
+/* MIDO Performance — Desbloqueo de centralitas para Alientech KESS3
+   Usado em desbloqueo-kess3.html e no banner da home. Só classes .unl-* e .ecu-*: não toca no resto do site. */
+
+/* ---------- textura de carbono (só CSS, sem imagens) ---------- */
+.unl-carbon {
+  background-color: #141415;
+  background-image:
+    radial-gradient(120% 90% at 85% 10%, rgba(227, 18, 27, .22), transparent 55%),
+    linear-gradient(135deg, rgba(255, 255, 255, .035) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, .035) 50%, rgba(255, 255, 255, .035) 75%, transparent 75%),
+    linear-gradient(45deg, rgba(0, 0, 0, .35) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, .35) 50%, rgba(0, 0, 0, .35) 75%, transparent 75%);
+  background-size: auto, 8px 8px, 8px 8px;
+}
+
+/* ---------- banner (home e topo da página) ---------- */
+.unl-banner { position: relative; overflow: hidden; border-radius: var(--r-xl); border: 1px solid var(--line); padding: 64px 56px; isolation: isolate; }
+.unl-banner::after { /* faixa vermelha diagonal, assinatura MIDO */
+  content: ""; position: absolute; z-index: -1; right: -12%; top: -40%; width: 46%; height: 180%; transform: rotate(18deg);
+  background: linear-gradient(90deg, transparent, rgba(227, 18, 27, .16) 40%, rgba(227, 18, 27, .32) 50%, rgba(227, 18, 27, .16) 60%, transparent);
+}
+.unl-banner .unl-kicker { display: inline-flex; align-items: center; gap: 10px; font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-bottom: 18px; }
+.unl-banner .unl-kicker::before { content: ""; width: 28px; height: 2px; background: var(--red); }
+.unl-banner h1, .unl-banner h2 { max-width: 760px; margin: 0; font-family: var(--font-display); font-size: clamp(30px, 4.4vw, 52px); line-height: 1.12; font-weight: 800; color: var(--heading); letter-spacing: -.01em; }
+.unl-banner h1 em, .unl-banner h2 em { font-style: normal; color: var(--red); }
+.unl-banner p { max-width: 640px; margin: 22px 0 0; font-size: 17px; line-height: 1.6; color: var(--body); }
+.unl-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+.unl-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; padding: 0; list-style: none; }
+.unl-tags li { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--surface-3); background: rgba(0, 0, 0, .25); font-size: 13px; font-weight: 600; color: var(--text); }
+
+/* botão de WhatsApp: o mesmo .btn-wa do site (verde oficial), só que do tamanho do conteúdo dentro do banner */
+.unl-actions .btn-wa { width: auto; height: 56px; padding: 0 8px 0 24px; font-size: 16px; justify-content: space-between; }
+.unl-actions .btn-wa .ico { background: rgba(11, 46, 23, .14); color: #0b2e17; }
+.unl-actions .btn-wa .ico svg { width: 16px; height: 16px; }
+.btn-line { background: transparent; box-shadow: inset 0 0 0 1px var(--surface-3); }
+.btn-line:hover { box-shadow: inset 0 0 0 1px var(--red); }
+
+/* ---------- página ---------- */
+.unl-page { padding-top: calc(var(--header-h) + 32px); }
+.unl-sec { margin-top: 96px; }
+.unl-sec > .unl-head { max-width: 760px; margin-bottom: 40px; }
+.unl-head .unl-kicker { display: block; font-family: var(--font-display); font-size: 13px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--red); margin-bottom: 12px; }
+.unl-head h2 { margin: 0; font-family: var(--font-display); font-size: clamp(26px, 3vw, 38px); line-height: 1.2; color: var(--heading); }
+.unl-head p { margin: 16px 0 0; font-size: 16px; line-height: 1.65; color: var(--body); }
+
+/* o que é */
+.unl-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.unl-card { padding: 28px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); }
+.unl-card .unl-ico { display: grid; place-items: center; width: 44px; height: 44px; border-radius: var(--r-md); background: var(--red-soft); color: var(--red); margin-bottom: 18px; }
+.unl-card .unl-ico svg { width: 22px; height: 22px; }
+.unl-card h3 { margin: 0 0 10px; font-family: var(--font-display); font-size: 19px; color: var(--heading); }
+.unl-card p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--body); }
+
+/* como funciona */
+.unl-steps { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; padding: 0; margin: 0; list-style: none; counter-reset: unl; }
+.unl-steps li { position: relative; padding: 26px 22px 24px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); counter-increment: unl; }
+.unl-steps li::before { content: counter(unl, decimal-leading-zero); display: block; font-family: var(--font-display); font-size: 34px; font-weight: 800; line-height: 1; color: transparent; -webkit-text-stroke: 1px var(--red); margin-bottom: 16px; }
+.unl-steps li:not(:last-child)::after { content: ""; position: absolute; top: 44px; right: -13px; width: 10px; height: 10px; border-top: 2px solid var(--red); border-right: 2px solid var(--red); transform: rotate(45deg); }
+.unl-steps h3 { margin: 0 0 8px; font-family: var(--font-display); font-size: 17px; color: var(--heading); }
+.unl-steps p { margin: 0; font-size: 14px; line-height: 1.55; color: var(--body); }
+
+/* aviso Alientech Suite */
+.unl-alert { display: flex; gap: 18px; align-items: flex-start; margin-top: 32px; padding: 22px 24px; border-radius: var(--r-lg); background: rgba(227, 18, 27, .08); border: 1px solid rgba(227, 18, 27, .45); }
+.unl-alert svg { flex: none; width: 26px; height: 26px; color: var(--red); margin-top: 2px; }
+.unl-alert b { display: block; margin-bottom: 4px; font-family: var(--font-display); font-size: 16px; color: var(--heading); }
+.unl-alert p { margin: 0; font-size: 15px; line-height: 1.6; color: var(--body); }
+
+/* tabela de compatibilidade */
+.ecu-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 18px; }
+.ecu-search { position: relative; flex: 1 1 340px; max-width: 520px; }
+.ecu-search svg { position: absolute; left: 18px; top: 50%; width: 18px; height: 18px; transform: translateY(-50%); color: var(--muted); pointer-events: none; }
+.ecu-search input { width: 100%; height: 56px; padding: 0 20px 0 50px; border-radius: var(--r-md); border: 1px solid var(--surface-3); background: var(--surface); color: var(--heading); font: inherit; font-size: 16px; }
+.ecu-search input:focus { outline: none; border-color: var(--red); box-shadow: 0 0 0 3px var(--red-soft); }
+.ecu-search input:disabled { opacity: .55; }
+.ecu-count { font-size: 14px; color: var(--muted); }
+.ecu-table-wrap { overflow-x: auto; border-radius: var(--r-lg); border: 1px solid var(--line); background: var(--surface); }
+.ecu-table { width: 100%; border-collapse: collapse; font-size: 15px; }
+.ecu-table th { padding: 16px 20px; text-align: left; font-family: var(--font-display); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); background: var(--surface-2); border-bottom: 1px solid var(--line); }
+.ecu-table td { padding: 16px 20px; border-bottom: 1px solid var(--line); color: var(--body); vertical-align: middle; }
+.ecu-table tr:last-child td { border-bottom: 0; }
+.ecu-table tbody tr:hover { background: rgba(255, 255, 255, .025); }
+.ecu-name { font-family: var(--font-display); font-weight: 800; color: var(--heading); }
+.ecu-table small { display: block; margin-top: 4px; font-size: 13px; color: var(--muted); }
+.ecu-proto { display: inline-block; padding: 4px 10px; border-radius: 999px; background: var(--red-soft); color: #ff6a70; font-size: 12px; font-weight: 700; letter-spacing: .04em; }
+.ecu-pending { display: inline-block; margin-left: 10px; padding: 3px 8px; border-radius: 6px; background: #4a3a10; color: #f2c14e; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; vertical-align: middle; }
+.ecu-act { text-align: right; white-space: nowrap; }
+.ecu-ask { display: inline-block; padding: 8px 14px; border-radius: var(--r-sm); border: 1px solid var(--surface-3); color: var(--heading); font-size: 14px; font-weight: 600; text-decoration: none; transition: border-color .2s, color .2s; }
+.ecu-ask:hover { border-color: #25d366; color: #6fe39b; }
+.ecu-empty { margin: 16px 0 0; padding: 20px 22px; border-radius: var(--r-lg); background: var(--surface); border: 1px dashed var(--surface-3); color: var(--body); font-size: 15px; line-height: 1.6; }
+.ecu-empty a { color: var(--red); font-weight: 600; }
+.ecu-draft { margin-bottom: 18px; padding: 14px 18px; border-radius: var(--r-md); background: #4a3a10; color: #f8dc8a; font-size: 14px; line-height: 1.5; }
+
+/* CTA final */
+.unl-final { margin: 96px 0 24px; text-align: left; }
+
+/* ---------- celular ---------- */
+@media (max-width: 1100px) {
+  .unl-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .unl-steps li::after { display: none; }
+}
+@media (max-width: 900px) {
+  .unl-grid { grid-template-columns: 1fr; }
+  .unl-banner { padding: 44px 28px; }
+}
+@media (max-width: 640px) {
+  .unl-page { padding-top: calc(var(--header-h) + 8px); }
+  .unl-sec { margin-top: 64px; }
+  .unl-banner { padding: 36px 20px; }
+  .unl-banner p { font-size: 16px; }
+  .unl-actions .btn, .unl-actions .btn-wa { width: 100%; justify-content: space-between; }
+  .unl-actions .btn { white-space: normal; height: auto; min-height: 56px; padding-top: 8px; padding-bottom: 8px; text-align: left; line-height: 1.3; }
+  .unl-steps { grid-template-columns: 1fr; }
+  /* tabela vira cartões */
+  .ecu-table-wrap { border: 0; background: none; overflow: visible; }
+  .ecu-table thead { display: none; }
+  .ecu-table, .ecu-table tbody, .ecu-table tr, .ecu-table td { display: block; width: 100%; }
+  .ecu-table tr { margin-bottom: 12px; padding: 16px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); }
+  .ecu-table td { padding: 6px 0; border: 0; }
+  .ecu-table td[data-label]::before { content: attr(data-label); display: block; font-size: 11px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 2px; }
+  .ecu-act { text-align: left; padding-top: 10px !important; }
+  .ecu-ask { width: 100%; text-align: center; }
+}

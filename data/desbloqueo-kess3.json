@@ -1,0 +1,17 @@
+{
+  "_instrucciones": "Lista de centralitas que MIDO desbloquea para Alientech KESS3. La tabla pública SOLO muestra las filas con \"confirmado\": true. Para revisar el borrador completo: /desbloqueo-kess3/?revision=1. Campos: ecu (modelo exacto), fabricante, grupo (marcas/vehículos), protocolo (cómo se trabaja con KESS3: Bench, Boot u OBD), nota (opcional).",
+  "actualizado": "2026-11-15",
+  "centralitas": [
+    { "ecu": "MD1CS001", "fabricante": "Bosch", "grupo": "BMW · Mini (diésel B37 / B47)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "MD1CS003", "fabricante": "Bosch", "grupo": "Stellantis: Peugeot · Citroën · Opel (diésel 1.5 BlueHDi)", "protocolo": "Boot", "nota": "", "confirmado": false },
+    { "ecu": "MD1CS004", "fabricante": "Bosch", "grupo": "Grupo VAG: VW · Audi · Seat · Skoda (diésel EA288)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "MD1CS015", "fabricante": "Bosch", "grupo": "Ford (diésel EcoBlue)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "MD1CP001", "fabricante": "Bosch", "grupo": "Mercedes-Benz (diésel OM654)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "MD1CP002", "fabricante": "Bosch", "grupo": "BMW (diésel B57)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "MG1CS003", "fabricante": "Bosch", "grupo": "BMW · Mini (gasolina B38 / B48 / B58)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "MG1CS011", "fabricante": "Bosch", "grupo": "Grupo VAG (gasolina EA211 evo)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "MG1CS032", "fabricante": "Bosch", "grupo": "Stellantis (gasolina 1.2 PureTech)", "protocolo": "Boot", "nota": "", "confirmado": false },
+    { "ecu": "Simos 18.1", "fabricante": "Continental", "grupo": "Grupo VAG (gasolina EA888 gen3)", "protocolo": "Bench", "nota": "", "confirmado": false },
+    { "ecu": "Simos 18.10", "fabricante": "Continental", "grupo": "Grupo VAG (gasolina EA888 evo)", "protocolo": "Bench", "nota": "", "confirmado": false }
+  ]
+}
