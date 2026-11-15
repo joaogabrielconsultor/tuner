@@ -412,7 +412,7 @@
     // Preguntas frecuentes (todas visíveis)
     '<section class="container svx-sec">' + head('Resolvemos tus dudas', 'Preguntas frecuentes') + '<div class="svx-faq">' + x.f.map(function (q) { return '<div class="svx-card"><h3>' + ui('question', 'svx-h3-ico') + esc(q[0]) + '</h3><p>' + esc(q[1]) + '</p></div>'; }).join('') + '</div>' +
       (x.e ? '<div class="svx-legal">' + ui('warn') + '<p><b>Aviso legal:</b> las anulaciones de sistemas antipolución son solo para vehículos de competición o uso fuera de vías públicas, en los lugares donde esté permitido. El taller debe comprobar la normativa de su país antes de instalarlas.</p></div>' : '') + '</section>' +
-    '<section class="container files-cta"><div><span class="kicker">Portal para talleres</span><h2>¿Lo necesitas para tu vehículo?</h2><p>Sube la lectura en el portal y elige este servicio. Te devolvemos el archivo en 30–60 min en horario laboral.</p>' +
+    '<section class="container files-cta"><div><span class="kicker">Área Profesional</span><h2>¿Lo necesitas para tu vehículo?</h2><p>Sube la lectura en el portal y elige este servicio. Te devolvemos el archivo en 30–60 min en horario laboral.</p>' +
       '<div class="files-cta-btns"><a class="btn" href="' + orderUrl(x.id) + '">Pedir este servicio ' + ARROW + '</a><a class="btn btn-ghost" href="' + WA + waText + '" target="_blank" rel="noopener">Consultar por WhatsApp</a></div></div></section>' +
     (others.length ? '<section class="container sv-others"><h2>Otros servicios</h2><div>' + others.map(function (o) { return '<a href="servicios/' + o.id + '/">' + esc(o.t) + '</a>'; }).join('') + '<a href="/archivos/#servicios">Ver todos los servicios</a></div></section>' : '');
 })();

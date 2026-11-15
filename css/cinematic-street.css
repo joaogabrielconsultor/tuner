@@ -7,14 +7,14 @@
 .cine { --f-street: 'Saira Condensed', 'Chakra Petch', system-ui, sans-serif; --grade: sepia(.42) saturate(.8) contrast(1.16) hue-rotate(12deg) brightness(.95); }
 
 /* ---------- grão de asfalto e concreto (camada fixa, estática) ---------- */
-body.cine::after { content: ''; position: fixed; inset: -50%; z-index: 52; pointer-events: none; opacity: .13; mix-blend-mode: overlay;
+body.cine::after { content: ''; position: fixed; inset: 0; z-index: 52; pointer-events: none; opacity: .06; will-change: transform;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.4 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
 
 /* ---------- grade de cor das fotos (amarelo-esverdeado, contraste duro) ---------- */
-.cine .hero-media, .cine .bay-media, .cine .fr, .cine .pr-img, .cine .fin-media { filter: var(--grade); }
+/* fotos estáticas: filtro rasterizado uma vez. O herói (que se move) usa só uma película por cima */
+.cine .bay-media, .cine .fr, .cine .pr-img, .cine .fin-media { filter: var(--grade); }
 .cine .hero-media::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
-  background: radial-gradient(120% 90% at 70% 40%, transparent 35%, rgba(20, 22, 6, .55) 100%), linear-gradient(180deg, rgba(120, 140, 40, .18), rgba(40, 46, 10, .3));
-  mix-blend-mode: multiply; }
+  background: radial-gradient(120% 90% at 70% 40%, transparent 35%, rgba(20, 22, 6, .55) 100%), linear-gradient(180deg, rgba(110, 120, 30, .16), rgba(50, 54, 12, .26)); }
 /* riscos finos sobre o herói */
 .cine .hero-cine::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .5;
   background: repeating-linear-gradient(103deg, transparent 0 140px, rgba(255, 255, 255, .035) 140px 141px, transparent 141px 310px),
@@ -68,3 +68,29 @@ html.race-armed .hero-media picture { animation-play-state: paused !important; }
 }
 html.fx-lite body.cine::after { display: none; }
 html.fx-lite .cine .hero-media, html.fx-lite .cine .bay-media, html.fx-lite .cine .fr, html.fx-lite .cine .pr-img { filter: sepia(.25) contrast(1.08); }
+
+/* celular: sem camadas decorativas de tela cheia (grão e rastros repintam durante a rolagem) */
+@media (max-width: 900px), (hover: none) { body.cine::after, .streaks { display: none !important; } }
+
+/* ---------- enquadramento ---------- */
+/* cabeçalho de seção assimétrico: título largo à esquerda, texto de apoio embaixo à direita */
+.cine .sec-head h2 { max-width: 20ch; }
+@media (min-width: 1000px) {
+  .cine .sec-head { grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); column-gap: clamp(32px, 5vw, 80px); align-items: end; }
+  .cine .sec-head > .kicker { grid-column: 1 / -1; }
+  .cine .sec-head > h2 { grid-column: 1; }
+  .cine .sec-head > :not(.kicker):not(h2) { grid-column: 2; padding-bottom: .4em; border-left: 2px solid var(--c-red); padding-left: 18px; }
+}
+/* serviços: título com peso de capítulo, menos vazio entre blocos, botão e link alinhados */
+.bays { gap: clamp(56px, 7vw, 104px); }
+.cine .bay h3 { font-size: clamp(30px, 3vw, 44px); line-height: .95; }
+.cine .bay-copy .cta-row, .cine .cta-row { align-items: center; }
+.cine .bay-media { align-self: center; }
+/* caso real: legendas começam na mesma linha */
+.film figure { align-content: start; align-self: start; }
+.film figcaption { min-height: 2.9em; }
+/* contadores: unidade menor para não quebrar */
+.odo b em { font-size: .5em; margin-left: .15em; }
+.odo b { white-space: nowrap; }
+.odo b:has(em) { font-size: clamp(30px, 3.3vw, 50px); }
+.odo { min-width: 0; }

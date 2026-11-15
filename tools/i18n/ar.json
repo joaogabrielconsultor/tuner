@@ -1004,7 +1004,9 @@
   "Caja automática (TCU)": "ناقل الحركة الأوتوماتيكي (TCU)",
   "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "يعتمد السعر النهائي على وحدة التحكم (ECU). نؤكده لك عند استلام الملف وقبل الدفع.",
   "Más opciones": "المزيد",
-  "Cerrar": "إغلاق"
+  "Cerrar": "إغلاق",
+  "Área Profesional": "المنطقة المهنية",
+  "Ir al Área Profesional": "الانتقال إلى المنطقة المهنية"
  },
  "patterns": [
   [

@@ -1004,7 +1004,9 @@
   "Caja automática (TCU)": "Automatikgetriebe (TCU)",
   "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "Der Endpreis hängt vom Steuergerät (ECU) ab. Wir bestätigen ihn nach Erhalt der Datei, vor der Zahlung.",
   "Más opciones": "Mehr Optionen",
-  "Cerrar": "Schließen"
+  "Cerrar": "Schließen",
+  "Área Profesional": "Profibereich",
+  "Ir al Área Profesional": "Zum Profibereich"
  },
  "patterns": [
   [

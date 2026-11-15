@@ -19,6 +19,7 @@ js = js.replace(/function orderUrl\(id\) \{[^\n]*\}/, "function orderUrl(id) { r
 rep("'<a href=\"servicios\">Ver todos los servicios</a>", "'<a href=\"archivos.html#servicios\">Ver todos los servicios</a>");
 rep("href=\"servicios\">Ver todos los servicios ' + ARROW", "href=\"archivos.html#servicios\">Ver todos los servicios ' + ARROW");
 if (/€/.test(js.split('var S = [')[0])) console.warn('Atenção: há "€" fora dos textos dos serviços — confira se não é preço.');
+js = js.split('<span class="kicker">Portal para talleres</span>').join('<span class="kicker">Área Profesional</span>'); // nome usado em todo o site
 fs.writeFileSync(path.join(ROOT, 'js', 'servicios.js'), js);
 
 // imagens usadas pelos serviços

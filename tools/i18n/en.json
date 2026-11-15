@@ -1004,7 +1004,9 @@
   "Caja automática (TCU)": "Automatic gearbox (TCU)",
   "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "The final price depends on the ECU. We confirm it when we receive the file, before you pay.",
   "Más opciones": "More options",
-  "Cerrar": "Close"
+  "Cerrar": "Close",
+  "Área Profesional": "Professional Area",
+  "Ir al Área Profesional": "Go to the Professional Area"
  },
  "patterns": [
   [

@@ -1004,7 +1004,9 @@
   "Caja automática (TCU)": "Câmbio automático (TCU)",
   "El precio final depende de la centralita (ECU). Te lo confirmamos al recibir el archivo, antes de pagar.": "O preço final depende da centralina (ECU). Confirmamos ao receber o arquivo, antes do pagamento.",
   "Más opciones": "Mais opções",
-  "Cerrar": "Fechar"
+  "Cerrar": "Fechar",
+  "Área Profesional": "Área Profissional",
+  "Ir al Área Profesional": "Ir para a Área Profissional"
  },
  "patterns": [
   [

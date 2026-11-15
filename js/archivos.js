@@ -119,7 +119,7 @@
     emisWrap.remove();
     var btn = document.getElementById('f-send');
     if (CFG.portal) {
-      btn.firstChild.nodeValue = 'Continuar al portal ';
+      btn.firstChild.nodeValue = 'Ir al Área Profesional ';
     } else {
       btn.firstChild.nodeValue = 'Portal para talleres: próximamente ';
       btn.disabled = true;

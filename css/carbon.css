@@ -1410,3 +1410,19 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
 [dir=rtl] .sv-illus-name { left: auto; right: 22px; }
 @keyframes sv-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .sv-illus-ring { animation: none; } }
+
+/* ===== Área Profesional: destaque no menu ===== */
+.main-nav > ul > li.nav-pro > a { gap: 8px; color: #fff; }
+.main-nav .pro-ico { width: 16px; height: 16px; flex: none; }
+@media (min-width: 1181px) {
+  .main-nav > ul > li.nav-pro { display: flex; align-items: center; }
+  .main-nav > ul > li.nav-pro > a { height: 38px; padding: 0 18px 0 14px; background: linear-gradient(100deg, var(--red), #ff3b30); clip-path: polygon(8px 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    box-shadow: 0 6px 22px rgba(227, 18, 27, .45); transition: filter .2s, transform .2s; }
+  .main-nav > ul > li.nav-pro > a::after { display: none; }
+  .main-nav > ul > li.nav-pro > a:hover, .main-nav > ul > li.nav-pro.active > a { color: #fff; filter: brightness(1.12); transform: translateY(-1px); }
+}
+@media (max-width: 1180px) {
+  .main-nav > ul > li.nav-pro > a { color: var(--red); }
+  .main-nav > ul > li.nav-pro > a::before { content: ''; order: 3; margin-left: auto; width: 10px; height: 10px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 4px rgba(227, 18, 27, .25); }
+}
+.foot-pro { color: #fff !important; font-weight: 700; box-shadow: inset 0 -2px 0 var(--red); }

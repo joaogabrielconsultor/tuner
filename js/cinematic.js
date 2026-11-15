@@ -115,7 +115,12 @@
       if (root.classList.contains('race-armed')) document.addEventListener('mido:go', startIgn, { once: true }); else setTimeout(startIgn, 500);
     }
   }
-  var idleOn = false;
+  var idleOn = false, heroOff = false;
+  var heroEl = $('.hero-cine');
+  if (heroEl && 'IntersectionObserver' in window) new IntersectionObserver(function (es) {
+    heroOff = !es[0].isIntersecting; root.classList.toggle('hero-off', heroOff);
+    if (!heroOff && tach && !RM && rpm) idleLoop();
+  }).observe(heroEl);
   function idleLoop() {
     if (idleOn) return; idleOn = true;
     (function loop() {
@@ -123,7 +128,7 @@
       var jitter = soundOn ? 0 : Math.sin(performance.now() / 260) * 25;
       rpm += ((target + jitter) - rpm) * (soundOn ? .35 : .08);
       drawTach();
-      if (document.hidden) { idleOn = false; return; }
+      if (document.hidden || (heroOff && !soundOn)) { idleOn = false; return; }
       requestAnimationFrame(loop);
     })();
   }
