@@ -39,6 +39,8 @@
   var shift = $('.shiftlight'), leds = shift ? $$('i', shift) : [];
   var hero = $('.hero-cine'), media = hero && $('.hero-media', hero), dock = $('.dock');
   var tracks = $$('[data-progress]');
+  var parY = 0, shX = 0, shY = 0;
+  function applyMedia() { if (media) media.style.transform = 'translate3d(' + shX.toFixed(1) + 'px,' + (parY + shY).toFixed(1) + 'px,0)'; }
   var ticking = false;
   function onScroll() {
     if (ticking) return; ticking = true;
@@ -50,7 +52,8 @@
         leds.forEach(function (l, i) { l.classList.toggle('on', i < n); });
         shift.classList.toggle('redline', p > .985);
       }
-      if (media && !RM && !lite && y < innerHeight * 1.2) media.style.transform = 'translate3d(0,' + (y * 0.28).toFixed(1) + 'px,0)';
+      parY = (media && !RM && !lite && y < innerHeight * 1.2) ? y * 0.28 : parY;
+      applyMedia();
       if (dock) dock.classList.toggle('show', y > innerHeight * .7 && !nearQuote());
       tracks.forEach(function (t) {
         // a barra enche ao longo de toda a seção, não só da lista
@@ -108,7 +111,8 @@
         drawTach();
         if (t < 2.2) requestAnimationFrame(ign); else { rpm = target = IDLE; idleLoop(); }
       };
-      setTimeout(function () { requestAnimationFrame(ign); }, 500);
+      var startIgn = function () { requestAnimationFrame(ign); };
+      if (root.classList.contains('race-armed')) document.addEventListener('mido:go', startIgn, { once: true }); else setTimeout(startIgn, 500);
     }
   }
   var idleOn = false;
@@ -132,7 +136,7 @@
   function setSound(on) {
     soundOn = on;
     if (sbtn) sbtn.setAttribute('aria-pressed', on ? 'true' : 'false');
-    if (!on) { if (snd) snd.pause(); target = IDLE; return; }
+    if (!on) { if (snd) snd.pause(); target = IDLE; shX = shY = 0; applyMedia(); return; }
     if (!snd) {
       snd = new Audio('/audio/intro-gtr-v2.mp3'); snd.preload = 'auto'; snd.volume = .6;
       snd.addEventListener('ended', function () { setSound(false); try { snd.currentTime = 0; } catch (e) {} });
@@ -146,6 +150,7 @@
       if (!soundOn || !snd) return;
       var lv = +(ENV.charAt(Math.floor(snd.currentTime / 0.05)) || 0) / 9;
       target = IDLE + lv * 6800;
+      if (!RM && !lite) { var tt = performance.now() / 1000, a = 1.6 + lv * 4.2; shX = (Math.sin(tt * 61) + Math.sin(tt * 97) * .5) * a; shY = (Math.sin(tt * 73 + 1) + Math.sin(tt * 131) * .4) * a * .6; applyMedia(); }
       if (RM && readout) { rpm = target; drawTach(); }
       requestAnimationFrame(follow);
     })();

@@ -402,3 +402,6 @@ html.fx-lite .hero-cine .hero-media { will-change: auto; }
 
 /* .cine .wrap zera o padding vertical: o herói declara o seu com a mesma especificidade */
 .cine .hero-body { padding-top: calc(var(--header-h, 104px) + 48px); }
+
+/* .step também existe no carbon.css (passos do configurador, altura fixa de 48px): neutraliza aqui */
+.cine .track .step { height: auto; padding: 0; border-radius: 0; background: none; display: grid; align-items: start; color: inherit; font-size: inherit; }

@@ -22,10 +22,13 @@
   <meta name="theme-color" content="#0d0d0f">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Saira+Condensed:wght@700;800&family=Manrope:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="preload" as="image" href="images/cine/hero-carbon-gtr-1920.webp" imagesrcset="images/cine/hero-carbon-gtr-960.webp 960w, images/cine/hero-carbon-gtr-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="css/carbon.css?v=15">
-  <link rel="stylesheet" href="css/cinematic.css?v=2">
+  <link rel="stylesheet" href="css/cinematic.css?v=4">
+  <link rel="stylesheet" href="css/cinematic-race.css?v=3">
+  <link rel="stylesheet" href="css/cinematic-street.css?v=2">
+  <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!sessionStorage.getItem('mpStart')){var mpR=document.documentElement;mpR.classList.add('race-armed');setTimeout(function(){mpR.classList.remove('race-armed')},4000)}}catch(e){}</script>
   <script>try{var mpH=document.documentElement,mpOK={en:'en',nl:'nl',de:'de',fr:'fr',it:'it',el:'el',pt:'pt-PT',br:'pt-BR',zh:'zh-Hans',ar:'ar'},mpL=new URLSearchParams(location.search).get('lang');if(mpL&&(mpOK[mpL]||mpL==='es'))localStorage.setItem('mpLang',mpL);mpL=localStorage.getItem('mpLang');if(mpOK[mpL]){mpH.lang=mpOK[mpL];if(mpL==='ar')mpH.dir='rtl';mpH.setAttribute('data-lang',mpL);mpH.classList.add('i18n-wait');setTimeout(function(){mpH.classList.remove('i18n-wait')},2500);document.write('<script src="js/i18n-'+mpL+'.js?v=11"><\/script><script src="js/i18n.js?v=2"><\/script>')}}catch(e){}</script>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="images/icon-32.png" type="image/png" sizes="32x32">
@@ -128,6 +131,7 @@
     </div>
     <div class="hero-sweep" aria-hidden="true"></div>
     <div class="hud-frame" aria-hidden="true"><span></span><span></span><span></span><span></span><span class="hud-tag"><b>MIDO</b> taller &amp; performance, Bilbao</span></div>
+    <div class="startlights" aria-hidden="true"><div class="lamps"><i></i><i></i><i></i></div><div class="go-word">GO</div></div>
 
     <div class="wrap hero-body">
       <div class="hero-copy">
@@ -153,6 +157,8 @@
     </div>
     <span class="scroll-cue" aria-hidden="true"></span>
   </section>
+
+  <div class="ticker" aria-label="Lo que ofrecemos"><div class="tk-track"><ul><li>Presupuesto previo sin compromiso</li><li>Banco de potencia propio</li><li>Cualquier marca</li><li>Mecánica, chapa y pintura, diagnóstico</li><li>Reprogramación de ECO a Stage 3</li><li>Cita previa en Bilbao</li></ul><ul aria-hidden="true"><li>Presupuesto previo sin compromiso</li><li>Banco de potencia propio</li><li>Cualquier marca</li><li>Mecánica, chapa y pintura, diagnóstico</li><li>Reprogramación de ECO a Stage 3</li><li>Cita previa en Bilbao</li></ul></div></div>
 
   <!-- ============ SERVICIOS ============ -->
   <section class="sec" id="servicios" aria-labelledby="h-serv">
@@ -245,6 +251,12 @@
         <div class="why-item"><svg viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="9" width="22" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 14h22" stroke="currentColor" stroke-width="2"/></svg><h3>Cualquier marca</h3><p>Mantenimiento y reparación para coches de cualquier marca, de diario o de altas prestaciones.</p></div>
         <div class="why-item"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 9v7l5 3" fill="none" stroke="currentColor" stroke-width="2"/></svg><h3>Con cita previa</h3><p>Reservamos hueco para tu coche: llegas, lo dejas y sabes cuándo estará listo.</p></div>
       </div>
+      <div class="odo-band">
+        <div class="odo"><b data-count="10">10</b><span>años de experiencia</span></div>
+        <div class="odo"><b data-count="5">5</b><span>años de garantía en la reprogramación</span></div>
+        <div class="odo"><b data-count="4">4</b><span>especialidades en un mismo taller</span></div>
+        <div class="odo"><b data-count="6">6</b><span>días a la semana abiertos, de lunes a sábado</span></div>
+      </div>
     </div>
   </section>
 
@@ -282,6 +294,20 @@
       <div class="film-nav">
         <button type="button" data-film-go="-1" aria-label="Fotos anteriores"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
         <button type="button" data-film-go="1" aria-label="Fotos siguientes"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2"/></svg></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SALIDA ============ -->
+  <section class="race-band pursuit" aria-labelledby="h-race">
+    <div class="wrap">
+      <span class="kicker">Tu turno</span>
+      <h2 id="h-race">Tu coche, listo para salir a la carretera.</h2>
+      <p class="lead">Cuéntanos qué necesita y te decimos qué hacer y cuánto cuesta antes de empezar.</p>
+      <div class="cta-row">
+        <a class="cta" href="#presupuesto" data-track="cta_quote" data-track-label="race">Pedir presupuesto
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="cta wa" data-wa="Hola MIDO Performance, quiero reservar cita en el taller." data-track="cta_whatsapp" data-track-label="race" href="https://wa.me/393758172444">Reservar cita por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -409,7 +435,8 @@
 
 <script src="js/config.js?v=3"></script>
 <script src="js/site.js?v=7"></script>
-<script src="js/cinematic.js?v=2"></script>
+<script src="js/cinematic.js?v=3"></script>
+<script src="js/cinematic-race.js?v=3"></script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;e.preventDefault();var h=a.getAttribute('href');if(h.length>1){var t=document.getElementById(h.slice(1));if(t)t.scrollIntoView();history.replaceState(null,'',location.pathname+h);}});</script>
 </body>
 </html>

@@ -216,6 +216,38 @@ async function scrollAll(p) {
     await p.context().close();
   });
 
+  await scenario('Noche de carrera: semáforo, GO una vez por visita, velocímetro, contadores y textos completos', async () => {
+    const ctx = await browser.newContext({ viewport: { width: 390, height: 844 } });
+    await ctx.addInitScript(spies);
+    const p = await ctx.newPage(); const errs = []; p.on('pageerror', (e) => errs.push(e.message));
+    p.goto(BASE + '/performance/');
+    await p.waitForFunction(() => document.querySelector('.startlights.go'), null, { timeout: 8000 });
+    expect(+(await p.$eval('.startlights', (l) => getComputedStyle(l).opacity)) > 0, 'el GO no se ve');
+    await p.waitForTimeout(1500);
+    expect(!(await p.evaluate(() => document.documentElement.classList.contains('race-armed'))), 'el héroe sigue bloqueado');
+    await p.goto(BASE + '/arquivos/', { waitUntil: 'networkidle' });
+    expect(!(await p.$('.startlights')), 'el semáforo se repite en la misma visita');
+    await p.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; document.querySelector('.odo-band').scrollIntoView(); });
+    await p.waitForTimeout(2400);
+    const n = await p.$$eval('.odo b[data-count-src]', (b) => b.map((x) => +x.textContent.replace(/D/g, '')));
+    expect(n[0] > 100 && n[1] > 1000, 'contadores del catálogo: ' + n);
+    for (let i = 0; i < 14; i++) { await p.mouse.wheel(0, 320); await p.waitForTimeout(40); }
+    expect(await p.$eval('.speedo', (s) => s.classList.contains('show') && +s.querySelector('b').textContent > 0), 'el velocímetro no reacciona al scroll');
+    await p.goto(BASE + '/performance/', { waitUntil: 'networkidle' });
+    const hs = await p.$$eval('#proceso .step', (s) => s.map((x) => x.scrollHeight - x.clientHeight));
+    expect(hs.every((d) => d <= 1), 'pasos del proceso recortados: ' + hs);
+    expect(await p.$eval('.ticker', (t) => t.textContent.length > 40), 'falta la banda de anuncios');
+    expect(!errs.length, errs.join(' | '));
+    await ctx.close();
+  });
+
+  await scenario('Movimiento reducido: sin semáforo, velocímetro ni rastros', async () => {
+    const p = await open('/arquivos/', { reduced: true, w: 390 });
+    expect(!(await p.$('.startlights')) && !(await p.$('.speedo')) && !(await p.$('.streaks')), 'efectos de carrera activos');
+    expect(!(await p.evaluate(() => document.documentElement.classList.contains('race-armed'))), 'héroe bloqueado');
+    await p.context().close();
+  });
+
   await scenario('Rutas antiguas intactas', async () => {
     const p = await open('/');
     for (const r of ['/', '/taller/', '/mecanica/', '/chapa-y-pintura/', '/diagnostico/', '/archivos/', '/vehiculos/', '/contacto/', '/faq/', '/noticias/', '/piezas/', '/taller.html', '/archivos.html']) {

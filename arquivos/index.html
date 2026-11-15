@@ -23,10 +23,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://nwejdnqbgmtgsedyvvvd.supabase.co" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Manrope:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;600;700&family=Saira+Condensed:wght@700;800&family=Manrope:wght@500;600;700;800&family=Montserrat:wght@400;500;600;700&display=swap">
   <link rel="preload" as="image" href="images/cine/svc-desarrollo-1920.webp" imagesrcset="images/cine/svc-desarrollo-960.webp 960w, images/cine/svc-desarrollo-1920.webp 1920w" imagesizes="100vw" fetchpriority="high">
   <link rel="stylesheet" href="css/carbon.css?v=15">
-  <link rel="stylesheet" href="css/cinematic.css?v=2">
+  <link rel="stylesheet" href="css/cinematic.css?v=4">
+  <link rel="stylesheet" href="css/cinematic-race.css?v=3">
+  <link rel="stylesheet" href="css/cinematic-street.css?v=2">
+  <script>try{if(!matchMedia('(prefers-reduced-motion: reduce)').matches&&!sessionStorage.getItem('mpStart')){var mpR=document.documentElement;mpR.classList.add('race-armed');setTimeout(function(){mpR.classList.remove('race-armed')},4000)}}catch(e){}</script>
   <script>try{var mpH=document.documentElement,mpOK={en:'en',nl:'nl',de:'de',fr:'fr',it:'it',el:'el',pt:'pt-PT',br:'pt-BR',zh:'zh-Hans',ar:'ar'},mpL=new URLSearchParams(location.search).get('lang');if(mpL&&(mpOK[mpL]||mpL==='es'))localStorage.setItem('mpLang',mpL);mpL=localStorage.getItem('mpLang');if(mpOK[mpL]){mpH.lang=mpOK[mpL];if(mpL==='ar')mpH.dir='rtl';mpH.setAttribute('data-lang',mpL);mpH.classList.add('i18n-wait');setTimeout(function(){mpH.classList.remove('i18n-wait')},2500);document.write('<script src="js/i18n-'+mpL+'.js?v=11"><\/script><script src="js/i18n.js?v=2"><\/script>')}}catch(e){}</script>
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" href="images/icon-32.png" type="image/png" sizes="32x32">
@@ -126,6 +129,7 @@
     </div>
     <div class="hero-sweep" aria-hidden="true"></div>
     <div class="hud-frame" aria-hidden="true"><span></span><span></span><span></span><span></span><span class="hud-tag"><b>MIDO</b> área profesional</span></div>
+    <div class="startlights" aria-hidden="true"><div class="lamps"><i></i><i></i><i></i></div><div class="go-word">GO</div></div>
 
     <div class="wrap hero-body">
       <div class="hero-copy">
@@ -142,6 +146,8 @@
     </div>
     <span class="scroll-cue" aria-hidden="true"></span>
   </section>
+
+  <div class="ticker" aria-label="Lo que ofrecemos"><div class="tk-track"><ul><li>Un pago por archivo, sin créditos</li><li>Checksum corregido, listo para escribir</li><li>ECU y TCU</li><li>Entrega en 30–60 min en horario laboral</li><li>Precio confirmado antes de pagar</li><li>Cuenta gratuita</li></ul><ul aria-hidden="true"><li>Un pago por archivo, sin créditos</li><li>Checksum corregido, listo para escribir</li><li>ECU y TCU</li><li>Entrega en 30–60 min en horario laboral</li><li>Precio confirmado antes de pagar</li><li>Cuenta gratuita</li></ul></div></div>
 
   <!-- ============ CÓMO FUNCIONA ============ -->
   <section class="sec" id="como-funciona" aria-labelledby="h-how">
@@ -161,6 +167,12 @@
         <div><h3>MIDO valida el precio</h3><p>Revisamos tu lectura y confirmamos el precio final según la centralita.</p></div>
         <div><h3>Recibes la solicitud de pago</h3><p>Un pago por archivo, sin créditos ni suscripción. Te avisamos por email y en el portal.</p></div>
         <div><h3>Sigues el trabajo y descargas</h3><p>Ves el estado en «Mis pedidos» y descargas el archivo en cuanto está listo.</p></div>
+      </div>
+      <div class="odo-band">
+        <div class="odo"><b data-count-src="marcas" data-count="167">167</b><span>marcas en el catálogo</span></div>
+        <div class="odo"><b data-count-src="modelos" data-count="1721">1.721</b><span>modelos para elegir</span></div>
+        <div class="odo"><b>30–60<em> min</em></b><span>de entrega en horario laboral, una vez pagado</span></div>
+        <div class="odo"><b data-count="1">1</b><span>pago por archivo, sin créditos ni suscripción</span></div>
       </div>
     </div>
   </section>
@@ -211,7 +223,7 @@
       </div>
       <div class="price-rows">
         <div class="price-row"><div class="pr-img reveal"><picture><source type="image/webp" srcset="images/cine/svc-stage1-v2-1000.webp"><img src="images/svc-stage1-v2.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async"></picture></div>
-          <div><h3>Stage 1</h3><p>Software a medida con el hardware de serie del motor.</p></div><div class="pr-price" data-price="stage1"><small>desde</small><b>…</b></div></div>
+          <div><h3>Stage 1 <span class="badge-hot">El más solicitado</span></h3><p>Software a medida con el hardware de serie del motor.</p></div><div class="pr-price" data-price="stage1"><small>desde</small><b>…</b></div></div>
         <div class="price-row"><div class="pr-img reveal"><picture><source type="image/webp" srcset="images/cine/svc-stage2-v2-1000.webp"><img src="images/svc-stage2-v2.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async"></picture></div>
           <div><h3>Stage 2</h3><p>Para vehículos con piezas de alto rendimiento: escape, admisión, intercooler.</p></div><div class="pr-price" data-price="stage2"><small>desde</small><b>…</b></div></div>
         <div class="price-row"><div class="pr-img reveal"><picture><source type="image/webp" srcset="images/cine/svc-stage3-v2-1000.webp"><img src="images/svc-stage3-v2.jpg" alt="" width="1200" height="900" loading="lazy" decoding="async"></picture></div>
@@ -244,7 +256,7 @@
   </section>
 
   <!-- ============ CIERRE ============ -->
-  <section class="sec finale" id="acceso" aria-labelledby="h-fin">
+  <section class="sec finale pursuit" id="acceso" aria-labelledby="h-fin">
     <div class="fin-media"><picture><source type="image/webp" srcset="images/cine/band-carbon-dyno-1600.webp"><img src="images/band-carbon-dyno.jpg" alt="" width="1916" height="821" loading="lazy" decoding="async"></picture></div>
     <div class="wrap">
       <span class="kicker">Área profesional MIDO</span>
@@ -345,7 +357,8 @@
 
 <script src="js/config.js?v=3"></script>
 <script src="js/site.js?v=7"></script>
-<script src="js/cinematic.js?v=2"></script>
+<script src="js/cinematic.js?v=3"></script>
+<script src="js/cinematic-race.js?v=3"></script>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="#"]');if(!a||e.defaultPrevented)return;e.preventDefault();var h=a.getAttribute('href');if(h.length>1){var t=document.getElementById(h.slice(1));if(t)t.scrollIntoView();history.replaceState(null,'',location.pathname+h);}});</script>
 </body>
 </html>

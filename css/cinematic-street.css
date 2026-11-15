@@ -1,0 +1,70 @@
+/* =====================================================================
+   MIDO · camada «street underground» (2005, cru e industrial)
+   Grade amarelo-esverdeada nas fotos, grão de asfalto e concreto,
+   riscos, tipografia condensada pesada, cortes diagonais entre seções
+   e entrada do carro com desfoque de movimento. Vermelho MIDO como acento.
+   ===================================================================== */
+.cine { --f-street: 'Saira Condensed', 'Chakra Petch', system-ui, sans-serif; --grade: sepia(.42) saturate(.8) contrast(1.16) hue-rotate(12deg) brightness(.95); }
+
+/* ---------- grão de asfalto e concreto (camada fixa, estática) ---------- */
+body.cine::after { content: ''; position: fixed; inset: -50%; z-index: 52; pointer-events: none; opacity: .13; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .5 0 0 0 0 .5 0 0 0 1.4 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+/* ---------- grade de cor das fotos (amarelo-esverdeado, contraste duro) ---------- */
+.cine .hero-media, .cine .bay-media, .cine .fr, .cine .pr-img, .cine .fin-media { filter: var(--grade); }
+.cine .hero-media::after { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(120% 90% at 70% 40%, transparent 35%, rgba(20, 22, 6, .55) 100%), linear-gradient(180deg, rgba(120, 140, 40, .18), rgba(40, 46, 10, .3));
+  mix-blend-mode: multiply; }
+/* riscos finos sobre o herói */
+.cine .hero-cine::before { content: ''; position: absolute; inset: 0; z-index: 2; pointer-events: none; opacity: .5;
+  background: repeating-linear-gradient(103deg, transparent 0 140px, rgba(255, 255, 255, .035) 140px 141px, transparent 141px 310px),
+              repeating-linear-gradient(-8deg, transparent 0 90px, rgba(0, 0, 0, .18) 90px 92px, transparent 92px 230px); }
+
+/* ---------- tipografia de impacto ---------- */
+.cine h1, .cine .sec-head h2, .cine .race-band h2, .cine .finale h2 { font-family: var(--f-street); font-weight: 800; font-style: italic; text-transform: uppercase; letter-spacing: -.005em; line-height: .92; }
+.cine .hero-copy h1 { font-size: clamp(50px, 7.6vw, 118px); }
+.hero-pro .hero-copy h1 { font-size: clamp(44px, 5.8vw, 92px); }
+.cine .sec-head h2 { font-size: clamp(40px, 5.4vw, 84px); }
+.cine .race-band h2, .cine .finale h2 { font-size: clamp(44px, 6.4vw, 104px); max-width: 16ch; }
+.cine .bay h3, .cine .step h3, .cine .price-row h3, .cine .perk h3, .cine .why-item h3 { font-family: var(--f-street); font-weight: 700; font-style: italic; text-transform: uppercase; font-size: 1.32em; letter-spacing: .01em; }
+.cine .kicker { font-family: var(--f-street); font-weight: 700; text-transform: uppercase; letter-spacing: .04em; font-size: 15px; }
+.cine .cta { font-family: var(--f-street); font-weight: 700; font-style: italic; text-transform: uppercase; letter-spacing: .03em; font-size: 18px; }
+
+/* palavra fantasma, composição assimétrica */
+.cine .why { position: relative; overflow: hidden; }
+.cine .why::before { content: 'BILBAO' / ''; position: absolute; right: -2vw; top: 6%; z-index: 0; pointer-events: none; font-family: var(--f-street); font-weight: 800; font-style: italic;
+  font-size: clamp(120px, 22vw, 360px); line-height: .8; color: transparent; -webkit-text-stroke: 1px rgba(255, 255, 255, .07); }
+.cine .why > .wrap { position: relative; z-index: 1; }
+
+/* ---------- cortes diagonais entre seções (corte rápido de câmera) ---------- */
+.cine .why, .cine .race-band { clip-path: polygon(0 clamp(24px, 4vw, 64px), 100% 0, 100% calc(100% - clamp(24px, 4vw, 64px)), 0 100%); padding-top: calc(clamp(72px, 10vw, 130px) + 2vw); padding-bottom: calc(clamp(72px, 10vw, 130px) + 2vw); }
+.cine .race-band { background:
+  linear-gradient(100deg, rgba(8, 8, 10, .96) 30%, rgba(8, 8, 10, .6)),
+  repeating-linear-gradient(90deg, transparent 0 46px, rgba(255, 191, 31, .5) 46px 70px, transparent 70px 140px) 0 calc(100% - 38px) / 100% 6px no-repeat,
+  #0a0a08; }
+
+/* ---------- carro entra com desfoque de movimento depois do GO ---------- */
+.cine .hero-media picture { display: block; height: 100%; animation: car-in 1.15s cubic-bezier(.16, .84, .24, 1) .05s both; }
+@keyframes car-in {
+  0% { transform: translateX(14%) skewX(-7deg); filter: blur(16px) brightness(1.6); opacity: .2; }
+  55% { filter: blur(3px) brightness(1.15); opacity: 1; }
+  100% { transform: none; filter: none; opacity: 1; }
+}
+html.race-armed .hero-media picture { animation-play-state: paused !important; }
+
+/* ---------- títulos: entrada com rastro horizontal ---------- */
+@keyframes slam { 0% { opacity: 0; transform: translateX(-60px) skewX(-18deg); filter: blur(10px); text-shadow: 30px 0 0 rgba(227, 18, 27, .5), 60px 0 0 rgba(227, 18, 27, .2); }
+  55% { opacity: 1; filter: blur(0); text-shadow: 8px 0 0 rgba(227, 18, 27, .35); } 100% { transform: none; text-shadow: none; } }
+
+@media (max-width: 640px) {
+  .cine .hero-copy h1 { font-size: clamp(44px, 13vw, 60px); }
+  .cine .sec-head h2 { font-size: clamp(36px, 10.5vw, 48px); }
+  .cine .race-band h2, .cine .finale h2 { font-size: clamp(38px, 11vw, 52px); }
+  .cine .cta { font-size: 17px; }
+  .cine .why::before { font-size: 34vw; top: 2%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cine .hero-media picture { animation: none !important; }
+}
+html.fx-lite body.cine::after { display: none; }
+html.fx-lite .cine .hero-media, html.fx-lite .cine .bay-media, html.fx-lite .cine .fr, html.fx-lite .cine .pr-img { filter: sepia(.25) contrast(1.08); }
