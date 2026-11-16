@@ -1,5 +1,5 @@
 /* =====================================================================
-   MIDO Performance — páginas cinematográficas (/performance e /arquivos)
+   MIDO Performance — páginas cinematográficas (/performance e /area-profesional)
    Carbono, grafite e o vermelho MIDO. Movimento só em transform/opacity;
    versão leve (html.fx-lite) e movimento reduzido respeitados.
    ===================================================================== */
@@ -227,7 +227,7 @@
 .dock .cta { flex: 1; justify-content: center; min-height: 50px; font-size: 16px; padding: 0 14px; }
 
 /* =====================================================================
-   /arquivos — área profesional
+   /area-profesional — área profesional
    ===================================================================== */
 .hero-pro .hero-media img { --obj: 50% 50%; }
 .ecu-map { position: absolute; right: var(--pad); top: calc(var(--header-h, 104px) + 40px); width: min(44vw, 560px); aspect-ratio: 16 / 10; z-index: 1; opacity: 0; animation: fade-in 1.2s var(--ease) .7s forwards;
@@ -389,7 +389,7 @@ html.fx-lite .hero-cine .hero-media { will-change: auto; }
   .cine .hero-body { padding-bottom: 92px; }
 }
 
-/* /arquivos: o mapa de ECU é a coluna da direita do herói */
+/* /area-profesional: o mapa de ECU é a coluna da direita do herói */
 .hero-pro .hero-media img { filter: brightness(.42) saturate(.9) blur(1px); animation: push-in-pro 2.8s var(--ease) .1s forwards; }
 @keyframes push-in-pro { to { transform: scale(1.02); filter: brightness(.46) saturate(.95) blur(1px); } }
 .hero-pro .hero-copy h1 { font-size: clamp(38px, 5.6vw, 82px); }
@@ -416,3 +416,8 @@ html.fx-lite .hero-cine .hero-media { will-change: auto; }
 .cine .dock { background: rgba(12, 12, 14, .96); }
 /* herói fora da tela: pausa os laços */
 html.hero-off .hero-sweep, html.hero-off .hero-copy h1 .glint, html.hero-off .scroll-cue::after { animation-play-state: paused; }
+
+/* acordeão de serviços no fim da Área Profesional */
+.cine .svc-acc .acc { max-width: 980px; }
+.cine .svc-acc .acc summary { font-family: var(--f-hud); font-size: 17px; }
+.cine .svc-acc .files-acc-note { max-width: 980px; }

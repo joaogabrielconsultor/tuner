@@ -36,7 +36,7 @@ python3 tools/sync-layout.py
 | Ruta | Para quién | Archivos |
 | --- | --- | --- |
 | `/performance/` | Clientes del taller: mecánica, chapa y pintura, diagnóstico y reprogramación. Objetivo: presupuestos y conversaciones por WhatsApp. | `performance.html` |
-| `/arquivos/` | Talleres y preparadores (B2B). Objetivo: altas y accesos al portal `mido-archivos`; precios en vivo del portal y demostración sin pedidos. | `arquivos.html` |
+| `/area-profesional/` | Talleres y preparadores (B2B). Objetivo: altas y accesos al portal `mido-archivos`; precios en vivo del portal y demostración sin pedidos. | `area-profesional.html` |
 
 Estilo y efectos compartidos: `css/cinematic.css` + `js/cinematic.js` (base), `css/cinematic-race.css` + `js/cinematic-race.js` (semáforo de salida, velocímetro con marchas y NOS, rastros de velocidad, banda de anuncios, contadores, luz de persecución) y `css/cinematic-street.css` (estética street underground: grade amarillo-verdoso, grano de asfalto, tipografía condensada, cortes diagonales) (cuentarrevoluciones con el audio del GT-R solo al pulsar, luz de cambio como progreso, revelado de fotos, progreso del proceso, formulario → WhatsApp, eventos `mido_*` en `window.dataLayer` sin datos personales). Respeta `prefers-reduced-motion` y activa una versión ligera (`html.fx-lite`) en aparatos modestos. Fotos optimizadas en `images/cine/` (WebP). Tras editar: `node tools/sync-layout.js && node tools/clean-urls.js`.
 

@@ -1,4 +1,4 @@
-// MIDO Performance — motor das páginas cinematográficas (/performance e /arquivos)
+// MIDO Performance — motor das páginas cinematográficas (/performance e /area-profesional)
 // Sem bibliotecas. Movimento só com transform/opacity; desligado com prefers-reduced-motion;
 // html.fx-lite em aparelhos modestos ou com economia de dados.
 (function () {
@@ -214,7 +214,7 @@
   });
 
   // =====================================================================
-  // /arquivos: preços reais do portal, mapa de ECU animado e demonstração
+  // /area-profesional: preços reais do portal, mapa de ECU animado e demonstração
   // =====================================================================
   // Leitura pública (chave publishable, só leitura, regra "precios: leer publico" do banco).
   var SB_URL = 'https://nwejdnqbgmtgsedyvvvd.supabase.co', SB_KEY = 'sb_publishable_rq4kCeac7cdTX_iG1PyMdw_t9f3LT2l';

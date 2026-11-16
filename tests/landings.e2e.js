@@ -1,4 +1,4 @@
-// Testes das páginas /performance e /arquivos (Playwright, sem framework).
+// Testes das páginas /performance e /area-profesional (Playwright, sem framework).
 //   servidor estático na pasta do projeto (ex.: npx http-server -p 8092, ou qualquer um que sirva pasta/index.html)
 //   BASE=http://127.0.0.1:8092 node tests/landings.e2e.js        (SHOTS=<pasta> guarda capturas)
 // Não cria pedidos nem cobranças: o portal só é aberto por link; o formulário abre o WhatsApp (window.open interceptado).
@@ -59,7 +59,7 @@ async function scrollAll(p) {
 (async () => {
   browser = await pw.chromium.launch({ executablePath: chrome(), args: ['--autoplay-policy=no-user-gesture-required'] });
 
-  for (const route of ['/performance/', '/arquivos/']) for (const w of [1440, 390, 320]) {
+  for (const route of ['/performance/', '/area-profesional/']) for (const w of [1440, 390, 320]) {
     await scenario(route + ' ' + w + 'px: carga, imágenes, consola y sin desbordes', async () => {
       const p = await open(route, { w });
       expect(await p.isVisible('h1'), 'h1 visible');
@@ -81,7 +81,7 @@ async function scrollAll(p) {
   }
 
   await scenario('Todos los enlaces y CTAs llevan a destinos válidos', async () => {
-    for (const route of ['/performance/', '/arquivos/']) {
+    for (const route of ['/performance/', '/area-profesional/']) {
       const p = await open(route);
       const links = await p.$$eval('main a[href], .dock a[href]', (as) => as.map((a) => ({ href: a.href, text: a.textContent.trim(), target: a.target })));
       expect(links.length >= 6, 'pocos enlaces en ' + route);
@@ -104,7 +104,7 @@ async function scrollAll(p) {
   });
 
   await scenario('Portal profesional: login y registro reales, sin segundo sistema de acceso', async () => {
-    const p = await open('/arquivos/');
+    const p = await open('/area-profesional/');
     const login = await p.getAttribute('.hero-copy .cta:not(.ghost)', 'href');
     const signup = await p.getAttribute('.hero-copy .cta.ghost', 'href');
     expect(login === PORTAL + '/', 'login → ' + login);
@@ -168,7 +168,7 @@ async function scrollAll(p) {
   });
 
   await scenario('Aparatos modestos: versión ligera de los efectos', async () => {
-    const p = await open('/arquivos/', { lite: true });
+    const p = await open('/area-profesional/', { lite: true });
     expect(await p.evaluate(() => document.documentElement.classList.contains('fx-lite')), 'no activa fx-lite');
     expect(!(await p.isVisible('.hero-sweep')), 'el barrido se mantiene en fx-lite');
     await p.context().close();
@@ -194,7 +194,7 @@ async function scrollAll(p) {
   });
 
   await scenario('Área profesional: precios reales del portal y demostración sin pedidos', async () => {
-    const p = await open('/arquivos/');
+    const p = await open('/area-profesional/');
     await p.waitForFunction(() => !/…/.test(document.querySelector('[data-price="stage1"]').textContent), null, { timeout: 15000 });
     const st1 = await p.textContent('[data-price="stage1"]');
     expect(/\d+\s?€|En el portal/.test(st1), 'precio Stage 1: ' + st1);
@@ -225,7 +225,7 @@ async function scrollAll(p) {
     expect(+(await p.$eval('.startlights', (l) => getComputedStyle(l).opacity)) > 0, 'el GO no se ve');
     await p.waitForTimeout(1500);
     expect(!(await p.evaluate(() => document.documentElement.classList.contains('race-armed'))), 'el héroe sigue bloqueado');
-    await p.goto(BASE + '/arquivos/', { waitUntil: 'networkidle' });
+    await p.goto(BASE + '/area-profesional/', { waitUntil: 'networkidle' });
     expect(!(await p.$('.startlights')), 'el semáforo se repite en la misma visita');
     await p.evaluate(() => { document.documentElement.style.scrollBehavior = 'auto'; document.querySelector('.odo-band').scrollIntoView(); });
     await p.waitForTimeout(2400);
@@ -242,9 +242,23 @@ async function scrollAll(p) {
   });
 
   await scenario('Movimiento reducido: sin semáforo, velocímetro ni rastros', async () => {
-    const p = await open('/arquivos/', { reduced: true, w: 390 });
+    const p = await open('/area-profesional/', { reduced: true, w: 390 });
     expect(!(await p.$('.startlights')) && !(await p.$('.speedo')) && !(await p.$('.streaks')), 'efectos de carrera activos');
     expect(!(await p.evaluate(() => document.documentElement.classList.contains('race-armed'))), 'héroe bloqueado');
+    await p.context().close();
+  });
+
+  await scenario('Dirección antigua /arquivos/ lleva a /area-profesional/ (con el ancla) y el acordeón de servicios está al final', async () => {
+    const p = await open('/arquivos/#demo');
+    await p.waitForURL(/\/area-profesional\/#demo$/, { timeout: 8000 });
+    const n = await p.$$eval('#acc-list details', (d) => d.length);
+    expect(n >= 10, 'acordeón con ' + n + ' servicios');
+    const last = await p.$eval('main', (m) => m.lastElementChild.id);
+    expect(last === 'todos-los-servicios', 'el acordeón no es la última sección: ' + last);
+    await p.click('#acc-list details:nth-child(2) summary');
+    expect(await p.$eval('#acc-list details:nth-child(2)', (d) => d.open), 'el acordeón no abre');
+    const more = await p.$eval('#acc-list details:nth-child(2) .acc-more', (a) => a.href);
+    const r = await p.request.get(more); expect(r.status() === 200, 'Ver más → ' + r.status());
     await p.context().close();
   });
 
