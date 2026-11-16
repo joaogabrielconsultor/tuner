@@ -7,7 +7,7 @@
   function waUrl(text) { return typeof cpWaUrl === 'function' ? cpWaUrl(text) : 'https://api.whatsapp.com/send?phone=' + WA + '&text=' + encodeURIComponent(text); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function msg(ecu) {
-    return 'Hola, quería consultar el desbloqueo de una centralita para KESS3.\n' +
+    return 'Hola, quería consultar el desbloqueo y la programación de una centralita.\n' +
       'Centralita: ' + (ecu || '') + '\n' +
       'Coche: ';
   }
@@ -27,8 +27,8 @@
     tbody.innerHTML = list.map(function (r) {
       return '<tr' + (r.confirmado ? '' : ' class="is-draft"') + '>' +
         '<td data-label="Centralita"><span class="ecu-name" translate="no">' + esc(r.fabricante + ' ' + r.ecu) + '</span>' + (r.confirmado ? '' : '<span class="ecu-pending">Pendiente de confirmar</span>') + '</td>' +
-        '<td data-label="Vehículos">' + esc(r.grupo) + (r.nota ? '<small>' + esc(r.nota) + '</small>' : '') + '</td>' +
-        '<td data-label="Protocolo"><span class="ecu-proto" translate="no">' + esc(r.protocolo) + '</span></td>' +
+        '<td data-label="Años">' + esc(r.grupo) + (r.nota ? '<small>' + esc(r.nota) + '</small>' : '') + '</td>' +
+        '<td data-label="Programación"><span class="ecu-proto" translate="no">' + esc(r.protocolo) + '</span></td>' +
         '<td class="ecu-act"><a class="ecu-ask" target="_blank" rel="noopener" href="' + esc(waUrl(msg(r.fabricante + ' ' + r.ecu))) + '">Consultar</a></td></tr>';
     }).join('');
     var any = rows.length > 0;

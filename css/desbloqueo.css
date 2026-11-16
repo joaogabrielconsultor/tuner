@@ -26,6 +26,12 @@
 .unl-tags { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; padding: 0; list-style: none; }
 .unl-tags li { padding: 8px 14px; border-radius: 999px; border: 1px solid var(--surface-3); background: rgba(0, 0, 0, .25); font-size: 13px; font-weight: 600; color: var(--text); }
 
+/* título com as referências: menor que o título normal e quebra nas barras */
+.unl-banner h1.unl-refs, .unl-banner h2.unl-refs { font-size: clamp(26px, 3.4vw, 44px); max-width: 900px; }
+.unl-refs em { display: block; margin-top: 6px; word-spacing: .05em; }
+.unl-banner .unl-sub { margin-top: 12px; font-family: var(--font-display); font-size: 18px; font-weight: 700; letter-spacing: .02em; color: var(--heading); }
+.unl-banner .unl-sub + p { margin-top: 14px; }
+
 /* botão de WhatsApp: o mesmo .btn-wa do site (verde oficial), só que do tamanho do conteúdo dentro do banner */
 .unl-actions .btn-wa { width: auto; height: 56px; padding: 0 8px 0 24px; font-size: 16px; justify-content: space-between; }
 .unl-actions .btn-wa .ico { background: rgba(11, 46, 23, .14); color: #0b2e17; }
