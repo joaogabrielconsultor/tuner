@@ -7,10 +7,9 @@
   function waUrl(text) { return typeof cpWaUrl === 'function' ? cpWaUrl(text) : 'https://api.whatsapp.com/send?phone=' + WA + '&text=' + encodeURIComponent(text); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
   function msg(ecu) {
-    return 'Hola MIDO, quiero consultar el desbloqueo de una centralita para Alientech KESS3.\n' +
+    return 'Hola, quería consultar el desbloqueo de una centralita para KESS3.\n' +
       'Centralita: ' + (ecu || '') + '\n' +
-      'Vehículo (marca, modelo, año y motor): \n' +
-      'Número de hardware / software (si lo tienes): ';
+      'Coche: ';
   }
 
   // todos os botões "Consultar desbloqueo por WhatsApp"
@@ -28,16 +27,16 @@
     tbody.innerHTML = list.map(function (r) {
       return '<tr' + (r.confirmado ? '' : ' class="is-draft"') + '>' +
         '<td data-label="Centralita"><span class="ecu-name" translate="no">' + esc(r.fabricante + ' ' + r.ecu) + '</span>' + (r.confirmado ? '' : '<span class="ecu-pending">Pendiente de confirmar</span>') + '</td>' +
-        '<td data-label="Grupo / vehículos">' + esc(r.grupo) + (r.nota ? '<small>' + esc(r.nota) + '</small>' : '') + '</td>' +
-        '<td data-label="Protocolo KESS3"><span class="ecu-proto" translate="no">' + esc(r.protocolo) + '</span></td>' +
+        '<td data-label="Vehículos">' + esc(r.grupo) + (r.nota ? '<small>' + esc(r.nota) + '</small>' : '') + '</td>' +
+        '<td data-label="Protocolo"><span class="ecu-proto" translate="no">' + esc(r.protocolo) + '</span></td>' +
         '<td class="ecu-act"><a class="ecu-ask" target="_blank" rel="noopener" href="' + esc(waUrl(msg(r.fabricante + ' ' + r.ecu))) + '">Consultar</a></td></tr>';
     }).join('');
     var any = rows.length > 0;
     wrap.hidden = !any;
-    info.textContent = any ? list.length + (list.length === 1 ? ' centralita' : ' centralitas') + (t ? ' encontradas' : '') : '';
+    info.textContent = any ? list.length + (list.length === 1 ? ' centralita' : ' centralitas') : '';
     empty.hidden = list.length > 0;
-    empty.innerHTML = any ? 'No encontramos esa centralita en la lista. <a href="' + esc(waUrl(msg(q.value))) + '" target="_blank" rel="noopener">Consúltanos por WhatsApp</a>: puede que también la trabajemos.'
-      : 'Estamos actualizando la lista de centralitas compatibles. <a href="' + esc(waUrl(msg(''))) + '" target="_blank" rel="noopener">Consúltanos por WhatsApp</a> con el modelo exacto de tu centralita.';
+    empty.innerHTML = any ? 'No está en la lista. <a href="' + esc(waUrl(msg(q.value))) + '" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a>.'
+      : 'Todavía estamos completando la lista. <a href="' + esc(waUrl(msg(''))) + '" target="_blank" rel="noopener">Pregúntanos por WhatsApp</a> con la referencia de tu centralita.';
     q.disabled = !any;
   }
   q.addEventListener('input', render);
