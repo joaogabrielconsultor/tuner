@@ -1421,8 +1421,10 @@ html[data-lang] :is(h1, h2, h3, h4) { hyphens: auto; }
   .main-nav > ul > li.nav-pro > a::after { display: none; }
   .main-nav > ul > li.nav-pro > a:hover, .main-nav > ul > li.nav-pro.active > a { color: #fff; filter: brightness(1.12); transform: translateY(-1px); }
 }
+/* celular: vermelho no menu = página atual; aqui o destaque é o ícone e o botão «ir» no fim da linha */
 @media (max-width: 1180px) {
-  .main-nav > ul > li.nav-pro > a { color: var(--red); }
-  .main-nav > ul > li.nav-pro > a::before { content: ''; order: 3; margin-left: auto; width: 10px; height: 10px; border-radius: 50%; background: var(--red); box-shadow: 0 0 0 4px rgba(227, 18, 27, .25); }
+  .main-nav > ul > li.nav-pro > a { color: var(--heading); }
+  .main-nav > ul > li.nav-pro .pro-ico { color: var(--red); width: 20px; height: 20px; }
+  .main-nav > ul > li.nav-pro > a::before { content: ''; order: 3; margin-left: auto; flex: none; width: 34px; height: 34px; border-radius: 10px; background: var(--red) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M6 3l5 5-5 5' fill='none' stroke='%23fff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 14px no-repeat; box-shadow: 0 6px 18px rgba(227, 18, 27, .35); }
 }
 .foot-pro { color: #fff !important; font-weight: 700; box-shadow: inset 0 -2px 0 var(--red); }
